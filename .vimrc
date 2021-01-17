@@ -1,0 +1,277 @@
+"Vim configuration file for Michael DeBusk
+"michael@nlphilia.com
+"Last edit: 2021-01-13 15:56 
+
+" ** 1. Important "{{{
+set nocompatible "Turn off vi-compatible mode
+"}}}
+
+" ** 2. Moving around, searching and patterns "{{{
+set path+=**   "Search down into subfolders
+set incsearch  "show match for partly-typed search command
+set ignorecase "ignore case when using a search pattern
+set smartcase  "override 'ignorecase' when pattern has upper case characters
+set autochdir  "Automatically change working directory to that of open file
+"}}}
+
+" ** 3. Tags "{{{
+
+"}}}
+
+" ** 4. Displaying text "{{{
+set scrolloff=2          "Number of lines to show around the cursor
+set nowrap               "Turn off word wrapping
+set cmdheight=2          "Set the command window height to 2 lines
+" set lines=40 columns=211 "Set size of vim in terminal
+" set list                 "Show whitespace characters
+set listchars=tab:␉·,trail:␠,eol:¶,nbsp:⎵      "List of strings used for list mode
+set number               "Enable line numbering, taking up 6 spaces
+set numberwidth=5        "Set line numbering to take up 5 spaces
+set relativenumber       "Show line numbers relative to current line
+set encoding=utf-8       "Use an encoding that supports unicode.
+set lazyredraw           "Don’t update screen during macro and script execution
+augroup numbertoggle     "Toggles relativenumber on and off based on mode
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+"}}}
+
+" ** 5. Syntax highlighting and spelling "{{{
+syntax enable
+set background=dark
+filetype indent plugin on "indent depends on filetype
+set hlsearch              "Highlight searches 
+set cursorline            "Highlight current line
+set colorcolumn=+1        "Show the column where text would wrap
+"}}}
+
+" ** 6. Multiple Windows "{{{
+set hidden       "Allow easier switching between files
+set laststatus=2 "Always display the status line
+set splitbelow   "Always open a new horizontal split below the existing one
+set splitright   "Always open a new vertical split below the existing one
+set statusline=%F%m%r%h%w\ [Fmt=%{&ff}]\ [Type=%Y]\ [ASCII=\%04.4b]\ [Hex=\%04.4B]\ [Line=%04l,\ Col=%03v]\ [%p%%]\ [Lines=%L] 
+"}}}
+
+" ** 7. Multiple tab pages "{{{
+"}}}
+
+" ** 8. Terminal "{{{
+set title   "show title in console title bar
+set ttyfast "smoother changes
+"}}}
+
+" ** 9. Using the mouse "{{{
+"}}}
+
+" ** 10. GUI "{{{
+if has("gui_running")
+    "Activate menu for Solarized color scheme
+    let g:solarized_menu=0 
+    "Set the font and size
+    set guifont=OpenDyslexicMono\ 9
+    "Hide toolbar
+    set guioptions-=T
+    set guioptions-=r
+    set guioptions-=L
+    set lines=43 columns=120
+endif
+"}}}
+
+" ** 11. Printing "{{{
+"}}}
+
+" ** 12. Messages and info "{{{
+set showcmd    "Show partial commands in the status line
+set ruler      "show the cursor position all the time
+set confirm    "ask if you wish to save changed files
+set visualbell "Use visual bell instead of beeping when doing something wrong
+"}}}
+
+" ** 13. Selecting text "{{{
+"}}}
+
+" ** 4. Editing text "{{{
+"set textwidth=80 "Set text width, where text would wrap if it did
+set completeopt=menuone,longest
+"}}}
+
+" ** 15. Tabs and indenting "{{{
+set tabstop=8     "set tab character to 8 characters
+set softtabstop=4 "Number of spaces a tab counts when editing
+set expandtab     "turn tabs into whitespace
+set shiftwidth=4  "Indent width for autoindent
+set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
+set smartindent   "Turn on smart indent
+set autoindent    "Automatically set the indent of a new line
+"}}}
+
+" ** 16. Folding "{{{
+set foldmethod=marker
+set foldlevel=99
+"}}}
+
+" ** 17. Diff mode "{{{
+"}}}
+
+" ** 18. Mapping "{{{
+"Quickly time out on keycodes, but never time out on mappings
+set notimeout ttimeout ttimeoutlen=200
+
+" In case you open a file without sudo permissions
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+"Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
+"which is the default
+map Y y$
+
+"Map <C-L> (redraw screen) to also turn off search highlighting until the
+"next search
+nnoremap <C-L> :nohl<CR><C-L>
+
+" Disable arrow movement, resize splits instead.
+nnoremap <Up> :resize +2<CR>
+nnoremap <Down> :resize -2<CR>
+nnoremap <Left> :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
+
+" Autoclose mappings
+" From https://medium.com/vim-drops/custom-autoclose-mappings-1ff90f45c6f5
+" autoclose and position cursor to write text inside
+" inoremap ' ''<left>
+" inoremap ` ``<left>
+" inoremap " "<left>
+" inoremap ( ()<left>
+" inoremap [ []<left>
+" inoremap { {}<left>
+""autoclose with ; and position cursor to write text inside
+" inoremap '; '';<left><left>
+" inoremap `; ``;<left><left>
+" inoremap "; "";<left><left>
+" inoremap (; ();<left><left>
+" inoremap [; [];<left><left>
+" inoremap {; {};<left><left>
+""autoclose with , and position cursor to write text inside
+" inoremap ', '',<left><left>
+" inoremap `, ``,<left><left>
+" inoremap ", "",<left><left>
+" inoremap (, (),<left><left>
+" inoremap [, [],<left><left>
+" inoremap {, {},<left><left>
+""autoclose and position cursor after
+" inoremap '<tab> ''
+" inoremap `<tab> ``
+" inoremap "<tab> ""
+" inoremap (<tab> ()
+" inoremap [<tab> []
+" inoremap {<tab> {}
+""autoclose with ; and position cursor after
+" inoremap ';<tab> '';
+" inoremap `;<tab> ``;
+" inoremap ";<tab> "";
+" inoremap (;<tab> ();
+" inoremap [;<tab> [];
+" inoremap {;<tab> {};
+""autoclose with , and position cursor after
+" inoremap ',<tab> '',
+" inoremap `,<tab> ``,
+" inoremap ",<tab> "",
+" inoremap (,<tab> (),
+" inoremap [,<tab> [],
+" inoremap {,<tab> {},
+""autoclose 2 lines below and position cursor in the middle 
+" inoremap '<CR> '<CR>'<ESC>O
+" inoremap `<CR> `<CR>`<ESC>O
+" inoremap "<CR> "<CR>"<ESC>O
+" inoremap (<CR> (<CR>)<ESC>O
+" inoremap [<CR> [<CR>]<ESC>O
+" inoremap {<CR> {<CR>}<ESC>O
+""autoclose 2 lines below adding ; and position cursor in the middle 
+" inoremap ';<CR> '<CR>';<ESC>O
+" inoremap `;<CR> `<CR>`;<ESC>O
+" inoremap ";<CR> "<CR>";<ESC>O
+" inoremap (;<CR> (<CR>);<ESC>O
+" inoremap [;<CR> [<CR>];<ESC>O
+" inoremap {;<CR> {<CR>};<ESC>O
+""autoclose 2 lines below adding , and position cursor in the middle 
+" inoremap ',<CR> '<CR>',<ESC>O
+" inoremap `,<CR> `<CR>`,<ESC>O
+" inoremap ",<CR> "<CR>",<ESC>O
+" inoremap (,<CR> (<CR>),<ESC>O
+" inoremap [,<CR> [<CR>],<ESC>O
+" inoremap {,<CR> {<CR>},<ESC>O
+"}}}
+
+" ** 19. Reading and writing files "{{{
+"Turn off modeline support.
+"http://blogs.techrepublic.com.com/security/?p=4476
+set modelines=0
+set nomodeline
+set backup "keep a backup file
+"}}}
+
+" ** 20. The swap file "{{{
+"}}}
+
+" ** 21. Command line editing "{{{
+set wildmenu  "turn on command line completion wild style
+"}}}
+
+" ** 22. Running external commands "{{{
+"}}}
+
+" ** 23. Running make and jumping to errors "{{{
+"}}}
+
+" ** 24. Language-specific "{{{
+"}}}
+
+" ** 25. Multi-byte characters "{{{
+"}}}
+
+" ** 26. Various "{{{
+set bufhidden=hide   "Hide buffer when not in window
+set viminfo='20,\"50 "Read/write a .viminfo file
+"}}}
+
+" ** Color scheme "{{{
+set t_Co=256
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+colorscheme solarized
+"}}}
+
+" ** Customized file types "{{{
+" Back up and restore views on buffer open
+au BufWinLeave ?* mkview
+au BufWinEnter ?* silent loadview
+
+" Python
+au BufNewFile,BufRead *.py
+            \ set tabstop=4 |
+            \ set softtabstop=4 |
+            \ set shiftwidth=4 |
+            \ set textwidth=79 |
+            \ set expandtab |
+            \ set autoindent |
+            \ set fileformat=unix |
+"
+" Web development
+au BufNewFile,BufRead *.js, *.html, *.css
+            \ set tabstop=2 |
+            \ set softtabstop=2 |
+            \ set shiftwidth=2 |
+"}}}
+
+" ** Abbreviations "{{{
+" Insert date and time
+:iab <expr> dts strftime("%F %R") 
+
+" for QIF files
+:iab ckng MAutopay<CR>LAssets:Current Assets:Capital One 360:Checking
+
+" Insert a ruler
+:iab RuL ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0
+"}}}
+
