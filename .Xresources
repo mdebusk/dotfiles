@@ -1,0 +1,110 @@
+! Xresources file for Michael DeBusk
+! Last edited: 2020-07-28 00:51
+
+! Use a nice truetype font and size by default... 
+URxvt.font:xft:OpenDyslexicMono:style=Regular:size=7,xft:IBM Plex Mono:style=Regular:size=7
+
+! Every shell is a login shell by default (for inclusion of all necessary environment variables)
+URxvt.loginshell:true
+
+! I like a LOT of scrollback...
+URxvt.savelines:16384
+
+! Window size
+URxvt.vt100*geometry:120x90
+
+URxvt.termName:rxvt-unicode
+
+! Disable printing the terminal contents when pressing PrintScreen.
+URxvt.print-pipe: "cat > /dev/null"
+
+! Configure Home and End keys {{{
+URxvt.keysym.Home: \033[1~
+URxvt.keysym.End: \033[4~
+URxvt.keysym.KP_Home: \033[1~
+URxvt.keysym.KP_End:  \033[4~
+!}}}
+
+! double-click to select whole URLs :D
+URxvt.charClass:33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+! right hand side scrollbar
+URxvt.scrollBar_right: true
+URxvt.ScrollBar: true
+
+! stop output to terminal from jumping down to bottom of scroll again
+URxvt.scrollTtyOutput:false
+
+! URxvt Plugins {{{
+URxvt.perl-ext:           default,matcher,font-size
+! `font-size` plugin
+URxvt.font-size.step: 2
+
+! "matcher" plugin
+URxvt.url-launcher:       firefox
+! URxvt.keysym.C-Delete:    perl:matcher:last
+URxvt.keysym.M-Delete:    perl:matcher:list
+!}}}
+
+! Solarized color scheme for the X Window System {{{
+! http://ethanschoonover.com/solarized
+
+! Common
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+! Dark
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+! Light
+! #define S_base03        #fdf6e3
+! #define S_base02        #eee8d5
+! #define S_base01        #93a1a1
+! #define S_base00        #839496
+! #define S_base0         #657b83
+! #define S_base1         #586e75
+! #define S_base2         #073642
+! #define S_base3         #002b36
+
+! To only apply colors to your terminal, for example, prefix
+! the color assignment statement with its name. Example:
+! URxvt*background:            S_base03
+
+*background:              S_base03
+*foreground:              S_base0
+*fading:                  40
+*fadeColor:               S_base03
+*cursorColor:             S_base1
+*pointerColorBackground:  S_base01
+*pointerColorForeground:  S_base1
+
+*color0:                  S_base02
+*color1:                  S_red
+*color2:                  S_green
+*color3:                  S_yellow
+*color4:                  S_blue
+*color5:                  S_magenta
+*color6:                  S_cyan
+*color7:                  S_base2
+*color9:                  S_orange
+*color8:                  S_base03
+*color10:                 S_base01
+*color11:                 S_base00
+*color12:                 S_base0
+*color13:                 S_violet
+*color14:                 S_base1
+*color15:                 S_base3
+!}}}
