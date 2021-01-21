@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # michael@nlphilia.com
-# Last edit: 2021-01-16 19:00
+# Last edit: 2021-01-21 07:47 
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -41,6 +41,9 @@ export CALOPT="--col=$XDG_CONFIG_HOME/ccal/cal.col --d=$XDG_DATA_HOME/ccal/cal.d
 
 # Let wget find its config file
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+
+# Let sqlite find its history file
+export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
 #}}}
 
 # ** History {{{
@@ -122,6 +125,9 @@ fi
 #Sane defaults for rm and mv
 alias mv='mv -i'
 alias rm='rm -i'
+
+# Help sqlite3 use the XDG Base Directory standard
+alias sqlite3='sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc'
 
 # Use vim as a pager with syntax highlighting!
 alias vless='/usr/local/share/vim/vim82/macros/less.sh'
