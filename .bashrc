@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# michael@nlphilia.com
-# Last edit: 2021-01-21 07:47 
+# Michael DeBusk
+# Last edit: 2021-01-28 10:34
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -105,9 +105,6 @@ esac
 #}}}
 
 # ** Aliases{{{
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 #if [ -f ~/.bash_aliases ]; then
 #    . ~/.bash_aliases
