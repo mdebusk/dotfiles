@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # Michael DeBusk
-# Last edit: 2021-01-28 10:34
+# Last edit: 2021-02-05 20:00
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -123,6 +123,9 @@ fi
 alias mv='mv -i'
 alias rm='rm -i'
 
+# Default for remind
+alias remind='remind $XDG_CONFIG_HOME/remind/reminders.rem'
+
 # Help sqlite3 use the XDG Base Directory standard
 alias sqlite3='sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc'
 
@@ -160,4 +163,3 @@ lcd() { cd ${1} ; ls ; }
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
-
