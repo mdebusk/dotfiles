@@ -2,7 +2,7 @@
 ! Last edited: 2021-02-06 20:57 
 
 ! Use a nice truetype font and size by default... 
-# URxvt.font:xft:OpenDyslexicMono:style=Regular:size=7,xft:IBM Plex Mono:style=Regular:size=7
+! URxvt.font:xft:OpenDyslexicMono:style=Regular:size=7,xft:IBM Plex Mono:style=Regular:size=7
 URxvt.font:xft:SourceCodePro-Regular:style=Regular:size=9,xft:IBM Plex Mono:style=Regular:size=9
 
 ! Every shell is a login shell by default (for inclusion of all necessary environment variables)
