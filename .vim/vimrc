@@ -1,5 +1,5 @@
 "Vim configuration file for Michael DeBusk
-"Last edit: 2021-01-13 15:56 
+"Last edit: 2021-02-09 09:54
 
 " ** 1. Important "{{{
 set nocompatible "Turn off vi-compatible mode
@@ -245,6 +245,10 @@ colorscheme solarized
 " Back up and restore views on buffer open
 au BufWinLeave ?* mkview
 au BufWinEnter ?* silent loadview
+
+" Bash
+au bufnewfile *.sh
+            \ 0r /home/michael/Templates/shell_script.sh
 
 " Python
 au BufNewFile,BufRead *.py
