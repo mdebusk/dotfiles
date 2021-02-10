@@ -1,15 +1,21 @@
 # ~/.nanorc
-# Last edit 2020-07-06 23:26
+# Michael DeBusk
+# https://www.nano-editor.org/dist/latest/nanorc.5.html
+# Last edit 2021-02-10 08:40
 
-# set statements
+# Options{{{
 set autoindent
 set tabsize 4
 set tabstospaces
 set linenumbers
-set smooth
 set softwrap
+set atblanks
+set backup
+set backupdir "~/.cache/nano/backups"
+set regexp
+#}}}
 
-# Includes
+# Syntax Highlighting{{{
 include "/usr/share/nano/asm.nanorc"
 include "/usr/share/nano/autoconf.nanorc"
 include "/usr/share/nano/awk.nanorc"
@@ -54,3 +60,9 @@ include "/usr/share/nano/tcl.nanorc"
 include "/usr/share/nano/texinfo.nanorc"
 include "/usr/share/nano/tex.nanorc"
 include "/usr/share/nano/xml.nanorc"
+#}}}
+
+#Rebinding Keys{{{
+#None yet
+#}}}
+
