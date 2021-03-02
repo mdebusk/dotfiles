@@ -1,5 +1,6 @@
 "Vim configuration file for Michael DeBusk
-"Last edit: 2021-02-09 09:54
+"Last edit: 2021-03-02 12:28
+
 
 " ** 1. Important "{{{
 set nocompatible "Turn off vi-compatible mode
@@ -18,7 +19,7 @@ set autochdir  "Automatically change working directory to that of open file
 "}}}
 
 " ** 4. Displaying text "{{{
-set scrolloff=2          "Number of lines to show around the cursor
+set scrolloff=8          "Number of lines to show around the cursor
 set nowrap               "Turn off word wrapping
 set cmdheight=2          "Set the command window height to 2 lines
 " set lines=40 columns=211 "Set size of vim in terminal
@@ -91,13 +92,17 @@ set visualbell "Use visual bell instead of beeping when doing something wrong
 " ** 13. Selecting text "{{{
 "}}}
 
-" ** 4. Editing text "{{{
+" ** 14. Editing text "{{{
 "set textwidth=80 "Set text width, where text would wrap if it did
+"set wrapmargin=80
+set complete+=kspell
 set completeopt=menuone,longest
+set nojoinspaces
+set omnifunc=syntaxcomplete#Complete
 "}}}
 
 " ** 15. Tabs and indenting "{{{
-set tabstop=8     "set tab character to 8 characters
+set tabstop=4     "set tab character to 8 characters
 set softtabstop=4 "Number of spaces a tab counts when editing
 set expandtab     "turn tabs into whitespace
 set shiftwidth=4  "Indent width for autoindent
@@ -232,6 +237,7 @@ set wildmenu  "turn on command line completion wild style
 " ** 26. Various "{{{
 set bufhidden=hide   "Hide buffer when not in window
 set viminfo='20,\"50 "Read/write a .viminfo file
+set signcolumn=yes
 "}}}
 
 " ** Color scheme "{{{
@@ -247,6 +253,7 @@ au BufWinLeave ?* mkview
 au BufWinEnter ?* silent loadview
 
 " Bash
+" copy script template into empty new buffer
 au bufnewfile *.sh
             \ 0r /home/michael/Templates/shell_script.sh
 
@@ -258,13 +265,17 @@ au BufNewFile,BufRead *.py
             \ set textwidth=79 |
             \ set expandtab |
             \ set autoindent |
-            \ set fileformat=unix |
-"
+            \ set fileformat=unix
+
+
 " Web development
-au BufNewFile,BufRead *.js, *.html, *.css
+au BufNewFile,BufRead *.js, *.html, *.css, *.php
             \ set tabstop=2 |
             \ set softtabstop=2 |
-            \ set shiftwidth=2 |
+            \ set shiftwidth=2
+
+au bufnewfile *.html
+            \ 0r /home/michael/Templates/html_document.html
 "}}}
 
 " ** Abbreviations "{{{
