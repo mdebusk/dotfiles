@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # Michael DeBusk
-# Last edit: 2021-02-05 20:00
+# Last edit: 2021-03-19 11:08
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -28,22 +28,19 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
-# Variables for XDG Base Directory Specification
+# Help programs use the XDG Base Directory standard
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
+export CALOPT="--col=$XDG_CONFIG_HOME/ccal/cal.col --d=$XDG_DATA_HOME/ccal/cal.dat --u --f"
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
 
 # News server, for SLRN
 export NNTPSERVER='news.eternal-september.org'
 
-# Personalized options for ccal
-export CALOPT="--col=$XDG_CONFIG_HOME/ccal/cal.col --d=$XDG_DATA_HOME/ccal/cal.dat --u --f"
-
-# Let wget find its config file
-export WGETRC="$XDG_CONFIG_HOME/wgetrc"
-
-# Let sqlite find its history file
-export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
+# Does anybody look at the history file for less?
+export LESSHISTFILE=-
 #}}}
 
 # ** History {{{
@@ -112,31 +109,32 @@ esac
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
-    # eval "`dircolors -b`"
     d=$XDG_CONFIG_HOME/dircolors
     test -r $d && eval "$(dircolors $d)"
-    alias ls='ls -lhGptv --color=auto --group-directories-first'
-    #alias vdir='ls --color=auto --format=long'
+    alias ls='ls -lhpv --color=auto --group-directories-first'
 fi
 
-#Sane defaults for rm and mv
+#Sane defaults for cp, rm, and mv; prompt before overwrite
 alias mv='mv -i'
+alias cp='cp -i'
 alias rm='rm -i'
 
-# Default for remind
+# Help programs use the XDG Base Directory standard
 alias remind='remind $XDG_CONFIG_HOME/remind/reminders.rem'
-
-# Help sqlite3 use the XDG Base Directory standard
+alias slrn='slrn -i "$XDG_CONFIG_HOME"/slrn/slrnrc -f "$XDG_CONFIG_HOME"/slrn/jnewsrc-september'
 alias sqlite3='sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc'
 
-# Use vim as a pager with syntax highlighting!
+# Use vim as a pager with syntax highlighting
 alias vless='/usr/local/share/vim/vim82/macros/less.sh'
+
+# Add color to grep output
+alias grep='grep --color'
 
 # Password generator
 alias pwgen='echo; tr -dc A-Za-z0-9_ < /dev/urandom | head -c 32 | xargs;echo'
 
 # Update all packages
-alias update='sudo apt update && sudo apt upgrade -y' 
+alias update='sudo apt update && sudo apt upgrade -y && sudo snap refresh'
 
 # Start VLC from the command line
 alias nvlc='nvlc --browse-dir ~/Music'
