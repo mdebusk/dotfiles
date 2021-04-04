@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # Michael DeBusk
-# Last edit: 2021-03-19 11:08
+# Last edit: 2021-04-04 17:55
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -34,14 +34,14 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
 export CALOPT="--col=$XDG_CONFIG_HOME/ccal/cal.col --d=$XDG_DATA_HOME/ccal/cal.dat --u --f"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
-export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
+export SQLITE_HISTORY=$XDG_CACHE_HOME/sqlite3/sqlite_history
 
 # News server, for SLRN
 export NNTPSERVER='news.eternal-september.org'
 
 # Does anybody look at the history file for less?
 export LESSHISTFILE=-
-#}}}
+# End Environment variables}}}
 
 # ** History {{{
 # save all the histories
@@ -63,32 +63,21 @@ shopt -s histappend
 # This will ignore duplicates, as well as ls, bg, fg and exit as well,
 # making for a cleaner bash history.
 export HISTIGNORE="&:ls:[bf]g:exit"
-# }}}
+# End History }}}
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# ** Prompt{{{
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
+# ** Prompt{{{
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# set a fancy prompt (non-color, unless we know we "want" color)
-# case "$TERM" in
-# xterm-color)
-#     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
-#     ;;
-# *)
-#     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-#     ;;
-# esac
-
-# Comment in the above and uncomment this below for a color prompt
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # If this is an xterm set the title to user@host:dir
@@ -99,7 +88,7 @@ xterm*|rxvt*)
 *)
     ;;
 esac
-#}}}
+# End Prompt}}}
 
 # ** Aliases{{{
 
@@ -118,6 +107,11 @@ fi
 alias mv='mv -i'
 alias cp='cp -i'
 alias rm='rm -i'
+
+# Other usweful defaults
+alias free="free -mt"
+alias df="df -Tha --total"
+alias wget="wget -c"
 
 # Help programs use the XDG Base Directory standard
 alias remind='remind $XDG_CONFIG_HOME/remind/reminders.rem'
@@ -140,7 +134,6 @@ alias update='sudo apt update && sudo apt upgrade -y && sudo snap refresh'
 alias nvlc='nvlc --browse-dir ~/Music'
 
 # What are my external and internal IP addresses?
-# alias exip='echo -n "External IP: "; wget -qO- http://ipecho.net/plain ; echo'
 alias ips="echo -n 'External IP: ' ; wget -qO- http://ipecho.net/plain ; echo; echo -n 'Internal IP: ' ; ifconfig wlp3s0 | grep inet\ | awk '{ print \$2 }' "
 
 # Diary
@@ -149,11 +142,19 @@ alias dz='cd ~/Documents && echo -e "## `date +%Y%m%d%H%M%S` ##\n" >> diary.md &
 # alias for bare git repo use (dotfile repo)
 # https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-#}}}
+# End aliases}}}
 
 # ** Functions{{{
 lcd() { cd ${1} ; ls ; }
-#}}}
+
+wttr()
+{
+    local request="wttr.in/${1-21901?FQ}"
+    [ "$(tput cols)" -lt 125 ] && request+='?n'
+    curl -H "Accept-Language: ${LANG%_*}" --compressed "$request"
+}
+
+# End Functions}}}
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -161,3 +162,6 @@ lcd() { cd ${1} ; ls ; }
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
+
+# Add support for fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
