@@ -1,5 +1,5 @@
 "Vim configuration file for Michael DeBusk
-"Last edit: 2021-03-23 10:27
+"Last edit: 2021-04-04 16:41
 
 
 " ** 1. Important "{{{
@@ -19,12 +19,11 @@ set autochdir  "Automatically change working directory to that of open file
 "}}}
 
 " ** 4. Displaying text "{{{
-set scrolloff=8          "Number of lines to show around the cursor
+set scrolloff=5          "Number of lines to show around the cursor
 set nowrap               "Turn off word wrapping
 set cmdheight=2          "Set the command window height to 2 lines
-" set lines=40 columns=211 "Set size of vim in terminal
-" set list                 "Show whitespace characters
-set listchars=tab:␉·,trail:␠,eol:¶,nbsp:⎵      "List of strings used for list mode
+set list                 "Show whitespace characters
+set listchars=tab:╠═,trail:░,nbsp:▃      "List of strings used for list mode
 set number               "Enable line numbering, taking up 6 spaces
 set numberwidth=5        "Set line numbering to take up 5 spaces
 set relativenumber       "Show line numbers relative to current line
@@ -248,50 +247,60 @@ colorscheme solarized
 "}}}
 
 " ** Customized file types "{{{
-" Back up and restore views on buffer open
-au BufWinLeave ?* mkview
-au BufWinEnter ?* silent loadview
+augroup views "Back up and restore views on buffer open
+    autocmd!
+    au BufWinLeave ?* mkview
+    au BufWinEnter ?* silent loadview
+augroup END
 
-" LaTeX
-" copy document template into empty new buffer
-au BufNewFile *.tex
-            \ 0r /home/michael/Templates/latex_document.tex
+augroup filetype_LaTeX
+    autocmd!
+    " copy document template into empty new buffer
+    au BufNewFile *.tex
+                \ 0r /home/michael/Templates/latex_document.tex
 
-" Bash
-" copy script template into empty new buffer
-au BufNewFile *.sh
-            \ 0r /home/michael/Templates/shell_script.sh
+    au BufNewFIle,BufRead *.tex
+                \ :iab latex \LaTeX\
+augroup END
 
-" Python
-au BufNewFile,BufRead *.py
-            \ set tabstop=4 |
-            \ set softtabstop=4 |
-            \ set shiftwidth=4 |
-            \ set textwidth=79 |
-            \ set expandtab |
-            \ set autoindent |
-            \ set fileformat=unix
+augroup filetype_bash
+    autocmd!
+    " copy script template into empty new buffer
+    au BufNewFile *.sh
+                \ 0r /home/michael/Templates/shell_script.sh
+augroup END
 
+augroup filetype_python
+    " Delete all trailing whitespace before saving
+    au BufWritePre *.py :%s/\s\+$//e
 
-" Web development
-au BufNewFile,BufRead *.js, *.html, *.css, *.php
-            \ set tabstop=2 |
-            \ set softtabstop=2 |
-            \ set shiftwidth=2
+    au BufNewFile,BufRead *.py
+                \ set tabstop=4 |
+                \ set softtabstop=4 |
+                \ set shiftwidth=4 |
+                \ set textwidth=79 |
+                \ set expandtab |
+                \ set autoindent |
+                \ set fileformat=unix
+augroup END
 
-" HTML
-" copy document template into empty new buffer
-au bufnewfile *.html
-            \ 0r /home/michael/Templates/html_document.html
+augroup web_development
+    au BufNewFile,BufRead *.js, *.html, *.css, *.php
+                \ set tabstop=2 |
+                \ set softtabstop=2 |
+                \ set shiftwidth=2
+
+    " copy HTML document template into empty new buffer
+    au bufnewfile *.html
+                \ 0r /home/michael/Templates/html_document.html
+augroup END
+
 "}}}
 
 " ** Abbreviations "{{{
 " Insert date (and maybe time)
 :iab <expr> dts strftime("%F %R")    "Date/time stamp
 :iab <expr> dtg strftime("%e %b %Y") "Date style used in genalogy
-
-" Assure that "LaTeX" will appear correctly in LaTeX documents
-:iab LaTeX \LaTeX\
 
 " for QIF files
 :iab ckng MAutopay<CR>LAssets:Current Assets:Capital One 360:Checking
