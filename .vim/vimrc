@@ -1,5 +1,6 @@
-"Vim configuration file for Michael DeBusk
-"Last edit: 2021-04-04 16:41
+" Vim configuration file for Michael DeBusk
+" https://github.com/mdebusk
+" Last edit: 2021-04-10 10:43
 
 
 " ** 1. Important "{{{
@@ -281,6 +282,8 @@ augroup filetype_python
                 \ set textwidth=79 |
                 \ set expandtab |
                 \ set autoindent |
+                \ set smartindent |
+                \ set colorcolumn=80 |
                 \ set fileformat=unix
 augroup END
 
