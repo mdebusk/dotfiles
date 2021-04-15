@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # Michael DeBusk
-# Last edit: 2021-04-04 17:55
+# Last edit: 2021-04-15 07:28
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -41,6 +41,10 @@ export NNTPSERVER='news.eternal-september.org'
 
 # Does anybody look at the history file for less?
 export LESSHISTFILE=-
+
+# For Tesseract OCR
+export TESSDATA_PREFIX=/usr/share/tesseract-ocr/4.00/tessdata/
+
 # End Environment variables}}}
 
 # ** History {{{
@@ -130,6 +134,9 @@ alias pwgen='echo; tr -dc A-Za-z0-9_ < /dev/urandom | head -c 32 | xargs;echo'
 # Update all packages
 alias update='sudo apt update && sudo apt upgrade -y && sudo snap refresh'
 
+# Find zombie processes
+alias zombie='ps axo stat,ppid,pid,comm | grep -w defunct'
+
 # Start VLC from the command line
 alias nvlc='nvlc --browse-dir ~/Music'
 
@@ -165,3 +172,4 @@ fi
 
 # Add support for fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
