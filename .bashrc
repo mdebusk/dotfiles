@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # Michael DeBusk
-# Last edit: 2021-04-15 07:28
+# Last edit: 2021-04-17 10:49
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -130,6 +130,9 @@ alias grep='grep --color'
 
 # Password generator
 alias pwgen='echo; tr -dc A-Za-z0-9_ < /dev/urandom | head -c 32 | xargs;echo'
+
+# Use wget to mirror a Web site
+alias mirror='wget --mirror --convert-links --html-extension --wait=2 -o log'
 
 # Update all packages
 alias update='sudo apt update && sudo apt upgrade -y && sudo snap refresh'
