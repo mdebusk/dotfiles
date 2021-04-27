@@ -126,7 +126,7 @@ alias sqlite3='sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc'
 alias vless='/usr/local/share/vim/vim82/macros/less.sh'
 
 # Add color to grep output
-alias grep='grep --color'
+alias grep='grep --color=auto'
 
 # Password generator
 alias pwgen='echo; tr -dc A-Za-z0-9_ < /dev/urandom | head -c 32 | xargs;echo'
@@ -144,10 +144,10 @@ alias zombie='ps axo stat,ppid,pid,comm | grep -w defunct'
 alias nvlc='nvlc --browse-dir ~/Music'
 
 # What are my external and internal IP addresses?
-alias ips="echo -n 'External IP: ' ; wget -qO- http://ipecho.net/plain ; echo; echo -n 'Internal IP: ' ; ifconfig wlp3s0 | grep inet\ | awk '{ print \$2 }' "
+alias ips="echo -n 'External IP: ' ; curl ifconfig.co; echo; echo -n 'Internal IP: ' ; ifconfig wlp3s0 | grep inet\ | awk '{ print \$2 }' "
 
 # Diary
-alias dz='cd ~/Documents && echo -e "## `date +%Y%m%d%H%M%S` ##\n" >> diary.md && vim "+ normal G" +startinsert diary.md && cd'
+alias dz='cd ~/Documents && echo -e "## `date +%Y%m%d%H%M%S`\n" >> diary.md && vim "+ normal G" +startinsert diary.md && cd'
 
 # alias for bare git repo use (dotfile repo)
 # https://www.atlassian.com/git/tutorials/dotfiles
