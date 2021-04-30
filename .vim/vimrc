@@ -78,7 +78,7 @@ endif
 
 " ** 11. Printing "{{{
 set printdevice=pdf     "Use PDF printer
-set printoptions=paper:letter,syntax:y,wrap:y, duplex:long
+set printoptions=paper:letter,syntax:y,wrap:y,duplex:long
 "}}}
 
 " ** 12. Messages and info "{{{
