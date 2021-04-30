@@ -1,22 +1,21 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2021-04-10 10:43
+" Last edit: 2021-04-30 10:30
 
 
 " ** 1. Important "{{{
-set nocompatible "Turn off vi-compatible mode
+set nocompatible         "Turn off vi-compatible mode
 "}}}
 
 " ** 2. Moving around, searching and patterns "{{{
-set path+=**   "Search down into subfolders
-set incsearch  "show match for partly-typed search command
-set ignorecase "ignore case when using a search pattern
-set smartcase  "override 'ignorecase' when pattern has upper case characters
-set autochdir  "Automatically change working directory to that of open file
+set path+=**             "Search down into subfolders
+set incsearch            "show match for partly-typed search command
+set ignorecase           "ignore case when using a search pattern
+set smartcase            "override 'ignorecase' when pattern has upper case characters
+set autochdir            "Automatically change working directory to that of open file
 "}}}
 
 " ** 3. Tags "{{{
-
 "}}}
 
 " ** 4. Displaying text "{{{
@@ -41,25 +40,25 @@ augroup END
 syntax enable
 set background=dark
 filetype indent plugin on "indent depends on filetype
-set hlsearch              "Highlight searches 
+set hlsearch              "Highlight searches
 set cursorline            "Highlight current line
 set colorcolumn=+1        "Show the column where text would wrap
 "}}}
 
 " ** 6. Multiple Windows "{{{
-set hidden       "Allow easier switching between files
-set laststatus=2 "Always display the status line
-set splitbelow   "Always open a new horizontal split below the existing one
-set splitright   "Always open a new vertical split below the existing one
-set statusline=%F%m%r%h%w\ [Fmt=%{&ff}]\ [Type=%Y]\ [ASCII=\%04.4b]\ [Hex=\%04.4B]\ [Line=%04l,\ Col=%03v]\ [%p%%]\ [Lines=%L] 
+set hidden               "Allow easier switching between files
+set laststatus=2         "Always display the status line
+set splitbelow           "Always open a new horizontal split below the existing one
+set splitright           "Always open a new vertical split below the existing one
+set statusline=%F%m%r%h%w\ [Fmt=%{&ff}]\ [Type=%Y]\ [ASCII=\%04.4b]\ [Hex=\%04.4B]\ [Line=%04l,\ Col=%03v]\ [%p%%]\ [Lines=%L]
 "}}}
 
 " ** 7. Multiple tab pages "{{{
 "}}}
 
 " ** 8. Terminal "{{{
-set title   "show title in console title bar
-set ttyfast "smoother changes
+set title                "show title in console title bar
+set ttyfast              "smoother changes
 "}}}
 
 " ** 9. Using the mouse "{{{
@@ -67,33 +66,33 @@ set ttyfast "smoother changes
 
 " ** 10. GUI "{{{
 if has("gui_running")
-    "Activate menu for Solarized color scheme
-    let g:solarized_menu=0 
-    "Set the font and size
-    set guifont=OpenDyslexicMono\ 9
+    let g:solarized_menu=0 "Activate menu for Solarized color scheme
+    set guifont=OpenDyslexicMono\ 9 "Set the font and size
     "Hide toolbar
     set guioptions-=T
     set guioptions-=r
     set guioptions-=L
-    set lines=43 columns=120
+    "set lines=43 columns=120       "Not useful with a tiling window manager
 endif
 "}}}
 
 " ** 11. Printing "{{{
+set printdevice=pdf     "Use PDF printer
+set printoptions=paper:letter,syntax:y,wrap:y, duplex:long
 "}}}
 
 " ** 12. Messages and info "{{{
-set showcmd    "Show partial commands in the status line
-set ruler      "show the cursor position all the time
-set confirm    "ask if you wish to save changed files
-set visualbell "Use visual bell instead of beeping when doing something wrong
+set showcmd              "Show partial commands in the status line
+set ruler                "show the cursor position all the time
+set confirm              "ask if you wish to save changed files
+set visualbell           "Use visual bell instead of beeping when doing something wrong
 "}}}
 
 " ** 13. Selecting text "{{{
 "}}}
 
 " ** 14. Editing text "{{{
-"set textwidth=80 "Set text width, where text would wrap if it did
+"set textwidth=80        "Set text width, where text would wrap if it did
 "set wrapmargin=80
 set complete+=kspell
 set completeopt=menuone,longest
@@ -102,13 +101,13 @@ set omnifunc=syntaxcomplete#Complete
 "}}}
 
 " ** 15. Tabs and indenting "{{{
-set tabstop=4     "set tab character to 8 characters
-set softtabstop=4 "Number of spaces a tab counts when editing
-set expandtab     "turn tabs into whitespace
-set shiftwidth=4  "Indent width for autoindent
-set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
-set smartindent   "Turn on smart indent
-set autoindent    "Automatically set the indent of a new line
+set tabstop=4            "set tab character to 8 characters
+set softtabstop=4        "Number of spaces a tab counts when editing
+set expandtab            "turn tabs into whitespace
+set shiftwidth=4         "Indent width for autoindent
+set shiftround           " use multiple of shiftwidth when indenting with '<' and '>'
+set smartindent          "Turn on smart indent
+set autoindent           "Automatically set the indent of a new line
 "}}}
 
 " ** 16. Folding "{{{
@@ -184,21 +183,21 @@ nnoremap <Right> :vertical resize -2<CR>
 " inoremap (,<tab> (),
 " inoremap [,<tab> [],
 " inoremap {,<tab> {},
-""autoclose 2 lines below and position cursor in the middle 
+""autoclose 2 lines below and position cursor in the middle
 " inoremap '<CR> '<CR>'<ESC>O
 " inoremap `<CR> `<CR>`<ESC>O
 " inoremap "<CR> "<CR>"<ESC>O
 " inoremap (<CR> (<CR>)<ESC>O
 " inoremap [<CR> [<CR>]<ESC>O
 " inoremap {<CR> {<CR>}<ESC>O
-""autoclose 2 lines below adding ; and position cursor in the middle 
+""autoclose 2 lines below adding ; and position cursor in the middle
 " inoremap ';<CR> '<CR>';<ESC>O
 " inoremap `;<CR> `<CR>`;<ESC>O
 " inoremap ";<CR> "<CR>";<ESC>O
 " inoremap (;<CR> (<CR>);<ESC>O
 " inoremap [;<CR> [<CR>];<ESC>O
 " inoremap {;<CR> {<CR>};<ESC>O
-""autoclose 2 lines below adding , and position cursor in the middle 
+""autoclose 2 lines below adding , and position cursor in the middle
 " inoremap ',<CR> '<CR>',<ESC>O
 " inoremap `,<CR> `<CR>`,<ESC>O
 " inoremap ",<CR> "<CR>",<ESC>O
@@ -210,16 +209,17 @@ nnoremap <Right> :vertical resize -2<CR>
 " ** 19. Reading and writing files "{{{
 "Turn off modeline support.
 "http://blogs.techrepublic.com.com/security/?p=4476
-set modelines=0
-set nomodeline
-set backup "keep a backup file
+set modelines=0          "Do not check for existing modelines
+set nomodeline           "Disable modeline support
+set backup               "keep a backup file
+set autowrite            "Writes file when switching to another buffer
 "}}}
 
 " ** 20. The swap file "{{{
 "}}}
 
 " ** 21. Command line editing "{{{
-set wildmenu  "turn on command line completion wild style
+set wildmenu             "turn on command line completion wild style
 "}}}
 
 " ** 22. Running external commands "{{{
@@ -235,8 +235,8 @@ set wildmenu  "turn on command line completion wild style
 "}}}
 
 " ** 26. Various "{{{
-set bufhidden=hide   "Hide buffer when not in window
-set viminfo='20,\"50 "Read/write a .viminfo file
+set bufhidden=hide       "Hide buffer when not in window
+set viminfo='20,\"50     "Read/write a .viminfo file
 set signcolumn=yes
 "}}}
 
@@ -248,7 +248,7 @@ colorscheme solarized
 "}}}
 
 " ** Customized file types "{{{
-augroup views "Back up and restore views on buffer open
+augroup views            "Back up and restore views on buffer open
     autocmd!
     au BufWinLeave ?* mkview
     au BufWinEnter ?* silent loadview
