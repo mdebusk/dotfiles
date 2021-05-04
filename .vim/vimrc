@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2021-05-04 10:49
+" Last edit: 2021-05-04 11:35
 
 
 " ** 1. Important "{{{
@@ -8,11 +8,11 @@ set nocompatible         "Turn off vi-compatible mode
 "}}}
 
 " ** 2. Moving around, searching and patterns "{{{
-set path+=**             "Search down into subfolders
-set incsearch            "show match for partly-typed search command
-set ignorecase           "ignore case when using a search pattern
-set smartcase            "override 'ignorecase' when pattern has upper case characters
 set autochdir            "Automatically change working directory to that of open file
+set ignorecase           "ignore case when using a search pattern
+set incsearch            "show match for partly-typed search command
+set path+=**             "Search down into subfolders
+set smartcase            "override 'ignorecase' when pattern has upper case characters
 "}}}
 
 " ** 3. Tags "{{{
@@ -20,7 +20,6 @@ set autochdir            "Automatically change working directory to that of open
 
 " ** 4. Displaying text "{{{
 set cmdheight=2          "Set the command window height to 2 lines
-set encoding=utf-8       "Use an encoding that supports unicode.
 set fillchars+=fold:·    " Set fill character for folds
 set lazyredraw           "Don’t update screen during macro and script execution
 set list                 "Show whitespace characters
@@ -38,12 +37,12 @@ augroup END
 "}}}
 
 " ** 5. Syntax highlighting and spelling "{{{
-syntax enable
-set background=dark
 filetype indent plugin on "indent depends on filetype
-set hlsearch              "Highlight searches
-set cursorline            "Highlight current line
+set background=dark
 set colorcolumn=+1        "Show the column where text would wrap
+set cursorline            "Highlight current line
+set hlsearch              "Highlight searches
+syntax enable
 "}}}
 
 " ** 6. Multiple Windows "{{{
@@ -67,13 +66,13 @@ set ttyfast              "smoother changes
 
 " ** 10. GUI "{{{
 if has("gui_running")
-    let g:solarized_menu=0 "Activate menu for Solarized color scheme
-    set guifont=OpenDyslexicMono\ 9 "Set the font and size
-    "Hide toolbar
-    set guioptions-=T
-    set guioptions-=r
-    set guioptions-=L
-    "set lines=43 columns=120       "Not useful with a tiling window manager
+    let g:solarized_menu=0            "Activate menu for Solarized color scheme
+    set guifont=OpenDyslexicMono\ 9   "Set the font and size
+    set guioptions-=L                 "Remove left scrollbar
+    set guioptions-=T                 "Remove toolbar
+    set guioptions-=m                 "Remove menu bar
+    set guioptions-=r                 "Remove right scrollbar
+    "set lines=43 columns=120         "Not useful with a tiling window manager
 endif
 "}}}
 
@@ -83,9 +82,9 @@ set printoptions=paper:letter,syntax:y,wrap:y,duplex:long
 "}}}
 
 " ** 12. Messages and info "{{{
-set showcmd              "Show partial commands in the status line
-set ruler                "show the cursor position all the time
 set confirm              "ask if you wish to save changed files
+set ruler                "show the cursor position all the time
+set showcmd              "Show partial commands in the status line
 set visualbell           "Use visual bell instead of beeping when doing something wrong
 "}}}
 
@@ -93,27 +92,27 @@ set visualbell           "Use visual bell instead of beeping when doing somethin
 "}}}
 
 " ** 14. Editing text "{{{
-"set textwidth=80        "Set text width, where text would wrap if it did
-"set wrapmargin=80
 set complete+=kspell
 set completeopt=menuone,longest
 set nojoinspaces
 set omnifunc=syntaxcomplete#Complete
+"set textwidth=80        "Set text width, where text would wrap if it did
+"set wrapmargin=80
 "}}}
 
 " ** 15. Tabs and indenting "{{{
-set tabstop=4            "set tab character to 8 characters
-set softtabstop=4        "Number of spaces a tab counts when editing
-set expandtab            "turn tabs into whitespace
-set shiftwidth=4         "Indent width for autoindent
-set shiftround           " use multiple of shiftwidth when indenting with '<' and '>'
-set smartindent          "Turn on smart indent
 set autoindent           "Automatically set the indent of a new line
+set expandtab            "turn tabs into whitespace
+set shiftround           " use multiple of shiftwidth when indenting with '<' and '>'
+set shiftwidth=4         "Indent width for autoindent
+set smartindent          "Turn on smart indent
+set softtabstop=4        "Number of spaces a tab counts when editing
+set tabstop=4            "set tab character to 8 characters
 "}}}
 
 " ** 16. Folding "{{{
-set foldmethod=marker
 set foldlevel=99
+set foldmethod=marker
 "}}}
 
 " ** 17. Diff mode "{{{
@@ -140,7 +139,7 @@ nnoremap <Down> :resize -2<CR>
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 
-" Autoclose mappings
+" Autoclose mappings "{{{2
 " From https://medium.com/vim-drops/custom-autoclose-mappings-1ff90f45c6f5
 " autoclose and position cursor to write text inside
 " inoremap ' ''<left>
@@ -206,14 +205,15 @@ nnoremap <Right> :vertical resize -2<CR>
 " inoremap [,<CR> [<CR>],<ESC>O
 " inoremap {,<CR> {<CR>},<ESC>O
 "}}}
+"}}}
 
 " ** 19. Reading and writing files "{{{
 "Turn off modeline support.
 "http://blogs.techrepublic.com.com/security/?p=4476
+set autowrite            "Writes file when switching to another buffer
+set backup               "keep a backup file
 set modelines=0          "Do not check for existing modelines
 set nomodeline           "Disable modeline support
-set backup               "keep a backup file
-set autowrite            "Writes file when switching to another buffer
 "}}}
 
 " ** 20. The swap file "{{{
@@ -233,12 +233,13 @@ set wildmenu             "turn on command line completion wild style
 "}}}
 
 " ** 25. Multi-byte characters "{{{
+set encoding=utf-8       "Use an encoding that supports unicode.
 "}}}
 
 " ** 26. Various "{{{
 set bufhidden=hide       "Hide buffer when not in window
-set viminfo='20,\"50     "Read/write a .viminfo file
 set signcolumn=yes
+set viminfo='20,\"50     "Read/write a .viminfo file
 "}}}
 
 " ** Color scheme "{{{
@@ -312,4 +313,3 @@ augroup END
 " Insert a ruler
 :iab RuL ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0
 "}}}
-
