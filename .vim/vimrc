@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2021-04-30 10:30
+" Last edit: 2021-05-04 10:49
 
 
 " ** 1. Important "{{{
@@ -19,16 +19,17 @@ set autochdir            "Automatically change working directory to that of open
 "}}}
 
 " ** 4. Displaying text "{{{
-set scrolloff=5          "Number of lines to show around the cursor
-set nowrap               "Turn off word wrapping
 set cmdheight=2          "Set the command window height to 2 lines
+set encoding=utf-8       "Use an encoding that supports unicode.
+set fillchars+=fold:·    " Set fill character for folds
+set lazyredraw           "Don’t update screen during macro and script execution
 set list                 "Show whitespace characters
 set listchars=tab:╠═,trail:░,nbsp:▃      "List of strings used for list mode
+set nowrap               "Turn off word wrapping
 set number               "Enable line numbering, taking up 6 spaces
 set numberwidth=5        "Set line numbering to take up 5 spaces
 set relativenumber       "Show line numbers relative to current line
-set encoding=utf-8       "Use an encoding that supports unicode.
-set lazyredraw           "Don’t update screen during macro and script execution
+set scrolloff=3          "Number of lines to show around the cursor
 augroup numbertoggle     "Toggles relativenumber on and off based on mode
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
