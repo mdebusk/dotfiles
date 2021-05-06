@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # Michael DeBusk
-# Last edit: 2021-04-17 10:49
+# Last edit: 2021-05-06 09:28
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -143,6 +143,9 @@ alias zombie='ps axo stat,ppid,pid,comm | grep -w defunct'
 # Start VLC from the command line
 alias nvlc='nvlc --browse-dir ~/Music'
 
+# Start Joplin terminal version
+alias joplincli='~/.joplin-bin/bin/joplin'
+
 # What are my external and internal IP addresses?
 alias ips="echo -n 'External IP: ' ; curl ifconfig.co; echo; echo -n 'Internal IP: ' ; ifconfig wlp3s0 | grep inet\ | awk '{ print \$2 }' "
 
@@ -175,4 +178,3 @@ fi
 
 # Add support for fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
