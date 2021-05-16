@@ -12,7 +12,7 @@
 # this file and re-run i3-config-wizard(1).
 # }}}
 
-# 4.15: Variables {{{ 
+# 4.15: Variables {{{
 # Set the modifier key to the "Windows" key
 set $mod Mod4
 set $alt Mod1
@@ -169,10 +169,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym $mod+shift+x exec i3lock -i /home/michael/Pictures/Wallpapers/i3-wallpaper.png
 # }}}
 
-# 4.4: Mouse Bindings {{{ 
+# 4.4: Mouse Bindings {{{
 # }}}
 
-# 4.5: Binding Modes {{{ 
+# 4.5: Binding Modes {{{
 # resize window (you can also use the mouse for that)
 mode "resize" {
 # These bindings trigger as soon as you enter the resize mode
@@ -207,30 +207,30 @@ bindsym Return mode "default"
 }
 # }}}
 
-# 4.6: The Floating Modifier {{{ 
+# 4.6: The Floating Modifier {{{
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 # }}}
 
-# 4.7: Constraining Floating Window Size {{{ 
+# 4.7: Constraining Floating Window Size {{{
 # }}}
 
-# 4.8: Orientation For New Workspaces {{{ 
+# 4.8: Orientation For New Workspaces {{{
 # }}}
 
-# 4.9: Layout Mode For New Containers {{{ 
+# 4.9: Layout Mode For New Containers {{{
 # }}}
 
-# 4.10: Window Title Alignment: {{{ 
+# 4.10: Window Title Alignment: {{{
 # }}}
 
-# 4.11: Default Border Style For New Windows {{{ 
+# 4.11: Default Border Style For New Windows {{{
 # }}}
 
-# 4.12: Hiding Borders Adjacent To The Screen Edges {{{ 
+# 4.12: Hiding Borders Adjacent To The Screen Edges {{{
 # }}}
 
-# 4.13: Arbitrary Commands For Specific Windows (for_window) {{{ 
+# 4.13: Arbitrary Commands For Specific Windows (for_window) {{{
 # When starting Password Safe, put it in a floating window
 for_window [class="Pwsafe" instance="pwsafe"] floating enable
 
@@ -244,25 +244,25 @@ for_window [class="Gnome-calculator" instance="gnome-calculator"] floating enabl
 for_window [class="Anki" instance="anki"] floating enable
 # }}}
 
-# 4.14: Don’t Focus Window Upon Opening {{{ 
+# 4.14: Don’t Focus Window Upon Opening {{{
 # }}}
 
-# 4.16: X Resources {{{ 
+# 4.16: X Resources {{{
 # }}}
 
-# 4.17: Automatically Putting Clients On Specific Workspaces {{{ 
+# 4.17: Automatically Putting Clients On Specific Workspaces {{{
 # Assign programs to a workspace
 assign [class="Brave-browser"] $workspace2
 assign [class="Nautilus"] $workspace3
 assign [class="Joplin"] $workspace10
 # }}}
 
-# 4.18. Automatically starting applications on i3 startup {{{ 
+# 4.18. Automatically starting applications on i3 startup {{{
 # start pulseaudio
 exec --no-startup-id i3-msg 'exec /usr/bin/pulseaudio --start'
 
 # Start xautolock to automatically lock the screen after a timeout
-exec xautolock -time 10 -locker i3lock -i /home/michael/Pictures/Wallpapers/i3-wallpaper.png 
+exec xautolock -time 10 -locker i3lock -i /home/michael/Pictures/Wallpapers/i3-wallpaper.png
 
 # Enable tapping of Touchpad
 exec xinput set-prop 13 287 1
@@ -287,45 +287,45 @@ exec --no-startup-id nm-applet
 exec --no-startup-id parcellite
 # }}}
 
-# 4.19: Automatically Putting Workspaces On Specific Screens {{{ 
+# 4.19: Automatically Putting Workspaces On Specific Screens {{{
 # }}}
 
-# 4.20: Changing Colors {{{ 
+# 4.20: Changing Colors {{{
 # }}}
 
-# 4.21: Interprocess Communication {{{ 
+# 4.21: Interprocess Communication {{{
 # }}}
 
-# 4.22: Focus Follows Mouse {{{ 
+# 4.22: Focus Follows Mouse {{{
 # }}}
 
-# 4.23: Mouse Warping {{{ 
+# 4.23: Mouse Warping {{{
 # }}}
 
-# 4.24: Popups During Fullscreen Mode {{{ 
+# 4.24: Popups During Fullscreen Mode {{{
 # }}}
 
-# 4.25: Focus Wrapping {{{ 
+# 4.25: Focus Wrapping {{{
 # }}}
 
-# 4.26: Forcing Xinerama {{{ 
+# 4.26: Forcing Xinerama {{{
 # }}}
 
-# 4.27: Automatic Back-And-Forth When Switching To The Current Workspace {{{ 
+# 4.27: Automatic Back-And-Forth When Switching To The Current Workspace {{{
 # }}}
 
-# 4.28 Delaying Urgency Hint Reset On Workspace Change {{{ 
+# 4.28 Delaying Urgency Hint Reset On Workspace Change {{{
 # }}}
 
-# 4.29: Focus On Window Activation {{{ 
+# 4.29: Focus On Window Activation {{{
 # }}}
 
-# 4.30: Drawing Marks On Window Decoration {{{ 
+# 4.30: Drawing Marks On Window Decoration {{{
 # }}}
 
-# 5: Configuring i3bar {{{ 
+# 5: Configuring i3bar {{{
 # Start i3bar to display a workspace bar (plus the system information i3status
-# 
+#
 # finds out, if available)
     bar {
         status_command i3status
