@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # Michael DeBusk
-# Last edit: 2021-05-06 09:28
+# Last edit: 2021-05-31 15:55
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -113,7 +113,7 @@ alias cp='cp -i'
 alias rm='rm -i'
 
 # Other usweful defaults
-alias free="free -mt"
+alias free="free -hmtw"
 alias df="df -Tha --total"
 alias wget="wget -c"
 
