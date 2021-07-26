@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # Michael DeBusk
-# Last edit: 2021-05-31 15:55
+# Last edit: 2021-07-26 19:45
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -17,7 +17,7 @@ export LESS_TERMCAP_ue=$'\E[0m' # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 # Set PATH so it includes user's private bin if it exists
-test -d "$HOME/bin" && PATH="$HOME/bin;$PATH"
+test -d "$HOME/bin" && PATH="$HOME/bin:$PATH"
 
 # For NPM
 export NPM_PACKAGES="/home/michael/.npm-packages"
