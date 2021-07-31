@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2021-07-07 07:13
+" Last edit: 2021-07-31 11:35
 
 
 " ** 1. Important "{{{
@@ -138,6 +138,21 @@ nnoremap <Up> :resize +2<CR>
 nnoremap <Down> :resize -2<CR>
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
+
+" Keep the cursor centered during search and join
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Undo break points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+" Don't leave visual mode when (un)indenting
+vnoremap < <gv
+vnoremap > >gv
 
 " Autoclose mappings "{{{2
 " From https://medium.com/vim-drops/custom-autoclose-mappings-1ff90f45c6f5
