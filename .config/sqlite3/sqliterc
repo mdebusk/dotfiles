@@ -1,5 +1,8 @@
 -- SQLite3 configuration file for Michael DeBusk
--- Last edit: 2021-03-19 22:01
+-- Last edit: 2021-08-03 13:31
+
 .headers on
-.timer on
+.timer off
 .mode column
+.separator ROW "\n"
+.nullvalue ∅
