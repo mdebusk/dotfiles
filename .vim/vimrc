@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2021-07-31 11:35
+" Last edit: 2021-08-04 14:11
 
 
 " ** 1. Important "{{{
@@ -96,6 +96,8 @@ set complete+=kspell
 set completeopt=menuone,longest
 set nojoinspaces
 set omnifunc=syntaxcomplete#Complete
+set undodir=~/.vim/undodir
+set undofile
 "set textwidth=80        "Set text width, where text would wrap if it did
 "set wrapmargin=80
 "}}}
@@ -320,7 +322,7 @@ augroup END
 " ** Abbreviations "{{{
 " Insert date (and maybe time)
 :iab <expr> dts strftime("%F %R")    "Date/time stamp
-:iab <expr> dtg strftime("%e %b %Y") "Date style used in genalogy
+:iab <expr> dtg strftime("%e %b %Y") "Date style used in genealogy
 
 " for QIF files
 :iab ckng MAutopay<CR>LAssets:Current Assets:Capital One 360:Checking
