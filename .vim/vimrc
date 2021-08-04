@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2021-08-04 14:11
+" Last edit: 2021-08-04 15:50
 
 
 " ** 1. Important "{{{
@@ -281,6 +281,7 @@ augroup filetype_LaTeX
 
     au BufNewFIle,BufRead *.tex
                 \ :iab latex \LaTeX\
+    map <F9> :!pdflatex %<CR>
 augroup END
 
 augroup filetype_bash
