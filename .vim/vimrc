@@ -5,7 +5,7 @@
 
 " ** 1. Important "{{{
 set nocompatible         "Turn off vi-compatible mode
-"}}}
+" End Important}}}
 
 " ** 2. Moving around, searching and patterns "{{{
 set autochdir            "Automatically change working directory to that of open file
@@ -13,10 +13,10 @@ set ignorecase           "ignore case when using a search pattern
 set incsearch            "show match for partly-typed search command
 set path+=**             "Search down into subfolders
 set smartcase            "override 'ignorecase' when pattern has upper case characters
-"}}}
+" End Moving around, searching and patterns}}}
 
 " ** 3. Tags "{{{
-"}}}
+" End Tags}}}
 
 " ** 4. Displaying text "{{{
 set cmdheight=2          "Set the command window height to 2 lines
@@ -34,7 +34,7 @@ augroup numbertoggle     "Toggles relativenumber on and off based on mode
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
     autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
-"}}}
+" End Displaying text}}}
 
 " ** 5. Syntax highlighting and spelling "{{{
 filetype indent plugin on "indent depends on filetype
@@ -43,7 +43,7 @@ set colorcolumn=+1        "Show the column where text would wrap
 set cursorline            "Highlight current line
 set hlsearch              "Highlight searches
 syntax enable
-"}}}
+" End Syntax highlighting and spelling}}}
 
 " ** 6. Multiple Windows "{{{
 set hidden               "Allow easier switching between files
@@ -51,18 +51,18 @@ set laststatus=2         "Always display the status line
 set splitbelow           "Always open a new horizontal split below the existing one
 set splitright           "Always open a new vertical split below the existing one
 set statusline=%F%m%r%h%w\ [Fmt=%{&ff}]\ [Type=%Y]\ [ASCII=\%04.4b]\ [Hex=\%04.4B]\ [Line=%04l,\ Col=%03v]\ [%p%%]\ [Lines=%L]
-"}}}
+" End Multiple Windows}}}
 
 " ** 7. Multiple tab pages "{{{
-"}}}
+" End Multiple tab pages}}}
 
 " ** 8. Terminal "{{{
 set title                "show title in console title bar
 set ttyfast              "smoother changes
-"}}}
+" End Terminal}}}
 
 " ** 9. Using the mouse "{{{
-"}}}
+" End Using the mouse}}}
 
 " ** 10. GUI "{{{
 if has("gui_running")
@@ -74,22 +74,22 @@ if has("gui_running")
     set guioptions-=r                 "Remove right scrollbar
     "set lines=43 columns=120         "Not useful with a tiling window manager
 endif
-"}}}
+" End GUI}}}
 
 " ** 11. Printing "{{{
 set printdevice=pdf     "Use PDF printer
 set printoptions=paper:letter,syntax:y,wrap:y,duplex:long
-"}}}
+" End Printing}}}
 
 " ** 12. Messages and info "{{{
 set confirm              "ask if you wish to save changed files
 set ruler                "show the cursor position all the time
 set showcmd              "Show partial commands in the status line
 set visualbell           "Use visual bell instead of beeping when doing something wrong
-"}}}
+" End Messages and info}}}
 
 " ** 13. Selecting text "{{{
-"}}}
+" End Selecting text}}}
 
 " ** 14. Editing text "{{{
 set complete+=kspell
@@ -100,7 +100,7 @@ set undodir=~/.vim/undodir
 set undofile
 "set textwidth=80        "Set text width, where text would wrap if it did
 "set wrapmargin=80
-"}}}
+" End Editing text}}}
 
 " ** 15. Tabs and indenting "{{{
 set autoindent           "Automatically set the indent of a new line
@@ -110,15 +110,15 @@ set shiftwidth=4         "Indent width for autoindent
 set smartindent          "Turn on smart indent
 set softtabstop=4        "Number of spaces a tab counts when editing
 set tabstop=4            "set tab character to 8 characters
-"}}}
+" End Tabs and indenting}}}
 
 " ** 16. Folding "{{{
 set foldlevel=99
 set foldmethod=marker
-"}}}
+" End Folding}}}
 
 " ** 17. Diff mode "{{{
-"}}}
+" End Diff mode}}}
 
 " ** 18. Mapping "{{{
 "Quickly time out on keycodes, but never time out on mappings
@@ -222,7 +222,7 @@ vnoremap > >gv
 " inoremap [,<CR> [<CR>],<ESC>O
 " inoremap {,<CR> {<CR>},<ESC>O
 "}}}
-"}}}
+" End Mapping}}}
 
 " ** 19. Reading and writing files "{{{
 "Turn off modeline support.
@@ -231,40 +231,40 @@ set autowrite            "Writes file when switching to another buffer
 set backup               "keep a backup file
 set modelines=0          "Do not check for existing modelines
 set nomodeline           "Disable modeline support
-"}}}
+" End Reading and writing files}}}
 
 " ** 20. The swap file "{{{
-"}}}
+" End The swap file}}}
 
 " ** 21. Command line editing "{{{
 set wildmenu             "turn on command line completion wild style
-"}}}
+" End Command line editing}}}
 
 " ** 22. Running external commands "{{{
-"}}}
+" End Running external commands}}}
 
 " ** 23. Running make and jumping to errors "{{{
-"}}}
+" End Running make and jumping to errors}}}
 
 " ** 24. Language-specific "{{{
-"}}}
+" End Language-specific}}}
 
 " ** 25. Multi-byte characters "{{{
 set encoding=utf-8       "Use an encoding that supports unicode.
-"}}}
+" End Multi-byte characters}}}
 
 " ** 26. Various "{{{
 set bufhidden=hide       "Hide buffer when not in window
 set signcolumn=yes
 set viminfo='20,\"50     "Read/write a .viminfo file
-"}}}
+" End Various}}}
 
 " ** Color scheme "{{{
 set t_Co=256
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
-"}}}
+" End Color scheme}}}
 
 " ** Customized file types "{{{
 augroup views            "Back up and restore views on buffer open
@@ -318,7 +318,7 @@ augroup web_development
                 \ 0r /home/michael/Templates/html_document.html
 augroup END
 
-"}}}
+" End Customized file types}}}
 
 " ** Abbreviations "{{{
 " Insert date (and maybe time)
@@ -330,7 +330,7 @@ augroup END
 
 " Insert a ruler
 :iab RuL ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0
-"}}}
+" End Abbreviations}}}
 
 " ** Plugins "{{{
 "" Make netrw look like NERDtree
@@ -344,4 +344,10 @@ augroup END
   "autocmd!
   "autocmd VimEnter * :Vexplore
 "augroup END
-"}}}
+" End Plugins}}}
+
+" ** Miscellaneous stuff "{{{
+" automatically leave insert mode after 'updatetime' milliseconds of inaction
+" https://vim.fandom.com/wiki/To_switch_back_to_normal_mode_automatically_after_inaction
+au CursorHoldI * stopinsert
+" End Miscellaneous stuff}}}
