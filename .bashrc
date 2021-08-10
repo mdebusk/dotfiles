@@ -135,7 +135,7 @@ alias pwgen='echo; tr -dc A-Za-z0-9_ < /dev/urandom | head -c 32 | xargs;echo'
 alias mirror='wget --mirror --convert-links --html-extension --wait=2 -o log'
 
 # Update all packages
-alias update='sudo apt update && sudo apt upgrade -y && sudo snap refresh'
+alias update='sudo apt update && sudo apt dist-upgrade -y && sudo snap refresh && sudo flatpak update -y'
 
 # Find zombie processes
 alias zombie='ps axo stat,ppid,pid,comm | grep -w defunct'
