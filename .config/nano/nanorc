@@ -1,67 +1,25 @@
 # ~/.nanorc
 # Michael DeBusk
 # https://www.nano-editor.org/dist/latest/nanorc.5.html
-# Last edit 2021-02-10 08:40
+# Last edit 2021-08-14 09:59
 
 # Options{{{
-set autoindent
-set tabsize 4
-set tabstospaces
-set linenumbers
-set softwrap
 set atblanks
+set autoindent
 set backup
 set backupdir "~/.cache/nano/backups"
+set linenumbers
+set minibar
 set regexp
+set softwrap
+set tabsize 4
+set tabstospaces
+set titlecolor normal,normal
 #}}}
 
 # Syntax Highlighting{{{
-include /usr/local/share/nano/extra/ada.nanorc
-include /usr/local/share/nano/extra/debian.nanorc
-include /usr/local/share/nano/extra/fortran.nanorc
-include /usr/local/share/nano/extra/gentoo.nanorc
-include /usr/local/share/nano/extra/haskell.nanorc
-include /usr/local/share/nano/extra/povray.nanorc
-include /usr/local/share/nano/extra/spec.nanorc
-include /usr/local/share/nano/asm.nanorc
-include /usr/local/share/nano/autoconf.nanorc
-include /usr/local/share/nano/awk.nanorc
-include /usr/local/share/nano/changelog.nanorc
-include /usr/local/share/nano/cmake.nanorc
-include /usr/local/share/nano/c.nanorc
-include /usr/local/share/nano/css.nanorc
-include /usr/local/share/nano/default.nanorc
-include /usr/local/share/nano/elisp.nanorc
-include /usr/local/share/nano/email.nanorc
-include /usr/local/share/nano/go.nanorc
-include /usr/local/share/nano/groff.nanorc
-include /usr/local/share/nano/guile.nanorc
-include /usr/local/share/nano/html.nanorc
-include /usr/local/share/nano/java.nanorc
-include /usr/local/share/nano/javascript.nanorc
-include /usr/local/share/nano/json.nanorc
-include /usr/local/share/nano/lua.nanorc
-include /usr/local/share/nano/makefile.nanorc
-include /usr/local/share/nano/man.nanorc
-include /usr/local/share/nano/markdown.nanorc
-include /usr/local/share/nano/nanohelp.nanorc
-include /usr/local/share/nano/nanorc.nanorc
-include /usr/local/share/nano/nftables.nanorc
-include /usr/local/share/nano/objc.nanorc
-include /usr/local/share/nano/ocaml.nanorc
-include /usr/local/share/nano/patch.nanorc
-include /usr/local/share/nano/perl.nanorc
-include /usr/local/share/nano/php.nanorc
-include /usr/local/share/nano/po.nanorc
-include /usr/local/share/nano/python.nanorc
-include /usr/local/share/nano/ruby.nanorc
-include /usr/local/share/nano/rust.nanorc
-include /usr/local/share/nano/sh.nanorc
-include /usr/local/share/nano/sql.nanorc
-include /usr/local/share/nano/tcl.nanorc
-include /usr/local/share/nano/texinfo.nanorc
-include /usr/local/share/nano/tex.nanorc
-include /usr/local/share/nano/xml.nanorc
+# Files from https://github.com/scopatz/nanorc
+include ~/.config/nano/syntax/nanorc/*.nanorc
 #}}}
 
 #Rebinding Keys{{{
