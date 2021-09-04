@@ -294,7 +294,9 @@ augroup END
 augroup filetype_python
     " Delete all trailing whitespace before saving
     au BufWritePre *.py :%s/\s\+$//e
-
+    " copy script template into empty new buffer
+    au BufNewFile *.py
+                \ 0r /home/michael/Templates/python_script.py
     au BufNewFile,BufRead *.py
                 \ set tabstop=4 |
                 \ set softtabstop=4 |
