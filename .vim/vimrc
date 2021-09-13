@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2021-08-04 15:50
+" Last edit: 2021-09-13 10:02
 
 
 " ** 1. Important "{{{
@@ -157,7 +157,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Autoclose mappings "{{{2
-" From https://medium.com/vim-drops/custom-autoclose-mappings-1ff90f45c6f5
+" https://alldrops.info/posts/vim-drops/2019-02-13_custom-autoclose-mappings/
 " autoclose and position cursor to write text inside
 " inoremap ' ''<left>
 " inoremap ` ``<left>
@@ -221,7 +221,7 @@ vnoremap > >gv
 " inoremap (,<CR> (<CR>),<ESC>O
 " inoremap [,<CR> [<CR>],<ESC>O
 " inoremap {,<CR> {<CR>},<ESC>O
-"}}}
+" End Autoclose mappings}}}
 " End Mapping}}}
 
 " ** 19. Reading and writing files "{{{
