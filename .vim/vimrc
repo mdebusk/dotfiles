@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2021-09-13 10:02
+" Last edit: 2021-09-13 14:38
 
 
 " ** 1. Important "{{{
@@ -29,6 +29,7 @@ set number               "Enable line numbering, taking up 6 spaces
 set numberwidth=5        "Set line numbering to take up 5 spaces
 set relativenumber       "Show line numbers relative to current line
 set scrolloff=3          "Number of lines to show around the cursor
+" set scrolloff=999        " Keeps cursor line centered on screen
 augroup numbertoggle     "Toggles relativenumber on and off based on mode
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -264,6 +265,7 @@ set t_Co=256
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
+highlight Comment cterm=italic gui=italic
 " End Color scheme}}}
 
 " ** Customized file types "{{{
