@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2021-09-13 14:38
+" Last edit: 2021-09-17 09:01
 
 
 " ** 1. Important "{{{
@@ -331,13 +331,10 @@ augroup END
 
 " for QIF files
 :iab ckng MAutopay<CR>LAssets:Current Assets:Capital One 360:Checking
-
-" Insert a ruler
-:iab RuL ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0
 " End Abbreviations}}}
 
 " ** Plugins "{{{
-"" Make netrw look like NERDtree
+"" Make netrw look like NERDtree {{{2
 "" https://shapeshed.com/vim-netrw/
 "let g:netrw_banner = 0
 "let g:netrw_liststyle = 3
@@ -348,10 +345,25 @@ augroup END
   "autocmd!
   "autocmd VimEnter * :Vexplore
 "augroup END
+" End netrw-to-NERDtree}}}
 " End Plugins}}}
 
 " ** Miscellaneous stuff "{{{
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
 " https://vim.fandom.com/wiki/To_switch_back_to_normal_mode_automatically_after_inaction
 au CursorHoldI * stopinsert
+
+" Use a line cursor within insert mode and a block cursor everywhere else.
+" https://www.youtube.com/watch?v=FcQjTXLrVUU&t=198s
+" Reference chart of values:{{{2
+"   Ps = 0  -> blinking block.
+"   Ps = 1  -> blinking block (default).
+"   Ps = 2  -> steady block.
+"   Ps = 3  -> blinking underline.
+"   Ps = 4  -> steady underline.
+"   Ps = 5  -> blinking bar (xterm).
+"   Ps = 6  -> steady bar (xterm).
+" End reference chart}}}
+let &t_SI = "\e[6 q" " Steady bar for insert mode
+let &t_EI = "\e[2 q" " Steady block for everything else
 " End Miscellaneous stuff}}}
