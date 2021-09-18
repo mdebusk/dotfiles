@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2021-09-17 09:01
+" Last edit: 2021-09-17 09:15
 
 
 " ** 1. Important "{{{
@@ -27,7 +27,7 @@ set listchars=tab:╠═,trail:░,nbsp:▃      "List of strings used for list 
 set nowrap               "Turn off word wrapping
 set number               "Enable line numbering, taking up 6 spaces
 set numberwidth=5        "Set line numbering to take up 5 spaces
-set relativenumber       "Show line numbers relative to current line
+" set relativenumber       "Show line numbers relative to current line
 set scrolloff=3          "Number of lines to show around the cursor
 " set scrolloff=999        " Keeps cursor line centered on screen
 augroup numbertoggle     "Toggles relativenumber on and off based on mode
@@ -97,6 +97,7 @@ set complete+=kspell
 set completeopt=menuone,longest
 set nojoinspaces
 set omnifunc=syntaxcomplete#Complete
+set matchpairs+=<:> " Add angle brackets to matchpairs
 set undodir=~/.vim/undodir
 set undofile
 "set textwidth=80        "Set text width, where text would wrap if it did
@@ -110,7 +111,7 @@ set shiftround           " use multiple of shiftwidth when indenting with '<' an
 set shiftwidth=4         "Indent width for autoindent
 set smartindent          "Turn on smart indent
 set softtabstop=4        "Number of spaces a tab counts when editing
-set tabstop=4            "set tab character to 8 characters
+set tabstop=4            "set tab character to 4 characters
 " End Tabs and indenting}}}
 
 " ** 16. Folding "{{{
@@ -226,10 +227,9 @@ vnoremap > >gv
 " End Mapping}}}
 
 " ** 19. Reading and writing files "{{{
-"Turn off modeline support.
-"http://blogs.techrepublic.com.com/security/?p=4476
 set autowrite            "Writes file when switching to another buffer
 set backup               "keep a backup file
+" https://www.techrepublic.com/blog/it-security/turn-off-modeline-support-in-vim/
 set modelines=0          "Do not check for existing modelines
 set nomodeline           "Disable modeline support
 " End Reading and writing files}}}
@@ -275,7 +275,7 @@ augroup views            "Back up and restore views on buffer open
     au BufWinEnter ?* silent loadview
 augroup END
 
-augroup filetype_LaTeX
+augroup filetype_LaTeX "{{{2
     autocmd!
     " copy document template into empty new buffer
     au BufNewFile *.tex
@@ -284,16 +284,16 @@ augroup filetype_LaTeX
     au BufNewFIle,BufRead *.tex
                 \ :iab latex \LaTeX\
     map <F9> :!pdflatex %<CR>
-augroup END
+augroup END "}}}
 
-augroup filetype_bash
+augroup filetype_bash "{{{2
     autocmd!
     " copy script template into empty new buffer
     au BufNewFile *.sh
                 \ 0r /home/michael/Templates/shell_script.sh
-augroup END
+augroup END "}}}
 
-augroup filetype_python
+augroup filetype_python "{{{2
     " Delete all trailing whitespace before saving
     au BufWritePre *.py :%s/\s\+$//e
     " copy script template into empty new buffer
@@ -309,9 +309,9 @@ augroup filetype_python
                 \ set smartindent |
                 \ set colorcolumn=80 |
                 \ set fileformat=unix
-augroup END
+augroup END "}}}
 
-augroup web_development
+augroup web_development "{{{2
     au BufNewFile,BufRead *.js, *.html, *.css, *.php
                 \ set tabstop=2 |
                 \ set softtabstop=2 |
@@ -320,7 +320,7 @@ augroup web_development
     " copy HTML document template into empty new buffer
     au bufnewfile *.html
                 \ 0r /home/michael/Templates/html_document.html
-augroup END
+augroup END "}}}
 
 " End Customized file types}}}
 
