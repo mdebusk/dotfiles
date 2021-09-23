@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2021-09-17 09:15
+" Last edit: 2021-09-23 15:24
 
 
 " ** 1. Important "{{{
@@ -229,6 +229,7 @@ vnoremap > >gv
 " ** 19. Reading and writing files "{{{
 set autowrite            "Writes file when switching to another buffer
 set backup               "keep a backup file
+set cryptmethod=blowfish2 " Encrypt files with a strong method
 " https://www.techrepublic.com/blog/it-security/turn-off-modeline-support-in-vim/
 set modelines=0          "Do not check for existing modelines
 set nomodeline           "Disable modeline support
