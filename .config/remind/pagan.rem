@@ -1,0 +1,66 @@
+# Reminders file for Michael DeBusk
+# Pagan holidays
+# Adapted from the Unix calendar utility
+# Last edit: 2021-05-24 15:01
+# Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
+# include /home/michael/.config/remind/pagan.rem
+
+REM Jan 02 %"Pagan Holiday: Frigg's Distaff%"%
+REM Jan 06 %"Pagan Holiday: Celtic day of the Three-Fold Goddess%"%
+REM Jan 10 %"Pagan Holiday: Geraint's Day%"%
+REM Jan 13 %"Pagan Holiday: Midvintersblot%"%
+REM Jan 20 %"Pagan Holiday: Midvintersblot%"%
+REM Jan 22 %"Pagan Holiday: Festival of the Muses%"%
+REM Jan 25 %"Pagan Holiday: Old Disting Feast%"%
+REM Tue 1 Feb -7 %"Pagan Holiday: Upelly - old fire festival%"%
+REM Jan 31 %"Pagan Holiday: Honoring the Valkyries%"%
+REM Feb 02 %"Pagan Holiday: 1st Cross-Quarter Day%"%
+REM Feb 02 %"Pagan Holiday: Imbolg / Imbolc (other Celtic names) / Brighid / Oimelc%"%
+REM Feb 11 %"Pagan Holiday: The Day the Birds Begin to Sing%"%
+REM Feb 14 %"Pagan Holiday: Festival of Vali%"%
+REM Mar 02 %"Pagan Holiday: Day of the Crows%"%
+REM Mar 13 %"Pagan Holiday: Burgsonndeg - festival of rebirth of the sun and the approach of spring%"%
+REM Mar 17 %"Pagan Holiday: Celebration of Trefuilnid Treochar (St.Patrick's day)%"%
+REM Mar 18 %"Pagan Holiday: Sheela's Day%"%
+REM Mar 19 %"Pagan Holiday: 1st Quarter Day - Spring (Vernal) Equinox%"%
+REM Mar 20 %"Pagan Holiday: Festival of Iduna%"%
+REM Mar 21 %"Pagan Holiday: Ostara / Eostre (Saxon goddess of Spring)%"%
+REM Apr 30 %"Pagan Holiday: May Eve / Walpurgisnacht (witches' Sabbath) / Walpurgis Night (after St. Walpurga)%"%
+REM May 01 %"Pagan Holiday: May Day / Beltane / Bealtaine - Celtic bonfire festival%"%
+REM May 04 %"Pagan Holiday: 2nd Cross-Quarter Day%"%
+REM May 12 %"Pagan Holiday: The Cat Parade%"%
+REM May 14 %"Pagan Holiday: Midnight Sun Festival%"%
+REM May 18 %"Pagan Holiday: Festival of the Horned God Cennunos%"%
+REM May 20 %"Pagan Holiday: Festival of Mjollnir, Thor's Hammer%"%
+REM May 24 %"Pagan Holiday: Mother's Day, in celebration of the Triple Goddess%"%
+REM Jun 20 %"Pagan Holiday: 2nd Quarter Day - Summer Solstice%"%
+REM Jun 21 %"Pagan Holiday: Litha (Norse/Anglo-Saxon for "longest day")%"%
+REM Jun 23 %"Pagan Holiday: St. John's Eve - European Midsummer celebration%"%
+REM Aug 01 %"Pagan Holiday: Lugnasad / Lughnasada / Lunasa - Gaelic summer "games of Lug" (sun-god)%"%
+REM Aug 02 %"Pagan Holiday: Lady Godiva Day%"%
+REM Aug 04 %"Pagan Holiday: Loch mo Naire%"%
+REM Aug 05 %"Pagan Holiday: 3rd Cross-Quarter Day%"%
+REM Aug 10 %"Pagan Holiday: Puck Faire%"%
+REM Aug 14 %"Pagan Holiday: Day of the Burryma%"%
+REM Aug 17 %"Pagan Holiday: Odin's Ordeal%"%
+REM Aug 23 %"Pagan Holiday: Feast of Ilmatar%"%
+REM Aug 28 %"Pagan Holiday: Frey Faxi%"%
+REM Aug 29 %"Pagan Holiday: Festival of Urda%"%
+REM Sep 21 %"Pagan Holiday: 3rd Quarter Day - Fall (Autumnal) Equinox%"%
+REM Oct 08 %"Pagan Holiday: Day of Remembrance for Erik the Red%"%
+REM Oct 09 %"Pagan Holiday: Leif Erikson Day%"%
+REM Oct 11 %"Pagan Holiday: Old Lady of the Trees%"%
+REM Oct 14 %"Pagan Holiday: Winter Nights - festival celebrating the harvest%"%
+REM Oct 18 %"Pagan Holiday: Great Horn Faire%"%
+REM Oct 24 %"Pagan Holiday: Feast of the Spirits of the Air%"%
+REM Oct 27 %"Pagan Holiday: Allan Apple Day%"%
+REM Oct 31 %"Pagan Holiday: Hallowmas / Allhallowmas / Allhallows%"%
+REM Nov 01 %"Pagan Holiday: Samhain - Celtic feast of departing Sun & new year%"%
+REM Nov 05 %"Pagan Holiday: 4th Cross-Quarter Day%"%
+REM Dec 06 %"Pagan Holiday: Festival of Nicolas, an aspect of Odin, leader of the hunt%"%
+REM Dec 09 %"Pagan Holiday: Yule Cleansing - The Danish fetch water for brewing the Yule-Ale%"%
+REM Dec 13 %"Pagan Holiday: Wodan's Jag - the Wild Hunt of Odin and his Army%"%
+REM Dec 18 %"Pagan Holiday: Festival of Epona%"%
+REM Dec 20 %"Pagan Holiday: 4th Quarter Day - Winter Solstice%"%
+REM Dec 21 %"Pagan Holiday: Festival of Beiwe / Nertha / Alban Athuan%"%
+REM Dec 21 %"Pagan Holiday: Yule (Norse for "wheel") - Germanic 12-day feast%"%
