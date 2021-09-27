@@ -1,0 +1,25 @@
+# Discordian holidays reminder file
+# Adapted from the Unix calendar utility and the Wikipedia article
+# Last edit: 2021-05-19 09:08
+# Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
+# include /home/michael/.config/remind/discordian.rem
+
+REM Jan 05 MSG %"Discordian Holiday: Mungday (5th of the Season of Chaos) Festival of Hung Mung%"%
+REM Feb 19 MSG %"Discordian Holiday: Chaoflux (50th of the Season of Chaos)%"%
+REM Feb 29 MSG %"Discordian Holiday: St. Tib's Day%"%
+REM Mar 19 MSG %"Discordian Holiday: Mojoday (5th of the Season of Discord) Festival of Dr. Van Van Mojo%"%
+REM Mar 25 MSG %"Discordian Holiday: Discordians for Jesus/Love Your Neighbor Day (11th of the Season of Discord)%"%
+REM Apr  6 MSG %"Discordian Holiday: Jake Day (23rd of the Season of Discord)%"%
+REM May 03 MSG %"Discordian Holiday: Discoflux (50th of the Season of Discord)%"%
+REM May 21 MSG %"Discordian Holiday: Saint Camping's Day (68th of the Season of Discord)%"%
+REM May 23 MSG %"Discordian Holiday: Eris Day (70th of the Season of  Discord)%"%
+REM May 25 MSG %"Discordian Holiday: Towel Day (72nd of the Season of Discord)%"%
+REM May 31 MSG %"Discordian Holiday: Syaday (5th of the Season of Confusion) Festival of Sri Syadasti%"%
+REM Jul  2 MSG %"Discordian Holiday: Mid Year's Day (37th of the Season of Confusion)%"%
+REM Jul  5 MSG %"Discordian Holiday: X-Day (40th of the Season of Confusion)%"%
+REM Jul 15 MSG %"Discordian Holiday: Confuflux (50th of the Season of Confusion)%"%
+REM Aug 10 MSG %"Discordian Holiday: Multiversal Underwear Day (3rd of the Season of Bureaucracy)%"%
+REM Aug 12 MSG %"Discordian Holiday: Zaraday (5th of the Season of Bureaucracy) Festival of Zarathud the Staunch%"%
+REM Sep 26 MSG %"Discordian Holiday: Bureflux (50th of the Season of Bureaucracy)%"%
+REM Oct 24 MSG %"Discordian Holiday: Maladay (5th of the Season of The Aftermath) Festival of The Elder Malaclypse%"%
+REM Dec 08 MSG %"Discordian Holiday: Afflux (50th of the Season of The Aftermath)%"%
