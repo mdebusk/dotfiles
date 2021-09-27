@@ -1,0 +1,44 @@
+# Reminders file for Michael DeBusk
+# Lord of the Rings history
+# Adapted from the Unix calendar utility
+# Last edit: 2021-05-13 19:23
+# Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
+# include /home/michael/.config/remind/lotr.rem
+
+REM Jan  5 MSG %"Lord of the Rings: Fellowship enters Moria%"%
+REM Jan  9 MSG %"Lord of the Rings: Fellowship reaches Lorien%"%
+REM Jan 17 MSG %"Lord of the Rings: Passing of Gandalf%"%
+REM Feb  7 MSG %"Lord of the Rings: Fellowship leaves Lorien%"%
+REM Feb 17 MSG %"Lord of the Rings: Death of Boromir%"%
+REM Feb 20 MSG %"Lord of the Rings: Meriadoc & Pippin meet Treebeard%"%
+REM Feb 22 MSG %"Lord of the Rings: Passing of King Ellesar%"%
+REM Feb 24 MSG %"Lord of the Rings: Ents destroy Isengard%"%
+REM Feb 26 MSG %"Lord of the Rings: Aragorn takes the Paths of the Dead%"%
+REM Mar  5 MSG %"Lord of the Rings: Frodo & Samwise encounter Shelob%"%
+REM Mar  8 MSG %"Lord of the Rings: Deaths of Denethor & Theoden%"%
+REM Mar 18 MSG %"Lord of the Rings: Destruction of the Ring%"%
+REM Mar 29 MSG %"Lord of the Rings: Flowering of the Mallorn%"%
+REM Apr  4 MSG %"Lord of the Rings: Gandalf visits Bilbo%"%
+REM Apr 17 MSG %"Lord of the Rings: An unexpected party%"%
+REM Apr 23 MSG %"Lord of the Rings: Crowning of King Ellesar%"%
+REM May 19 MSG %"Lord of the Rings: Arwen leaves Lorian to wed King Ellesar%"%
+REM Jun 11 MSG %"Lord of the Rings: Sauron attacks Osgilliath%"%
+REM Jun 13 MSG %"Lord of the Rings: Bilbo returns to Bag End%"%
+REM Jun 23 MSG %"Lord of the Rings: Wedding of Ellesar & Arwen%"%
+REM Jul  4 MSG %"Lord of the Rings: Gandalf imprisoned by Saruman%"%
+REM Jul 24 MSG %"Lord of the Rings: The ring comes to Bilbo%"%
+REM Jul 26 MSG %"Lord of the Rings: Bilbo rescued from Wargs by Eagles%"%
+REM Aug  3 MSG %"Lord of the Rings: Funeral of King Theoden%"%
+REM Aug 29 MSG %"Lord of the Rings: Saruman enters the Shire%"%
+REM Sep 10 MSG %"Lord of the Rings: Gandalf escapes from Orthanc%"%
+REM Sep 14 MSG %"Lord of the Rings: Frodo & Bilbo's birthday%"%
+REM Sep 15 MSG %"Lord of the Rings: Black riders enter the Shire%"%
+REM Sep 18 MSG %"Lord of the Rings: Frodo and company rescued by Bombadil%"%
+REM Sep 28 MSG %"Lord of the Rings: Frodo wounded at Weathertop%"%
+REM Oct  5 MSG %"Lord of the Rings: Frodo crosses bridge of Mitheithel%"%
+REM Oct 16 MSG %"Lord of the Rings: Boromir reaches Rivendell%"%
+REM Oct 17 MSG %"Lord of the Rings: Council of Elrond%"%
+REM Oct 25 MSG %"Lord of the Rings: End of War of the Ring%"%
+REM Nov 16 MSG %"Lord of the Rings: Bilbo reaches the Lonely Mountain%"%
+REM Dec  5 MSG %"Lord of the Rings: Death of Smaug%"%
+REM Dec 16 MSG %"Lord of the Rings: Fellowship begins Quest%"%
