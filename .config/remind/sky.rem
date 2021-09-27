@@ -1,0 +1,46 @@
+# Reminders file for Michael DeBusk
+# Sunrise, sunset, moon phase
+# Last edit: 2021-09-25 13:28
+# Place in $XDG_CONFIG_HOME/remind/
+
+IF moonphase()==0
+    SET phase="🌑"
+ENDIF
+IF moonphase()>0&&moonphase()<90
+    SET phase="🌒"
+ENDIF
+IF moonphase()==90
+    SET phase="🌓"
+ENDIF
+IF moonphase()>90&&moonphase<180
+    SET phase="🌔"
+ENDIF
+IF moonphase()==180
+    SET phase="🌕"
+ENDIF
+IF moonphase()>180&&moonphase()<270
+    SET phase="🌖"
+ENDIF
+IF moonphase()==270
+    SET phase="🌗"
+ENDIF
+IF moonphase()>270&&moonphase()<360
+    phase="🌘"
+ENDIF
+
+REM Sunrise    : [sunrise(trigdate())]%
+REM Sunset     : [sunset(trigdate())]%
+REM Moon phase : [phase]%
+REM New moon   : [moondate(0)]%
+REM Full moon  : [moondate(2)]%
+
+# Moon icons {{{
+# New moon: 🌑
+# Waxing crescent: 🌒
+# First quarter: 🌓
+# Waxing gibbous: 🌔
+# Full moon: 🌕
+# Waning gibbous: 🌖
+# Last quarter: 🌗
+# Waning crescent: 🌘
+# End moon icons }}}
