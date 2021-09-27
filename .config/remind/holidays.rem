@@ -1,0 +1,102 @@
+# Reminders file for Michael DeBusk
+# Holidays
+# Last edit: 2021-03-22 19:00
+# Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
+# include /home/michael/.config/remind/holidays.rem
+
+SET Week_2 8
+SET Week_3 15
+REM Sun Mar 8 +2 MSG Daylight Saving Time starts in the USA %b%
+REM SUN Nov 1 +2 MSG Daylight Saving Time ends in the USA %b%
+
+# Here's a tricky problem:  The 4th of July is a holiday in the U.S.{{{
+# However, if it falls on a Saturday, the previous Friday is a holiday.
+# If it falls on a Sunday, the next Monday is a holiday.  Here's how
+# to do it.  NOTE that the following procedure makes the OMIT context
+# dependent upon the current date.  SInce it only depends on the current
+# year, which is not likely to change while producing a calendar, we
+# are fairly safe.  However, reminders with huge DELTA or BACK components
+# may not operate as expected.  In general, any time you make OMIT
+# dependent upon the current date, it's tricky and results may not be
+# what you expect.  You should try to make sure that the OMIT context
+# "near" any current reminders will not change during a calendar run.
+# The SCANFROM clause should help make these OMITs very safe.
+
+# Calculate the weekday of the holiday.
+REM 4 July SCANFROM [_back(7)] SATISFY 1
+
+IF WKDAYNUM(TRIGDATE()) == Sat
+	REM [TRIGDATE()] MSG Independence day (actual)%
+	OMIT [TRIGDATE()-1] MSG Independence day (observed)%
+ELSE
+	IF WKDAYNUM(TRIGDATE()) == Sun
+		REM [TRIGDATE()] MSG Independence day (actual)%
+		OMIT [TRIGDATE()+1] MSG Independence day (observed)%
+	ELSE
+		OMIT [TRIGDATE()] MSG Independence day%
+	ENDIF
+ENDIF
+# }}}
+
+#US Holidays{{{
+#
+# The following holidays were provided by Dave Rickel
+# Modified by D. Skoll to give safe OMITs for moveable holidays
+#
+
+SET SaveTrig $NumTrig
+SET easter EASTERDATE(YEAR(TODAY()))
+REM  [easter-46] MSG %"Ash Wednesday%"
+REM  [easter-7]  MSG %"Palm Sunday%"
+OMIT [easter-2]  MSG %"Good Friday%"
+OMIT [easter]    MSG %"Easter%" Sunday%
+REM  [easter+39] MSG %"Ascension Day%"
+REM  [easter+49] MSG %"Pentecost%"
+
+# Some holidays are omitted, some are not.  You may want to change
+# which ones are omitted - use the general forms shown below.
+# You'll need the _back() function and the Week_n variables defined
+# way up in the file.
+
+OMIT     Jan  1		MSG %"New Year's%" Day%
+REM  Mon Jan [Week_3]	MSG Martin Luther King - %"MLK Day%"
+REM      Feb  2		MSG %"Groundhog Day%"
+REM      Feb 14		MSG %"Valentine's%" Day
+REM  Mon Feb [Week_3]	SCANFROM [_back(7)] SATISFY 1
+OMIT [trigdate()] MSG %"President's Day%"
+REM      Mar 17		MSG %"St. Patrick's%" Day
+REM      Apr  1		MSG %"April Fool's%" Day
+REM  Mon Tue Wed Thu Fri Sat 15 Apr MSG %"Income tax%" due
+REM      May  5		MSG %"Cinco de Mayo%"
+REM  Sat May [Week_1]	MSG %"Kentucky Derby%"
+REM  Sun May [Week_2]	MSG %"Mother's Day%"
+REM  Sat May [Week_3]	MSG %"Armed Forces Day%"
+REM  Mon [_last(May)]	SCANFROM [_back(7)] SATISFY 1
+OMIT [trigdate()] MSG %"Memorial Day%"
+REM      Jun 14		MSG %"Flag Day%"
+REM  Sun Jun [Week_3]	MSG %"Father's Day%"
+REM  Mon Sep [Week_1]	SCANFROM [_back(7)] SATISFY 1
+OMIT [trigdate()] MSG %"Labor Day%"
+REM  Mon Oct [Week_2]	MSG %"Columbus Day%"
+REM      Nov 11		MSG %"Veterans Day%"
+REM      Oct 30		MSG %"Mischief Night%"
+REM      Oct 31		MSG %"Halloween%"
+REM  Tue Nov  2		SCANFROM [_back(7)] \
+	SATISFY [(YEAR(TRIGDATE()) % 4) == 0] \
+	MSG %"Election%" Day
+REM  Thu Nov [Week_4]	SCANFROM [_back(7)] SATISFY 1
+OMIT [trigdate()] MSG %"Thanksgiving%" Day
+REM  Fri Nov [Week_4+1]	SCANFROM [_back(7)] SATISFY 1
+OMIT [trigdate()] MSG %"Thanksgiving%" (cont.)
+OMIT     Dec 24		MSG %"Christmas Eve%"
+OMIT     Dec 25		MSG %"Christmas%" Day
+
+#
+# If any US holidays were triggered above, shade in the calendar
+# entry in PostScript.  This is not quite correct, as it blots out any
+# other PostScript stuff above.  I was too lazy to do it properly :-)
+#
+if $NumTrig > SaveTrig
+	REM SPECIAL SHADE 220
+endif
+# }}}
