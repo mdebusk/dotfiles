@@ -1,0 +1,304 @@
+# **  Description of Definitions File{{{
+# DEFS.REM
+#
+# This file is a reminder script, which contains a few handy definitions.
+# Cut and paste as desired!  Also, near the end, there are a bunch of
+# holiday definitions for the U.S.
+#
+# Some examples provided by George M. Sipe <gsipe@pyratl.ga.pyramid.com>
+#
+# U.S. holidays provided by Dave Rickel <drickel@sjc.mentorg.com>
+#
+# Use your text editor to search for:
+#  "#USHOLS" for U.S. holidays
+#  "#JHOLS"  for Jewish holidays
+#  "#PSSTUFF" for nifty PostScript examples
+#  "#COLORS" for examples of ANSI color escape sequences.
+#
+# This file is part of REMIND.
+# Copyright (C) 1992-1997 Dianne Skoll
+# Copyright (C) 1999-2000 Roaring Penguin Software Inc.
+#
+# }}}
+
+RUN OFF
+
+# Ensure required version of remind is used... #{{{
+IF version() < "03.01.08"
+   ERRMSG This file requires at least version 03.01.08 of Remind.%
+   ERRMSG This version is version [version()].
+   EXIT
+ENDIF
+# }}}
+
+# Symbolic constants for weekdays... #{{{
+SET Sunday    0
+SET Monday    1
+SET Tuesday   2
+SET Wednesday 3
+SET Thursday  4
+SET Friday    5
+SET Saturday  6
+
+SET Sun 0
+SET Mon 1
+SET Tue 2
+SET Wed 3
+SET Thu 4
+SET Fri 5
+SET Sat 6
+# }}}
+
+# Symbolic constants for month names... #{{{
+
+SET Jan 1
+SET Feb 2
+SET Mar 3
+SET Apr 4
+SET May 5
+SET Jun 6
+SET Jul 7
+SET Aug 8
+SET Sep 9
+SET Oct 10
+SET Nov 11
+SET Dec 12
+
+SET January   1
+SET February  2
+SET March     3
+SET April     4
+SET May       5
+SET June      6
+SET July      7
+SET August    8
+SET September 9
+SET October   10
+SET November  11
+SET December  12
+# }}}
+
+# Other symbolic constants and functions for "pasting"{{{
+
+SET Quote CHAR(34)
+
+# Handy constants/function for specifing week of month...
+SET  Week_1		 1
+SET  Week_2		 8
+SET  Week_3		15
+SET  Week_4		22
+FSET _last(mo)		"1 " + MON((mo%12)+1) + " --7"
+# }}}
+
+# Handy function to provide SCANFROM dates...{{{
+FSET _back(days)	TODAY()-days
+
+# Function which returns a string in "am/pm" format based
+# on the time.  For example, set a am_pm(NOW())...
+
+FSET _am_pm(tm)	IIF(tm<01:00, tm+12*60+"am", \
+                    tm<12:00, tm+"am", \
+                    tm<13:00, tm+"pm", \
+                              tm-12*60+"pm")
+# }}}
+
+# Function which removes a single leading zero from a string...{{{
+FSET _no_lz(s) IIF(SUBSTR(s, 1, 1)=="0", SUBSTR(s, 2), s)
+# }}}
+
+# Return the length in minutes of the daylight/night portion of a date,{{{
+FSET _light_len(date) MAX(SUNSET(date)-SUNRISE(date), 0)
+FSET _dark_len(date) 1440-_light_len(date)
+# }}}
+
+# Function to calculate number of years since a given year{{{
+# or number of months since a given month and year...
+
+FSET _yr_num(yr)		ORD(YEAR(TRIGDATE()) - yr)
+FSET _mo_num(mo, yr)		ORD(12 * (YEAR(TRIGDATE()) - yr) + \
+					MONNUM(TRIGDATE()) - mo)
+
+# Here's an example of how to use them
+# REM 1 Nov ++12 MSG %"Dean's [_yr_num(1984)] birthday%" is %b.
+# REM 1 MSG Dean's [_mo_num(11, 1984)] 'monthly' anniversary
+# }}}
+
+# Function to send mail via elm's "fastmail" (by GMS!)...{{{
+
+#FSET _mail(from, subj)	"mailx -s " + \
+#				Quote + from + " : " + subj + Quote \
+#				GETENV("LOGNAME") + " < /dev/null 1>&0"
+FSET _mail(from, subj)	"fastmail -f " + \
+				Quote + from + Quote + \
+				" -s " + Quote + subj + Quote + \
+				" /dev/null " + GETENV("LOGNAME")
+# }}}
+
+# A meeting on the first Monday of every month which is moved to the{{{
+# second Monday in the event of a holiday.
+#
+
+# First, the normal meeting.  However, the SKIP keyword means this
+# one won't be triggered if the first Monday is a holiday
+# REM Mon 1 SKIP MSG Meeting
+
+# Now, calculate the "potential" delayed meeting
+# REM Mon 8 SATISFY 1
+
+# But only actually trigger the delayed meeting if the previous
+# Monday was a holiday
+# IF ISOMITTED(TRIGDATE()-7)
+   # REM [TRIGDATE()] MSG Delayed meeting
+# ENDIF
+# }}}
+
+# A very complicated reminder sent in by a Remind user.{{{
+# This person gets paid every two weeks, starting from 8 January 1993.
+# If a pay date occurs before the twelfth of a month, then that
+# he pays his mortgage on that pay date.  Otherwise, he pays the mortgage
+# on the previous pay date.  Furthermore, he has to schedule his
+# mortgage payment six days before it is due.  He wants to be reminded
+# a further four days before the scheduling deadline.  He also
+# wants to be mailed a notice two weeks before the scheduling deadline.
+#
+# Here's the solution - if you can follow this, consider yourself a
+# Remind programmer extraordinaire!
+
+# A function to determine whether or not a pay-date is a mortgage-date.
+
+FSET _IsMortDate(x) DAY(x) < 12 || (DAY(x+14) >= 12 && DAY(x+14) <= 14)
+
+# Paydays - for reference
+# REM 8 Jan 1993 *14 MSG Payday
+
+# Calculate the mortgage payment six days ahead of time.  Note that this
+# is done "implicitly" by subtracting 6 from the starting date - we start
+# on 2 Jan rather than 8 Jan.  We add 6 to TRIGDATE() in _IsMortDate to
+# compensate.
+# REM 2 Jan 1993 *14 ++4 SATISFY [_IsMortDate(TRIGDATE()+6)] \
+	# MSG %"Schedule mortgage payment%" for %a.
+
+# Now the mail reminder two weeks before the payment date - because two
+# weeks before a payment date is also a payment date, no pre-compensation
+# in the starting date of 8 Jan is necessary - convince yourself of this!
+# This uses the _mail() function defined earlier.
+# REM ONCE 8 Jan 1993 *14 SATISFY [_IsMortDate(TRIGDATE()+14)] \
+	# RUN [_mail("Decatur Federal", \
+		# "Pay mortgage by the " + ORD(DAY(TRIGDATE()+14)))]
+
+# Make an entry on the calendar when the mortgage should be paid
+# REM 8 Jan 1993 *14 SATISFY [_IsMortDate(TRIGDATE())] \
+	# CAL Mortgage payment
+# }}}
+
+# A script to tell you when your library books are due{{{
+# On our UNIX system, I run a program which queries the university
+# library and creates a file called ".booksdue".  This file is
+# a REMIND script to tell me when my library books are due.  Here's
+# an example from my reminder file - it shows the use of filedate().
+# When the .booksdue file is at least 7 days old, I create a new version
+# by querying the library computer.  Note the use of realtoday() rather
+# than today.
+#
+
+# IF !$RunOff && !$CalMode && !$SimpleCal
+   # IF REALTODAY()-FILEDATE("/home/dfs/.booksdue") >= 7
+      # REM RUN /home/dfs/bilge/library/getbooks
+   # ENDIF
+# ENDIF
+# }}}
+
+#PSSTUFF1{{{
+#
+# This portion of the file contains some cute examples of the new
+# PS-type reminders.  You need a PostScript printer or viewer to
+# appreciate these.  To use them, pipe the output of remind -p into the
+# rem2ps program.  More examples are in the PSSTUFF2 section, below.
+#
+
+# The following reminder will shade the Saturday and Sunday calendar
+# entries.
+REM Sat Sun SPECIAL SHADE 220
+# }}}
+
+#PSSTUFF2{{{
+#
+# Since the SHADE special blots out any previous PostScript
+# reminders for a date, these examples need to follow the US Holidays
+# section, which uses SHADE.
+#
+
+# The following will fill in the Hebrew dates on the calendar.  For this
+# example, I recommend that you use the -sd 10 option for Rem2PS.
+REM PS Border Border moveto \
+   /DayFont findfont DaySize scalefont setfont \
+   ([hebday(today())] [hebmon(today())]) show
+
+# Fill in the phases of the moon on the PostScript calendar
+[moondate(0)] SPECIAL MOON 0
+[moondate(1)] SPECIAL MOON 1
+[moondate(2)] SPECIAL MOON 2
+[moondate(3)] SPECIAL MOON 3
+
+# The following example puts sunrise and sunset times in PostScript in the
+# calendar - the sizes are hard-coded, however, and work best in landscape.
+REM PS Border Border 5 sub moveto \
+	/SmallFont findfont 4 scalefont setfont \
+	(Sunrise: [sunrise(trigdate())] Sunset: [sunset(trigdate())]) show
+
+# The next one puts the day number (1-366) and days left in the year at the
+# bottom of the post-script calendar.  Again, the hard-coded sizes work best
+# in landscape.
+FSET _DayOfYear(x) x-(date(year(x),1,1) - 1)
+REM PS BoxWidth 3 mul 4 div Border 5 sub moveto \
+	/SmallFont findfont 4 scalefont setfont \
+	([_DayOfYear(today())]([365+isleap(today())-_DayOfYear(today())])) show
+# }}}
+
+#COLORS{{{
+#
+# This contains sample ANSI escape sequences for coloring messages.
+# It should work on an IBM PC with the ANSI.SYS driver, and on
+# other terminals which use the ANSI sequences.
+#
+# This information was provided by Gail Gurman.
+#
+# Colors - use Nrm to reset to normal text.
+SET Esc   CHAR(27)
+
+SET Nrm   Esc + "[0m"
+SET Blk   Esc + "[0;30m"
+SET Red   Esc + "[0;31m"
+SET Grn   Esc + "[0;32m"
+SET Ylw   Esc + "[0;33m"
+SET Blu   Esc + "[0;34m"
+SET Mag   Esc + "[0;35m"
+SET Cyn   Esc + "[0;36m"
+SET Wht   Esc + "[0;37m"
+SET Gry   Esc + "[30;1m"
+SET BrRed Esc + "[31;1m"
+SET BrGrn Esc + "[32;1m"
+SET BrYlw Esc + "[33;1m"
+SET BrBlu Esc + "[34;1m"
+SET BrMag Esc + "[35;1m"
+SET BrCyn Esc + "[36;1m"
+SET BrWht Esc + "[37;1m"
+
+# Examples
+# REM MSG A [Blu]blue[Nrm] reminder.
+# REM MSG [Red]%"A red reminder%" safe to use in the calendar mode.[Nrm]
+
+# Here is an example of how to use msgprefix() and msgsuffix().  These
+# will highlight priority-0 reminders in bright red,
+# priority-2500 in red, and priority-7500 in blue.  All others
+# will be in the normal colors
+FSET msgprefix(x) iif(x==0, BrRed, x==2500, Red, x==7500, Blu, Nrm)
+
+# Don't forget to return to normal color set at the end of reminder!
+FSET msgsuffix(x) Nrm
+
+# The next examples are great for putting right at the end of the reminder
+# file.  They make queued reminders more eye-catching when they pop up.
+# FSET msgprefix(x) char(13,10,13,10)+"******************"+char(13,10,13,10)
+# FSET msgsuffix(x) char(13,10)+"******************"+char(13,10,13,10)
+# }}}
