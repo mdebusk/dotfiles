@@ -276,7 +276,8 @@ exec xinput set-prop 13 287 1
 # Set wallpaper
 # exec --no-startup-id feh --bg-scale /home/michael/Pictures/Wallpapers/i3.png
 # exec --no-startup-id feh --bg-scale /home/michael/Pictures/Wallpapers/i3keys.jpg
-exec --no-startup-id feh --bg-scale  /home/michael/Pictures/Wallpapers/Mountains.png
+# exec --no-startup-id feh --bg-scale /home/michael/Pictures/Wallpapers/Mountains.png
+exec --no-startup-id feh --bg-scale "/home/michael/Pictures/Wallpapers/Ubuntu Black.jpg"
 
 # Start udiskie to manage auto-mounting of removable media
 exec --no-startup-id /usr/bin/udiskie --tray
