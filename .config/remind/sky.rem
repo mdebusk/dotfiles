@@ -1,6 +1,6 @@
 # Reminders file for Michael DeBusk
 # Sunrise, sunset, moon phase
-# Last edit: 2021-09-29 10:18
+# Last edit: 2021-10-02 20:25
 # Place in $XDG_CONFIG_HOME/remind/
 
 # Phases of the moon {{{
@@ -28,7 +28,7 @@ ENDIF
 IF moonphase()>270&&moonphase()<360
     SET phase="🌘"
 ENDIF
-# #nd phases of the moon }}}
+# End phases of the moon }}}
 
 REM Sunrise    : [sunrise(trigdate())]%
 REM Sunset     : [sunset(trigdate())]%
