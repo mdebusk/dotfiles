@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # Michael DeBusk
-# Last edit: 2021-07-26 19:45
+# Last edit: 2021-10-06 19:42
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -150,7 +150,7 @@ alias joplincli='~/.joplin-bin/bin/joplin'
 alias ips="echo -n 'External IP: ' ; curl ifconfig.co; echo; echo -n 'Internal IP: ' ; ifconfig wlp3s0 | grep inet\ | awk '{ print \$2 }' "
 
 # Diary
-alias dz='cd ~/Documents && echo -e "## `date +%Y%m%d%H%M%S`\n" >> diary.md && vim "+ normal G" +startinsert diary.md && cd'
+alias dz='cd ~/Documents && echo -e "## `date +%F\ %T%n" >> diary.md && vim "+ normal G" +startinsert diary.md && cd'
 
 # alias for bare git repo use (dotfile repo)
 # https://www.atlassian.com/git/tutorials/dotfiles
