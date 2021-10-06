@@ -166,7 +166,7 @@ FSET _mail(from, subj)	"fastmail -f " + \
 
 # A function to determine whether or not a pay-date is a mortgage-date.
 
-FSET _IsMortDate(x) DAY(x) < 12 || (DAY(x+14) >= 12 && DAY(x+14) <= 14)
+# FSET _IsMortDate(x) DAY(x) < 12 || (DAY(x+14) >= 12 && DAY(x+14) <= 14)
 
 # Paydays - for reference
 # REM 8 Jan 1993 *14 MSG Payday
