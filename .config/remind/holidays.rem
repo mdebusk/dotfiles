@@ -1,6 +1,6 @@
 # Reminders file for Michael DeBusk
 # Holidays
-# Last edit: 2021-03-22 19:00
+# Last edit: 2021-10-06 09:52
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
 # include /home/michael/.config/remind/holidays.rem
 
@@ -47,6 +47,7 @@ ENDIF
 SET SaveTrig $NumTrig
 SET easter EASTERDATE(YEAR(TODAY()))
 REM  [easter-46] MSG %"Ash Wednesday%"
+REM  [easter-45] MSG %"Shrove Tuesday/Mardi Gras%"
 REM  [easter-7]  MSG %"Palm Sunday%"
 OMIT [easter-2]  MSG %"Good Friday%"
 OMIT [easter]    MSG %"Easter%" Sunday%
@@ -59,6 +60,7 @@ REM  [easter+49] MSG %"Pentecost%"
 # way up in the file.
 
 OMIT     Jan  1		MSG %"New Year's%" Day%
+REM      Jan  6         MSG %"Epiphany%"%
 REM  Mon Jan [Week_3]	MSG Martin Luther King - %"MLK Day%"
 REM      Feb  2		MSG %"Groundhog Day%"
 REM      Feb 14		MSG %"Valentine's%" Day
@@ -77,7 +79,9 @@ REM      Jun 14		MSG %"Flag Day%"
 REM  Sun Jun [Week_3]	MSG %"Father's Day%"
 REM  Mon Sep [Week_1]	SCANFROM [_back(7)] SATISFY 1
 OMIT [trigdate()] MSG %"Labor Day%"
+REM      Sep 11         MSG %"Patriot Day%"
 REM  Mon Oct [Week_2]	MSG %"Columbus Day%"
+REM      Sep 17         MSG %"Constitution Day%"
 REM      Nov 11		MSG %"Veterans Day%"
 REM      Oct 30		MSG %"Mischief Night%"
 REM      Oct 31		MSG %"Halloween%"
@@ -88,8 +92,10 @@ REM  Thu Nov [Week_4]	SCANFROM [_back(7)] SATISFY 1
 OMIT [trigdate()] MSG %"Thanksgiving%" Day
 REM  Fri Nov [Week_4+1]	SCANFROM [_back(7)] SATISFY 1
 OMIT [trigdate()] MSG %"Thanksgiving%" (cont.)
+REM      Dec  7         MSG %"Pearl Harbor Rememberance Day%"
 OMIT     Dec 24		MSG %"Christmas Eve%"
 OMIT     Dec 25		MSG %"Christmas%" Day
+OMIT     Dec 31		MSG %"New Year's Eve%"
 
 #
 # If any US holidays were triggered above, shade in the calendar
