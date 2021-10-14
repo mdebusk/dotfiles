@@ -18,4 +18,4 @@
 - [vlc](https://www.videolan.org/) video player has a command-line interface
 
 ## What this repo is for
-- [Manage Dotfiles With A Bare Git Repository](https://harfangk.github.io/2016/09/18/manage-dotfiles-with-a-git-bare-repository.html)
+- [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles)
