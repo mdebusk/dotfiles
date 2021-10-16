@@ -1,6 +1,6 @@
 # Reminders file for Michael DeBusk
 # Holidays
-# Last edit: 2021-10-06 09:52
+# Last edit: 2021-10-11 08:25
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
 # include /home/michael/.config/remind/holidays.rem
 
@@ -44,6 +44,7 @@ ENDIF
 # Modified by D. Skoll to give safe OMITs for moveable holidays
 #
 
+# Easter {{{2
 SET SaveTrig $NumTrig
 SET easter EASTERDATE(YEAR(TODAY()))
 REM  [easter-46] MSG %"Ash Wednesday%"
@@ -53,6 +54,7 @@ OMIT [easter-2]  MSG %"Good Friday%"
 OMIT [easter]    MSG %"Easter%" Sunday%
 REM  [easter+39] MSG %"Ascension Day%"
 REM  [easter+49] MSG %"Pentecost%"
+# }}}
 
 # Some holidays are omitted, some are not.  You may want to change
 # which ones are omitted - use the general forms shown below.
@@ -80,7 +82,7 @@ REM  Sun Jun [Week_3]	MSG %"Father's Day%"
 REM  Mon Sep [Week_1]	SCANFROM [_back(7)] SATISFY 1
 OMIT [trigdate()] MSG %"Labor Day%"
 REM      Sep 11         MSG %"Patriot Day%"
-REM  Mon Oct [Week_2]	MSG %"Columbus Day%"
+REM  Mon Oct [Week_2]	MSG %"Columbus Day/Indigenous People's Day%"
 REM      Sep 17         MSG %"Constitution Day%"
 REM      Nov 11		MSG %"Veterans Day%"
 REM      Oct 30		MSG %"Mischief Night%"
