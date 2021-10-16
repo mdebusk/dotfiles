@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # Michael DeBusk
-# Last edit: 2021-10-06 19:42
+# Last edit: 2021-10-08 15:15
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -147,7 +147,7 @@ alias nvlc='nvlc --browse-dir ~/Music'
 alias joplincli='~/.joplin-bin/bin/joplin'
 
 # What are my external and internal IP addresses?
-alias ips="echo -n 'External IP: ' ; curl ifconfig.co; echo; echo -n 'Internal IP: ' ; ifconfig wlp3s0 | grep inet\ | awk '{ print \$2 }' "
+alias ips="echo -n 'External IP: ' ; curl ifconfig.co; echo -n 'Internal IP: ' ; ifconfig wlp3s0 | grep inet\ | awk '{ print \$2 }' "
 
 # Diary
 alias dz='pushd ~/Documents && echo -e "## `date +%F\ %T`\n" >> diary.md && vim "+ normal G" +startinsert diary.md && popd'
