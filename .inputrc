@@ -1,5 +1,5 @@
 # .inputrc for Michael DeBusk
-# Last edited: 2020-07-18 11:14
+# Last edited: 2021-12-06 13:44
 
 # Some of these were taken from
 # https://www.topbug.net/blog/2017/07/31/inputrc-for-humans/
@@ -41,6 +41,7 @@ TAB: menu-complete
 
 # display possible completions using different colors to indicate their file types
 set colored-stats On
+set colored-completion-prefix On
 
 # auto completion will ignore cases
 set completion-ignore-case On
