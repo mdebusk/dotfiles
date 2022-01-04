@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2021-09-23 15:24
+" Last edit: 2021-12-08 16:42
 
 
 " ** 1. Important "{{{
@@ -335,6 +335,8 @@ augroup END "}}}
 " End Abbreviations}}}
 
 " ** Plugins "{{{
+packadd! matchit
+
 "" Make netrw look like NERDtree {{{2
 "" https://shapeshed.com/vim-netrw/
 "let g:netrw_banner = 0
