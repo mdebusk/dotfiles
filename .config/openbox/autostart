@@ -1,3 +1,8 @@
+##################################################
+# Openbox autostart file for Michael DeBusk
+# https://github.com/mdebusk
+# Last edit: 2022-02-22 11:26
+##################################################
 tint2 &
 compton &
-feh --bg-scale "/home/michael/Pictures/Wallpapers/Tree and Fog.jpg" &
+feh --bg-scale "/home/michael/Pictures/Wallpapers/Openbox.jpg" &
