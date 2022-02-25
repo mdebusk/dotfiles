@@ -1,6 +1,6 @@
 # ~/.profile: executed by Bourne-compatible login shells.
 # Michael DeBusk
-# Last edit: 2021-03-25 14:02
+# Last edit: 2022-02-23 17:37
 
 if [ "$BASH" ]; then
   if [ -f ~/.bashrc ]; then
