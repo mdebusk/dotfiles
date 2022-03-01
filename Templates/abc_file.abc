@@ -1,0 +1,38 @@
+%abc-2.1
+% Header {{{
+X:Index number, must be first
+T:Title, must be second
+T:Title, can be used multiple times
+A:Area (deprecated, use O: instead)
+B:Book where the tune can be found
+C:Composer
+D:Discography, i.e., name of album where tune can be heard
+F:File URL where tune can be found on the World Wide Web
+G:Group, e.g., Fiddle, used by software for indexing purposes
+H:History notes; continue lines with "+:"
+H:Can be used for multiple entries
+I:instruction directives concerned with how the abc code is to be interpreted. See reference
+L:Length of the default note, e.g., 1/16
+m:macro, see reference
+M:Meter, e.g., 2/4
+N:Notes
+O:Origin, geographical,  e.g. Irish
+P:Parts, see reference
+Q:Tempo, e.g., 1/4=120 or "Allegro"
+r:remark
+R:Rhythm, e.g., reel
+S:Source, e.g., Collected in Brittany
+U:user defined; the letters H-W and h-w and the symbol ~ can be reassigned
+V:voice; Used for multi-voice music (not used yet)
+W:Words placed below the last staff
+Z:Michael DeBusk (transcription, can include date and e-mail address)
+Z:abc-transcription Michael DeBusk, datestamp
+% Z:abc-edited-by Michael DeBusk, datestamp
+Z:abc-copyright &copy; Michael DeBusk (Copyright date of transcription, not of song)
+K:Key, e.g., A, must be last
+% End header; tune must follow immediately }}}
+
+%=========================================================%
+% Make sure you end the file with an empty line           %
+% Standard: http://abcnotation.com/wiki/abc:standard:v2.1 %
+%=========================================================%
