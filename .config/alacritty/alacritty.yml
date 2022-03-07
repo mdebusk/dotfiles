@@ -53,9 +53,9 @@ window: #{{{
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
-  #padding:
-  #  x: 0
-  #  y: 0
+  padding:
+    x: 5
+    y: 5
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -767,31 +767,6 @@ window_opacity: 0.8
   #- { key: B,      mods: Shift,         mode: Vi|~Search, action: WordLeft                }
   #- { key: W,      mods: Shift,         mode: Vi|~Search, action: WordRight               }
   #- { key: E,      mods: Shift,         mode: Vi|~Search, action: WordRightEnd            }
-  #- { key: Key5,   mods: Shift,         mode: Vi|~Search, action: Bracket                 }
-  #- { key: Slash,                       mode: Vi|~Search, action: SearchForward           }
-  #- { key: Slash,  mods: Shift,         mode: Vi|~Search, action: SearchBackward          }
-  #- { key: N,                           mode: Vi|~Search, action: SearchNext              }
-  #- { key: N,      mods: Shift,         mode: Vi|~Search, action: SearchPrevious          }
-
-  # Search Mode
-  #- { key: Return,                mode: Search|Vi,  action: SearchConfirm         }
-  #- { key: Escape,                mode: Search,     action: SearchCancel          }
-  #- { key: C,      mods: Control, mode: Search,     action: SearchCancel          }
-  #- { key: U,      mods: Control, mode: Search,     action: SearchClear           }
-  #- { key: W,      mods: Control, mode: Search,     action: SearchDeleteWord      }
-  #- { key: P,      mods: Control, mode: Search,     action: SearchHistoryPrevious }
-  #- { key: N,      mods: Control, mode: Search,     action: SearchHistoryNext     }
-  #- { key: Up,                    mode: Search,     action: SearchHistoryPrevious }
-  #- { key: Down,                  mode: Search,     action: SearchHistoryNext     }
-  #- { key: Return,                mode: Search|~Vi, action: SearchFocusNext       }
-  #- { key: Return, mods: Shift,   mode: Search|~Vi, action: SearchFocusPrevious   }
-
-  # (Windows, Linux, and BSD only)
-  #- { key: V,              mods: Control|Shift, mode: ~Vi,        action: Paste            }
-  #- { key: C,              mods: Control|Shift,                   action: Copy             }
-  #- { key: F,              mods: Control|Shift, mode: ~Search,    action: SearchForward    }
-  #- { key: B,              mods: Control|Shift, mode: ~Search,    action: SearchBackward   }
-  #- { key: C,              mods: Control|Shift, mode: Vi|~Search, action: ClearSelection   }
   #- { key: Insert,         mods: Shift,                           action: PasteSelection   }
   #- { key: Key0,           mods: Control,                         action: ResetFontSize    }
   #- { key: Equals,         mods: Control,                         action: IncreaseFontSize }
