@@ -192,7 +192,8 @@ startup_notifications = 1
 launcher_tooltip = 1
 launcher_item_app = tint2conf.desktop
 launcher_item_app = brave-browser.desktop
-launcher_item_app = rxvt-unicode.desktop
+# launcher_item_app = rxvt-unicode.desktop
+launcher_item_app = Alacritty.desktop
 launcher_item_app = gvim.desktop
 
 #-------------------------------------
