@@ -12,6 +12,7 @@
 - [nano](https://www.nano-editor.org/) text editor (on rare occasion)
 - [pandoc](https://pandoc.org/) convertor for [markdown](https://daringfireball.net/projects/markdown/)
 - [remind](https://dianne.skoll.ca/projects/remind/) calendar
+- [alacritty](https://alacritty.org/) is something I'm experimenting with right now, and may replace the following with it:
 - [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) terminal emulator
 - [slrn](https://slrn.info/) news reader
 - [solarized](https://ethanschoonover.com/solarized/) is my preferred terminal color scheme
