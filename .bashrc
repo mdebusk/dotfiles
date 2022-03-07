@@ -180,3 +180,6 @@ fi
 
 # Add support for fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Add completions for Alacritty
+source /home/michael/Source/alacritty/extra/completions/alacritty.bash
