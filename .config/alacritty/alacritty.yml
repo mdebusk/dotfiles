@@ -1,7 +1,7 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 # For Michael DeBusk
 # https://github.com/mdebusk
-# Last edit: 2021-06-22 10:25
+# Last edit: 2022-03-06 20:36
 
 # Import additional configuration files #{{{
 #
@@ -18,14 +18,17 @@
 # Any items in the `env` entry below will be added as #{{{
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
+    TERM: alacritty
+  # This variable "fixes" font scaling issues
+    WINIT_X11_SCALE_FACTOR: "1.0"
+
 # End env }}}
 
 window: #{{{
@@ -111,19 +114,19 @@ history: 10000
 # Font configuration {{{
 font:
   normal:
-    family: JetBrains Mono
-    style: Regular
+    family: DejaVu Sans Mono
+    style: Book
   bold:
-    family: JetBrains Mono
+    family: DejaVu Sans Mono
     style: Bold
   italic:
-    family: JetBrains Mono
-    style: Italic
+    family: DejaVu Sans Mono
+    style: Oblique
   bold_italic:
-    family: JetBrains Mono
-    style: Bold Italic
+    family: DejaVu Sans Mono
+    style: Bold Oblique
 
-size: 11
+size: 9
 # End font configuration }}}
 
 # If `true`, bold text is drawn using the bright color variants.
@@ -348,7 +351,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.8
+window_opacity: 0.8
 
 #selection:
   # This string contains all characters that are used as separators for
