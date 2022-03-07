@@ -1,8 +1,8 @@
 ##################################################
 # Openbox autostart file for Michael DeBusk
 # https://github.com/mdebusk
-# Last edit: 2022-02-22 11:26
+# Last edit: 2022-03-07 14:00
 ##################################################
 tint2 &
-compton &
+compton -b &
 feh --bg-scale "/home/michael/Pictures/Wallpapers/Openbox.jpg" &
