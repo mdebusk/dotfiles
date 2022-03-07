@@ -1,7 +1,7 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference
 # Michael DeBusk
-# Last edit: 2022-02-25 18:13
+# Last edit: 2022-03-06 20:40
 
 # 4.16: Variables {{{1
 # Set the modifier key to the "Windows" key{{{2
@@ -44,8 +44,9 @@ font pango:Droid Sans Regular 7
 # 4.4: Keyboard Bindings {{{
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-# indsym $mod+Return exec gnome-terminal
-bindsym $mod+Return exec urxvt
+# bindsym $mod+Return exec gnome-terminal
+# bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 
 # Start the file manager
 bindsym $mod+Shift+f exec nautilus
@@ -260,6 +261,9 @@ assign [class="Joplin"] $workspace10
 # }}}
 
 # 4.19. Automatically starting applications on i3 startup {{{
+# Start compton
+exec-always --no-startup-id 'compton -b'
+
 # start pulseaudio
 exec --no-startup-id i3-msg 'exec /usr/bin/pulseaudio --start'
 
