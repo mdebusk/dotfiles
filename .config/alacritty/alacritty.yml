@@ -25,7 +25,7 @@ env:
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-    TERM: alacritty
+    TERM: xterm-256color
   # This variable "fixes" font scaling issues
     WINIT_X11_SCALE_FACTOR: "1.0"
 
