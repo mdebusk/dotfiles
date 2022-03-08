@@ -38,11 +38,15 @@ REM Full moon  : [moondate(2)] at [moontime(2)]%
 
 # Moon icons {{{
 # New moon: 🌑
+# New moon face: 🌚
 # Waxing crescent: 🌒
 # First quarter: 🌓
+# First quarter moon face: 🌛
 # Waxing gibbous: 🌔
 # Full moon: 🌕
+# Full moon face: 🌝
 # Waning gibbous: 🌖
 # Last quarter: 🌗
+# Last quarter moon face: 🌜
 # Waning crescent: 🌘
 # End moon icons }}}
