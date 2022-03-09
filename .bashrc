@@ -154,7 +154,7 @@ alias joplincli='~/.joplin-bin/bin/joplin'
 alias ips="echo -n 'External IP: ' ; curl ifconfig.co; echo -n 'Internal IP: ' ; ifconfig wlp3s0 | grep inet\ | awk '{ print \$2 }' "
 
 # Diary
-alias dz='pushd ~/Documents && echo -e "## `date +%F\ %T`\n" >> diary.md && vim "+ normal G" +startinsert diary.md && popd'
+alias dz='pushd ~/Documents && echo -e "\n## `date +%F\ %T` {{{\n\n}}}" >> diary.md && vim "+ normal Gk" +startinsert diary.md && popd'
 
 # alias for bare git repo use (dotfile repo)
 # https://www.atlassian.com/git/tutorials/dotfiles
