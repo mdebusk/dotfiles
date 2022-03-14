@@ -1,7 +1,7 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference
 # Michael DeBusk
-# Last edit: 2022-03-06 20:40
+# Last edit: 2022-03-13 20:07
 
 # 4.16: Variables {{{1
 # Set the modifier key to the "Windows" key{{{2
@@ -262,13 +262,13 @@ assign [class="Joplin"] $workspace10
 
 # 4.19. Automatically starting applications on i3 startup {{{
 # Start compton
-exec-always --no-startup-id 'compton -b'
+exec_always --no-startup-id 'compton -b'
 
 # start pulseaudio
 exec --no-startup-id i3-msg 'exec /usr/bin/pulseaudio --start'
 
 # Start xautolock to automatically lock the screen after a timeout
-exec xautolock -time 10 -locker i3lock -i /home/michael/Pictures/Wallpapers/i3-wallpaper.png
+exec_always xautolock -corners 00-0 -locker "i3lock -i /home/michael/Pictures/Wallpapers/i3-wallpaper.png"
 
 # Enable tapping of Touchpad
 exec xinput set-prop 13 287 1
