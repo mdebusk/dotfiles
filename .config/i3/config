@@ -1,7 +1,7 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference
 # Michael DeBusk
-# Last edit: 2022-03-13 20:07
+# Last edit: 2022-03-13 21:39
 
 # 4.16: Variables {{{1
 # Set the modifier key to the "Windows" key{{{2
@@ -166,7 +166,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # bind a key to lock the screen
-bindsym $mod+shift+x exec i3lock -i /home/michael/Pictures/Wallpapers/i3-wallpaper.png
+bindsym $mod+shift+x exec "i3lock -i /home/michael/Pictures/Wallpapers/i3-wallpaper.png"
 # }}}
 
 # 4.5: Mouse Bindings {{{
@@ -268,7 +268,7 @@ exec_always --no-startup-id 'compton -b'
 exec --no-startup-id i3-msg 'exec /usr/bin/pulseaudio --start'
 
 # Start xautolock to automatically lock the screen after a timeout
-exec_always xautolock -corners 00-0 -locker "i3lock -i /home/michael/Pictures/Wallpapers/i3-wallpaper.png"
+# exec_always xautolock -locker "i3lock -i /home/michael/Pictures/Wallpapers/i3-wallpaper.png"
 
 # Enable tapping of Touchpad
 exec xinput set-prop 13 287 1
