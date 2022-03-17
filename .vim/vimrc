@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2021-12-08 16:42
+" Last edit: 2022-03-17 17:27
 
 
 " ** 1. Important "{{{
@@ -28,6 +28,7 @@ set nowrap               "Turn off word wrapping
 set number               "Enable line numbering, taking up 6 spaces
 set numberwidth=5        "Set line numbering to take up 5 spaces
 " set relativenumber       "Show line numbers relative to current line
+set sidescrolloff=5      "Number of columns to show around the cursor
 set scrolloff=3          "Number of lines to show around the cursor
 " set scrolloff=999        " Keeps cursor line centered on screen
 augroup numbertoggle     "Toggles relativenumber on and off based on mode
@@ -97,7 +98,8 @@ set complete+=kspell
 set completeopt=menuone,longest
 set nojoinspaces
 set omnifunc=syntaxcomplete#Complete
-set matchpairs+=<:> " Add angle brackets to matchpairs
+set matchpairs+=<:>      "Add angle brackets to matchpairs
+set nrformats-=octal     "Remove octal from auto-increment and auto-decrement
 set undodir=~/.vim/undodir
 set undofile
 "set textwidth=80        "Set text width, where text would wrap if it did
