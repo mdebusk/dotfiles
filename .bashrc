@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # Michael DeBusk
-# Last edit: 2021-11-16 16:22
+# Last edit: 2022-03-24 14:28
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -122,7 +122,8 @@ alias df="df -Tha --total"
 alias wget="wget -c"
 
 # Help programs use the XDG Base Directory standard
-alias remind='remind $XDG_CONFIG_HOME/remind/reminders.rem'
+alias remind='remind -@ $XDG_CONFIG_HOME/remind/reminders.rem'
+alias tkremind='tkremind $XDG_CONFIG_HOME/remind/reminders.rem'
 alias slrn='slrn -i "$XDG_CONFIG_HOME"/slrn/slrnrc -f "$XDG_CONFIG_HOME"/slrn/jnewsrc-september'
 alias sqlite3='sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc'
 
