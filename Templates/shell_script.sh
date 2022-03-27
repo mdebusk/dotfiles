@@ -36,7 +36,9 @@
 #}}} End license and copyright
 
 # {{{Help
-#
+
+set -euo pipefail # Catch a variety of errors
+
 Help()
 {
     cat <<EOF
