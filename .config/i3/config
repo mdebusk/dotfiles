@@ -1,7 +1,7 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference
 # Michael DeBusk
-# Last edit: 2022-03-13 21:39
+# Last edit: 2022-03-27 00:12
 
 # 4.16: Variables {{{1
 # Set the modifier key to the "Windows" key{{{2
@@ -11,8 +11,8 @@ set $alt Mod1
 
 # Variables to define names of workspaces {{{2
 set $workspace1 "1: Terminal"
-set $workspace2 "2. Brave"
-set $workspace3 "3: Files"
+set $workspace2 "2. Browser"
+set $workspace3 "3: Nautilus"
 set $workspace4 "4: "
 set $workspace5 "5: "
 set $workspace6 "6: "
@@ -262,7 +262,13 @@ assign [class="Joplin"] $workspace10
 
 # 4.19. Automatically starting applications on i3 startup {{{
 # Start compton
-exec_always --no-startup-id 'compton -b'
+exec --no-startup-id 'compton -b'
+
+# Set laptop screen as primary display
+exec --no-startup-id 'xrandr --output LVDS-0 --primary'
+
+# Set bass speaker volume to 60% because it's busted
+exec --no-startup-id "amixer set 'Bass Speaker' 60%"
 
 # start pulseaudio
 exec --no-startup-id i3-msg 'exec /usr/bin/pulseaudio --start'
@@ -336,6 +342,18 @@ exec --no-startup-id parcellite
     bar {
         status_command i3status
         font pango:Droid Sans Regular 7, Font Awesome 5 Brands Regular 7, Font Awesome 5 Free Regular 7
+        output primary
+        colors {
+                background #002b36
+                statusline #839496
+                separator #586e75
+#               colorclass         border background text
+                focused_workspace  #586e75 #073642 #839496
+                active_workspace   #586e75 #5f676a #839496
+                inactive_workspace #586e75 #222222 #888888
+                urgent_workspace   #2f343a #dc322f #839496
+                binding_mode       #2f343a #900000 #839496
+            }
     }
 # }}}
 
