@@ -2,7 +2,7 @@
 # see "man i3status" for documentation.
 
 # Michael DeBusk
-# Last edit 2020-08-01 21:25
+# Last edit 2022-03-26 23:44
 
 # It is important that this file is edited as UTF-8.
 # The following line should contain a sharp s:
@@ -11,6 +11,10 @@
 
 general {
         colors = true
+        color_good = "#859900"
+        color_degraded = "#b58900"
+        color_bad = "#dc322f"
+        separator = "┋"
         interval = 5
 }
 
@@ -20,22 +24,24 @@ order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery 0"
 # order += "battery all"
+order += "memory"
 order += "load"
 order += "volume master"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = "W: %quality at %essid (%ip)"
-        format_down = "W ❌"
+        format_up = "📶 %quality at %essid (%ip)"
+        format_down = " 📶❌"
 }
 
 ethernet _first_ {
         # if you use %speed, i3status requires root privileges
         format_up = "E: %ip (%speed)"
-        format_down = "E: ❌"
+        # format_down = "E: ❌"
+        format_down = ""
 }
 battery 0 {
-        format = "%status %percentage %remaining %emptytime"
+        format = "Battery: %status %percentage %remaining %emptytime"
         format_down = "No battery"
         status_chr = "⚡ CHR"
         status_bat = "🔋 BAT"
@@ -51,18 +57,24 @@ tztime local {
         format = "%Y-%m-%d (%A) %H:%M"
 }
 
+memory {
+    memory_used_method = classical
+    format = "Memory: %used/%total"
+}
+
 load {
-        format = "%1min"
+        format = "CPU Load: %1min"
 }
 
 volume master {
    format = " %volume"
-   format_muted = " %volume"
+   # format_muted = " %volume"
+   format_muted = "🔇"
    device = "default"
    mixer = "Master"
    mixer_idx = 0
 }
 
 disk "/" {
-        format = "%avail"
+        format = "🗄️ %avail"
 }
