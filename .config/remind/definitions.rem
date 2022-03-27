@@ -256,49 +256,17 @@ REM PS BoxWidth 3 mul 4 div Border 5 sub moveto \
 # }}}
 
 #COLORS{{{
-#
-# This contains sample ANSI escape sequences for coloring messages.
-# It should work on an IBM PC with the ANSI.SYS driver, and on
-# other terminals which use the ANSI sequences.
-#
-# This information was provided by Gail Gurman.
-#
-# Colors - use Nrm to reset to normal text.
-SET Esc   CHAR(27)
-
-SET Nrm   Esc + "[0m"
-SET Blk   Esc + "[0;30m"
-SET Red   Esc + "[0;31m"
-SET Grn   Esc + "[0;32m"
-SET Ylw   Esc + "[0;33m"
-SET Blu   Esc + "[0;34m"
-SET Mag   Esc + "[0;35m"
-SET Cyn   Esc + "[0;36m"
-SET Wht   Esc + "[0;37m"
-SET Gry   Esc + "[30;1m"
-SET BrRed Esc + "[31;1m"
-SET BrGrn Esc + "[32;1m"
-SET BrYlw Esc + "[33;1m"
-SET BrBlu Esc + "[34;1m"
-SET BrMag Esc + "[35;1m"
-SET BrCyn Esc + "[36;1m"
-SET BrWht Esc + "[37;1m"
-
-# Examples
-# REM MSG A [Blu]blue[Nrm] reminder.
-# REM MSG [Red]%"A red reminder%" safe to use in the calendar mode.[Nrm]
-
-# Here is an example of how to use msgprefix() and msgsuffix().  These
-# will highlight priority-0 reminders in bright red,
-# priority-2500 in red, and priority-7500 in blue.  All others
-# will be in the normal colors
-FSET msgprefix(x) iif(x==0, BrRed, x==2500, Red, x==7500, Blu, Nrm)
-
-# Don't forget to return to normal color set at the end of reminder!
-FSET msgsuffix(x) Nrm
-
-# The next examples are great for putting right at the end of the reminder
-# file.  They make queued reminders more eye-catching when they pop up.
-# FSET msgprefix(x) char(13,10,13,10)+"******************"+char(13,10,13,10)
-# FSET msgsuffix(x) char(13,10)+"******************"+char(13,10,13,10)
+# ANSI colors have been deprecated. One should now use the SPECIAL COLORS
+# directive and RGB values. The following are from the Solarized pallette:
+# base0     131 148 150 Body text
+# base01     88 110 117 Comments
+# base1     147 161 161 Optional emphasized content
+# blue       38 139 210
+# cyan       42 161 152
+# green     133 153   0
+# magenta   211  54 130
+# orange    203  75  22
+# red       220  50  47
+# violet    108 113 196
+# yellow    181 137   0
 # }}}
