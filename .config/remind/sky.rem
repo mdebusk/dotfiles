@@ -1,6 +1,6 @@
 # Reminders file for Michael DeBusk
 # Sunrise, sunset, moon phase
-# Last edit: 2022-03-20 12:50
+# Last edit: 2022-03-26 21:21
 # Place in $XDG_CONFIG_HOME/remind/
 
 ## Phases of the moon {{{
@@ -30,11 +30,13 @@
 #ENDIF
 ## End phases of the moon }}}
 
-REM Sunrise    : [sunrise(trigdate())]%
-REM Sunset     : [sunset(trigdate())]%
+REM Sunrise       : [sunrise(trigdate())]%
+REM Sunset        : [sunset(trigdate())]%
 # REM Moon phase : [phase]%
-REM New moon   : [moondate(0)] at [moontime(0)]%
-REM Full moon  : [moondate(2)] at [moontime(2)]%
+REM New moon      : [moondate(0)] at [moontime(0)]%
+REM First quarter : [moondate(1)] at [moontime(1)]%
+REM Full moon     : [moondate(2)] at [moontime(2)]%
+REM Third quarter : [moondate(3)] at [moontime(3)]%
 
 # Moon icons {{{
 # New moon: 🌑
