@@ -1,6 +1,6 @@
 # Reminders file for Michael DeBusk
 # Holidays
-# Last edit: 2021-10-11 08:25
+# Last edit: 2022-03-25 09:03
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
 # include /home/michael/.config/remind/holidays.rem
 
@@ -69,6 +69,7 @@ REM      Feb 14		MSG %"Valentine's%" Day
 REM  Mon Feb [Week_3]	SCANFROM [_back(7)] SATISFY 1
 OMIT [trigdate()] MSG %"President's Day%"
 REM      Mar 17		MSG %"St. Patrick's%" Day
+REM      Mar 25         MSG %"Maryland Day%
 REM      Apr  1		MSG %"April Fool's%" Day
 REM  Mon Tue Wed Thu Fri Sat 15 Apr MSG %"Income tax%" due
 REM      May  5		MSG %"Cinco de Mayo%"
