@@ -1,7 +1,7 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference
 # Michael DeBusk
-# Last edit: 2022-03-27 00:12
+# Last edit: 2022-03-27 14:24
 
 # 4.16: Variables {{{1
 # Set the modifier key to the "Windows" key{{{2
@@ -347,12 +347,11 @@ exec --no-startup-id parcellite
                 background #002b36
                 statusline #839496
                 separator #586e75
-#               colorclass         border background text
                 focused_workspace  #586e75 #073642 #839496
                 active_workspace   #586e75 #5f676a #839496
-                inactive_workspace #586e75 #222222 #888888
-                urgent_workspace   #2f343a #dc322f #839496
-                binding_mode       #2f343a #900000 #839496
+                inactive_workspace #586e75 #586e75 #002b36
+                urgent_workspace   #cb4b16 #dc322f #002b36
+                binding_mode       #686e75 #d33682 #002b36
             }
     }
 # }}}
