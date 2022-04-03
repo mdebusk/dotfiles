@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2022-03-19 22:22
+" Last edit: 2022-04-03 01:05
 
 
 " ** 1. Important "{{{
@@ -265,7 +265,7 @@ set viminfo='20,\"50     "Read/write a .viminfo file
 
 " ** Color scheme "{{{
 set t_Co=256
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
 highlight Comment cterm=italic gui=italic
