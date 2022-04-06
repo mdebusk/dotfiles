@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # Michael DeBusk
-# Last edit: 2022-03-27 13:44
+# Last edit: 2022-04-06 15:00
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -163,12 +163,12 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # End aliases}}}
 
 # ** Functions{{{
-wttr()
-{
-    local request="wttr.in/${1-21001?FQ}"
-    [ "$(tput cols)" -lt 125 ] && request+='?n'
-    curl -H "Accept-Language: ${LANG%_*}" --compressed "$request"
-}
+# wttr()
+# {
+    # local request="wttr.in/${1-21001?FQ}"
+    # [ "$(tput cols)" -lt 125 ] && request+='?n'
+    # curl -H "Accept-Language: ${LANG%_*}" --compressed "$request"
+# }
 
 # End Functions}}}
 
