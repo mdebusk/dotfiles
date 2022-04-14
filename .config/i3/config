@@ -1,7 +1,7 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference
 # Michael DeBusk
-# Last edit: 2022-03-27 14:24
+# Last edit: 2022-04-13 17:31
 
 # 4.16: Variables {{{1
 # Set the modifier key to the "Windows" key{{{2
@@ -157,7 +157,7 @@ bindsym $mod+Shift+e mode "exit: [l]ogout, [r]eboot, [s]hutdown"
 bindsym $mod+r mode "resize"
 
 # Pulse Audio controls
-bindsym XF87AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
@@ -262,16 +262,16 @@ assign [class="Joplin"] $workspace10
 
 # 4.19. Automatically starting applications on i3 startup {{{
 # Start compton
-exec --no-startup-id 'compton -b'
+# exec --no-startup-id 'compton -b'
 
 # Set laptop screen as primary display
-exec --no-startup-id 'xrandr --output LVDS-0 --primary'
-
-# Set bass speaker volume to 60% because it's busted
-exec --no-startup-id "amixer set 'Bass Speaker' 60%"
+# exec --no-startup-id 'xrandr --output LVDS-0 --primary'
 
 # start pulseaudio
-exec --no-startup-id i3-msg 'exec /usr/bin/pulseaudio --start'
+# exec --no-startup-id i3-msg 'exec /usr/bin/pulseaudio --start'
+
+# Set bass speaker volume to 60% because it's busted
+exec --no-startup-id "sleep 10 && amixer set 'Bass Speaker' 60%"
 
 # Start xautolock to automatically lock the screen after a timeout
 # exec_always xautolock -locker "i3lock -i /home/michael/Pictures/Wallpapers/i3-wallpaper.png"
