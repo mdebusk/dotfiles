@@ -231,8 +231,8 @@ vnoremap > >gv
 " ** 19. Reading and writing files "{{{
 set autowrite            "Writes file when switching to another buffer
 set backup               "keep a backup file
-set cryptmethod=blowfish2 " Encrypt files with a strong method
-" https://www.techrepublic.com/blog/it-security/turn-off-modeline-support-in-vim/
+" set cryptmethod=blowfish2 " Encrypt files with a strong method
+" https://www.techrepublic.com/article/turn-off-modeline-support-in-vim/
 set modelines=0          "Do not check for existing modelines
 set nomodeline           "Disable modeline support
 " End Reading and writing files}}}
