@@ -1,7 +1,7 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference
 # Michael DeBusk
-# Last edit: 2022-04-13 17:31
+# Last edit: 2022-04-25 12:38
 
 # 4.16: Variables {{{1
 # Set the modifier key to the "Windows" key{{{2
@@ -166,7 +166,8 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # bind a key to lock the screen
-bindsym $mod+shift+x exec "i3lock -i /home/michael/Pictures/Wallpapers/i3-wallpaper.png"
+# bindsym $mod+shift+x exec "i3lock -i /home/michael/Pictures/Wallpapers/i3-wallpaper.png"
+bindsym $mod+shift+x exec "i3lock -i /home/michael/Pictures/Wallpapers/Go\ Away.png"
 # }}}
 
 # 4.5: Mouse Bindings {{{
@@ -264,6 +265,9 @@ assign [class="Joplin"] $workspace10
 # Start compton
 # exec --no-startup-id 'compton -b'
 
+# Start autotiling script
+exec_always --no-startup-id ~/bin/autotiling
+
 # Set laptop screen as primary display
 # exec --no-startup-id 'xrandr --output LVDS-0 --primary'
 
@@ -274,7 +278,7 @@ assign [class="Joplin"] $workspace10
 exec --no-startup-id "sleep 10 && amixer set 'Bass Speaker' 60%"
 
 # Start xautolock to automatically lock the screen after a timeout
-# exec_always xautolock -locker "i3lock -i /home/michael/Pictures/Wallpapers/i3-wallpaper.png"
+# exec_always xautolock -locker "/usr/bin/i3lock -i /home/michael/Pictures/Wallpapers/Go\ Away.png"
 
 # Enable tapping of Touchpad
 exec xinput set-prop 13 287 1
