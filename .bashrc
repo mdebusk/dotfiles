@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # Michael DeBusk
-# Last edit: 2022-04-22 20:19
+# Last edit: 2022-04-28 09:38
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -140,7 +140,7 @@ alias pwgen='echo; tr -dc A-Za-z0-9_ < /dev/urandom | head -c 32 | xargs;echo'
 alias mirror='wget --mirror --convert-links --html-extension --wait=2 -o log'
 
 # Update all packages
-alias update='sudo apt update && sudo apt dist-upgrade -y && sudo snap refresh'
+alias update='sudo apt update && sudo apt dist-upgrade -y'
 
 # Find zombie processes
 alias zombie='ps axo stat,ppid,pid,comm | grep -w defunct'
