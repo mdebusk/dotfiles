@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2022-04-03 01:05
+" Last edit: 2022-05-05 14:44
 
 
 " ** 1. Important "{{{
@@ -278,14 +278,22 @@ augroup views            "Back up and restore views on buffer open
     au BufWinEnter ?* silent loadview
 augroup END
 
+augroup markdown "{{{2
+    au BufNewFile,BufRead *.md :set iskeyword=@,48-57,_,-,192-255
+    au BufNewFile,BufRead *.md :iab (c) &#169;
+    au BufNewFile,BufRead *.md :iab (r) &#174;
+    au BufNewFile,BufRead *.md :iab -- &#8211;
+    au BufNewFile,BufRead *.md :iab --- &#8212;
+    au BufNewFile,BufRead *.md :iab (tm) &#8482;
+augroup END " markdown}}}
+
 augroup filetype_LaTeX "{{{2
     autocmd!
     " copy document template into empty new buffer
     au BufNewFile *.tex
                 \ 0r /home/michael/Templates/latex_document.tex
 
-    au BufNewFIle,BufRead *.tex
-                \ :iab latex \LaTeX\
+    au BufNewFIle,BufRead *.tex :iab latex \LaTeX\
     map <F9> :!pdflatex %<CR>
 augroup END "}}}
 
