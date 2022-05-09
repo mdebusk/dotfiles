@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2022-05-05 14:44
+" Last edit: 2022-05-08 16:23
 
 
 " ** 1. Important "{{{
@@ -69,7 +69,7 @@ set ttyfast              "smoother changes
 " ** 10. GUI "{{{
 if has("gui_running")
     let g:solarized_menu=0            "Activate menu for Solarized color scheme
-    set guifont=DejaVu\ Sans\ Mono\ 12 "Set the font and size
+    set guifont=Azeret\ Mono\ 12 "Set the font and size
     set guioptions-=L                 "Remove left scrollbar
     set guioptions-=T                 "Remove toolbar
     set guioptions-=m                 "Remove menu bar
