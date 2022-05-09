@@ -1,7 +1,7 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 # For Michael DeBusk
 # https://github.com/mdebusk
-# Last edit: 2022-03-06 20:36
+# Last edit: 2022-05-08 16:03
 
 # Import additional configuration files #{{{
 #
@@ -114,17 +114,17 @@ history: 10000
 # Font configuration {{{
 font:
   normal:
-    family: DejaVu Sans Mono
-    style: Book
+    family: Azeret Mono
+    style: Regular
   bold:
-    family: DejaVu Sans Mono
+    family: Azeret Mono
     style: Bold
   italic:
-    family: DejaVu Sans Mono
-    style: Oblique
+    family: Azeret Mono
+    style: Italic
   bold_italic:
-    family: DejaVu Sans Mono
-    style: Bold Oblique
+    family: Azeret Mono
+    style: Bold Italic
 
 size: 9
 # End font configuration }}}
