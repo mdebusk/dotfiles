@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # Michael DeBusk
-# Last edit: 2022-04-28 09:38
+# Last edit: 2022-05-13 14:41
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -108,7 +108,7 @@ esac
 if [ "$TERM" != "dumb" ]; then
     d=$XDG_CONFIG_HOME/dircolors
     test -r $d && eval "$(dircolors $d)"
-    alias ls='ls -lhpv --color=auto --group-directories-first'
+    alias ls='ls -lhpv --color=auto --group-directories-first --time-style=long-iso'
 fi
 
 #Sane defaults for cp, rm, and mv; prompt before overwrite
