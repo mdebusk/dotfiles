@@ -1,34 +1,61 @@
 /* For styling the rendered Markdown */
+
+/* html {{{ */
+html {
+    font-size: 16pt;
+    font-family: Andika, Georgia, "Times New Roman", serif;
+}
+/* End html }}} */
+
+/* Headings {{{ */
 h1, h2, h3, h4, h5, h6 {
     color: #2aa198;
     font-family: sans-serif;
 }
-
 h1 {
     font-size: 28pt;
 }
-
 h2 {
     font-size: 21pt;
 }
-
 h3 {
     font-size: 16pt;
 }
-
 h4 {
     font-size: 12pt;
 }
-
 h5 {
     font-size: 9pt;
 }
-
 h6 {
     font-size: 7pt;
 }
+/* End headings }}}*/
 
-body {
-    font-size: 16pt;
-    font-family: Georgia, "Times New Roman", serif;
+/* Definition lists {{{ */
+/* https://www.the-art-of-web.com/css/format-dl/ */
+dl {
+    border: 3px double;
+    padding: 0.5em;
 }
+dt {
+    float: left;
+    clear: left;
+    /* width: 100px; */
+    text-align: right;
+    font-weight: bold;
+}
+dt::after {
+    content: ": ";
+}
+dd {
+    margin: 0 0 0 110px;
+    padding: 0 0 0.5em 0;
+}
+/* End definition lists }}} */
+
+/* Ordered and unordered Lists {{{ */
+ol,ul {
+    line-height: 1.0;
+}
+/* End unordered Lists }}} */
