@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2022-05-08 16:23
+" Last edit: 2022-05-14 22:40
 
 
 " ** 1. Important "{{{
@@ -69,12 +69,17 @@ set ttyfast              "smoother changes
 " ** 10. GUI "{{{
 if has("gui_running")
     let g:solarized_menu=0            "Activate menu for Solarized color scheme
-    set guifont=Azeret\ Mono\ 12 "Set the font and size
-    set guioptions-=L                 "Remove left scrollbar
+    set guifont=Azeret\ Mono\ 12      "Set the font and size
+    set guioptions-=l                 "Remove left scrollbar
+    set guioptions-=R                 "Remove right scrollbar if vsplit
+    set guioptions-=b                 "Remove bottom scrollbar
+    set guioptions-=F                 "Remove footer from Motif
+    set guioptions-=L                 "Remove left scrollbar if vsplit
     set guioptions-=T                 "Remove toolbar
     set guioptions-=m                 "Remove menu bar
     set guioptions-=r                 "Remove right scrollbar
     "set lines=43 columns=120         "Not useful with a tiling window manager
+    "set lines=999 columns=999        "Creates a pseudo-fullscreen gvim
 endif
 " End GUI}}}
 
