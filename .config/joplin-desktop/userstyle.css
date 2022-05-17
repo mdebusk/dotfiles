@@ -1,11 +1,15 @@
-/* For styling the rendered Markdown */
+/* Joplin's userstyle.css for Michael DeBusk
+ * https://gitbub.com/mdebusk
+ * For styling the rendered Markdown
+ * Last edit: 2022-05-17 14:56
+ */
 
-/* html {{{ */
-html {
+/* Body {{{ */
+body {
     font-size: 16pt;
     font-family: Andika, Georgia, "Times New Roman", serif;
 }
-/* End html }}} */
+/* End body }}} */
 
 /* Headings {{{ */
 h1, h2, h3, h4, h5, h6 {
@@ -32,6 +36,12 @@ h6 {
 }
 /* End headings }}}*/
 
+/* Lists {{{ */
+ol,ul,td {
+    line-height: 1.0;
+}
+/* End unordered Lists }}} */
+
 /* Definition lists {{{ */
 /* https://www.the-art-of-web.com/css/format-dl/ */
 dl {
@@ -53,9 +63,3 @@ dd {
     padding: 0 0 0.5em 0;
 }
 /* End definition lists }}} */
-
-/* Ordered and unordered Lists {{{ */
-ol,ul {
-    line-height: 1.0;
-}
-/* End unordered Lists }}} */
