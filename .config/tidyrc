@@ -1,0 +1,46 @@
+# HTML Tidy version 5.9.20 Configuration File for Michael DeBusk
+# https://github.com/mdebusk
+# Ref: https://api.html-tidy.org/tidy/quickref_next.html
+# Last edit: 2022-05-17 22:21
+
+# Document Display Options {{{
+quiet yes
+#}}}
+
+# Document In and Out Options {{{
+add-meta-charset yes
+#}}}
+
+# File Input-Output Options {{{
+#}}}
+
+# Diagnostics Options {{{
+#}}}
+
+# Encoding Options {{{
+#}}}
+
+# Cleanup Options {{{
+bare yes
+drop-proprietary-attributes yes
+logical-emphasis yes
+#}}}
+
+# Entities Options {{{
+numeric-entities yes
+#}}}
+
+# Repair Options {{{
+#}}}
+
+# Transformation Options {{{
+#}}}
+
+# Teaching Tidy Options {{{
+#}}}
+
+# Pretty Print Options {{{
+indent yes
+sort-attributes alpha
+wrap 72
+}}}
