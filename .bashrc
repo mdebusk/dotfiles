@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # Michael DeBusk
-# Last edit: 2022-05-13 14:41
+# Last edit: 2022-05-17 22:29
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -35,6 +35,7 @@ export XDG_CACHE_HOME=$HOME/.cache
 export CALOPT="--col=$XDG_CONFIG_HOME/ccal/cal.col --d=$XDG_DATA_HOME/ccal/cal.dat --u --f"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export SQLITE_HISTORY=$XDG_CACHE_HOME/sqlite3/sqlite_history
+export HTML_TIDY=$XDG_CONFIG_HOME/tidyrc
 
 # News server, for SLRN
 export NNTPSERVER='news.eternal-september.org'
