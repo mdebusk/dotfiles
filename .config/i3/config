@@ -1,7 +1,7 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference
 # Michael DeBusk
-# Last edit: 2022-04-25 12:38
+# Last edit: 2022-05-20 18:39
 
 # 4.16: Variables {{{1
 # Set the modifier key to the "Windows" key{{{2
@@ -226,6 +226,7 @@ floating_modifier $mod
 # }}}
 
 # 4.12: Default Border Style For New Windows {{{
+default_border pixel 3
 # }}}
 
 # 4.13: Hiding Borders Adjacent To The Screen Edges {{{
