@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit: 2022-05-14 22:40
+" Last edit :2022-05-22 20:57
 
 
 " ** 1. Important "{{{
@@ -347,6 +347,9 @@ augroup END "}}}
 
 " for QIF files
 :iab ckng MAutopay<CR>LAssets:Current Assets:Capital One 360:Checking
+
+" Github URL
+:iab gthb Michael DeBusk (https://github.com/mdebusk)
 " End Abbreviations}}}
 
 " ** Plugins "{{{
@@ -384,4 +387,7 @@ au CursorHoldI * stopinsert
 " End reference chart}}}
 let &t_SI = "\e[6 q" " Steady bar for insert mode
 let &t_EI = "\e[2 q" " Steady block for everything else
+
+" Save macro in register d
+let @d='gg/Last\ edit\ \+:\ \d/e16xidts kbýagg'
 " End Miscellaneous stuff}}}
