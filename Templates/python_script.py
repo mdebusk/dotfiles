@@ -14,7 +14,7 @@
 # End Description}}}
 
 #{{{License and copyright
-#  Copyright (C) 2021 Michael DeBusk (https://github.com/mdebusk)
+#  Copyright © 2022 Michael DeBusk (https://github.com/mdebusk)
 #
 #  Full GNU General Public License can be viewed here:
 #  https://www.gnu.org/licenses/gpl-3.0.en.html
