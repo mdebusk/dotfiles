@@ -12,9 +12,9 @@
 ###############################################################################}}}
 
 #{{{License and copyright
-#  Copyright (C) 2021 Michael DeBusk (https://github.com/mdebusk/)
+#  Copyright © 2022 Michael DeBusk (https://github.com/mdebusk/)
 
-#  Template copyright (C) 2007, 2019 David Both LinuxGeek46@both.org
+#  Template copyright © 2007, 2019 David Both LinuxGeek46@both.org
 #  https://opensource.com/article/19/12/bash-script-template
 
 #  Full GNU General Public License can be viewed here:
@@ -27,7 +27,7 @@
 #
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  MERcHANTABILITY or FITNESS FOR A PARTIcULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
@@ -37,7 +37,7 @@
 
 # {{{Help
 
-set -euo pipefail # Catch a variety of errors
+set -euo pipefail # catch a variety of errors
 
 Help()
 {
@@ -60,7 +60,7 @@ EOF
 License()
 {
     cat <<EOF
-$0 Copyright (C) 2021 Michael DeBusk
+$0 Copyright © 2022 Michael DeBusk
 
 This program comes with ABSOLUTELY NO WARRANTY.
 This is free software, and you are welcome to
@@ -71,8 +71,8 @@ EOF
 }
 #}}} End license display
 
-# {{{Check for root.
-CheckRoot()
+# {{{check for root.
+checkRoot()
 {
    # If we are not running as root we exit the program
    if [ `id -u` != 0 ]
@@ -88,7 +88,7 @@ CheckRoot()
 # Sanity checks
 #
 # Are we root? If not, then quit
-# CheckRoot
+# checkRoot
 
 # Initialize variables
 option=""
