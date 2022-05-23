@@ -1,0 +1,159 @@
+[Desktop Entry]
+Version=1.0
+Type=Application|Link|Directory
+Name=Specific name of the application
+GenericName=Generic name of the application
+comment=Tooltip
+Exec=Path to executable
+Path=\working\directory\
+URL=If entry is Link type, the URL to access
+Terminal=false|true
+Icon=/path/to/icon
+MimeType=see /etc/mime.types
+categories=See below
+Keywords=
+
+# https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
+
+## Main categories
+# AudioVideo;
+# Audio;
+# Video;
+# Development;
+# Education;
+# Game;
+# Graphics;
+# Network;
+# Office;
+# Science;
+# Settings;
+# System;
+# Utility;
+
+## Additional categories
+# 2DGraphics;
+# 3DGraphics;
+# Accessibility;
+# ActionGame;
+# Adult;
+# AdventureGame;
+# Amusement;
+# ArcadeGame;
+# Archiving;
+# Art;
+# ArtificialIntelligence;
+# Astronomy;
+# AudioVideoEditing;
+# Biology;
+# BlocksGame;
+# BoardGame;
+# Building;
+# calculator;
+# calendar;
+# cardGame;
+# chart;
+# chat;
+# chemistry;
+# clock;
+# compression;
+# computerScience;
+# consoleOnly;
+# construction;
+# contactManagement;
+# core;
+# DataVisualization;
+# Database;
+# Debugger;
+# DesktopSettings;
+# Dialup;
+# Dictionary;
+# DiscBurning;
+# Documentation;
+# Economy;
+# Electricity;
+# Electronics;
+# Email;
+# Emulator;
+# Engineering;
+# Feed;
+# FileManager;
+# FileTools;
+# FileTransfer;
+# Filesystem;
+# Finance;
+# Flowchart;
+# GNOME;
+# GTK;
+# GUIDesigner;
+# Geography;
+# Geology;
+# Geoscience;
+# HamRadio;
+# HardwareSettings;
+# History;
+# Humanities;
+# IDE;
+# IRcclient;
+# ImageProcessing;
+# InstantMessaging;
+# Java;
+# KDE;
+# KidsGame;
+# Languages;
+# Literature;
+# LogicGame;
+# Maps;
+# Math;
+# MedicalSoftware;
+# Midi;
+# Mixer;
+# Monitor;
+# Motif;
+# Music;
+# News;
+# NumericalAnalysis;
+# OcR;
+# P2P;
+# PDA;
+# PackageManager;
+# Parallelcomputing;
+# Photography;
+# Physics;
+# Player;
+# Presentation;
+# Printing;
+# Profiling;
+# ProjectManagement;
+# Publishing;
+# Qt;
+# RasterGraphics;
+# Recorder;
+# RemoteAccess;
+# Revisioncontrol;
+# Robotics;
+# RolePlaying;
+# Scanning;
+# Security;
+# Sequencer;
+# Shooter;
+# Simulation;
+# Spirituality;
+# Sports;
+# SportsGame;
+# Spreadsheet;
+# StrategyGame;
+# TV;
+# Telephony;
+# TelephonyTools;
+# TerminalEmulator;
+# TextEditor;
+# TextTools;
+# Translation;
+# Tuner;
+# VectorGraphics;
+# Videoconference;
+# Viewer;
+# WebBrowser;
+# WebDevelopment;
+# WordProcessor;
+# XFcE;
