@@ -21,14 +21,14 @@ P:Parts, see reference
 Q:Tempo, e.g., 1/4=120 or "Allegro"
 r:remark
 R:Rhythm, e.g., reel
-S:Source, e.g., Collected in Brittany
+S:Source, e.g., collected in Brittany
 U:user defined; the letters H-W and h-w and the symbol ~ can be reassigned
 V:voice; Used for multi-voice music (not used yet)
 W:Words placed below the last staff
 Z:Michael DeBusk (transcription, can include date and e-mail address)
 Z:abc-transcription Michael DeBusk, datestamp
 % Z:abc-edited-by Michael DeBusk, datestamp
-Z:abc-copyright &copy; Michael DeBusk (Copyright date of transcription, not of song)
+Z:abc-copyright © Michael DeBusk (Copyright date of transcription, not of song)
 K:Key, e.g., A, must be last
 % End header; tune must follow immediately }}}
 
