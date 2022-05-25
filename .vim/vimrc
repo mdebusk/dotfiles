@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit : 2022-05-24 22:29
+" Last edit : 2022-05-24 23:36
 
 
 " ** 1. Important "{{{
@@ -358,11 +358,11 @@ packadd! matchit
 
 "" Make netrw look like NERDtree {{{2
 "" https://shapeshed.com/vim-netrw/
-"let g:netrw_banner = 0
-"let g:netrw_liststyle = 3
-"let g:netrw_browse_split = 4
-"let g:netrw_altv = 1
-"let g:netrw_winsize = 25
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
 "augroup ProjectDrawer
   "autocmd!
   "autocmd VimEnter * :Vexplore
@@ -390,5 +390,5 @@ let &t_SI = "\e[6 q" " Steady bar for insert mode
 let &t_EI = "\e[2 q" " Steady block for everything else
 
 " Save macro in register d
-let @d='/last edit : /eDA dts ýaxgg'
+let @d='gg/last edit : /eDa dtsýagg'
 " End Miscellaneous stuff}}}
