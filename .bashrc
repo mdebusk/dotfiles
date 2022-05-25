@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # Michael DeBusk
-# Last edit: 2022-05-17 22:29
+# Last edit : 2022-05-25 01:49
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -32,10 +32,15 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
+export XDG_STATE_HOME=$HOME/.local/state
 export CALOPT="--col=$XDG_CONFIG_HOME/ccal/cal.col --d=$XDG_DATA_HOME/ccal/cal.dat --u --f"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export SQLITE_HISTORY=$XDG_CACHE_HOME/sqlite3/sqlite_history
 export HTML_TIDY=$XDG_CONFIG_HOME/tidyrc
+export DVDCSS_CACHE=$XDG_DATA_HOME/dvdcss
+export GPODDER_HOME=~/.config/gpodder/
+export GPODDER_DOWNLOAD_DIR=~/Podcasts/
+export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer
 
 # News server, for SLRN
 export NNTPSERVER='news.eternal-september.org'
@@ -127,6 +132,7 @@ alias remind='remind -@2 $XDG_CONFIG_HOME/remind/reminders.rem'
 alias tkremind='tkremind $XDG_CONFIG_HOME/remind/reminders.rem'
 alias slrn='slrn -i "$XDG_CONFIG_HOME"/slrn/slrnrc -f "$XDG_CONFIG_HOME"/slrn/jnewsrc-september'
 alias sqlite3='sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc'
+alias dosbox='dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox-0.74-3.conf'
 
 # Use vim as a pager with syntax highlighting
 alias vless='/usr/local/share/vim/vim82/macros/less.sh'
