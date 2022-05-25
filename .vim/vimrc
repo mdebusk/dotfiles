@@ -1,6 +1,6 @@
 " Vim configuration file for Michael DeBusk
 " https://github.com/mdebusk
-" Last edit :2022-05-22 20:57
+" Last edit : 2022-05-24 22:29
 
 
 " ** 1. Important "{{{
@@ -290,6 +290,7 @@ augroup markdown "{{{2
     au BufNewFile,BufRead *.md :iab -- &#8211;
     au BufNewFile,BufRead *.md :iab --- &#8212;
     au BufNewFile,BufRead *.md :iab (tm) &#8482;
+    let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 augroup END " markdown}}}
 
 augroup filetype_LaTeX "{{{2
@@ -389,5 +390,5 @@ let &t_SI = "\e[6 q" " Steady bar for insert mode
 let &t_EI = "\e[2 q" " Steady block for everything else
 
 " Save macro in register d
-let @d='gg/Last\ edit\ \+:\ \d/e16xidts kbýagg'
+let @d='/last edit : /eDA dts ýaxgg'
 " End Miscellaneous stuff}}}
