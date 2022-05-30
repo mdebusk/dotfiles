@@ -1,6 +1,14 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# Michael DeBusk
-# Last edit : 2022-05-25 01:49
+###############################################################################
+# Filename   : .bashrc                                                        #
+# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Created    : 2008                                                           #
+# Last edit  : 2022-05-30 11:51                                               #
+# Purpose    : Configuration file for bash shell                              #
+# Depends    : bash                                                           #
+# Arguments  : none                                                           #
+# Known bugs : NKA                                                            #
+# To do      : none yet                                                       #
+###############################################################################
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -147,7 +155,7 @@ alias pwgen='echo; tr -dc A-Za-z0-9_ < /dev/urandom | head -c 32 | xargs;echo'
 alias mirror='wget --mirror --convert-links --html-extension --wait=2 -o log'
 
 # Update all packages
-alias update='sudo apt update && sudo apt dist-upgrade -y'
+# alias update='sudo apt update && sudo apt dist-upgrade -y'
 
 # Find zombie processes
 alias zombie='ps axo stat,ppid,pid,comm | grep -w defunct'
