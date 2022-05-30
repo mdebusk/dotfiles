@@ -1,6 +1,14 @@
-# ~/.profile: executed by Bourne-compatible login shells.
-# Michael DeBusk
-# Last edit: 2022-02-23 17:37
+###############################################################################
+# Filename   : .profile                                                       #
+# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Created    : Unknown                                                        #
+# Last edit  : 2022-02-23 17:37                                               #
+# Purpose    : Sets bash environment variables                                #
+# Depends    : bash                                                           #
+# Arguments  : N/A                                                            #
+# Known bugs : NKA                                                            #
+# To do      : N/A                                                            #
+###############################################################################
 
 if [ "$BASH" ]; then
   if [ -f ~/.bashrc ]; then
