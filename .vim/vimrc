@@ -1,7 +1,14 @@
-" Vim configuration file for Michael DeBusk
-" https://github.com/mdebusk
-" Last edit : 2022-05-27 10:04
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Filename   : vimrc                                                          "
+" Author     : Michael DeBusk (https://github.com/mdebusk/)                   "
+" Created    : 2016                                                           "
+" Last edit  : 2022-05-30 12:11                                               "
+" Purpose    : Initialization file for vim                                    "
+" Depends    : vim                                                            "
+" Arguments  : none                                                           "
+" Known bugs : NKA                                                            "
+" To do      : none yet                                                       "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " ** 1. Important "{{{
 set nocompatible         "Turn off vi-compatible mode
@@ -405,5 +412,5 @@ let &t_SI = "\e[6 q" " Steady bar for insert mode
 let &t_EI = "\e[2 q" " Steady block for everything else
 
 " Save macro in register d
-let @d='gg/last edit : \d/eRdtsggkbkbýagg:nohl'
+let @d='gg/last edit\ *:\ *\d/e:nohlRdtsýaggd'
 " End Miscellaneous stuff}}}
