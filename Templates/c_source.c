@@ -1,9 +1,10 @@
 /*****************************************************************************/
-/* File       :                                                              */
+/* Filename   :                                                              */
 /* Author     : Michael DeBusk (https://github.com/mdebusk)                  */
+/* Created    :                                                              */
 /* Last edit  :                                                              */
-/* Object     :                                                              */
-/* Args       :                                                              */
+/* Purpose    :                                                              */
+/* Argumants  :                                                              */
 /* Known bugs :                                                              */
 /* To do      :                                                              */
 /*****************************************************************************/

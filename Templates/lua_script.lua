@@ -1,9 +1,9 @@
 #!/usr/bin/env lua
---
+
 --[[ Description {{{
 Filename  :
 Author    : Michael DeBusk (https://github.com/mdebusk)
-Date      :
+Created   :
 Last edit :
 Purpose   :
 Arguments :
