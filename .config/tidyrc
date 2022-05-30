@@ -1,7 +1,15 @@
-# HTML Tidy version 5.9.20 Configuration File for Michael DeBusk
-# https://github.com/mdebusk
-# Ref: https://api.html-tidy.org/tidy/quickref_next.html
-# Last edit: 2022-05-17 22:21
+###############################################################################
+# Filename   : tidyrc                                                         #
+# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Created    : unknown                                                        #
+# Last edit  : 2022-05-17 22:21                                               #
+# Purpose    : Configuration file for HTML Tidy                               #
+# Depends    : HTML Tidy version 5.9.20                                       #
+#              https://api.html-tidy.org/tidy/quickref_next.html              #
+# Arguments  : N/A                                                            #
+# Known bugs : NKA                                                            #
+# To do      : N/A                                                            #
+###############################################################################
 
 # Document Display Options {{{
 quiet yes
