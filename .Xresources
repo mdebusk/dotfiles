@@ -1,5 +1,14 @@
-! Xresources file for Michael DeBusk
-! Last edit: 2021-05-07 15:50
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Filename   : .Xresources                                                    !
+! Author     : Michael DeBusk (https://github.com/mdebusk/)                   !
+! Created    : 2021-05-01                                                     !
+! Last edit  : 2021-05-07 15:50                                               !
+! Purpose    : Configuration file for xorg and related programs               !
+! Depends    : xorg                                                           !
+! Arguments  : x                                                              !
+! Known bugs : x                                                              !
+! To do      : x                                                              !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ! Use a nice truetype font and size by default...
 ! URxvt.font:xft:OpenDyslexicMono:style=Regular:size=7,xft:IBM Plex Mono:style=Regular:size=7
