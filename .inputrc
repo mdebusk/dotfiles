@@ -1,5 +1,16 @@
-# .inputrc for Michael DeBusk
-# Last edited: 2021-12-06 13:44
+###############################################################################
+# Filename   : .inputrc                                                       #
+# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Created    : Aft 2008                                                       #
+# Last edit  : 2022-05-30 15:08                                               #
+# Purpose    : User configuration file for GNU readline                       #
+# Depends    : readline                                                       #
+# Arguments  : N/A                                                            #
+# Known bugs : NKA                                                            #
+# To do      : N/A
+###############################################################################
+
+
 
 # Some of these were taken from
 # https://www.topbug.net/blog/2017/07/31/inputrc-for-humans/
@@ -8,7 +19,7 @@
 # Carry over site-wide readline configuration
 $include /etc/inputrc
 
-# Open current directory in nautilus
+# Open current directory in nautilus with the F5 key
 "\e[15~": "nautilus . &\n"
 
 # Emulate some aspects of 4DOS command-line editing and history
