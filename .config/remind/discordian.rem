@@ -1,6 +1,16 @@
-# Discordian holidays reminder file
-# Adapted from the Unix calendar utility and the Wikipedia article
-# Last edit: 2021-05-19 09:08
+###############################################################################
+# Filename   : discordian.rem                                                 #
+# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Created    : Unknown                                                        #
+# Last edit  : 2021-05-19 09:08                                               #
+# Purpose    : Discordian holidays file for remind                            #
+# Depends    : remind                                                         #
+# Arguments  : N/A                                                            #
+# Known bugs : NKA                                                            #
+# To do      : N/A                                                            #
+###############################################################################
+
+
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
 # include /home/michael/.config/remind/discordian.rem
 

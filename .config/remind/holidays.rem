@@ -1,6 +1,15 @@
-# Reminders file for Michael DeBusk
-# Holidays
-# Last edit: 2022-05-15 19:17
+###############################################################################
+# Filename   : holidays.rem                                                   #
+# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Created    : Unknown                                                        #
+# Last edit  : 2022-05-15 19:17                                               #
+# Purpose    : Holidays file for remind                                       #
+# Depends    : remind                                                         #
+# Arguments  : N/A                                                            #
+# Known bugs : NKA                                                            #
+# To do      : N/A                                                            #
+###############################################################################
+
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
 # include /home/michael/.config/remind/holidays.rem
 

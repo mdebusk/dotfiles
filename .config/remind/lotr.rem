@@ -1,7 +1,15 @@
-# Reminders file for Michael DeBusk
-# Lord of the Rings history
-# Adapted from the Unix calendar utility
-# Last edit: 2022-03-20 12:48
+###############################################################################
+# Filename   : lotr.rem                                                       #
+# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Created    : Unknown                                                        #
+# Last edit  : 2022-03-20 12:48                                               #
+# Purpose    : Lord of the Rings days file for remind                         #
+# Depends    : remind                                                         #
+# Arguments  : N/A                                                            #
+# Known bugs : NKA                                                            #
+# To do      : N/A                                                            #
+###############################################################################
+
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
 # include /home/michael/.config/remind/lotr.rem
 
