@@ -1,7 +1,15 @@
-# ~/.nanorc
-# Michael DeBusk
-# https://www.nano-editor.org/dist/latest/nanorc.5.html
-# Last edit 2021-08-14 09:59
+###############################################################################
+# Filename   : .nanorc                                                        #
+# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Created    : 2021-01-16                                                     #
+# Last edit  : 2021-08-14 09:59                                               #
+# Purpose    : Configuration file for nano                                    #
+#              https://www.nano-editor.org/dist/latest/nanorc.5.html          #
+# Depends    : nano                                                           #
+# Arguments  : N/A                                                            #
+# Known bugs : NKA                                                            #
+# To do      : N/A                                                            #
+###############################################################################
 
 # Options{{{
 set atblanks
@@ -22,7 +30,7 @@ set titlecolor normal,normal
 include ~/.config/nano/syntax/nanorc/*.nanorc
 #}}}
 
-#Rebinding Keys{{{
-#None yet
-#}}}
+# Rebinding Keys{{{
+# None yet
+# }}}
 

@@ -1,8 +1,15 @@
-##################################################
-# Openbox autostart file for Michael DeBusk
-# https://github.com/mdebusk
-# Last edit: 2022-03-07 14:00
-##################################################
+###############################################################################
+# Filename   : autostart                                                      #
+# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Created    : 2022-02-21                                                     #
+# Last edit  : 2022-03-07 14:00                                               #
+# Purpose    : automatically starts programs when booting openbox             #
+# Depends    : openbox                                                        #
+# Arguments  : N/A                                                            #
+# Known bugs : NKA                                                            #
+# To do      : N/A                                                            #
+###############################################################################
+
 tint2 &
 compton -b &
 feh --bg-scale "/home/michael/Pictures/Wallpapers/Openbox.jpg" &

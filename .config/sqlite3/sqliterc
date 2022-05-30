@@ -1,6 +1,14 @@
--- SQLite3 configuration file for Michael DeBusk
--- https://github.com/mdebusk
--- Last edit: 2021-08-03 13:31
+--------------------------------------------------------------------------------
+-- Filename   : sqliterc                                                      --
+-- Author     : Michael DeBusk (https://github.com/mdebusk/)                  --
+-- Created    : 2021-03-19                                                    --
+-- Last edit  : 2021-08-03 13:31                                              --
+-- Purpose    : Initialization file for sqlite3                               --
+-- Depends    : sqlite3                                                       --
+-- Arguments  : N/A                                                           --
+-- Known bugs : NKA                                                           --
+-- To do      : N/A                                                           --
+--------------------------------------------------------------------------------
 
 .headers on
 .timer off

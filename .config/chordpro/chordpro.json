@@ -1,7 +1,14 @@
-// Configuration for ChordPro for Michael DeBusk
-// https://github.com/mdebusk
-// Created   : 2022-05-22
-// Last edit : 2022-05-22 17:20
+///////////////////////////////////////////////////////////////////////////////
+// Filename   : chordpro.json                                                //
+// Author     : Michael DeBusk (https://github.com/mdebusk/)                 //
+// Created    : 2022-05-22                                                   //
+// Last edit  : 2022-05-22 17:20                                             //
+// Purpose    : Configuration for ChordPro                                   //
+// Depends    : ChordPro                                                     //
+// Arguments  : N/A                                                          //
+// Known bugs : NKA                                                          //
+// To do      : N/A                                                          //
+///////////////////////////////////////////////////////////////////////////////
 
 {
     // Includes. These are processed first, before the rest of

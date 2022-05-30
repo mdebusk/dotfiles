@@ -1,7 +1,14 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator.
-# For Michael DeBusk
-# https://github.com/mdebusk
-# Last edit: 2022-05-08 16:03
+###############################################################################
+# Filename   : alacritty,yml                                                  #
+# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Created    : 2021-09-26                                                     #
+# Last edit  : 2022-05-08 16:03                                               #
+# Purpose    : Configuration for Alacritty                                    #
+# Depends    : alacritty                                                      #
+# Arguments  : N/A                                                            #
+# Known bugs : NKA                                                            #
+# To do      : N/A                                                            #
+###############################################################################
 
 # Import additional configuration files #{{{
 #

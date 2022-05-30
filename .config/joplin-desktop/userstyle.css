@@ -1,8 +1,14 @@
-/* Joplin's userstyle.css for Michael DeBusk
- * https://gitbub.com/mdebusk
- * For styling the rendered Markdown
- * Last edit: 2022-05-17 14:56
- */
+/******************************************************************************/
+/* Filename   : userstyle.css                                                 */
+/* Author     : Michael DeBusk (https://github.com/mdebusk/)                  */
+/* Created    : 2022-05-05                                                    */
+/* Last edit  : 2022-05-17 14:56                                              */
+/* Purpose    : user stylesheet for Joplin                                    */
+/* Depends    : joplin                                                        */
+/* Arguments  : N/A                                                           */
+/* Known bugs : NKA                                                           */
+/* To do      : N/A                                                           */
+/******************************************************************************/
 
 /* Body {{{ */
 body {

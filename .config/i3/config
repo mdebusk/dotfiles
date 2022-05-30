@@ -1,7 +1,16 @@
-# i3 config file (v4)
-# Please see http://i3wm.org/docs/userguide.html for a complete reference
-# Michael DeBusk
-# Last edit: 2022-05-20 18:39
+###############################################################################
+# Filename   : config                                                         #
+# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Created    : 2021-01-16                                                     #
+# Last edit  : 2022-05-20 18:39                                               #
+# Purpose    : Configuration file for i3 window manager                       #
+#              http://i3wm.org/docs/userguide.html                            #
+# Depends    : i3                                                             #
+# Arguments  : N/A                                                            #
+# Known bugs : NKA                                                            #
+# To do      : N/A                                                            #
+###############################################################################
+
 
 # 4.16: Variables {{{1
 # Set the modifier key to the "Windows" key{{{2
