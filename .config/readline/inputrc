@@ -1,0 +1,79 @@
+###############################################################################
+# Filename   : .inputrc                                                       #
+# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Created    : Aft 2008                                                       #
+# Last edit  : 2022-05-30 15:08                                               #
+# Purpose    : User configuration file for GNU readline                       #
+# Depends    : readline                                                       #
+# Arguments  : N/A                                                            #
+# Known bugs : NKA                                                            #
+# To do      : N/A
+###############################################################################
+
+
+
+# Some of these were taken from
+# https://www.topbug.net/blog/2017/07/31/inputrc-for-humans/
+# and some from a Usenet post by Rich Steiner
+
+# Carry over site-wide readline configuration
+$include /etc/inputrc
+
+# Open current directory in nautilus with the F5 key
+"\e[15~": "nautilus . &\n"
+
+# Emulate some aspects of 4DOS command-line editing and history
+# searching based on substrings
+"\e[1~": beginning-of-line
+"\e[3~": delete-char
+"\e[4~": end-of-line
+
+$if term=linux
+"\C-?": backward-delete-char
+$else
+"\C-?": delete-char
+$endif
+
+$if term=rxvt-unicode
+"\e[7~": beginning-of-line
+"\e[8~": end-of-line
+"\eOc": forward-word
+"\eOd": backward-word
+$endif
+# Improve history search
+"\C-p":history-search-backward
+"\C-n":history-search-forward
+"\M-[A":history-search-backward
+"\M-[B":history-search-forward
+"\C-x":kill-whole-linex
+
+# Use tab key to complete searches
+TAB: menu-complete
+
+# display possible completions using different colors to indicate their file types
+set colored-stats On
+set colored-completion-prefix On
+
+# auto completion will ignore cases
+set completion-ignore-case On
+
+# sets maximum number of characters to be the common prefix to display for completions
+set completion-prefix-display-length 3
+
+# Append a slash to completions that are symlinks to directories
+set mark-symlinked-directories On
+
+# Sets completions to be listed immediately instead of ringing the bell
+# when the completing word has more than one possible completion
+set show-all-if-ambiguous On
+
+# Sets completions to be listed immediately instead of ringing the bell
+# when the completing word has more than one possible completion but no
+# partial completion can be made
+set show-all-if-unmodified On
+
+# Sets completions to be appended by characters that indicate their file types
+set visible-stats On
+
+# Use vim keybindings in console
+# set editing-mode vi
