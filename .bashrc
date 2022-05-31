@@ -2,7 +2,7 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2022-05-30 11:51                                               #
+# Last edit  : 2022-05-30 22:32                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash                                                           #
 # Arguments  : none                                                           #
@@ -37,18 +37,25 @@ unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 # Help programs use the XDG Base Directory standard
+export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
-export XDG_CACHE_HOME=$HOME/.cache
 export XDG_STATE_HOME=$HOME/.local/state
+
 export CALOPT="--col=$XDG_CONFIG_HOME/ccal/cal.col --d=$XDG_DATA_HOME/ccal/cal.dat --u --f"
-export WGETRC="$XDG_CONFIG_HOME/wgetrc"
-export SQLITE_HISTORY=$XDG_CACHE_HOME/sqlite3/sqlite_history
-export HTML_TIDY=$XDG_CONFIG_HOME/tidyrc
 export DVDCSS_CACHE=$XDG_DATA_HOME/dvdcss
-export GPODDER_HOME=~/.config/gpodder/
-export GPODDER_DOWNLOAD_DIR=~/Podcasts/
-export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer
+export GPODDER_DOWNLOAD_DIR=$HOME/Podcasts/
+export GPODDER_HOME=~$XDG_DATA_HOME/gpodder/
+export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
+export HISTFILE=$XDG_STATE_HOME/bash/history
+export HTML_TIDY=$XDG_CONFIG_HOME/tidyrc
+export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
+export MPLAYER_HOME=$XDG_CONFIG_HOME/mplayer
+export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql_history
+export NODE_REPL_HISTORY=$XDG_DATA_HOME/node_repl_history
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export SQLITE_HISTORY=$XDG_CACHE_HOME/sqlite3/sqlite_history
+export WGETRC=$XDG_CONFIG_HOME/wgetrc
 
 # News server, for SLRN
 export NNTPSERVER='news.eternal-september.org'
@@ -138,9 +145,9 @@ alias wget="wget -c"
 # Help programs use the XDG Base Directory standard
 alias remind='remind -@2 $XDG_CONFIG_HOME/remind/reminders.rem'
 alias tkremind='tkremind $XDG_CONFIG_HOME/remind/reminders.rem'
-alias slrn='slrn -i "$XDG_CONFIG_HOME"/slrn/slrnrc -f "$XDG_CONFIG_HOME"/slrn/jnewsrc-september'
-alias sqlite3='sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc'
-alias dosbox='dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox-0.74-3.conf'
+alias slrn='slrn -i $XDG_CONFIG_HOME"/slrn/slrnrc -f "$XDG_CONFIG_HOME/slrn/jnewsrc-september'
+alias sqlite3='sqlite3 -init $XDG_CONFIG_HOME/sqlite3/sqliterc'
+alias dosbox='dosbox -conf $XDG_CONFIG_HOME/dosbox/dosbox-0.74-3.conf'
 
 # Use vim as a pager with syntax highlighting
 alias vless='/usr/local/share/vim/vim82/macros/less.sh'
