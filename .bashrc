@@ -2,7 +2,7 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2022-05-30 22:32                                               #
+# Last edit  : 2022-05-31 22:46                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash                                                           #
 # Arguments  : none                                                           #
@@ -52,8 +52,10 @@ export HTML_TIDY=$XDG_CONFIG_HOME/tidyrc
 export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
 export MPLAYER_HOME=$XDG_CONFIG_HOME/mplayer
 export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql_history
+export NCFTPDIR=$XDG_CONFIG_HOME/ncftp
 export NODE_REPL_HISTORY=$XDG_DATA_HOME/node_repl_history
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export PWS_PREFSDIR=$XDG_CONFIG_HOME/pwsafe/
 export SQLITE_HISTORY=$XDG_CACHE_HOME/sqlite3/sqlite_history
 export WGETRC=$XDG_CONFIG_HOME/wgetrc
 
