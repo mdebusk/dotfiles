@@ -13,9 +13,10 @@ MimeType=see /etc/mime.types
 categories=See below
 Keywords=
 
+# Feel free to delete from here to EOF when finished
 # https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
 
-## Main categories
+## Main categories {{{
 # AudioVideo;
 # Audio;
 # Video;
@@ -28,9 +29,9 @@ Keywords=
 # Science;
 # Settings;
 # System;
-# Utility;
+# Utility;}}}
 
-## Additional categories
+## Additional categories{{{
 # 2DGraphics;
 # 3DGraphics;
 # Accessibility;
@@ -156,4 +157,4 @@ Keywords=
 # WebBrowser;
 # WebDevelopment;
 # WordProcessor;
-# XFcE;
+# XFcE; }}}
