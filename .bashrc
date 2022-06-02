@@ -2,7 +2,7 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2022-05-31 22:46                                               #
+# Last edit  : 2022-06-01 22:43                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash                                                           #
 # Arguments  : none                                                           #
@@ -45,7 +45,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 export CALOPT="--col=$XDG_CONFIG_HOME/ccal/cal.col --d=$XDG_DATA_HOME/ccal/cal.dat --u --f"
 export DVDCSS_CACHE=$XDG_DATA_HOME/dvdcss
 export GPODDER_DOWNLOAD_DIR=$HOME/Podcasts/
-export GPODDER_HOME=~$XDG_DATA_HOME/gpodder/
+export GPODDER_HOME=$XDG_CONFIG_HOME/gpodder/
 export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
 export HISTFILE=$XDG_STATE_HOME/bash/history
 export HTML_TIDY=$XDG_CONFIG_HOME/tidyrc
