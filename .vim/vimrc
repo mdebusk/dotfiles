@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://github.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-05-30 12:11                                               "
+" Last edit  : 2022-06-02 00:30                                               "
 " Purpose    : Initialization file for vim                                    "
 " Depends    : vim                                                            "
 " Arguments  : none                                                           "
@@ -291,8 +291,8 @@ set viminfo='20,\"50     "Read/write a .viminfo file
 " End Various}}}
 
 " ** Color scheme "{{{
-set t_Co=256
-" let g:solarized_termcolors=256
+set t_Co=16
+let g:solarized_termcolors=16
 let g:solarized_termtrans=1
 colorscheme solarized
 highlight Comment cterm=italic gui=italic
