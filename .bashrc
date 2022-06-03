@@ -2,7 +2,7 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2022-06-01 22:43                                               #
+# Last edit  : 2022-06-02 22:08                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash                                                           #
 # Arguments  : none                                                           #
@@ -15,58 +15,24 @@
 
 # ** Enviroment Variables{{{
 
-# # Escape sequences for less. I'm not sure why I put them here.'
-# export LESS_TERMCAP_mb=$'\E[01;31m' # begin blinking
-# export LESS_TERMCAP_md=$'\E[01;38;5;74m' # begin bold
-# export LESS_TERMCAP_me=$'\E[0m' # end mode
-# export LESS_TERMCAP_se=$'\E[0m' # end standout-mode
-# export LESS_TERMCAP_so=$'\E[38;5;246m' # begin standout-mode - info box
-# export LESS_TERMCAP_ue=$'\E[0m' # end underline
-# export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
-
-# Set PATH so it includes user's private bin if it exists
-test -d "$HOME/bin" && PATH="$HOME/bin:$PATH"
-
-# For NPM
-export NPM_PACKAGES="/home/michael/.npm-packages"
-export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
-export PATH="$NPM_PACKAGES/bin:$PATH"
+# Escape sequences for less. I'm not sure why I put them here.'
+export LESS_TERMCAP_mb=$'\E[01;31m' # begin blinking
+export LESS_TERMCAP_md=$'\E[01;38;5;74m' # begin bold
+export LESS_TERMCAP_me=$'\E[0m' # end mode
+export LESS_TERMCAP_se=$'\E[0m' # end standout-mode
+export LESS_TERMCAP_so=$'\E[38;5;246m' # begin standout-mode - info box
+export LESS_TERMCAP_ue=$'\E[0m' # end underline
+export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-
-# Help programs use the XDG Base Directory standard
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_STATE_HOME=$HOME/.local/state
-
-export CALOPT="--col=$XDG_CONFIG_HOME/ccal/cal.col --d=$XDG_DATA_HOME/ccal/cal.dat --u --f"
-export DVDCSS_CACHE=$XDG_DATA_HOME/dvdcss
-export GPODDER_DOWNLOAD_DIR=$HOME/Podcasts/
-export GPODDER_HOME=$XDG_CONFIG_HOME/gpodder/
-export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
-export HISTFILE=$XDG_STATE_HOME/bash/history
-export HTML_TIDY=$XDG_CONFIG_HOME/tidyrc
-export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
-export MPLAYER_HOME=$XDG_CONFIG_HOME/mplayer
-export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql_history
-export NCFTPDIR=$XDG_CONFIG_HOME/ncftp
-export NODE_REPL_HISTORY=$XDG_DATA_HOME/node_repl_history
-export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
-export PWS_PREFSDIR=$XDG_CONFIG_HOME/pwsafe/
-export SQLITE_HISTORY=$XDG_CACHE_HOME/sqlite3/sqlite_history
-export WGETRC=$XDG_CONFIG_HOME/wgetrc
 
 # News server, for SLRN
 export NNTPSERVER='news.eternal-september.org'
 
 # Does anybody look at the history file for less?
 export LESSHISTFILE=-
-
-# For Tesseract OCR
-export TESSDATA_PREFIX=/usr/share/tesseract-ocr/4.00/tessdata/
 
 # End Environment variables}}}
 
