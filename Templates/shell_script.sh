@@ -1,43 +1,44 @@
-#!/bin/bash 
+#!/usr/bin/env bash
 
-# Header block {{{
 ###############################################################################
-# Filename   :
-# Author     : Michael DeBusk (https://github.com/mdebusk)
-# Created    :
-# Last edit  :
-# Purpose    :
-# Arguments  : h=Help, g=License, V=version
-# Known bugs :
-# To do      :
-###############################################################################}}}
+# Filename   : x                                                              #
+# Author     : Michael DeBusk (https://github.com/mdebusk)                    #
+# Created    : x                                                              #
+# Last edit  : x                                                              #
+# Purpose    : x                                                              #
+# Arguments  : h=Help, g=License, V=version                                   #
+# Known bugs : NKA                                                            #
+# To do      : N.A                                                            #
+###############################################################################
 
-#{{{License and copyright
-#  Copyright © 2022 Michael DeBusk (https://github.com/mdebusk/)
+# License and copyright {{{
+###############################################################################
+# Copyright © 2022 Michael DeBusk (https://github.com/mdebusk/)               #
+# Template copyright © 2007, 2019 David Both LinuxGeek46@both.org             #
+# https://opensource.com/article/19/12/bash-script-template                   #
+# Full GNU General Public License can be viewed here:                         #
+# https://www.gnu.org/licenses/gpl-3.0.en.html                                #
+#                                                                             #
+# This program is free software; you can redistribute it and/or               #
+# modify it under the terms of the GNU General Public License as              #
+# published by the Free Software Foundation; either version 2 of              #
+# the License, or (at your option) any later version.                         #
+#                                                                             #
+# This program is distributed in the hope that it will be useful,             #
+# but WITHOUT ANY WARRANTY; without even the implied warranty of              #
+# MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. See the GNU            #
+# General Public License for more details.                                    #
+#                                                                             #
+# You should have received a copy of the GNU General Public                   #
+# License along with this program; if not, write to:                          #
+#                                                                             #
+# The Free Software Foundation, Inc.                                          #
+# 59 Temple Place, Suite 330                                                  #
+# Boston, MA 02111-1307                                                       #
+###############################################################################
+#  End license and copyright }}}
 
-#  Template copyright © 2007, 2019 David Both LinuxGeek46@both.org
-#  https://opensource.com/article/19/12/bash-script-template
-
-#  Full GNU General Public License can be viewed here:
-#  https://www.gnu.org/licenses/gpl-3.0.en.html
-#
-#  This program is free software; you can redistribute it and/or modify
-#  it under the terms of the GNU General Public License as published by
-#  the Free Software Foundation; either version 2 of the License, or
-#  (at your option) any later version.
-#
-#  This program is distributed in the hope that it will be useful,
-#  but WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERcHANTABILITY or FITNESS FOR A PARTIcULAR PURPOSE.  See the
-#  GNU General Public License for more details.
-#
-#  You should have received a copy of the GNU General Public License
-#  along with this program; if not, write to the Free Software
-#  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-#}}} End license and copyright
-
-# {{{Help
-
+# Help {{{
 set -euo pipefail # catch a variety of errors
 
 Help()
@@ -54,25 +55,23 @@ V     Print software version and exit.
 
 EOF
 }
-#}}} End help
+# End help }}}
 
-# {{{License display
-#
+# License display {{{
 License()
 {
     cat <<EOF
 $0 Copyright © 2022 Michael DeBusk
 
-This program comes with ABSOLUTELY NO WARRANTY.
-This is free software, and you are welcome to
-redistribute it under certain conditions.
-See https://www.gnu.org/licenses/gpl-3.0.en.html
+This program comes with ABSOLUTELY NO WARRANTY. This is free
+software, and you are welcome to redistribute it under certain
+conditions. See https://www.gnu.org/licenses/gpl-3.0.en.html
 
 EOF
 }
-#}}} End license display
+# End license display }}}
 
-# {{{check for root.
+# check for root {{{
 checkRoot()
 {
    # If we are not running as root we exit the program
@@ -82,21 +81,23 @@ checkRoot()
       exit
    fi
 }
-#}}} End check for root
+# End check for root }}}
 
 # {{{Main program
 
-# Sanity checks
+# Sanity checks {{{2
 #
 # Are we root? If not, then quit
 # checkRoot
+# End sanity checks }}}
 
-# Initialize variables
+# Initialize variables {{{2
 option=""
 Version="0.1"
 Msg="Hello world!"
-#
-# Process the input options. Add options as needed.
+# End variables }}}
+
+# Process the input options. Add options as needed. {{{2
 #
 # Get the options
 while getopts ":ghV" option; do
@@ -115,6 +116,7 @@ while getopts ":ghV" option; do
          exit;;
    esac
 done
+# End options }}}
 
 echo "$Msg"
 #}}} End main program
