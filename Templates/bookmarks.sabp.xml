@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><root>
+    <!-- Filename   : bookmarks.sabp.xml                              -->
+    <!-- Author     : Michael DeBusk (https://github.com/mdebusk/)    -->
+    <!-- Created    : x                                               -->
+    <!-- Last edit  : x                                               -->
+    <!-- Purpose    : Listing of bookmarks for Smart Audiobook Player -->
+    <!-- Book title : x                                               -->
+    <bookmark>
+        <title></title>
+        <description></description>
+        <fileName></filename>
+        <filePosition>0</filePosition>
+    </bookmark>
+</root>
+

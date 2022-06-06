@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><root>
+    <!-- Filename   : characters.sabp.xml                             -->
+    <!-- Author     : Michael DeBusk (https://github.com/mdebusk/)    -->
+    <!-- Created    : x                                               -->
+    <!-- Last edit  : x                                               -->
+    <!-- Purpose    : Characters listing for Smart Audiobook Player   -->
+    <!-- Book title : x                                               -->
+    <character>
+        <name></name>
+        <description></description>
+    </character>
+</root>
