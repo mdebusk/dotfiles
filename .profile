@@ -2,7 +2,7 @@
 # Filename   : .profile                                                       #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-06-02 22:08                                               #
+# Last edit  : 2022-06-06 16:52                                               #
 # Purpose    : Sets bash environment variables                                #
 # Depends    : bash                                                           #
 # Arguments  : N/A                                                            #
@@ -37,7 +37,8 @@ export EDITOR=$VISUAL
 export GTEST_ROOT=$HOME/Source/googletest/
 export GMOCK_ROOT=$HOME/Source/googletest/googlemock
 
-# Help programs use the XDG standard
+# Help programs use the XDG standard {{{
+test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && source ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
@@ -60,7 +61,7 @@ export SQLITE_HISTORY=$XDG_CACHE_HOME/sqlite3/sqlite_history
 export WGETRC=$XDG_CONFIG_HOME/wgetrc
 export ANDROID_HOME=$XDG_DATA_HOME/android
 export CARGO_HOME=$XDG_DATA_HOME/cargo
-
+# End xdg }}}
 
 # For NPM
 export NPM_PACKAGES="/home/michael/.npm-packages"
