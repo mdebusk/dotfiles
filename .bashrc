@@ -2,7 +2,7 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2022-06-02 22:08                                               #
+# Last edit  : 2022-06-06 14:59                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash                                                           #
 # Arguments  : none                                                           #
@@ -13,36 +13,44 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# ** Enviroment Variables{{{
+# ** Environment Variables{{{
 
-# Escape sequences for less. I'm not sure why I put them here.'
-export LESS_TERMCAP_mb=$'\E[01;31m' # begin blinking
-export LESS_TERMCAP_md=$'\E[01;38;5;74m' # begin bold
-export LESS_TERMCAP_me=$'\E[0m' # end mode
-export LESS_TERMCAP_se=$'\E[0m' # end standout-mode
-export LESS_TERMCAP_so=$'\E[38;5;246m' # begin standout-mode - info box
-export LESS_TERMCAP_ue=$'\E[0m' # end underline
-export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
+# Environment variables for less {{{2
+# Set colors for less.
+# https://wiki.archlinux.org/index.php/Color_output_in_console#less
+export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
+export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
+export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
+export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
+export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
+export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
+export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+# Does anybody look at the history file for less?
+export LESSHISTFILE=-
 
-# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
+# Sensible (to me) defaults for less
+# https://www.topbug.net/blog/2016/09/27/make-gnu-less-more-powerful/
+export LESS="-F -i -J -M -R -x4 -z-4"
+# End less}}}
+
+# Unset manpath so we can inherit from /etc/manpath via
+# the `manpath` command
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 # News server, for SLRN
 export NNTPSERVER='news.eternal-september.org'
 
-# Does anybody look at the history file for less?
-export LESSHISTFILE=-
-
 # End Environment variables}}}
 
 # ** History {{{
 # save all the histories
-export HISTFILESIZE=10000
-export HISTSIZE=5000
+export HISTFILESIZE=1000000
+export HISTSIZE=100000
 
-# don't put duplicate lines or empty spaces in the history
-export HISTCONTROL=ignoreboth
+# Ignore duplicates and commands starting with
+# an empty space, and delete duplicates
+export HISTCONTROL=ignoreboth:erasedups
 
 # Add date and time to history command output
 export HISTTIMEFORMAT="%FT%T: "
@@ -116,6 +124,7 @@ alias tkremind='tkremind $XDG_CONFIG_HOME/remind/reminders.rem'
 alias slrn='slrn -i $XDG_CONFIG_HOME"/slrn/slrnrc -f "$XDG_CONFIG_HOME/slrn/jnewsrc-september'
 alias sqlite3='sqlite3 -init $XDG_CONFIG_HOME/sqlite3/sqliterc'
 alias dosbox='dosbox -conf $XDG_CONFIG_HOME/dosbox/dosbox-0.74-3.conf'
+alias mysql-workbench="mysql_workbench.sh"
 
 # Use vim as a pager with syntax highlighting
 alias vless='/usr/local/share/vim/vim82/macros/less.sh'
@@ -124,13 +133,10 @@ alias vless='/usr/local/share/vim/vim82/macros/less.sh'
 alias grep='grep --color=auto'
 
 # Password generator
-alias pwgen='echo; tr -dc A-Za-z0-9_ < /dev/urandom | head -c 32 | xargs;echo'
+alias pwgen='echo -e "\n$(tr -dc A-Za-z0-9_ < /dev/urandom | head -c 32 | xargs)\n"'
 
 # Use wget to mirror a Web site
 alias mirror='wget --mirror --convert-links --html-extension --wait=2 -o log'
-
-# Update all packages
-# alias update='sudo apt update && sudo apt dist-upgrade -y'
 
 # Find zombie processes
 alias zombie='ps axo stat,ppid,pid,comm | grep -w defunct'
