@@ -2,7 +2,7 @@
 # Filename   : .profile                                                       #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-06-06 16:52                                               #
+# Last edit  : 2022-06-07 21:29                                               #
 # Purpose    : Sets bash environment variables                                #
 # Depends    : bash                                                           #
 # Arguments  : N/A                                                            #
@@ -57,6 +57,7 @@ export NCFTPDIR=$XDG_CONFIG_HOME/ncftp
 export NODE_REPL_HISTORY=$XDG_DATA_HOME/node_repl_history
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export PWS_PREFSDIR=$XDG_CONFIG_HOME/pwsafe/
+export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
 export SQLITE_HISTORY=$XDG_CACHE_HOME/sqlite3/sqlite_history
 export WGETRC=$XDG_CONFIG_HOME/wgetrc
 export ANDROID_HOME=$XDG_DATA_HOME/android
