@@ -2,7 +2,7 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2022-06-06 14:59                                               #
+# Last edit  : 2022-06-09 20:26                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash                                                           #
 # Arguments  : none                                                           #
@@ -176,7 +176,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Add support for fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f $XDG_CONFIG_HOME/fzf/fzf.bash ] && source $XDG_CONFIG_HOME/fzf/fzf.bash
 
 # Add completions for Alacritty
 source /home/michael/Source/alacritty/extra/completions/alacritty.bash
