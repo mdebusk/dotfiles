@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://github.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-06-02 00:30                                               "
+" Last edit  : 2022-06-10 23:37                                               "
 " Purpose    : Initialization file for vim                                    "
 " Depends    : vim                                                            "
 " Arguments  : none                                                           "
@@ -34,10 +34,10 @@ set listchars=tab:╠═,trail:░,nbsp:▃      "List of strings used for list 
 set nowrap               "Turn off word wrapping
 set number               "Enable line numbering, taking up 6 spaces
 set numberwidth=5        "Set line numbering to take up 5 spaces
-" set relativenumber       "Show line numbers relative to current line
+"" set relativenumber       "Show line numbers relative to current line
 set sidescrolloff=5      "Number of columns to show around the cursor
 set scrolloff=3          "Number of lines to show around the cursor
-" set scrolloff=999        " Keeps cursor line centered on screen
+"" set scrolloff=999        " Keeps cursor line centered on screen
 augroup numbertoggle     "Toggles relativenumber on and off based on mode
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -79,17 +79,19 @@ set statusline+=\ [Lines\:%L]              "Total lines in file
 " End Multiple tab pages}}}
 
 " ** 8. Terminal "{{{
+set term=alacritty       "Which terminal shall vim run?
 set title                "show title in console title bar
 set ttyfast              "smoother changes
 " End Terminal}}}
 
 " ** 9. Using the mouse "{{{
+set mousefocus                        "May as well use it if it's there
 " End Using the mouse}}}
 
 " ** 10. GUI "{{{
 if has("gui_running")
     let g:solarized_menu=0            "Activate menu for Solarized color scheme
-    set guifont=Azeret\ Mono\ 12      "Set the font and size
+    set guifont=Azeret\ Mono\ 9       "Set the font and size
     set guioptions-=l                 "Remove left scrollbar
     set guioptions-=R                 "Remove right scrollbar if vsplit
     set guioptions-=b                 "Remove bottom scrollbar
@@ -98,8 +100,8 @@ if has("gui_running")
     set guioptions-=T                 "Remove toolbar
     set guioptions-=m                 "Remove menu bar
     set guioptions-=r                 "Remove right scrollbar
-    "set lines=43 columns=120         "Not useful with a tiling window manager
-    "set lines=999 columns=999        "Creates a pseudo-fullscreen gvim
+    ""set lines=43 columns=120         "Not useful with a tiling window manager
+    ""set lines=999 columns=999        "Creates a pseudo-fullscreen gvim
 endif
 " End GUI}}}
 
@@ -125,10 +127,10 @@ set nojoinspaces
 set omnifunc=syntaxcomplete#Complete
 set matchpairs+=<:>      "Add angle brackets to matchpairs
 set nrformats-=octal     "Remove octal from auto-increment and auto-decrement
-set undodir=~/.vim/undodir
-set undofile
-"set textwidth=80        "Set text width, where text would wrap if it did
-"set wrapmargin=80
+set undodir=~/.vim/undodir "Store undofile out of the way
+set undofile              "Save and restorre undo file
+""set textwidth=80        "Set text width, where text would wrap if it did
+""set wrapmargin=80
 " End Editing text}}}
 
 " ** 15. Tabs and indenting "{{{
@@ -188,75 +190,75 @@ vnoremap > >gv
 " Autoclose mappings "{{{2
 " https://alldrops.info/posts/vim-drops/2019-02-13_custom-autoclose-mappings/
 " autoclose and position cursor to write text inside
-" inoremap ' ''<left>
-" inoremap ` ``<left>
-" inoremap " "<left>
-" inoremap ( ()<left>
-" inoremap [ []<left>
-" inoremap { {}<left>
+"" inoremap ' ''<left>
+"" inoremap ` ``<left>
+"" inoremap " "<left>
+"" inoremap ( ()<left>
+"" inoremap [ []<left>
+"" inoremap { {}<left>
 ""autoclose with ; and position cursor to write text inside
-" inoremap '; '';<left><left>
-" inoremap `; ``;<left><left>
-" inoremap "; "";<left><left>
-" inoremap (; ();<left><left>
-" inoremap [; [];<left><left>
-" inoremap {; {};<left><left>
+"" inoremap '; '';<left><left>
+"" inoremap `; ``;<left><left>
+"" inoremap "; "";<left><left>
+"" inoremap (; ();<left><left>
+"" inoremap [; [];<left><left>
+"" inoremap {; {};<left><left>
 ""autoclose with , and position cursor to write text inside
-" inoremap ', '',<left><left>
-" inoremap `, ``,<left><left>
-" inoremap ", "",<left><left>
-" inoremap (, (),<left><left>
-" inoremap [, [],<left><left>
-" inoremap {, {},<left><left>
+"" inoremap ', '',<left><left>
+"" inoremap `, ``,<left><left>
+"" inoremap ", "",<left><left>
+"" inoremap (, (),<left><left>
+"" inoremap [, [],<left><left>
+"" inoremap {, {},<left><left>
 ""autoclose and position cursor after
-" inoremap '<tab> ''
-" inoremap `<tab> ``
-" inoremap "<tab> ""
-" inoremap (<tab> ()
-" inoremap [<tab> []
-" inoremap {<tab> {}
+"" inoremap '<tab> ''
+"" inoremap `<tab> ``
+"" inoremap "<tab> ""
+"" inoremap (<tab> ()
+"" inoremap [<tab> []
+"" inoremap {<tab> {}
 ""autoclose with ; and position cursor after
-" inoremap ';<tab> '';
-" inoremap `;<tab> ``;
-" inoremap ";<tab> "";
-" inoremap (;<tab> ();
-" inoremap [;<tab> [];
-" inoremap {;<tab> {};
+"" inoremap ';<tab> '';
+"" inoremap `;<tab> ``;
+"" inoremap ";<tab> "";
+"" inoremap (;<tab> ();
+"" inoremap [;<tab> [];
+"" inoremap {;<tab> {};
 ""autoclose with , and position cursor after
-" inoremap ',<tab> '',
-" inoremap `,<tab> ``,
-" inoremap ",<tab> "",
-" inoremap (,<tab> (),
-" inoremap [,<tab> [],
-" inoremap {,<tab> {},
+"" inoremap ',<tab> '',
+"" inoremap `,<tab> ``,
+"" inoremap ",<tab> "",
+"" inoremap (,<tab> (),
+"" inoremap [,<tab> [],
+"" inoremap {,<tab> {},
 ""autoclose 2 lines below and position cursor in the middle
-" inoremap '<CR> '<CR>'<ESC>O
-" inoremap `<CR> `<CR>`<ESC>O
-" inoremap "<CR> "<CR>"<ESC>O
-" inoremap (<CR> (<CR>)<ESC>O
-" inoremap [<CR> [<CR>]<ESC>O
-" inoremap {<CR> {<CR>}<ESC>O
+"" inoremap '<CR> '<CR>'<ESC>O
+"" inoremap `<CR> `<CR>`<ESC>O
+"" inoremap "<CR> "<CR>"<ESC>O
+"" inoremap (<CR> (<CR>)<ESC>O
+"" inoremap [<CR> [<CR>]<ESC>O
+"" inoremap {<CR> {<CR>}<ESC>O
 ""autoclose 2 lines below adding ; and position cursor in the middle
-" inoremap ';<CR> '<CR>';<ESC>O
-" inoremap `;<CR> `<CR>`;<ESC>O
-" inoremap ";<CR> "<CR>";<ESC>O
-" inoremap (;<CR> (<CR>);<ESC>O
-" inoremap [;<CR> [<CR>];<ESC>O
-" inoremap {;<CR> {<CR>};<ESC>O
+"" inoremap ';<CR> '<CR>';<ESC>O
+"" inoremap `;<CR> `<CR>`;<ESC>O
+"" inoremap ";<CR> "<CR>";<ESC>O
+"" inoremap (;<CR> (<CR>);<ESC>O
+"" inoremap [;<CR> [<CR>];<ESC>O
+"" inoremap {;<CR> {<CR>};<ESC>O
 ""autoclose 2 lines below adding , and position cursor in the middle
-" inoremap ',<CR> '<CR>',<ESC>O
-" inoremap `,<CR> `<CR>`,<ESC>O
-" inoremap ",<CR> "<CR>",<ESC>O
-" inoremap (,<CR> (<CR>),<ESC>O
-" inoremap [,<CR> [<CR>],<ESC>O
-" inoremap {,<CR> {<CR>},<ESC>O
+"" inoremap ',<CR> '<CR>',<ESC>O
+"" inoremap `,<CR> `<CR>`,<ESC>O
+"" inoremap ",<CR> "<CR>",<ESC>O
+"" inoremap (,<CR> (<CR>),<ESC>O
+"" inoremap [,<CR> [<CR>],<ESC>O
+"" inoremap {,<CR> {<CR>},<ESC>O
 " End Autoclose mappings}}}
 " End Mapping}}}
 
 " ** 19. Reading and writing files "{{{
 set autowrite            "Writes file when switching to another buffer
 set backup               "keep a backup file
-" set cryptmethod=blowfish2 " Encrypt files with a strong method
+"" set cryptmethod=blowfish2 " Encrypt files with a strong method
 " https://www.techrepublic.com/article/turn-off-modeline-support-in-vim/
 set modelines=0          "Do not check for existing modelines
 set nomodeline           "Disable modeline support
@@ -385,10 +387,10 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
-"augroup ProjectDrawer
-  "autocmd!
-  "autocmd VimEnter * :Vexplore
-"augroup END
+""augroup ProjectDrawer
+"  "autocmd!
+"  "autocmd VimEnter * :Vexplore
+""augroup END
 " End netrw-to-NERDtree}}}
 " End Plugins}}}
 
@@ -413,4 +415,22 @@ let &t_EI = "\e[2 q" " Steady block for everything else
 
 " Save macro in register d
 let @d='gg/last edit\ *:\ *\d/e:nohlRdtsýaggd'
+
+" Set sup a local buffer as a pseudo-word-processor {{{2
+function! Writer()
+    map j gj
+    map k gk
+    setlocal formatoptions=t1
+    setlocal textwidth=80
+    setlocal noautoindent
+    setlocal shiftwidth=4
+    setlocal tabstop=4
+    setlocal expandtab
+    setlocal wrap
+    setlocal nolist
+    setlocal linebreak
+    set syntax=markdown
+endfunction
+com! WR call Writer()
+"End Writer function }}}
 " End Miscellaneous stuff}}}
