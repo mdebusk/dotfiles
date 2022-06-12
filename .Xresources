@@ -2,7 +2,7 @@
 ! Filename   : .Xresources                                                    !
 ! Author     : Michael DeBusk (https://github.com/mdebusk/)                   !
 ! Created    : 2021-05-01                                                     !
-! Last edit  : 2022-06-09 18:10                                               !
+! Last edit  : 2022-06-11 18:06                                               !
 ! Purpose    : Configuration file for xorg and related programs               !
 ! Depends    : xorg                                                           !
 ! Arguments  : x                                                              !
@@ -14,35 +14,44 @@
 
 ! Fonts {{{2
 
-! Source Code Pro {{{3
-! URxvt.font:\
-!   xft:Source Code Pro:style=Regular:size=9, \
-!   xft:IBM Plex Mono:style=Regular:size=9
-! URxvt.boldFont:\
-!   xft:Source Code Pro:style=Bold:size=9, \
-!   xft:IBM Plex Mono:style=Bold:size=9
-! URxvt.italicFont:\
-!   xft:Source Code Pro:style=Italic:size=9, \
-!   xft:IBM Plex Mono:style=Italic:size=9
-! URxvt.boldItalicFont:\
-!   xft:Source Code Pro:style=Bold Italic:size=9, \
-!   xft:IBM Plex Mono:style=Bold Italic:size=9
-! End Source Code Pro }}}
+!! Source Code Pro (Inactive) {{{3
+!! URxvt.font:\
+!!   xft:Source Code Pro:style=Regular:size=9, \
+!!   xft:IBM Plex Mono:style=Regular:size=9
+!! URxvt.boldFont:\
+!!   xft:Source Code Pro:style=Bold:size=9, \
+!!   xft:IBM Plex Mono:style=Bold:size=9
+!! URxvt.italicFont:\
+!!   xft:Source Code Pro:style=Italic:size=9, \
+!!   xft:IBM Plex Mono:style=Italic:size=9
+!! URxvt.boldItalicFont:\
+!!   xft:Source Code Pro:style=Bold Italic:size=9, \
+!!   xft:IBM Plex Mono:style=Bold Italic:size=9
+!! End Source Code Pro }}}
 
-! Azeret Mono {{{3
-URxvt.font:\
+! Azeret Mono (Active) {{{3
+*font:\
     xft:Azeret Mono:style=Regular:antialias=true:size:minspace=false=9, \
     xft:IBM Plex Mono:style=Regular:antialias=true:size:minspace=false=9
-URxvt.boldFont:\
+*boldFont:\
     xft:Azeret Mono:style=Bold:antialias=true:size:minspace=false=9, \
     xft:IBM Plex Mono:style=Bold:antialias=true:size:minspace=false=9
-URxvt.italicFont:\
+*italicFont:\
     xft:Azeret Mono:style=Italic:antialias=true:size:minspace=false=9, \
     xft:IBM Plex Mono:style=Bold:antialias=true:size:minspace=false=9
-URxvt.boldItalicFont:\
+*boldItalicFont:\
     xft:Azeret Mono:style=Bold Italic:antialias=true:size:minspace=false=9, \
     xft:IBM Plex Mono:style=Bold Italic:antialias=true:size:minspace=false=9
 ! End Azeret Mono }}}
+
+! Font display settings {{{
+URxvt.letterSpace: -1
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+! End font display settings
 
 ! End fonts }}}
 
@@ -62,7 +71,7 @@ URxvt.boldItalicFont:\
 #define S_green         #859900
 ! End common }}}
 
-! Dark {{{4
+! Dark (Active) {{{4
 #define S_base03        #002b36
 #define S_base02        #073642
 #define S_base01        #586e75
@@ -73,7 +82,7 @@ URxvt.boldItalicFont:\
 #define S_base3         #fdf6e3
 ! End dark }}}
 
-! Light {{{4
+! Light (Inactive) {{{4
 ! #define S_base03        #fdf6e3
 ! #define S_base02        #eee8d5
 ! #define S_base01        #93a1a1
@@ -217,6 +226,9 @@ URxvt.keysym.KP_Home: \033[1~
 URxvt.keysym.KP_End:  \033[4~
 ! End configuring Home and End keys }}}
 
+! internal border
+URxvt.internalBorder: 4
+
 ! double-click to select whole URLs :D
 URxvt.charClass:33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 
@@ -224,8 +236,15 @@ URxvt.charClass:33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 URxvt.scrollBar_right: true
 URxvt.ScrollBar: true
 
+!Set scrollbar style to rxvt, plain, next or xterm.
+URxvt*scrollstyle: plain
+
 ! stop output to terminal from jumping down to bottom of scroll again
 URxvt.scrollTtyOutput:false
+
+!Turn on/off ISO 14755 (default enabled).
+URxvt*iso14755: False
+URxvt.iso14755_52: false
 
 ! URxvt Plugins {{{2
 URxvt.perl-ext:           default,matcher,font-size
