@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://github.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-06-13 22:04                                               "
+" Last edit  : 2022-06-14 18:15                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/
 " Depends    : vim                                                            "
@@ -160,6 +160,9 @@ set notimeout ttimeout ttimeoutlen=200
 " In case you open a file without sudo permissions
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
+" Open help in a vertical split and to the right
+cnoremap help vertical botright help
+
 "Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 "which is the default
 map Y y$
@@ -168,7 +171,7 @@ map Y y$
 "next search
 nnoremap <C-L> :nohl<CR><C-L>
 
-" Disable arrow movement, resize splits instead.
+" Disable arrow movement; resize splits instead.
 nnoremap <Up> :resize +2<CR>
 nnoremap <Down> :resize -2<CR>
 nnoremap <Left> :vertical resize +2<CR>
@@ -323,7 +326,7 @@ augroup filetype_LaTeX "{{{2
     autocmd!
     " copy document template into empty new buffer
     au BufNewFile *.tex
-                \ 0r /home/michael/Templates/latex_document.tex
+                \ 0r $HOME/Templates/latex_document.tex
 
     au BufNewFIle,BufRead *.tex :iab latex \LaTeX\
     map <F9> :!pdflatex %<CR>
@@ -333,7 +336,7 @@ augroup filetype_bash "{{{2
     autocmd!
     " copy script template into empty new buffer
     au BufNewFile *.sh
-                \ 0r /home/michael/Templates/shell_script.sh
+                \ 0r $HOME/Templates/shell_script.sh
 augroup END "}}}
 
 augroup filetype_python "{{{2
@@ -341,7 +344,7 @@ augroup filetype_python "{{{2
     au BufWritePre *.py :%s/\s\+$//e
     " copy script template into empty new buffer
     au BufNewFile *.py
-                \ 0r /home/michael/Templates/python_script.py
+                \ 0r $HOME/Templates/python_script.py
     au BufNewFile,BufRead *.py
                 \ set tabstop=4 |
                 \ set softtabstop=4 |
@@ -362,7 +365,7 @@ augroup web_development "{{{2
 
     " copy HTML document template into empty new buffer
     au bufnewfile *.html
-                \ 0r /home/michael/Templates/html_document.html
+                \ 0r $HOME/Templates/html_document.html
 augroup END "}}}
 
 " End Customized file types}}}
@@ -375,8 +378,6 @@ augroup END "}}}
 " for QIF files
 :iab ckng MAutopay<CR>LAssets:Current Assets:Capital One 360:Checking
 
-" Github URL
-:iab gthb Michael DeBusk (https://github.com/mdebusk)
 " End Abbreviations}}}
 
 " ** Plugins "{{{
