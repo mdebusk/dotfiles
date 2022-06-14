@@ -2,8 +2,9 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://github.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-06-11 12:38                                               "
+" Last edit  : 2022-06-13 22:04                                               "
 " Purpose    : Initialization file for vim                                    "
+" Reference  : https://vimhelp.org/
 " Depends    : vim                                                            "
 " Arguments  : none                                                           "
 " Known bugs : NKA                                                            "
@@ -30,7 +31,8 @@ set cmdheight=2          "Set the command window height to 2 lines
 set fillchars+=fold:·    " Set fill character for folds
 set lazyredraw           "Don’t update screen during macro and script execution
 set list                 "Show whitespace characters
-set listchars=tab:╠═,trail:░,nbsp:▃      "List of strings used for list mode
+"List of strings used for list mode
+set listchars=tab:╠═,trail:░,nbsp:▃,leadmultispace:┊\ \ \ ,
 set nowrap               "Turn off word wrapping
 set number               "Enable line numbering, taking up 6 spaces
 set numberwidth=5        "Set line numbering to take up 5 spaces
@@ -91,7 +93,7 @@ set mousefocus                        "May as well use it if it's there
 " ** 10. GUI "{{{
 if has("gui_running")
     let g:solarized_menu=0            "Activate menu for Solarized color scheme
-    set guifont=Azeret\ Mono\ 9       "Set the font and size
+    set guifont=Azeret\ Mono\ 12      "Set the font and size
     set guioptions-=l                 "Remove left scrollbar
     set guioptions-=R                 "Remove right scrollbar if vsplit
     set guioptions-=b                 "Remove bottom scrollbar
