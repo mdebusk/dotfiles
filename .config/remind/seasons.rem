@@ -16,9 +16,9 @@
 # Using [trigger(date(y,m,d),time(h,m),1)] form because values are in UTC
 #  and are independent of timezone.
 #
-# Edited by Michael DeBusk to include emojis and to trim old dates
+# Edited by Michael DeBusk to trim old dates
 # https://github.com/mdebusk
-# Last edit: 2022-03-20 12:55
+# Last edit : 2022-06-19 10:36
 
 REM [trigger(date(2022,1,04), time(06,54), 1)] Perihelion%
 REM [trigger(date(2022,3,20), time(15,33), 1)] Vernal Equinox%
