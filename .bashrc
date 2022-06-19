@@ -2,7 +2,7 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2022-06-09 20:26                                               #
+# Last edit  : 2022-06-19 00:10                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash                                                           #
 # Arguments  : none                                                           #
@@ -13,9 +13,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# ** Environment Variables{{{
+# ** Environment Variables {{{
 
-# Environment variables for less {{{2
+# ** Environment variables for less {{{2
 # Set colors for less.
 # https://wiki.archlinux.org/index.php/Color_output_in_console#less
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
@@ -41,7 +41,7 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 # News server, for SLRN
 export NNTPSERVER='news.eternal-september.org'
 
-# End Environment variables}}}
+# End environment variables }}}
 
 # ** History {{{
 # save all the histories
@@ -64,7 +64,7 @@ shopt -s histappend
 # This will ignore duplicates, as well as ls, bg, fg and exit as well,
 # making for a cleaner bash history.
 export HISTIGNORE="&:ls:[bf]g:exit"
-# End History }}}
+# End history }}}
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -73,7 +73,7 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
-# ** Prompt{{{
+# ** Prompt {{{
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
@@ -81,11 +81,7 @@ fi
 
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
-# Add current git branch to prompt
-# https://blog.sellorm.com/2020/01/13/add-the-current-git-branch-to-your-bash-prompt/
-# PS1="\[\033[95m\]\u@\h \[\033[32m\]\W\[\033[33m\] [\$(git symbolic-ref --short HEAD 2>/dev/null)]\[\033[00m\]\$ "
-
-# If this is an xterm set the title to user@host:dir
+# If this is an xterm, set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
     PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
@@ -93,9 +89,9 @@ xterm*|rxvt*)
 *)
     ;;
 esac
-# End Prompt}}}
+# End prompt }}}
 
-# ** Aliases{{{
+# ** Aliases {{{
 
 #if [ -f ~/.bash_aliases ]; then
 #    . ~/.bash_aliases
@@ -156,17 +152,10 @@ alias dz='pushd ~/Documents && echo -e "\n## `date +%F\ %T` {{{\n\n}}}" >> diary
 # alias for bare git repo use (dotfile repo)
 # https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-# End aliases}}}
+# End aliases }}}
 
-# ** Functions{{{
-# wttr()
-# {
-    # local request="wttr.in/${1-21001?FQ}"
-    # [ "$(tput cols)" -lt 125 ] && request+='?n'
-    # curl -H "Accept-Language: ${LANG%_*}" --compressed "$request"
-# }
-
-# End Functions}}}
+# ** Functions {{{
+# End functions}}}
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
