@@ -2,7 +2,7 @@
 ! Filename   : .Xresources                                                    !
 ! Author     : Michael DeBusk (https://github.com/mdebusk/)                   !
 ! Created    : 2021-05-01                                                     !
-! Last edit  : 2022-06-13 16:22                                               !
+! Last edit  : 2022-06-19 00:53                                               !
 ! Purpose    : Configuration file for xorg and related programs               !
 ! Depends    : xorg                                                           !
 ! Arguments  : x                                                              !
@@ -10,23 +10,23 @@
 ! To do      : x                                                              !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-! General settings {{{
+! ** General settings {{{
 
-! Fonts {{{2
+! ** Fonts {{{2
 
 ! Source Code Pro (Inactive) {{{3
-! URxvt.font:\
-!   xft:Source Code Pro:style=Regular:size=9, \
-!   xft:IBM Plex Mono:style=Regular:size=9
-! URxvt.boldFont:\
-!   xft:Source Code Pro:style=Bold:size=9, \
-!   xft:IBM Plex Mono:style=Bold:size=9
-! URxvt.italicFont:\
-!   xft:Source Code Pro:style=Italic:size=9, \
-!   xft:IBM Plex Mono:style=Italic:size=9
-! URxvt.boldItalicFont:\
-!   xft:Source Code Pro:style=Bold Italic:size=9, \
-!   xft:IBM Plex Mono:style=Bold Italic:size=9
+!! URxvt.font:\
+!!   xft:Source Code Pro:style=Regular:size=9, \
+!!   xft:IBM Plex Mono:style=Regular:size=9
+!! URxvt.boldFont:\
+!!   xft:Source Code Pro:style=Bold:size=9, \
+!!   xft:IBM Plex Mono:style=Bold:size=9
+!! URxvt.italicFont:\
+!!   xft:Source Code Pro:style=Italic:size=9, \
+!!   xft:IBM Plex Mono:style=Italic:size=9
+!! URxvt.boldItalicFont:\
+!!   xft:Source Code Pro:style=Bold Italic:size=9, \
+!!   xft:IBM Plex Mono:style=Bold Italic:size=9
 ! End Source Code Pro }}}
 
 ! Azeret Mono (Active) {{{3
@@ -51,11 +51,11 @@ Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
-! End font display settings
+! End font display settings }}}
 
 ! End fonts }}}
 
-! Colors {{{2
+! ** Colors {{{2
 
 ! Solarized Dark color scheme (ACTIVE) {{{3
 ! https://github.com/solarized/xresources
@@ -177,87 +177,87 @@ Xft.hintstyle:  hintfull
 !!*color15:               S_base3
 ! End Solarized Light }}}
 
-! ! Molokai color scheme (INACTIVE) {{{3
-! ! http://www.futurile.net/2016/06/15/xterm-256color-themes-molokai-terminal-theme/
-!
-! ! Background: black, dark grey
-! #define _background #272822
-! #define _color8 #303030
-!
-! ! Color1/foreground: light grey: standard files, cursor
-! ! Color9: bright pink: soft link e.g. ln -s test1 imaginarytest
-! #define _foreground #d0d0d0
-! #define _color9 #ff0090
-!
-! ! Color2: dark green: world read/write dir e.g. /tmp
-! ! Color10: bright green: binaries user can execute /bin
-! #define _color2 #66AA11
-! #define _color10 #80FF00
-!
-! ! Color3: medium brown: fifo e.g mkfifo fifotest
-! ! Color11: light brown/sand: block special files e.g ls -l /dev/loop0
-! #define _color3 #c47f2c
-! #define _color11 #ffba68
-!
-! ! Color4: medium blue: FIXME: unused?
-! ! Color12: light blue: directory
-! #define _color4 #30309b
-! #define _color12 #5f5fee
-!
-! ! Color5: dark purple: Not used in ls, in ranger (not sure where it gets it colors from though)
-! ! Color13: light purple: socket file /var/run/dbus_system_bus_socket
-! #define _color5 #7e40a5
-! #define _color13 #bb88dd
-!
-! ! Color6: medium magenta: FIXME: unused?
-! ! Color14: light magenta: symbolic links e.g. ~/Examples /bin/lsmod
-! #define _color6 #3579A8
-! #define _color14 #4eb4fa
-!
-! ! Color7: medium grey: setuid file e.g. /usr/bin/sudo
-! ! Color15: light grey: background color for setuid files e.g /usr/bin/sudo
-! #define _color7 #9999AA
-! ! Trying white in case it helps
-! #define _color15 #ffffff
-! !#define _color15 #d0d0d0
-!
-! ! General - covering all X clients
-! !*background: _background
-! !*foreground: _foreground
-! ! Not sure what this one does - Solarise had it at base3
-! !*fadeColor: XXX ! Not sure what this does
-!
-! ! XTerm specific
-! xterm*background: _background
-! xterm*foreground: _foreground
-!
-! ! Not really required - XTerm defaults to using the foreground colour
-! xterm*cursorColor: _foreground
-!
-! xterm*color0: _background
-! xterm*color1: _foreground
-! xterm*color2: _color2
-! xterm*color3: _color3
-! xterm*color4: _color4
-! xterm*color5: _color5
-! xterm*color6: _color6
-! xterm*color7: _color7
-! ! 8-15 are considered brighter colours of 1-7
-! xterm*color8: _color8
-! xterm*color9: _color9
-! xterm*color10: _color10
-! xterm*color11: _color11
-! xterm*color12: _color12
-! xterm*color13: _color13
-! xterm*color14: _color14
-! xterm*color15: _color15
+! Molokai color scheme (INACTIVE) {{{3
+! http://www.futurile.net/2016/06/15/xterm-256color-themes-molokai-terminal-theme/
+
+! Background: black, dark grey
+!! #define _background #272822
+!! #define _color8 #303030
+
+! Color1/foreground: light grey: standard files, cursor
+! Color9: bright pink: soft link e.g. ln -s test1 imaginarytest
+!! #define _foreground #d0d0d0
+!! #define _color9 #ff0090
+
+! Color2: dark green: world read/write dir e.g. /tmp
+! Color10: bright green: binaries user can execute /bin
+!! #define _color2 #66AA11
+!! #define _color10 #80FF00
+
+! Color3: medium brown: fifo e.g mkfifo fifotest
+! Color11: light brown/sand: block special files e.g ls -l /dev/loop0
+!! #define _color3 #c47f2c
+!! #define _color11 #ffba68
+
+! Color4: medium blue: FIXME: unused?
+! Color12: light blue: directory
+!! #define _color4 #30309b
+!! #define _color12 #5f5fee
+
+! Color5: dark purple: Not used in ls, in ranger (not sure where it gets it colors from though)
+! Color13: light purple: socket file /var/run/dbus_system_bus_socket
+!! #define _color5 #7e40a5
+!! #define _color13 #bb88dd
+
+! Color6: medium magenta: FIXME: unused?
+! Color14: light magenta: symbolic links e.g. ~/Examples /bin/lsmod
+!! #define _color6 #3579A8
+!! #define _color14 #4eb4fa
+
+! Color7: medium grey: setuid file e.g. /usr/bin/sudo
+! Color15: light grey: background color for setuid files e.g /usr/bin/sudo
+!! #define _color7 #9999AA
+! Trying white in case it helps
+!! #define _color15 #ffffff
+!! #define _color15 #d0d0d0
+
+! General - covering all X clients
+!! *background: _background
+!! *foreground: _foreground
+! Not sure what this one does - Solarise had it at base3
+!! *fadeColor: XXX ! Not sure what this does
+
+! XTerm specific
+!! xterm*background: _background
+!! xterm*foreground: _foreground
+
+! Not really required - XTerm defaults to using the foreground colour
+!! xterm*cursorColor: _foreground
+
+!! xterm*color0: _background
+!! xterm*color1: _foreground
+!! xterm*color2: _color2
+!! xterm*color3: _color3
+!! xterm*color4: _color4
+!! xterm*color5: _color5
+!! xterm*color6: _color6
+!! xterm*color7: _color7
+! 8-15 are considered brighter colours of 1-7
+!! xterm*color8: _color8
+!! xterm*color9: _color9
+!! xterm*color10: _color10
+!! xterm*color11: _color11
+!! xterm*color12: _color12
+!! xterm*color13: _color13
+!! xterm*color14: _color14
+!! xterm*color15: _color15
 ! End Molokai }}}
 
 ! End Colors }}}
 
 ! End general settings }}}
 
-! URxvt-specific settings {{{
+! ** URxvt-specific settings {{{
 
 ! Every shell is a login shell by default (for inclusion of all necessary environment variables)
 URxvt.loginshell:true
