@@ -61,7 +61,7 @@ shopt -s cmdhist
 # merge session histories
 shopt -s histappend
 
-# This will ignore duplicates, as well as ls, bg, fg and exit as well,
+# This will ignore duplicates, as well as ls, bg, fg and exit,
 # making for a cleaner bash history.
 export HISTIGNORE="&:ls:[bf]g:exit"
 # End history }}}
