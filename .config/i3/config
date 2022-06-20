@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-06-04 00:42                                               #
+# Last edit  : 2022-06-20 00:27                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3                                                             #
@@ -12,49 +12,40 @@
 ###############################################################################
 
 
-# 4.16: Variables {{{1
-# Set the modifier key to the "Windows" key{{{2
+# ** 4.16: Variables {{{1
+
+# Set the modifier key to the "Windows" key {{{2
 set $mod Mod4
 set $alt Mod1
-# }}}
+# End modifier key }}}
 
 # Variables to define names of workspaces {{{2
 set $workspace1 "1: Terminal"
 set $workspace2 "2. Browser"
-set $workspace3 "3: Nautilus"
+set $workspace3 "3: Files"
 set $workspace4 "4: "
 set $workspace5 "5: "
 set $workspace6 "6: "
 set $workspace7 "7: "
 set $workspace8 "8: "
 set $workspace9 "9: "
-set $workspace10 "10: Joplin"
-# }}}
-# }}}
+set $workspace10 "10: Notes"
+# End names of workspaces }}}
 
-# 4.3: Fonts {{{
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-# font pango:monospace 8
+# End variables }}}
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-# font pango:DejaVu Sans Mono 8
+# ** 4.3: Fonts {{{
+
+# Font for window titles. Will also be used by the bar unless
+# a different font is used in the bar {} block below.
 font pango:Droid Sans Regular 7
+# End fonts }}}
 
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
-# }}}
-
-# 4.4: Keyboard Bindings {{{
+# ** 4.4: Keyboard Bindings {{{
 # start a terminal
-# bindsym $mod+Return exec i3-sensible-terminal
-# bindsym $mod+Return exec gnome-terminal
-# bindsym $mod+Return exec urxvt
+## bindsym $mod+Return exec i3-sensible-terminal
+## bindsym $mod+Return exec gnome-terminal
+## bindsym $mod+Return exec urxvt
 bindsym $mod+Return exec alacritty
 
 # Start the file manager
@@ -64,16 +55,12 @@ bindsym $mod+Shift+f exec nautilus
 bindsym $mod+shift+i exec x-www-browser
 
 # Start my notes program
-bindsym $mod+Shift+f exec joplin
+bindsym $mod+Shift+n exec joplin
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Take a screen shot
@@ -159,40 +146,39 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# restart i3 in place (preserves your layout/session, can be used
+# to upgrade i3)
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+e mode "exit: [l]ogout, [r]eboot, [s]hutdown"
 
 bindsym $mod+r mode "resize"
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
 
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 
 # bind a key to lock the screen
-bindsym $mod+shift+x exec "i3lock -i /home/michael/Pictures/Wallpapers/lock.png"
+# This filename is a soft link to an existing image. It should not
+# be necessary to edit the line below; just change the link.
+bindsym $mod+shift+x exec "i3lock -i /home/michael/Pictures/Wallpapers/lock.jpg"
+# end keyboard bindings }}}
+
+# ** 4.5: Mouse Bindings {{{
+# None currently set
 # }}}
 
-# 4.5: Mouse Bindings {{{
-# }}}
+# ** 4.6: Binding Modes {{{
 
-# 4.6: Binding Modes {{{
 # resize window (you can also use the mouse for that)
 mode "resize" {
 # These bindings trigger as soon as you enter the resize mode
-
-# Pressing left will shrink the window’s width.
-# Pressing right will grow the window’s width.
-# Pressing up will shrink the window’s height.
-# Pressing down will grow the window’s height.
 bindsym h resize shrink width 10 px or 10 ppt
 bindsym j resize grow height 10 px or 10 ppt
 bindsym k resize shrink height 10 px or 10 ppt
@@ -209,7 +195,6 @@ bindsym Return mode "default"
 bindsym Escape mode "default"
 }
 
-
 mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
 bindsym l exec i3-msg exit
 bindsym r exec systemctl reboot
@@ -217,92 +202,97 @@ bindsym s exec systemctl poweroff
 bindsym Escape mode "default"
 bindsym Return mode "default"
 }
-# }}}
+# End binding modes }}}
 
-# 4.7: The Floating Modifier {{{
+# ** 4.7: The Floating Modifier {{{
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-# }}}
+# End floating modifier }}}
 
-# 4.8: Constraining Floating Window Size {{{
-# }}}
+# ** 4.8: Constraining Floating Window Size {{{
+# None currently set
+# End constraining floating window size }}}
 
-# 4.9: Orientation For New Workspaces {{{
-# }}}
+# ** 4.9: Orientation For New Workspaces {{{
+# None currently set
+# End orientation for new workspaces }}}
 
-# 4.10: Layout Mode For New Containers {{{
-# }}}
+# ** 4.10: Layout Mode For New Containers {{{
+# None currently set
+# End layout mode for new containers }}}
 
-# 4.11: Window Title Alignment: {{{
-# }}}
+# ** 4.11: Window Title Alignment: {{{
+# None currently set
+# End window title alignment }}}
 
-# 4.12: Default Border Style For New Windows {{{
+# ** 4.12: Default Border Style For New Windows {{{
 default_border pixel 3
-# }}}
+# End default border style for new windows }}}
 
-# 4.13: Hiding Borders Adjacent To The Screen Edges {{{
-# }}}
+# ** 4.13: Hiding Borders Adjacent To The Screen Edges {{{
+# None currently set
+# End hiding borders adjacent to the screen edges }}}
 
-# 4.14: Arbitrary Commands For Specific Windows (for_window) {{{
-# When starting Password Safe, put it in a floating window
+# ** 4.14: Arbitrary Commands For Specific Windows (for_window) {{{
+
+# Open all of the following in a floating window {{{2
 for_window [class="Pwsafe" instance="pwsafe"] floating enable
-
-# When starting KeePassXC, put it in a floating window
 for_window [class="KeePassXC" instance="keepassxc"] floating enable
-
-# When starting Gnome Calculator, put it in a floating window
+for_window [class="Bitwarden" instance="Bitwarden"] floating enable
 for_window [class="Gnome-calculator" instance="gnome-calculator"] floating enable
-
-# When starting Veracrypt, put it in a floating window
 for_window [class="Veracrypt" instance="veracrypt"] floating enable
-
-# When starting Anki, put it in a floating window
 for_window [class="Anki" instance="anki"] floating enable
-# }}}
+for_window [class="Tali" instance="tali"] floating enable
+# End floating windows }}}
 
-# 4.15: Don’t Focus Window Upon Opening {{{
-# }}}
+# End arbitrary commands for specific windows }}}
 
-# 4.17: X Resources {{{
-# }}}
+# ** 4.15: Don’t Focus Window Upon Opening {{{
+# None currently set
+# End don't focus window upon opening }}}
 
-# 4.18: Automatically Putting Clients On Specific Workspaces {{{
-# Assign programs to a workspace
+# ** 4.17: X Resources {{{
+# None set yet
+# End X Resources }}}
+
+# ** 4.18: Automatically Putting Clients On Specific Workspaces {{{
 assign [class="Brave-browser"] $workspace2
 assign [class="Nautilus"] $workspace3
 assign [class="Joplin"] $workspace10
-# }}}
+# End assign programs to specific workspaces }}}
 
-# 4.19. Automatically starting applications on i3 startup {{{
+# ** 4.19. Automatically starting applications on i3 startup {{{
 # Start compton
-# exec --no-startup-id 'compton -b'
+## exec --no-startup-id 'compton -b'
 
 # Start autotiling script
 exec_always --no-startup-id ~/bin/autotiling
 
 # Set laptop screen as primary display
-# exec --no-startup-id 'xrandr --output LVDS-0 --primary'
+## exec --no-startup-id 'xrandr --output LVDS-0 --primary'
 
 # start pulseaudio
-# exec --no-startup-id i3-msg 'exec /usr/bin/pulseaudio --start'
+## exec --no-startup-id i3-msg 'exec /usr/bin/pulseaudio --start'
 
 # Set bass speaker volume to 60% because it's busted
 exec --no-startup-id "sleep 10 && amixer set 'Bass Speaker' 60%"
 
 # Start xautolock to automatically lock the screen after a timeout
-# exec_always xautolock -locker "/usr/bin/i3lock -i /home/michael/Pictures/Wallpapers/Go\ Away.png"
+## exec_always xautolock -locker "/usr/bin/i3lock -i \
+## /home/michael/Pictures/Wallpapers/lock.jpg"
 
 # Enable tapping of Touchpad
 exec xinput set-prop 13 287 1
 
 # Set wallpaper
-exec --no-startup-id feh --no-fehbg --bg-scale "/home/michael/Pictures/Wallpapers/wallpaper.jpg"
+exec --no-startup-id feh --no-fehbg --bg-scale \
+"/home/michael/Pictures/Wallpapers/wallpaper.jpg"
 
 # Start udiskie to manage auto-mounting of removable media
 exec --no-startup-id /usr/bin/udiskie --tray
 
 # Start Dropbox, PCloud, and InSync
-# exec --no-startup-id dropbox start
+## exec --no-startup-id dropbox start
 exec --no-startup-id insync start
 exec --no-startup-id /opt/Pcloud/pcloud start
 
@@ -311,50 +301,74 @@ exec --no-startup-id nm-applet
 
 # Start Parcellite clipboard manager
 exec --no-startup-id parcellite
-# }}}
 
-# 4.20: Automatically Putting Workspaces On Specific Screens {{{
-# }}}
+# End Automatically starting applications }}}
 
-# 4.21: Changing Colors {{{
-# }}}
+# ** 4.20: Automatically Putting Workspaces On Specific Screens {{{
+workspace 1 output primary
+workspace 2 output HDMI-0
+workspace 3 output primary
+workspace 4 output primary
+workspace 5 output primary
+workspace 6 output primary
+workspace 7 output primary
+workspace 8 output primary
+workspace 9 output HDMI-0
+workspace 10 output primary
+# End automatically put workspaces on specific screens }}}
 
-# 4.22: Interprocess Communication {{{
-# }}}
+# ** 4.21: Changing Colors {{{
+# Currently depending on .XResources
+# End changing colors }}}
 
-# 4.23: Focus Follows Mouse {{{
-# }}}
+# ** 4.22: Interprocess Communication {{{
+# None set yet
+# End interprocess communication }}}
 
-# 4.24: Mouse Warping {{{
-# }}}
+# ** 4.23: Focus Follows Mouse {{{
+# None set yet
+# End focus follows mouse }}}
 
-# 4.25: Popups During Fullscreen Mode {{{
-# }}}
+# ** 4.24: Mouse Warping {{{
+# None set yet
+# End mouse warping }}}
 
-# 4.26: Focus Wrapping {{{
-# }}}
+# ** 4.25: Popups During Fullscreen Mode {{{
+# None set yet
+# End popups during fullscreen mode }}}
 
-# 4.27: Forcing Xinerama {{{
-# }}}
+# ** 4.26: Focus Wrapping {{{
+# None set yet
+# End focus wrapping }}}
 
-# 4.28: Automatic Back-And-Forth When Switching To The Current Workspace {{{
-# }}}
+# ** 4.27: Forcing Xinerama {{{
+# None set yet
+# End forcing Xinerama }}}
 
-# 4.29 Delaying Urgency Hint Reset On Workspace Change {{{
-# }}}
+# ** 4.28: Automatic Back-And-Forth When Switching To The Current Workspace {{{
+# None set yet
+# End automatic back-and-forth }}}
 
-# 4.30: Focus On Window Activation {{{
-# }}}
+# ** 4.29 Delaying Urgency Hint Reset On Workspace Change {{{
+# None set yet
+# End delaying urgency hint }}}
 
-# 4.31: Drawing Marks On Window Decoration {{{
-# }}}
+# ** 4.30: Focus On Window Activation {{{
+# None set yet
+# End focus on window activation }}}
+
+# ** 4.31: Drawing Marks On Window Decoration {{{
+# None set yet
+# End drawing marks on window decortion }}}
 
 # 5: Configuring i3bar {{{
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
     bar {
         status_command i3status
-        font pango:Droid Sans Regular 7, Font Awesome 5 Brands Regular 7, Font Awesome 5 Free Regular 7
+        font pango:Droid Sans Regular 9, \
+        Font Awesome 5 Brands Regular 9, \
+        Font Awesome 5 Free Regular 9
         output primary
         colors {
                 background #002b36
@@ -367,6 +381,6 @@ exec --no-startup-id parcellite
                 binding_mode       #686e75 #d33682 #002b36
             }
     }
-# }}}
+# End configuring ibar }}}
 
 # vim:filetype=i3config
