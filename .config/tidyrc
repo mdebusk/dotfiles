@@ -11,44 +11,44 @@
 # To do      : N/A                                                            #
 ###############################################################################
 
-# Document Display Options {{{
+# ** Document Display Options {{{
 quiet yes
-#}}}
+# End Document Display Options }}}
 
-# Document In and Out Options {{{
+# ** Document In and Out Options {{{
 add-meta-charset yes
-#}}}
+# End Document In and Out Options }}}
 
-# File Input-Output Options {{{
-#}}}
+# ** File Input-Output Options {{{
+# End File Input-Output Options }}}
 
-# Diagnostics Options {{{
-#}}}
+# ** Diagnostics Options {{{
+# End Diagnostics Options }}}
 
-# Encoding Options {{{
-#}}}
+# ** Encoding Options {{{
+# End Encoding Options }}}
 
-# Cleanup Options {{{
+# ** Cleanup Options {{{
 bare yes
 drop-proprietary-attributes yes
 logical-emphasis yes
-#}}}
+# End Cleanup Options }}}
 
-# Entities Options {{{
+# ** Entities Options {{{
 numeric-entities yes
-#}}}
+# End Entities Options }}}
 
-# Repair Options {{{
-#}}}
+# ** Repair Options {{{
+# End Repair Options }}}
 
-# Transformation Options {{{
-#}}}
+# ** Transformation Options {{{
+# End Transformation Options }}}
 
-# Teaching Tidy Options {{{
-#}}}
+# ** Teaching Tidy Options {{{
+# End Teaching Tidy Options }}}
 
-# Pretty Print Options {{{
+# ** Pretty Print Options {{{
 indent yes
 sort-attributes alpha
 wrap 72
-}}}
+# End Pretty Print Options }}}
