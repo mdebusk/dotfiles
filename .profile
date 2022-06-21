@@ -2,9 +2,9 @@
 # Filename   : .profile                                                       #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-06-07 21:29                                               #
-# Purpose    : Sets bash environment variables                                #
-# Depends    : bash                                                           #
+# Last edit  : 2022-06-21 00:25                                               #
+# Purpose    : Sets environment variables                                     #
+# Depends    : N/A                                                            #
 # Arguments  : N/A                                                            #
 # Known bugs : NKA                                                            #
 # To do      : N/A                                                            #
@@ -62,6 +62,8 @@ export SQLITE_HISTORY=$XDG_CACHE_HOME/sqlite3/sqlite_history
 export WGETRC=$XDG_CONFIG_HOME/wgetrc
 export ANDROID_HOME=$XDG_DATA_HOME/android
 export CARGO_HOME=$XDG_DATA_HOME/cargo
+# I'm not quite ready to take this step
+## export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 # End xdg }}}
 
 # For NPM
