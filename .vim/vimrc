@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://github.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-06-21 13:51                                               "
+" Last edit  : 2022-06-21 13:56                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/
 " Depends    : vim                                                            "
@@ -307,7 +307,7 @@ let g:solarized_termtrans=1
 colorscheme solarized
 highlight Comment cterm=italic gui=italic
 highlight clear SpellBad
-highlight SpellBad cterm=underline,bold
+highlight SpellBad cterm=underline,bold gui=undercurl
 " End Color scheme }}}
 
 " ** Customized file types {{{
