@@ -2,7 +2,7 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2022-06-20 11:13                                               #
+# Last edit  : 2022-06-21 02:51                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash                                                           #
 # Arguments  : none                                                           #
@@ -117,7 +117,7 @@ alias wget="wget -c"
 # Help programs use the XDG Base Directory standard
 alias remind='remind -@2 $XDG_CONFIG_HOME/remind/reminders.rem'
 alias tkremind='tkremind $XDG_CONFIG_HOME/remind/reminders.rem'
-alias slrn='slrn -i $XDG_CONFIG_HOME"/slrn/slrnrc -f "$XDG_CONFIG_HOME/slrn/jnewsrc-september'
+alias slrn='slrn -i $XDG_CONFIG_HOME/slrn/slrnrc -f $XDG_CONFIG_HOME/slrn/jnewsrc-september'
 alias sqlite3='sqlite3 -init $XDG_CONFIG_HOME/sqlite3/sqliterc'
 alias dosbox='dosbox -conf $XDG_CONFIG_HOME/dosbox/dosbox-0.74-3.conf'
 alias mysql-workbench="mysql_workbench.sh"
