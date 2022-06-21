@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://github.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-06-20 23:19                                               "
+" Last edit  : 2022-06-21 00:22                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/
 " Depends    : vim                                                            "
@@ -11,22 +11,24 @@
 " To do      : none yet                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" ** 1. Important "{{{
+" ** 1. Important {{{
 set nocompatible         "Turn off vi-compatible mode
-" End Important}}}
+" I'm not quite ready to do this next move
+"" set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
+" End Important }}}
 
-" ** 2. Moving around, searching and patterns "{{{
+" ** 2. Moving around, searching and patterns {{{
 set autochdir            "Automatically change working directory to that of open file
 set ignorecase           "ignore case when using a search pattern
 set incsearch            "show match for partly-typed search command
 set path+=**             "Search down into subfolders
 set smartcase            "override 'ignorecase' when pattern has upper case characters
-" End Moving around, searching and patterns}}}
+" End Moving around, searching and patterns }}}
 
-" ** 3. Tags "{{{
-" End Tags}}}
+" ** 3. Tags {{{
+" End Tags }}}
 
-" ** 4. Displaying text "{{{
+" ** 4. Displaying text {{{
 set cmdheight=2          "Set the command window height to 2 lines
 set fillchars+=fold:·    " Set fill character for folds
 set lazyredraw           "Don’t update screen during macro and script execution
@@ -45,18 +47,18 @@ augroup numbertoggle     "Toggles relativenumber on and off based on mode
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
     autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
-" End Displaying text}}}
+" End Displaying text }}}
 
-" ** 5. Syntax highlighting and spelling "{{{
+" ** 5. Syntax highlighting and spelling {{{
 filetype indent plugin on "indent depends on filetype
 set background=dark
 set colorcolumn=+1        "Show the column where text would wrap
 set cursorline            "Highlight current line
 set hlsearch              "Highlight searches
 syntax enable
-" End Syntax highlighting and spelling}}}
+" End Syntax highlighting and spelling }}}
 
-" ** 6. Multiple Windows "{{{
+" ** 6. Multiple Windows {{{
 set hidden               "Allow easier switching between files
 set laststatus=2         "Always display the status line
 set splitbelow           "New horizontal split opens below the existing one
@@ -75,22 +77,22 @@ set statusline+=\ [%3p%%]                  "Percentage through file
 set statusline+=\ [Lines\:%L]              "Total lines in file
 " set statusline+=%#color#%
 " End statusline }}}
-" End Multiple Windows}}}
+" End Multiple Windows }}}
 
-" ** 7. Multiple tab pages "{{{
-" End Multiple tab pages}}}
+" ** 7. Multiple tab pages {{{
+" End Multiple tab pages }}}
 
-" ** 8. Terminal "{{{
+" ** 8. Terminal {{{
 set term=alacritty       "Which terminal shall vim run?
 set title                "show title in console title bar
 set ttyfast              "smoother changes
-" End Terminal}}}
+" End Terminal }}}
 
-" ** 9. Using the mouse "{{{
+" ** 9. Using the mouse {{{
 set mousefocus                        "May as well use it if it's there
-" End Using the mouse}}}
+" End Using the mouse }}}
 
-" ** 10. GUI "{{{
+" ** 10. GUI {{{
 if has("gui_running")
     let g:solarized_menu=0            "Activate menu for Solarized color scheme
     set guifont=Azeret\ Mono\ 12      "Set the font and size
@@ -105,24 +107,24 @@ if has("gui_running")
     ""set lines=43 columns=120         "Not useful with a tiling window manager
     ""set lines=999 columns=999        "Creates a pseudo-fullscreen gvim
 endif
-" End GUI}}}
+" End GUI }}}
 
-" ** 11. Printing "{{{
+" ** 11. Printing {{{
 set printdevice=pdf     "Use PDF printer
 set printoptions=paper:letter,syntax:y,wrap:y,duplex:long
-" End Printing}}}
+" End Printing }}}
 
-" ** 12. Messages and info "{{{
+" ** 12. Messages and info {{{
 set confirm              "ask if you wish to save changed files
 set ruler                "show the cursor position all the time
 set showcmd              "Show partial commands in the status line
 set visualbell           "Use visual bell instead of beeping when doing something wrong
-" End Messages and info}}}
+" End Messages and info }}}
 
-" ** 13. Selecting text "{{{
-" End Selecting text}}}
+" ** 13. Selecting text {{{
+" End Selecting text }}}
 
-" ** 14. Editing text "{{{
+" ** 14. Editing text {{{
 set complete+=kspell
 set completeopt=menuone,longest
 set nojoinspaces
@@ -133,9 +135,9 @@ set undodir=$XDG_STATE_HOME/vim/undo,~/,/tmp
 set undofile              "Save and restorre undo file
 ""set textwidth=80        "Set text width, where text would wrap if it did
 ""set wrapmargin=80
-" End Editing text}}}
+" End Editing text }}}
 
-" ** 15. Tabs and indenting "{{{
+" ** 15. Tabs and indenting {{{
 set autoindent           "Automatically set the indent of a new line
 set expandtab            "turn tabs into whitespace
 set shiftround           " use multiple of shiftwidth when indenting with '<' and '>'
@@ -143,17 +145,17 @@ set shiftwidth=4         "Indent width for autoindent
 set smartindent          "Turn on smart indent
 set softtabstop=4        "Number of spaces a tab counts when editing
 set tabstop=4            "set tab character to 4 characters
-" End Tabs and indenting}}}
+" End Tabs and indenting }}}
 
-" ** 16. Folding "{{{
+" ** 16. Folding {{{
 set foldlevel=99
 set foldmethod=marker
-" End Folding}}}
+" End Folding }}}
 
-" ** 17. Diff mode "{{{
-" End Diff mode}}}
+" ** 17. Diff mode {{{
+" End Diff mode }}}
 
-" ** 18. Mapping "{{{
+" ** 18. Mapping {{{
 "Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
 
@@ -192,7 +194,7 @@ inoremap ? ?<c-g>u
 vnoremap < <gv
 vnoremap > >gv
 
-" Autoclose mappings "{{{2
+" Autoclose mappings {{{2
 " https://alldrops.info/posts/vim-drops/2019-02-13_custom-autoclose-mappings/
 " autoclose and position cursor to write text inside
 "" inoremap ' ''<left>
@@ -257,63 +259,63 @@ vnoremap > >gv
 "" inoremap (,<CR> (<CR>),<ESC>O
 "" inoremap [,<CR> [<CR>],<ESC>O
 "" inoremap {,<CR> {<CR>},<ESC>O
-" End Autoclose mappings}}}
-" End Mapping}}}
+" End Autoclose mappings }}}
+" End Mapping }}}
 
-" ** 19. Reading and writing files "{{{
+" ** 19. Reading and writing files {{{
 set autowrite            "Writes file when switching to another buffer
 set backup               "keep a backup file
 set backupdir=$XDG_STATE_HOME/vim/backup,~/,/tmp "location of backup files
 " https://www.techrepublic.com/article/turn-off-modeline-support-in-vim/
 set modelines=0          "Do not check for existing modelines
 set nomodeline           "Disable modeline support
-" End Reading and writing files}}}
+" End Reading and writing files }}}
 
-" ** 20. The swap file "{{{
+" ** 20. The swap file {{{
 set directory=$XDG_STATE_HOME/vim/swap,~/,/tmp
-" End The swap file}}}
+" End The swap file }}}
 
-" ** 21. Command line editing "{{{
+" ** 21. Command line editing {{{
 set wildmenu             "turn on command line completion wild style
 " Ignore the following extensions when using wildmenu
 set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pdf,*.bak,*.beam
-" End Command line editing}}}
+" End Command line editing }}}
 
-" ** 22. Running external commands "{{{
-" End Running external commands}}}
+" ** 22. Running external commands {{{
+" End Running external commands }}}
 
-" ** 23. Running make and jumping to errors "{{{
-" End Running make and jumping to errors}}}
+" ** 23. Running make and jumping to errors {{{
+" End Running make and jumping to errors }}}
 
-" ** 24. Language-specific "{{{
-" End Language-specific}}}
+" ** 24. Language-specific {{{
+" End Language-specific }}}
 
-" ** 25. Multi-byte characters "{{{
+" ** 25. Multi-byte characters {{{
 set encoding=utf-8       "Use an encoding that supports unicode.
-" End Multi-byte characters}}}
+" End Multi-byte characters }}}
 
-" ** 26. Various "{{{
+" ** 26. Various {{{
 set bufhidden=hide       "Hide buffer when not in window
 set signcolumn=yes
 set viminfo=%,<800,'10,/50,:100,h,f0,n$XDG_STATE_HOME/vim/viminfo
-" End Various}}}
+" End Various }}}
 
-" ** Color scheme "{{{
+" ** Color scheme {{{
 set t_Co=16
 let g:solarized_termcolors=16
 let g:solarized_termtrans=1
 colorscheme solarized
 highlight Comment cterm=italic gui=italic
-" End Color scheme}}}
+" End Color scheme }}}
 
-" ** Customized file types "{{{
+" ** Customized file types {{{
 augroup views            "Back up and restore views on buffer open
     autocmd!
     au BufWinLeave ?* mkview
     au BufWinEnter ?* silent loadview
 augroup END
 
-augroup markdown "{{{2
+augroup markdown {{{2
     au BufNewFile,BufRead *.md :set iskeyword=@,48-57,_,-,192-255
     au BufNewFile,BufRead *.md :iab (c) &#169;
     au BufNewFile,BufRead *.md :iab (r) &#174;
@@ -321,9 +323,9 @@ augroup markdown "{{{2
     au BufNewFile,BufRead *.md :iab --- &#8212;
     au BufNewFile,BufRead *.md :iab (tm) &#8482;
     let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'sql']
-augroup END " markdown}}}
+augroup END " markdown }}}
 
-augroup filetype_LaTeX "{{{2
+augroup filetype_LaTeX {{{2
     autocmd!
     " copy document template into empty new buffer
     au BufNewFile *.tex
@@ -333,14 +335,14 @@ augroup filetype_LaTeX "{{{2
     map <F9> :!pdflatex %<CR>
 augroup END "}}}
 
-augroup filetype_bash "{{{2
+augroup filetype_bash {{{2
     autocmd!
     " copy script template into empty new buffer
     au BufNewFile *.sh
                 \ 0r $HOME/Templates/shell_script.sh
 augroup END "}}}
 
-augroup filetype_python "{{{2
+augroup filetype_python {{{2
     " Delete all trailing whitespace before saving
     au BufWritePre *.py :%s/\s\+$//e
     " copy script template into empty new buffer
@@ -358,7 +360,7 @@ augroup filetype_python "{{{2
                 \ set fileformat=unix
 augroup END "}}}
 
-augroup web_development "{{{2
+augroup web_development {{{2
     au BufNewFile,BufRead *.js, *.html, *.css, *.php
                 \ set tabstop=2 |
                 \ set softtabstop=2 |
@@ -369,9 +371,9 @@ augroup web_development "{{{2
                 \ 0r $HOME/Templates/html_document.html
 augroup END "}}}
 
-" End Customized file types}}}
+" End Customized file types }}}
 
-" ** Abbreviations "{{{
+" ** Abbreviations {{{
 " Insert date (and maybe time)
 :iab <expr> dts strftime("%F %R")    "Date/time stamp
 :iab <expr> dtg strftime("%e %b %Y") "Date style used in genealogy
@@ -379,9 +381,9 @@ augroup END "}}}
 " for QIF files
 :iab ckng MAutopay<CR>LAssets:Current Assets:Capital One 360:Checking
 
-" End Abbreviations}}}
+" End Abbreviations }}}
 
-" ** Plugins "{{{
+" ** Plugins {{{
 packadd! matchit
 
 "" Make netrw look like NERDtree {{{2
@@ -395,10 +397,10 @@ let g:netrw_winsize = 25
 "  "autocmd!
 "  "autocmd VimEnter * :Vexplore
 ""augroup END
-" End netrw-to-NERDtree}}}
-" End Plugins}}}
+" End netrw-to-NERDtree }}}
+" End Plugins }}}
 
-" ** Miscellaneous stuff "{{{
+" ** Miscellaneous stuff {{{
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
 " https://vim.fandom.com/wiki/To_switch_back_to_normal_mode_automatically_after_inaction
 au CursorHoldI * stopinsert
@@ -413,7 +415,7 @@ au CursorHoldI * stopinsert
 "   Ps = 4  -> steady underline.
 "   Ps = 5  -> blinking bar (xterm).
 "   Ps = 6  -> steady bar (xterm).
-" End reference chart}}}
+" End reference chart }}}
 let &t_SI = "\e[6 q" " Steady bar for insert mode
 let &t_EI = "\e[2 q" " Steady block for everything else
 
@@ -437,4 +439,4 @@ function! Writer()
 endfunction
 com! WR call Writer()
 "End Writer function }}}
-" End Miscellaneous stuff}}}
+" End Miscellaneous stuff }}}
