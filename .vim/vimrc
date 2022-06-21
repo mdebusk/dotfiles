@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://github.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-06-21 00:22                                               "
+" Last edit  : 2022-06-21 13:22                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/
 " Depends    : vim                                                            "
@@ -54,6 +54,7 @@ filetype indent plugin on "indent depends on filetype
 set background=dark
 set colorcolumn=+1        "Show the column where text would wrap
 set cursorline            "Highlight current line
+set highlight SpellBad cterm=underline,bold
 set hlsearch              "Highlight searches
 syntax enable
 " End Syntax highlighting and spelling }}}
