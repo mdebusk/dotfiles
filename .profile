@@ -2,7 +2,7 @@
 # Filename   : .profile                                                       #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-06-21 00:25                                               #
+# Last edit  : 2022-06-22 06:35                                               #
 # Purpose    : Sets environment variables                                     #
 # Depends    : N/A                                                            #
 # Arguments  : N/A                                                            #
@@ -62,6 +62,17 @@ export SQLITE_HISTORY=$XDG_CACHE_HOME/sqlite3/sqlite_history
 export WGETRC=$XDG_CONFIG_HOME/wgetrc
 export ANDROID_HOME=$XDG_DATA_HOME/android
 export CARGO_HOME=$XDG_DATA_HOME/cargo
+export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME"/.nv
+export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/.nv
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export PYENV_ROOT=$XDG_DATA_HOME/pyenv
+export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
+export TEXMFHOME=$XDG_DATA_HOME/texmf
+export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
+export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
+export RXVT_SOCKET="$XDG_RUNTIME_DIR"/urxvtd
+export WORKON_HOME="$XDG_DATA_HOME/virtualenvs"
 # I'm not quite ready to take this step
 ## export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 # End xdg }}}
