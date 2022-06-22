@@ -2,7 +2,7 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2022-06-21 02:51                                               #
+# Last edit  : 2022-06-22 16:54                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash                                                           #
 # Arguments  : none                                                           #
@@ -141,7 +141,7 @@ alias zombie='ps axo stat,ppid,pid,comm | grep -w defunct'
 alias nvlc='nvlc --browse-dir ~/Music'
 
 # Start Joplin terminal version
-alias joplincli='~/.joplin-bin/bin/joplin'
+alias joplincli='~/bin/Joplin/bin/joplin'
 
 # What are my external and internal IP addresses?
 alias ips="echo -n 'External IP: ' ; curl ifconfig.co; echo -n 'Internal IP: ' ; ifconfig wlp3s0 | grep inet\ | awk '{ print \$2 }' "
