@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-06-20 00:27                                               #
+# Last edit  : 2022-06-22 16:47                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3                                                             #
@@ -38,7 +38,7 @@ set $workspace10 "10: Notes"
 
 # Font for window titles. Will also be used by the bar unless
 # a different font is used in the bar {} block below.
-font pango:Droid Sans Regular 7
+font pango:Droid Sans Regular 9
 # End fonts }}}
 
 # ** 4.4: Keyboard Bindings {{{
@@ -55,7 +55,7 @@ bindsym $mod+Shift+f exec nautilus
 bindsym $mod+shift+i exec x-www-browser
 
 # Start my notes program
-bindsym $mod+Shift+n exec joplin
+bindsym $mod+Shift+n exec Joplin
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -81,8 +81,8 @@ bindsym $mod+Right focus right
 # move focused window
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move left
-bindsym $mod+Shift+h move right
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -238,7 +238,7 @@ default_border pixel 3
 # Open all of the following in a floating window {{{2
 for_window [class="Pwsafe" instance="pwsafe"] floating enable
 for_window [class="KeePassXC" instance="keepassxc"] floating enable
-for_window [class="Bitwarden" instance="Bitwarden"] floating enable
+for_window [class="Bitwarden" instance="bitwarden"] floating enable
 for_window [class="Gnome-calculator" instance="gnome-calculator"] floating enable
 for_window [class="Veracrypt" instance="veracrypt"] floating enable
 for_window [class="Anki" instance="anki"] floating enable
@@ -301,6 +301,9 @@ exec --no-startup-id nm-applet
 
 # Start Parcellite clipboard manager
 exec --no-startup-id parcellite
+
+# Start Joplin notes
+exec --no-startup-id Joplin
 
 # End Automatically starting applications }}}
 
