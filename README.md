@@ -9,7 +9,7 @@
 ## Some of the software I use
 - [Ubuntu](https://ubuntu.com/download/desktop) 20.04.4 LTS "Focal Fossa"
 - [bash](https://www.gnu.org/software/bash/) shell
-- [boxes](https://boxes.thomasjensen.com/) (text utility I use to create comment boxes in vim)
+- [boxes](https://boxes.thomasjensen.com/) text utility I use to create comment boxes in vim
 - [Chordpro](https://www.chordpro.org/chordpro/) creates well-formatted song sheets from ascii text
 - [fzf](https://github.com/junegunn/fzf) command-line fuzzy-finder
 - [i3wm](https://i3wm.org/) Window Manager, almost all the time
