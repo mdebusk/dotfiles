@@ -2,7 +2,7 @@
 # Filename   : .profile                                                       #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-06-22 06:35                                               #
+# Last edit  : 2022-06-23 21:06                                               #
 # Purpose    : Sets environment variables                                     #
 # Depends    : N/A                                                            #
 # Arguments  : N/A                                                            #
@@ -65,7 +65,7 @@ export CARGO_HOME=$XDG_DATA_HOME/cargo
 export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME"/.nv
 export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/.nv
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export PYENV_ROOT=$XDG_DATA_HOME/pyenv
 export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
 export TEXMFHOME=$XDG_DATA_HOME/texmf
