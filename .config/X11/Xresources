@@ -2,7 +2,7 @@
 ! Filename   : .Xresources                                                    !
 ! Author     : Michael DeBusk (https://github.com/mdebusk/)                   !
 ! Created    : 2021-05-01                                                     !
-! Last edit  : 2022-06-19 00:53                                               !
+! Last edit  : 2022-06-24 17:40                                               !
 ! Purpose    : Configuration file for xorg and related programs               !
 ! Depends    : xorg                                                           !
 ! Arguments  : x                                                              !
@@ -259,6 +259,8 @@ Xft.hintstyle:  hintfull
 
 ! ** URxvt-specific settings {{{
 
+
+
 ! Every shell is a login shell by default (for inclusion of all necessary environment variables)
 URxvt.loginshell:true
 
@@ -268,7 +270,9 @@ URxvt.savelines:16384
 ! Window size
 URxvt.vt100*geometry:120x90
 
-URxvt.termName:rxvt-unicode
+! https://push.cx/2008/256-color-xterms-in-ubuntu
+*customization: -color
+URxvt.termName:rxvt-unicode-256color
 
 ! Disable printing the terminal contents when pressing PrintScreen.
 URxvt.print-pipe: "cat > /dev/null"
