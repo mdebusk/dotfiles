@@ -1402,7 +1402,7 @@ elastic (n,e,s,w)
 
 END ada-box #}}}
 
-BOX tex-cmt #{{{
+BOX tex-cmt, slang-cmt #{{{
 
 author   "Nic H"
 designer "(public domain)"
@@ -1428,7 +1428,7 @@ elastic (w)
 
 END tex-cmt #}}}
 
-BOX tex-box #{{{
+BOX tex-box, slang-box #{{{
 
 author   "Nic H"
 designer "(public domain)"
