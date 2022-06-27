@@ -3,14 +3,14 @@ Version=1.0
 Type=Application|Link|Directory
 Name=Specific name of the application
 GenericName=Generic name of the application
-comment=Tooltip
+Comment=Tooltip
 Exec=Path to executable
 Path=\working\directory\
 URL=If entry is Link type, the URL to access
 Terminal=false|true
 Icon=/path/to/icon
 MimeType=see /etc/mime.types
-categories=See below
+Categories=See below
 Keywords=
 
 # Feel free to delete from here to EOF when finished
