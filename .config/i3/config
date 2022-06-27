@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-06-24 01:20                                               #
+# Last edit  : 2022-06-27 15:47                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3                                                             #
@@ -55,7 +55,7 @@ bindsym $mod+Shift+f exec nautilus
 bindsym $mod+shift+i exec x-www-browser
 
 # Start my notes program
-bindsym $mod+Shift+n exec Joplin
+bindsym $mod+Shift+n exec /opt/Joplin/Joplin
 
 # kill focused window
 bindsym $mod+Shift+q kill
