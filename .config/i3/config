@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-06-30 03:49                                               #
+# Last edit  : 2022-06-30 10:21                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3                                                             #
@@ -62,7 +62,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 ## bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'Droid Sans Regular-9' -nb '#586e75' -sf  '#657b83' -sb '#eee8d5' -nf '#eee8d5'"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Droid Sans Regular-9' -nb '#586e75' -sf  '#657b83' -sb '#eee8d5' -nf '#eee8d5'"
 
 # Take a screen shot
 bindsym Control+Print exec gnome-screenshot -i
