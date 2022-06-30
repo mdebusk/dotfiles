@@ -2,7 +2,7 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2022-06-22 16:54                                               #
+# Last edit  : 2022-06-30 02:32                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash                                                           #
 # Arguments  : none                                                           #
@@ -123,7 +123,7 @@ alias dosbox='dosbox -conf $XDG_CONFIG_HOME/dosbox/dosbox-0.74-3.conf'
 alias mysql-workbench="mysql_workbench.sh"
 
 # Use vim as a pager with syntax highlighting
-alias vless='/usr/local/share/vim/vim82/macros/less.sh'
+alias vless='/usr/local/share/vim/vim90/macros/less.sh'
 
 # Add color to grep output
 alias grep='grep --color=auto'
