@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-03-26 23:44                                               #
+# Last edit  : 2022-06-30 22:48                                               #
 # Purpose    : Configuration file for i3status                                #
 # Depends    : i3status                                                       #
 # Arguments  : N/A                                                            #
@@ -16,12 +16,12 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
-        colors = true
-        color_good = "#859900"
-        color_degraded = "#b58900"
-        color_bad = "#dc322f"
-        separator = "┋"
-        interval = 5
+    colors = true
+    color_good = "#859900"
+    color_degraded = "#b58900"
+    color_bad = "#dc322f"
+    separator = "┋"
+    interval = 5
 }
 
 # order += "ipv6"
@@ -36,31 +36,33 @@ order += "volume master"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = "📶 %quality at %essid (%ip)"
-        format_down = " 📶❌"
+    format_up = "📶 %quality at %essid (%ip)"
+    format_down = " 📶❌"
 }
 
 ethernet _first_ {
-        # if you use %speed, i3status requires root privileges
-        format_up = "E: %ip (%speed)"
-        # format_down = "E: ❌"
-        format_down = ""
+# if you use %speed, i3status requires root privileges
+    format_up = "E: %ip (%speed)"
+# format_down = "E: ❌"
+    format_down = ""
 }
 battery 0 {
-        format = "Battery: %status %percentage %remaining %emptytime"
-        format_down = "No battery"
-        status_chr = "⚡ CHR"
-        status_bat = "🔋 BAT"
-        status_unk = "? UNK"
-        status_full = "☻ FULL"
-        path = "/sys/class/power_supply/BAT%d/uevent"
-        low_threshold = 10
+    format = "Battery: %status %percentage %remaining %emptytime"
+    format_down = "No battery"
+    status_chr = "⚡ CHR"
+    status_bat = "🔋 BAT"
+    status_unk = "? UNK"
+    status_full = "☻ FULL"
+    path = "/sys/class/power_supply/BAT%d/uevent"
+    low_threshold = 10
+    last_full_capacity = true
+    integer_battery_capacity = true
 # battery all {
 #        format = "%status %percentage %remaining"
 }
 
 tztime local {
-        format = "%Y-%m-%d (%A) %H:%M"
+    format = "%Y-%m-%d (%A) %H:%M"
 }
 
 memory {
@@ -69,18 +71,18 @@ memory {
 }
 
 load {
-        format = "CPU Load: %1min"
+    format = "CPU Load: %1min"
 }
 
 volume master {
-   format = " %volume"
-   # format_muted = " %volume"
-   format_muted = "🔇"
-   device = "default"
-   mixer = "Master"
-   mixer_idx = 0
+    format = " %volume"
+# format_muted = " %volume"
+    format_muted = "🔇"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
 }
 
 disk "/" {
-        format = "🗄️ %avail"
+    format = "🗄️ %avail"
 }
