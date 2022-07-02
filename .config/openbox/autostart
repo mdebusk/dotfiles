@@ -1,8 +1,8 @@
 ###############################################################################
 # Filename   : autostart                                                      #
-# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-02-21                                                     #
-# Last edit  : 2022-03-07 14:00                                               #
+# Last edit  : 2022-07-02 13:51                                               #
 # Purpose    : automatically starts programs when booting openbox             #
 # Depends    : openbox                                                        #
 # Arguments  : N/A                                                            #

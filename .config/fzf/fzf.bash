@@ -1,10 +1,10 @@
 ###############################################################################
 # Filename   : fzf.bash                                                       #
-# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-11-30 20:45:58.485227149 -0500                            #
-# Last edit  : 2022-06-09 22:33                                               #
+# Last edit  : 2022-07-02 13:50                                               #
 # Purpose    : Initialization for fzf utility                                 #
-# Reference  : https://github.com/junegunn/                                   #
+# Reference  : https://gitlab.com/junegunn/                                   #
 # Depends    : fzf                                                            #
 # Arguments  : N/A                                                            #
 # Known bugs : NKA                                                            #
@@ -24,7 +24,7 @@ source "/home/michael/Source/fzf/shell/key-bindings.bash"
 
 # Color scheme (Solarized Light) {{{
 # Author: Ethan Schoonover (https://ethanschoonover.com/solarized/)
-# modified by aramisgithub (https://github.com/arzg/)
+# modified by aramisgitlab (https://gitlab.com/arzg/)
 export FZF_DEFAULT_OPTS="--color="
 export FZF_DEFAULT_OPTS+="bg+:#eee8d5,"
 export FZF_DEFAULT_OPTS+="bg:#fdf6e3,"
@@ -41,7 +41,7 @@ export FZF_DEFAULT_OPTS+="hl+:#268bd2"
 # End color scheme }}}
 
 # Layout {{{
-# https://github.com/junegunn/fzf/blob/master/ADVANCED.md
+# https://gitlab.com/junegunn/fzf/blob/master/ADVANCED.md
 export FZF_DEFAULT_OPTS+=" --height=33%"
 export FZF_DEFAULT_OPTS+=" --layout=reverse"
 export FZF_DEFAULT_OPTS+=" --info=inline"

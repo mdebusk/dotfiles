@@ -1,8 +1,8 @@
 ###############################################################################################################
 # Filename   : colors                                                                                         #
-# Author     : Michael DeBusk (https://github.com/mdebusk/)                                                   #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                                                   #
 # Created    : 2022-06-25                                                                                     #
-# Last edit  : 2022-06-25 13:22                                                                               #
+# Last edit  : 2022-07-02 13:50                                                                               #
 # Purpose    : Color scheme modified to work with mutt compiled against ncurses                               #
 # Reference  : https://git.sr.ht/~ben/cfg/tree/c6bb5f5fb1de3c26350cf0a740040df249cfc3ec/mutt/solarized.muttrc #
 # Depends    : mutt compiled against ncurses                                                                  #

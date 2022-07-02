@@ -1,9 +1,9 @@
 ###############################################################################
 # Filename   : discordian.rem                                                 #
-# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 #            : Swiped from the nic 'calendar' utility                         #
 # Created    : Unknown, probably late 1970s                                   #
-# Last edit  : 2022-06-19 10:32                                               #
+# Last edit  : 2022-07-02 13:52                                               #
 # Purpose    : Discordian holidays file for remind                            #
 # Depends    : remind                                                         #
 # Arguments  : N/A                                                            #

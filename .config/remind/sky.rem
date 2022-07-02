@@ -1,8 +1,8 @@
 ###############################################################################
 # Filename   : sky.rem                                                        #
-# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-03-26 21:37                                               #
+# Last edit  : 2022-07-02 13:52                                               #
 # Purpose    : Moon phases file for remind                                    #
 # Depends    : remind                                                         #
 # Arguments  : N/A                                                            #

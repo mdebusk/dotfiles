@@ -1,8 +1,8 @@
 --------------------------------------------------------------------------------
 -- Filename   : sqliterc                                                      --
--- Author     : Michael DeBusk (https://github.com/mdebusk/)                  --
+-- Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                  --
 -- Created    : 2021-03-19                                                    --
--- Last edit  : 2021-08-03 13:31                                              --
+-- Last edit  : 2022-07-02 13:53                                              --
 -- Purpose    : Initialization file for sqlite3                               --
 -- Depends    : sqlite3                                                       --
 -- Arguments  : N/A                                                           --

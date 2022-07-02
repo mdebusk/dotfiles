@@ -1,8 +1,8 @@
 ###############################################################################
 # Filename   : .bashrc                                                        #
-# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2022-06-30 02:32                                               #
+# Last edit  : 2022-07-02 13:25                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash                                                           #
 # Arguments  : none                                                           #

@@ -1,8 +1,8 @@
 ###############################################################################
 # Filename   : .inputrc                                                       #
-# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Aft 2008                                                       #
-# Last edit  : 2022-05-30 15:08                                               #
+# Last edit  : 2022-07-02 13:51                                               #
 # Purpose    : User configuration file for GNU readline                       #
 # Depends    : readline                                                       #
 # Arguments  : N/A                                                            #

@@ -1,8 +1,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Filename   : vimrc                                                          "
-" Author     : Michael DeBusk (https://github.com/mdebusk/)                   "
+" Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-06-21 13:56                                               "
+" Last edit  : 2022-07-02 13:30                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/
 " Depends    : vim                                                            "

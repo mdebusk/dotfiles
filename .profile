@@ -1,8 +1,8 @@
 ###############################################################################
 # Filename   : .profile                                                       #
-# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-06-23 21:06                                               #
+# Last edit  : 2022-07-02 13:26                                               #
 # Purpose    : Sets environment variables                                     #
 # Depends    : N/A                                                            #
 # Arguments  : N/A                                                            #

@@ -1,8 +1,8 @@
 ###############################################################################
 # Filename   : config                                                         #
-# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-06-30 22:48                                               #
+# Last edit  : 2022-07-02 13:50                                               #
 # Purpose    : Configuration file for i3status                                #
 # Depends    : i3status                                                       #
 # Arguments  : N/A                                                            #

@@ -1,8 +1,8 @@
 ###############################################################################
 # Filename   : tidyrc                                                         #
-# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : unknown                                                        #
-# Last edit  : 2022-05-17 22:21                                               #
+# Last edit  : 2022-07-02 13:53                                               #
 # Purpose    : Configuration file for HTML Tidy                               #
 # Depends    : HTML Tidy version 5.9.20                                       #
 #              https://api.html-tidy.org/tidy/quickref_next.html              #

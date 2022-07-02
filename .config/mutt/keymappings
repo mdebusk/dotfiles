@@ -1,8 +1,8 @@
 ###############################################################################
 # Filename   : keymappings                                                    #
-# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2020-07-19 08:10                                               #
-# Last edit  : 2022-06-25 13:30                                               #
+# Last edit  : 2022-07-02 13:50                                               #
 # Purpose    : vim-like keybindings for mutt                                  #
 # Reference  : https://ryanlue.com/posts/2017-05-21-mutt-the-vim-way          #
 # Depends    : mutt                                                           #

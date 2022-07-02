@@ -1,8 +1,8 @@
 ###############################################################################
 # Filename   : .nanorc                                                        #
-# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2021-08-14 09:59                                               #
+# Last edit  : 2022-07-02 13:51                                               #
 # Purpose    : Configuration file for nano                                    #
 #              https://www.nano-editor.org/dist/latest/nanorc.5.html          #
 # Depends    : nano                                                           #
@@ -26,7 +26,7 @@ set titlecolor normal,normal
 #}}}
 
 # Syntax Highlighting{{{
-# Files from https://github.com/scopatz/nanorc
+# Files from https://gitlab.com/scopatz/nanorc
 include ~/.config/nano/syntax/nanorc/*.nanorc
 #}}}
 

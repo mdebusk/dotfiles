@@ -1,8 +1,8 @@
 ###############################################################################
 # Filename   : alacritty,yml                                                  #
-# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-09-26                                                     #
-# Last edit  : 2022-05-08 16:03                                               #
+# Last edit  : 2022-07-02 13:34                                               #
 # Purpose    : Configuration for Alacritty                                    #
 # Depends    : alacritty                                                      #
 # Arguments  : N/A                                                            #

@@ -1,9 +1,9 @@
 ###############################################################################
 # Filename   : lotr.rem                                                       #
-# Author     : Michael DeBusk (https://github.com/mdebusk/)                   #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 #            : Swiped from the unix calendar utility                          #
 # Created    : Unknown, maybe late 1970s                                      #
-# Last edit  : 2022-03-20 12:48                                               #
+# Last edit  : 2022-07-02 13:51                                               #
 # Purpose    : Lord of the Rings days file for remind                         #
 # Depends    : remind                                                         #
 # Arguments  : N/A                                                            #
