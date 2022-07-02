@@ -2,7 +2,7 @@
 # Filename   : .gitignore                                                     #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022                                                           #
-# Last edit  : 2022-07-02 13:27                                               #
+# Last edit  : 2022-07-02 18:07                                               #
 # Purpose    : causes git to ignore specific files in dotfiles repo           #
 # Depends    : git                                                            #
 # Arguments  : N/A                                                            #
@@ -16,26 +16,25 @@
 !/.bashrc
 !/.mailcap
 !/README.md
-!/Templates/*
-!/.vim/*
+!/Templates/
 !/.config/compton.conf
 !/.config/dircolors
 !/.config/signature-mail
 !/.config/tidyrc
-!/.config/X11/*
-!/.config/boxes/*
+!/.config/X11/
+!/.config/boxes/
 !/.config/ccal/cal.col
-!/.config/chordpro/*
-!/.config/dosbox/*
-!/.config/fzf/*
-!/.config/i3/*
-!/.config/i3status/*
+!/.config/chordpro/
+!/.config/dosbox/
+!/.config/fzf/
+!/.config/i3/
+!/.config/i3status/
 !/.config/joplin-desktop/userstyle.css
 !/.config/mutt/colors
 !/.config/mutt/keymappings
 !/.config/nano/nanorc
 !/.config/npm/npmrc
-!/.config/nvim/*
+!/.config/nvim/
 !/.config/openbox/autostart
 !/.config/openbox/rc.xml
 !/.config/readline/inputrc
@@ -49,3 +48,16 @@
 !/.config/rofi/config.rasi
 !/.config/sqlite3/sqliterc
 !/.config/tint2/tint2rc
+!/.vim/after/
+!/.vim/autoload/
+!/.vim/bitmaps/
+!/.vim/colors/
+!/.vim/compiler/
+!/.vim/doc/
+!/.vim/ftdetect/
+!/.vim/ftplugin/
+!/.vim/pack/
+!/.vim/plugin/
+!/.vim/spell/
+!/.vim/syntax/
+
