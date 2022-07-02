@@ -1,0 +1,51 @@
+###############################################################################
+# Filename   : .gitignore                                                     #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : 2022                                                           #
+# Last edit  : 2022-07-02 13:27                                               #
+# Purpose    : causes git to ignore specific files in dotfiles repo           #
+# Depends    : git                                                            #
+# Arguments  : N/A                                                            #
+# Known bugs : NKA                                                            #
+# To do      : N/A                                                            #
+###############################################################################
+
+/*
+!/.gitignore
+!/.profile
+!/.bashrc
+!/.mailcap
+!/README.md
+!/Templates/*
+!/.vim/*
+!/.config/compton.conf
+!/.config/dircolors
+!/.config/signature-mail
+!/.config/tidyrc
+!/.config/X11/*
+!/.config/boxes/*
+!/.config/ccal/cal.col
+!/.config/chordpro/*
+!/.config/dosbox/*
+!/.config/fzf/*
+!/.config/i3/*
+!/.config/i3status/*
+!/.config/joplin-desktop/userstyle.css
+!/.config/mutt/colors
+!/.config/mutt/keymappings
+!/.config/nano/nanorc
+!/.config/npm/npmrc
+!/.config/nvim/*
+!/.config/openbox/autostart
+!/.config/openbox/rc.xml
+!/.config/readline/inputrc
+!/.config/remind/definitions.rem
+!/.config/remind/discordian.rem
+!/.config/remind/holidays.rem
+!/.config/remind/lotr.rem
+!/.config/remind/pagan.rem
+!/.config/remind/seasons.rem
+!/.config/remind/sky.rem
+!/.config/rofi/config.rasi
+!/.config/sqlite3/sqliterc
+!/.config/tint2/tint2rc
