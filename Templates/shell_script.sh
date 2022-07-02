@@ -2,7 +2,7 @@
 
 ###############################################################################
 # Filename   : x                                                              #
-# Author     : Michael DeBusk (https://github.com/mdebusk)                    #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk)                    #
 # Created    : x                                                              #
 # Last edit  : x                                                              #
 # Purpose    : x                                                              #
@@ -13,7 +13,7 @@
 
 # License and copyright {{{
 ###############################################################################
-# Copyright © 2022 Michael DeBusk (https://github.com/mdebusk/)               #
+# Copyright © 2022 Michael DeBusk (https://gitlab.com/mdebusk/)               #
 # Template copyright © 2007, 2019 David Both LinuxGeek46@both.org             #
 # https://opensource.com/article/19/12/bash-script-template                   #
 # Full GNU General Public License can be viewed here:                         #

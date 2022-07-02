@@ -2,7 +2,7 @@
 
 --[[ Description {{{
 Filename  :
-Author    : Michael DeBusk (https://github.com/mdebusk)
+Author    : Michael DeBusk (https://gitlab.com/mdebusk)
 Created   :
 Last edit :
 Purpose   :
@@ -12,7 +12,7 @@ To do     :
 End description }}}--]]
 
 --[[ License and copyright {{{
-Copyright © 2022 Michael DeBusk (https://github.com/mdebusk)
+Copyright © 2022 Michael DeBusk (https://gitlab.com/mdebusk)
 
 Full GNU General Public License can be viewed here:
 https://www.gnu.org/licenses/gpl-3.0.en.html
