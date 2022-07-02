@@ -1,0 +1,43 @@
+03 00   video colors for month name
+03 00   video colors for weekday header
+07 00   video colors for normal calendar days
+13 00   video colors for sundays
+15 00   video colors for current day
+07 00   background color for yearly calendar (the space between months)
+11 00   video colors for special day descriptions
+12 00   video colors for indicator that a special description is for today
+FG BG   Description
+
+#############################################################
+# Filename   : cal.col                                      #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/) #
+# Created    : Unknown                                      #
+# Last edit  : 2022-07-02 13:49                             #
+# Purpose    : Color configuration file for ccal            #
+# Reference  : http://unicorn.us.com/cal.html               #
+# Depends    : ccal                                         #
+#############################################################
+
+## Instructions {{{
+This file is optional.  It doesn't have to exist.
+
+Color definitions must appear as above, as a two-character field for
+the foreground color, followed by a space, folowed by a two-character
+field for the background color. The color definitions must start on the
+first line, and must not contain blank lines.
+
+## Possible colors {{{2
+|------------|----|---------------|----|
+| black      | 00 | dark gray     | 08 |
+| blue       | 01 | bright blue   | 09 |
+| green      | 02 | bright green  | 10 |
+| cyan       | 03 | bright cyan   | 11 |
+| red        | 04 | bright red    | 12 |
+| violet     | 05 | bright violet | 13 |
+| orange     | 06 | yellow        | 14 |
+| light gray | 07 | white         | 15 |
+# }}}
+
+Specifying a background color from 8 to 15 will result in a background
+color of 0 to 7, with flashing text.
+}}}
