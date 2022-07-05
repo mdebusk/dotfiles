@@ -2,7 +2,7 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2022-07-04 14:41                                               #
+# Last edit  : 2022-07-04 23:32                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash                                                           #
 # Arguments  : none                                                           #
@@ -62,7 +62,12 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-PS1='${debian_chroot:+($debian_chroot)}\[\033[00;32;40m\]\u@\h\[\033[00;40m\]:\[\033[00;34;40m\]\w\[\033[00m\]\$ '
+# My old prompt
+## PS1='${debian_chroot:+($debian_chroot)}\[\033[00;32;40m\]\u@\h\[\033[00;40m\]:\[\033[00;34;40m\]\w\[\033[00m\]\$ '
+
+# New two-line prompt I'm trying on to see if I like it
+# Modeled after a video on "Steve's Teacher" YouTube channel
+PS1='${debian_chroot:+($debian_chroot)}\[\033[00;31;40m\]┌[\[\033[00;32;40m\]\u@\h\[\033[00;31;40m\]]-\[[\033[00;34;40m\]\w\[\033[00;31;40m\]]\n└╼\[\033[00m\] $ '
 
 # If this is an xterm, set the title to user@host:dir
 case "$TERM" in
