@@ -2,7 +2,7 @@
 # Filename   : alacritty,yml                                                  #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-09-26                                                     #
-# Last edit  : 2022-07-02 13:34                                               #
+# Last edit  : 2022-07-07 20:57                                               #
 # Purpose    : Configuration for Alacritty                                    #
 # Depends    : alacritty                                                      #
 # Arguments  : N/A                                                            #
@@ -32,7 +32,7 @@ env:
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-    TERM: xterm-256color
+  # TERM: xterm-256color
   # This variable "fixes" font scaling issues
     WINIT_X11_SCALE_FACTOR: "1.0"
 
