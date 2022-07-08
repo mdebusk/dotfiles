@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-07-02 13:30                                               "
+" Last edit  : 2022-07-07 22:43                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/
 " Depends    : vim                                                            "
@@ -12,37 +12,38 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " ** 1. Important {{{
-set nocompatible         "Turn off vi-compatible mode
+set nocompatible         " Turn off vi-compatible mode
 " I'm not quite ready to do this next move
 "" set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
+"" set packpath^=$XDG_DATA_HOME/vim,$XDG_CONFIG_HOME/vim
+"" set packpath+=$XDG_CONFIG_HOME/vim/after,$XDG_DATA_HOME/vim/after
 " End Important }}}
 
 " ** 2. Moving around, searching and patterns {{{
-set autochdir            "Automatically change working directory to that of open file
-set ignorecase           "ignore case when using a search pattern
-set incsearch            "show match for partly-typed search command
-set path+=**             "Search down into subfolders
-set smartcase            "override 'ignorecase' when pattern has upper case characters
+set autochdir   " Automatically change working directory to that of open file
+set ignorecase  " ignore case when using a search pattern
+set incsearch   " show match for partly-typed search command
+set path+=**    " Search down into subfolders
+set smartcase   " override 'ignorecase' when pattern has upper case characters
 " End Moving around, searching and patterns }}}
 
 " ** 3. Tags {{{
 " End Tags }}}
 
 " ** 4. Displaying text {{{
-set cmdheight=2          "Set the command window height to 2 lines
-set fillchars+=fold:·    " Set fill character for folds
-set lazyredraw           "Don’t update screen during macro and script execution
-set list                 "Show whitespace characters
-"List of strings used for list mode
+set cmdheight=2        " Set the command window height to 2 lines
+set fillchars+=vert:┃  " Set vertical separator
+set fillchars+=fold:·  " Set fill character for folds
+set lazyredraw         " Don’t update screen during macro and script execution
+set list               " Show whitespace characters
+" Strings used for list mode
 set listchars=tab:╠═,trail:░,nbsp:▃,leadmultispace:┊\ \ \ ,
-set nowrap               "Turn off word wrapping
-set number               "Enable line numbering, taking up 6 spaces
-set numberwidth=5        "Set line numbering to take up 5 spaces
-"" set relativenumber       "Show line numbers relative to current line
-set sidescrolloff=5      "Number of columns to show around the cursor
-set scrolloff=3          "Number of lines to show around the cursor
-"" set scrolloff=999        " Keeps cursor line centered on screen
-augroup numbertoggle     "Toggles relativenumber on and off based on mode
+set nowrap             " Turn off word wrapping
+set number             " Enable line numbering, taking up 6 spaces
+set numberwidth=5      " Set line numbering to take up 5 spaces
+set sidescrolloff=5    " Number of columns to show around the cursor
+set scrolloff=3        " Number of lines to show around the cursor
+augroup numbertoggle   " Toggles relativenumber on and off based on mode
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
     autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
@@ -50,31 +51,31 @@ augroup END
 " End Displaying text }}}
 
 " ** 5. Syntax highlighting and spelling {{{
-filetype indent plugin on "indent depends on filetype
+filetype indent plugin on " indent depends on filetype
 set background=dark
-set colorcolumn=+1        "Show the column where text would wrap
-set cursorline            "Highlight current line
-set hlsearch              "Highlight searches
+set colorcolumn=+1        " Show the column where text would wrap
+set cursorline            " Highlight current line
+set hlsearch              " Highlight searches
 syntax enable
 " End Syntax highlighting and spelling }}}
 
 " ** 6. Multiple Windows {{{
-set hidden               "Allow easier switching between files
-set laststatus=2         "Always display the status line
-set splitbelow           "New horizontal split opens below the existing one
-set splitright           "New vertical split opens right of the existing one
-" Initiate statusline {{{2
-set statusline=                            "Start with an empty statusline
-set statusline+=[%02n]                     "Buffer number
-set statusline+=\ %F%m%r%h%w               "File path, modified, r/o, help, preview
-set statusline+=\ [Fmt\:%{&ff}]            "file format
-set statusline+=\ [Type\:%Y]               "Filetype
-set statusline+=\ [ASC\:%04.4b]         "ASCII code of character under cursor
-set statusline+=\ [HEX\:%04.4B]           "Hex code of character under cursor
-set statusline+=%=                         "Move to right side of the line
-set statusline+=\ [Line\:%04l,\ Col\:%03v] "Cursor location
-set statusline+=\ [%3p%%]                  "Percentage through file
-set statusline+=\ [Lines\:%L]              "Total lines in file
+set hidden        " Allow easier switching between files
+set laststatus=2  " Always display the status line
+set splitbelow    " New horizontal split opens below the existing one
+set splitright    " New vertical split opens right of the existing one
+" Statusline {{{2
+set statusline=                            " Start with an empty statusline
+set statusline+=[%02n]                     " Buffer number
+set statusline+=\ %F%m%r%h%w               " File path, modified, r/o, help, preview
+set statusline+=\ [Fmt\:%{&ff}]            " file format
+set statusline+=\ [Type\:%Y]               " Filetype
+set statusline+=\ [ASC\:%04.4b]            " ASCII code of character under cursor
+set statusline+=\ [HEX\:%04.4B]            " Hex code of character under cursor
+set statusline+=%=                         " Move to right side of the line
+set statusline+=\ [Line\:%04l,\ Col\:%03v] " Cursor location
+set statusline+=\ [%3p%%]                  " Percentage through file
+set statusline+=\ [Lines\:%L]              " Total lines in file
 " set statusline+=%#color#%
 " End statusline }}}
 " End Multiple Windows }}}
@@ -83,68 +84,66 @@ set statusline+=\ [Lines\:%L]              "Total lines in file
 " End Multiple tab pages }}}
 
 " ** 8. Terminal {{{
-set term=alacritty       "Which terminal shall vim run?
-set title                "show title in console title bar
-set ttyfast              "smoother changes
+set term=alacritty     " Which terminal shall vim run?
+set title              " show title in console title bar
+set ttytype=alacritty  " Alias for 'term'
+set ttyfast            " smoother changes
 " End Terminal }}}
 
 " ** 9. Using the mouse {{{
-set mousefocus                        "May as well use it if it's there
+set mousefocus  " May as well use it if it's there
 " End Using the mouse }}}
 
 " ** 10. GUI {{{
-if has("gui_running")
-    let g:solarized_menu=0            "Activate menu for Solarized color scheme
-    set guifont=Azeret\ Mono\ 12      "Set the font and size
-    set guioptions-=l                 "Remove left scrollbar
-    set guioptions-=R                 "Remove right scrollbar if vsplit
-    set guioptions-=b                 "Remove bottom scrollbar
-    set guioptions-=F                 "Remove footer from Motif
-    set guioptions-=L                 "Remove left scrollbar if vsplit
-    set guioptions-=T                 "Remove toolbar
-    set guioptions-=m                 "Remove menu bar
-    set guioptions-=r                 "Remove right scrollbar
-    ""set lines=43 columns=120         "Not useful with a tiling window manager
-    ""set lines=999 columns=999        "Creates a pseudo-fullscreen gvim
+if has(" gui_running")
+    set guifont=Azeret\ Mono\ 12 " Set the font and size
+    set guioptions-=l            " Remove left scrollbar
+    set guioptions-=R            " Remove right scrollbar if vsplit
+    set guioptions-=b            " Remove bottom scrollbar
+    set guioptions-=F            " Remove footer from Motif
+    set guioptions-=L            " Remove left scrollbar if vsplit
+    set guioptions-=T            " Remove toolbar
+    set guioptions-=m            " Remove menu bar
+    set guioptions-=r            " Remove right scrollbar
+    set toolbar=text             " If toolbar is showing, use text, not icons
 endif
 " End GUI }}}
 
 " ** 11. Printing {{{
-set printdevice=pdf     "Use PDF printer
+set printdevice=pdf        " Use PDF printer
+set printfont=courier:h12  " Use courier 12 point
 set printoptions=paper:letter,syntax:y,wrap:y,duplex:long
 " End Printing }}}
 
 " ** 12. Messages and info {{{
-set confirm              "ask if you wish to save changed files
-set ruler                "show the cursor position all the time
-set showcmd              "Show partial commands in the status line
-set visualbell           "Use visual bell instead of beeping when doing something wrong
+set confirm     " ask if you wish to save changed files
+set ruler       " show the cursor position all the time
+set showcmd     " Show partial commands in the status line
+set visualbell  " Use visual bell instead of beeping when doing something wrong
 " End Messages and info }}}
 
 " ** 13. Selecting text {{{
 " End Selecting text }}}
 
 " ** 14. Editing text {{{
-set complete+=kspell
+set complete+=kspell     " Add kspell dictionary to autocomplete
 set completeopt=menuone,longest
-set nojoinspaces
+set nojoinspaces         " Don't use two spaces when joining lines
 set omnifunc=syntaxcomplete#Complete
-set matchpairs+=<:>      "Add angle brackets to matchpairs
-set nrformats-=octal     "Remove octal from auto-increment and auto-decrement
+set matchpairs+=<:>      " Add angle brackets to matchpairs
+set nrformats-=octal     " Remove octal from auto-increment and auto-decrement
 set undodir=$XDG_STATE_HOME/vim/undo,~/,/tmp
-set undofile              "Save and restorre undo file
-""set textwidth=80        "Set text width, where text would wrap if it did
-""set wrapmargin=80
+set undofile              " Save and restore undo file
 " End Editing text }}}
 
 " ** 15. Tabs and indenting {{{
-set autoindent           "Automatically set the indent of a new line
-set expandtab            "turn tabs into whitespace
-set shiftround           " use multiple of shiftwidth when indenting with '<' and '>'
-set shiftwidth=4         "Indent width for autoindent
-set smartindent          "Turn on smart indent
-set softtabstop=4        "Number of spaces a tab counts when editing
-set tabstop=4            "set tab character to 4 characters
+set autoindent     " Automatically set the indent of a new line
+set expandtab      " turn tabs into whitespace
+set shiftround     " use multiple of shiftwidth when indenting with '<' and '>'
+set shiftwidth=4   " Indent width for autoindent
+set smartindent    " Turn on smart indent
+set softtabstop=4  " Number of spaces a tab counts when editing
+set tabstop=4      " set tab character to 4 characters
 " End Tabs and indenting }}}
 
 " ** 16. Folding {{{
@@ -156,119 +155,18 @@ set foldmethod=marker
 " End Diff mode }}}
 
 " ** 18. Mapping {{{
-"Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=200
-
-" In case you open a file without sudo permissions
-cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
-
-" Open help in a vertical split and to the right
-cnoremap help vertical botright help
-
-"Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
-"which is the default
-map Y y$
-
-"Map <C-L> (redraw screen) to also turn off search highlighting until the
-"next search
-nnoremap <C-L> :nohl<CR><C-L>
-
-" Disable arrow movement; resize splits instead.
-nnoremap <Up> :resize +2<CR>
-nnoremap <Down> :resize -2<CR>
-nnoremap <Left> :vertical resize +2<CR>
-nnoremap <Right> :vertical resize -2<CR>
-
-" Keep the cursor centered during search and join
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap J mzJ`z
-
-" Undo break points
-inoremap , ,<c-g>u
-inoremap . .<c-g>u
-inoremap ! !<c-g>u
-inoremap ? ?<c-g>u
-
-" Don't leave visual mode when (un)indenting
-vnoremap < <gv
-vnoremap > >gv
-
-" Autoclose mappings {{{2
-" https://alldrops.info/posts/vim-drops/2019-02-13_custom-autoclose-mappings/
-" autoclose and position cursor to write text inside
-"" inoremap ' ''<left>
-"" inoremap ` ``<left>
-"" inoremap " "<left>
-"" inoremap ( ()<left>
-"" inoremap [ []<left>
-"" inoremap { {}<left>
-""autoclose with ; and position cursor to write text inside
-"" inoremap '; '';<left><left>
-"" inoremap `; ``;<left><left>
-"" inoremap "; "";<left><left>
-"" inoremap (; ();<left><left>
-"" inoremap [; [];<left><left>
-"" inoremap {; {};<left><left>
-""autoclose with , and position cursor to write text inside
-"" inoremap ', '',<left><left>
-"" inoremap `, ``,<left><left>
-"" inoremap ", "",<left><left>
-"" inoremap (, (),<left><left>
-"" inoremap [, [],<left><left>
-"" inoremap {, {},<left><left>
-""autoclose and position cursor after
-"" inoremap '<tab> ''
-"" inoremap `<tab> ``
-"" inoremap "<tab> ""
-"" inoremap (<tab> ()
-"" inoremap [<tab> []
-"" inoremap {<tab> {}
-""autoclose with ; and position cursor after
-"" inoremap ';<tab> '';
-"" inoremap `;<tab> ``;
-"" inoremap ";<tab> "";
-"" inoremap (;<tab> ();
-"" inoremap [;<tab> [];
-"" inoremap {;<tab> {};
-""autoclose with , and position cursor after
-"" inoremap ',<tab> '',
-"" inoremap `,<tab> ``,
-"" inoremap ",<tab> "",
-"" inoremap (,<tab> (),
-"" inoremap [,<tab> [],
-"" inoremap {,<tab> {},
-""autoclose 2 lines below and position cursor in the middle
-"" inoremap '<CR> '<CR>'<ESC>O
-"" inoremap `<CR> `<CR>`<ESC>O
-"" inoremap "<CR> "<CR>"<ESC>O
-"" inoremap (<CR> (<CR>)<ESC>O
-"" inoremap [<CR> [<CR>]<ESC>O
-"" inoremap {<CR> {<CR>}<ESC>O
-""autoclose 2 lines below adding ; and position cursor in the middle
-"" inoremap ';<CR> '<CR>';<ESC>O
-"" inoremap `;<CR> `<CR>`;<ESC>O
-"" inoremap ";<CR> "<CR>";<ESC>O
-"" inoremap (;<CR> (<CR>);<ESC>O
-"" inoremap [;<CR> [<CR>];<ESC>O
-"" inoremap {;<CR> {<CR>};<ESC>O
-""autoclose 2 lines below adding , and position cursor in the middle
-"" inoremap ',<CR> '<CR>',<ESC>O
-"" inoremap `,<CR> `<CR>`,<ESC>O
-"" inoremap ",<CR> "<CR>",<ESC>O
-"" inoremap (,<CR> (<CR>),<ESC>O
-"" inoremap [,<CR> [<CR>],<ESC>O
-"" inoremap {,<CR> {<CR>},<ESC>O
-" End Autoclose mappings }}}
+set notimeout       " Never time out on mappings
+set ttimeout        " Allow time out on keycodes
+set ttimeoutlen=200 " Time to time out (in milliseconds)
 " End Mapping }}}
 
 " ** 19. Reading and writing files {{{
-set autowrite            "Writes file when switching to another buffer
-set backup               "keep a backup file
-set backupdir=$XDG_STATE_HOME/vim/backup,~/,/tmp "location of backup files
+set autowrite    " Writes file when switching to another buffer
+set backup       " keep a backup file
+set backupdir=$XDG_STATE_HOME/vim/backup,~/,/tmp " location of backup files
 " https://www.techrepublic.com/article/turn-off-modeline-support-in-vim/
-set modelines=0          "Do not check for existing modelines
-set nomodeline           "Disable modeline support
+set modelines=0  " Do not check for existing modelines
+set nomodeline   " Disable modeline support
 " End Reading and writing files }}}
 
 " ** 20. The swap file {{{
@@ -276,7 +174,7 @@ set directory=$XDG_STATE_HOME/vim/swap,~/,/tmp
 " End The swap file }}}
 
 " ** 21. Command line editing {{{
-set wildmenu             "turn on command line completion wild style
+set wildmenu  " turn on command line completion wild style
 " Ignore the following extensions when using wildmenu
 set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pdf,*.bak,*.beam
 " End Command line editing }}}
@@ -291,18 +189,18 @@ set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.
 " End Language-specific }}}
 
 " ** 25. Multi-byte characters {{{
-set encoding=utf-8       "Use an encoding that supports unicode.
+set encoding=utf-8       " Use an encoding that supports unicode.
 " End Multi-byte characters }}}
 
 " ** 26. Various {{{
-set bufhidden=hide       "Hide buffer when not in window
+set bufhidden=hide  " Hide buffer when not in window
 set signcolumn=yes
 set viminfo=%,<800,'10,/50,:100,h,f0,n$XDG_STATE_HOME/vim/viminfo
+set viewdir=$XDG_STATE_HOME/vim/view
 " End Various }}}
 
 " ** Color scheme {{{
 set t_Co=16
-let g:solarized_termcolors=16
 let g:solarized_termtrans=1
 colorscheme solarized
 highlight Comment cterm=italic gui=italic
@@ -311,7 +209,7 @@ highlight SpellBad cterm=underline,bold gui=undercurl
 " End Color scheme }}}
 
 " ** Customized file types {{{
-augroup views            "Back up and restore views on buffer open
+augroup views            " Back up and restore views on buffer open
     autocmd!
     au BufWinLeave ?* mkview
     au BufWinEnter ?* silent loadview
@@ -377,8 +275,8 @@ augroup END "}}}
 
 " ** Abbreviations {{{
 " Insert date (and maybe time)
-:iab <expr> dts strftime("%F %R")    "Date/time stamp
-:iab <expr> dtg strftime("%e %b %Y") "Date style used in genealogy
+:iab <expr> dts strftime("%F %R")    " Date/time stamp
+:iab <expr> dtg strftime("%e %b %Y") " Date style used in genealogy
 
 " for QIF files
 :iab ckng MAutopay<CR>LAssets:Current Assets:Capital One 360:Checking
@@ -395,15 +293,121 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
-""augroup ProjectDrawer
-"  "autocmd!
-"  "autocmd VimEnter * :Vexplore
-""augroup END
+"" augroup ProjectDrawer
+"  " autocmd!
+"  " autocmd VimEnter * :Vexplore
+"" augroup END
 " End netrw-to-NERDtree }}}
 " End Plugins }}}
 
+" ** Key remaps {{{
+" In case you open a file without sudo permissions
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+" Open help in a vertical split and to the right
+cnoremap help vertical botright help
+
+" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
+" which is the default
+map Y y$
+
+" Map <C-L> (redraw screen) to also turn off search highlighting until the
+" next search
+nnoremap <C-L> :nohl<CR><C-L>
+
+" Disable arrow movement; resize splits instead.
+" TODO: I never use these. Consider remapping to <NOP>
+nnoremap <Up> :resize +2<CR>
+nnoremap <Down> :resize -2<CR>
+nnoremap <Left> :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
+
+" Keep the cursor centered during search and join
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Undo break points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+" Don't leave visual mode when (un)indenting
+vnoremap < <gv
+vnoremap > >gv
+
+" Autoclose mappings {{{2
+" https://alldrops.info/posts/vim-drops/2019-02-13_custom-autoclose-mappings/
+" autoclose and position cursor to write text inside
+"" inoremap ' ''<left>
+"" inoremap ` ``<left>
+"" inoremap " "<left>
+"" inoremap ( ()<left>
+"" inoremap [ []<left>
+"" inoremap { {}<left>
+"" autoclose with ; and position cursor to write text inside
+"" inoremap '; '';<left><left>
+"" inoremap `; ``;<left><left>
+"" inoremap "; "";<left><left>
+"" inoremap (; ();<left><left>
+"" inoremap [; [];<left><left>
+"" inoremap {; {};<left><left>
+"" autoclose with , and position cursor to write text inside
+"" inoremap ', '',<left><left>
+"" inoremap `, ``,<left><left>
+"" inoremap ", "",<left><left>
+"" inoremap (, (),<left><left>
+"" inoremap [, [],<left><left>
+"" inoremap {, {},<left><left>
+"" autoclose and position cursor after
+"" inoremap '<tab> ''
+"" inoremap `<tab> ``
+"" inoremap "<tab> ""
+"" inoremap (<tab> ()
+"" inoremap [<tab> []
+"" inoremap {<tab> {}
+"" autoclose with ; and position cursor after
+"" inoremap ';<tab> '';
+"" inoremap `;<tab> ``;
+"" inoremap ";<tab> "";
+"" inoremap (;<tab> ();
+"" inoremap [;<tab> [];
+"" inoremap {;<tab> {};
+"" autoclose with , and position cursor after
+"" inoremap ',<tab> '',
+"" inoremap `,<tab> ``,
+"" inoremap ",<tab> "",
+"" inoremap (,<tab> (),
+"" inoremap [,<tab> [],
+"" inoremap {,<tab> {},
+"" autoclose 2 lines below and position cursor in the middle
+"" inoremap '<CR> '<CR>'<ESC>O
+"" inoremap `<CR> `<CR>`<ESC>O
+"" inoremap "<CR> "<CR>"<ESC>O
+"" inoremap (<CR> (<CR>)<ESC>O
+"" inoremap [<CR> [<CR>]<ESC>O
+"" inoremap {<CR> {<CR>}<ESC>O
+"" autoclose 2 lines below adding ; and position cursor in the middle
+"" inoremap ';<CR> '<CR>';<ESC>O
+"" inoremap `;<CR> `<CR>`;<ESC>O
+"" inoremap ";<CR> "<CR>";<ESC>O
+"" inoremap (;<CR> (<CR>);<ESC>O
+"" inoremap [;<CR> [<CR>];<ESC>O
+"" inoremap {;<CR> {<CR>};<ESC>O
+"" autoclose 2 lines below adding , and position cursor in the middle
+"" inoremap ',<CR> '<CR>',<ESC>O
+"" inoremap `,<CR> `<CR>`,<ESC>O
+"" inoremap ",<CR> "<CR>",<ESC>O
+"" inoremap (,<CR> (<CR>),<ESC>O
+"" inoremap [,<CR> [<CR>],<ESC>O
+"" inoremap {,<CR> {<CR>},<ESC>O
+" End Autoclose mappings }}}
+" End remaps }}}
+
 " ** Miscellaneous stuff {{{
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
+" NOTE: 'updatetime' defaults to 4000 milliseconds
 " https://vim.fandom.com/wiki/To_switch_back_to_normal_mode_automatically_after_inaction
 au CursorHoldI * stopinsert
 
@@ -440,5 +444,5 @@ function! Writer()
     set syntax=markdown
 endfunction
 com! WR call Writer()
-"End Writer function }}}
+" End Writer function }}}
 " End Miscellaneous stuff }}}
