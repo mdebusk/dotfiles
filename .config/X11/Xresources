@@ -2,7 +2,7 @@
 ! Filename   : .Xresources                                                    !
 ! Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   !
 ! Created    : 2021-05-01                                                     !
-! Last edit  : 2022-07-02 13:35                                               !
+! Last edit  : 2022-07-09 23:59                                               !
 ! Purpose    : Configuration file for xorg and related programs               !
 ! Depends    : xorg                                                           !
 ! Arguments  : x                                                              !
@@ -12,9 +12,9 @@
 
 ! ** General settings {{{
 
-! ** Fonts {{{2
+! *** Fonts {{{2
 
-! Source Code Pro (Inactive) {{{3
+! **** Source Code Pro (Inactive) {{{3
 !! URxvt.font:\
 !!   xft:Source Code Pro:style=Regular:size=9, \
 !!   xft:IBM Plex Mono:style=Regular:size=9
@@ -29,7 +29,7 @@
 !!   xft:IBM Plex Mono:style=Bold Italic:size=9
 ! End Source Code Pro }}}
 
-! Azeret Mono (Active) {{{3
+! **** Azeret Mono (Active) {{{3
 *font:\
     xft:Azeret Mono:style=Regular:antialias=true:size:minspace=false=9, \
     xft:IBM Plex Mono:style=Regular:antialias=true:size:minspace=false=9
@@ -44,7 +44,7 @@
     xft:IBM Plex Mono:style=Bold Italic:antialias=true:size:minspace=false=9
 ! End Azeret Mono }}}
 
-! Font display settings {{{
+! **** Font display settings {{{3
 URxvt.letterSpace: -1
 Xft.dpi:        96
 Xft.antialias:  true
@@ -55,9 +55,9 @@ Xft.hintstyle:  hintfull
 
 ! End fonts }}}
 
-! ** Colors {{{2
+! *** Colors {{{2
 
-! Solarized Dark color scheme (ACTIVE) {{{3
+! **** Solarized Dark color scheme (ACTIVE) {{{3
 ! https://gitlab.com/solarized/xresources
 #define S_base03        #002b36
 #define S_base02        #073642
@@ -117,7 +117,7 @@ Xft.hintstyle:  hintfull
 *color15:               S_base3
 ! End Solarized Dark }}}
 
-! Solarized Light color scheme (INACTIVE) {{{
+! **** Solarized Light color scheme (INACTIVE) {{{3
 ! https://gitlab.com/solarized/xresources/blob/master/Xresources.light
 !!#define S_base03        #002b36
 !!#define S_base02        #073642
@@ -177,7 +177,7 @@ Xft.hintstyle:  hintfull
 !!*color15:               S_base3
 ! End Solarized Light }}}
 
-! Molokai color scheme (INACTIVE) {{{3
+! **** Molokai color scheme (INACTIVE) {{{3
 ! http://www.futurile.net/2016/06/15/xterm-256color-themes-molokai-terminal-theme/
 
 ! Background: black, dark grey
@@ -255,11 +255,15 @@ Xft.hintstyle:  hintfull
 
 ! End Colors }}}
 
+*visualBell:      true
+*urgentOnBell:    true
+*scrollTtyOutput: False
+*scrollKey:       True
+*customization:   -color
+
 ! End general settings }}}
 
 ! ** URxvt-specific settings {{{
-
-
 
 ! Every shell is a login shell by default (for inclusion of all necessary environment variables)
 URxvt.loginshell:true
@@ -270,47 +274,74 @@ URxvt.savelines:16384
 ! Window size
 URxvt.vt100*geometry:120x90
 
-! https://push.cx/2008/256-color-xterms-in-ubuntu
-*customization: -color
 URxvt.termName:rxvt-unicode-256color
+URxvt.depth:24
 
 ! Disable printing the terminal contents when pressing PrintScreen.
 URxvt.print-pipe: "cat > /dev/null"
 
-! Configure Home and End keys {{{2
-URxvt.keysym.Home: \033[1~
-URxvt.keysym.End: \033[4~
-URxvt.keysym.KP_Home: \033[1~
-URxvt.keysym.KP_End:  \033[4~
-! End configuring Home and End keys }}}
+! *** Configure keypad {{{2
+! https://github.com/tpope/dotfiles/blob/master/.Xresources
+URxvt.keysym.KP_Up: string:\033[A
+URxvt.keysym.KP_Down: string:\033[B
+URxvt.keysym.KP_Right: string:\033[C
+URxvt.keysym.KP_Left: string:\033[D
+URxvt.keysym.KP_Begin: string:\033[E
+URxvt.keysym.KP_Insert: string:\033[2~
+URxvt.keysym.KP_Delete: string:\033[3~
+URxvt.keysym.KP_Next: string:\033[5~
+URxvt.keysym.KP_Prior: string:\033[6~
+URxvt.keysym.KP_Home: string:\033[7~
+URxvt.keysym.KP_End: string:\033[8~
+URxvt.keysym.KP_Enter: string:\015
+URxvt.keysym.KP_Add: string:+
+URxvt.keysym.KP_Subtract: string:-
+URxvt.keysym.KP_Multiply: string:*
+URxvt.keysym.KP_Divide: string:/
+! End keypad config }}}
+
+! *** Configure other keys {{{2
+! Scroll up one line
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+
+! Scroll down one line
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+
+URxvt.keysym.Control-Up: \033[1;5A
+URxvt.keysym.Control-Down: \033[1;5B
+
+! Jump right one word
+URxvt.keysym.Control-Right: \033[1;5C
+! Jump left one word
+URxvt.keysym.Control-Left: \033[1;5D
+! End keys config }}}
 
 ! internal border
-URxvt.internalBorder: 4
+URxvt.internalBorder: 8
 
 ! double-click to select whole URLs :D
 URxvt.charClass:33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 
 ! right hand side scrollbar
 URxvt.scrollBar_right: true
-URxvt.ScrollBar: true
+URxvt.scrollBar: true
 
 !Set scrollbar style to rxvt, plain, next or xterm.
 URxvt*scrollstyle: plain
 
-! stop output to terminal from jumping down to bottom of scroll again
-URxvt.scrollTtyOutput:false
-
-!Turn on/off ISO 14755 (default enabled).
+! Turn on/off ISO 14755 (default enabled).
+! https://unix.stackexchange.com/questions/444773/how-to-disable-the-ctrlshift-binding-iso-14755-in-urxvt
 URxvt*iso14755: False
 URxvt.iso14755_52: false
 
-! URxvt Plugins {{{2
+! *** URxvt Plugins {{{2
 URxvt.perl-ext:           default,matcher,font-size
 ! `font-size` plugin
 URxvt.font-size.step: 2
 
 ! "matcher" plugin
-URxvt.url-launcher:       firefox
+URxvt.url-launcher:       xdg_open
+
 ! URxvt.keysym.C-Delete:    perl:matcher:last
 URxvt.keysym.M-Delete:    perl:matcher:list
 ! End URxvt plugins}}}
