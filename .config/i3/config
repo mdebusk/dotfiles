@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-07-02 13:50                                               #
+# Last edit  : 2022-07-10 22:06                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3                                                             #
@@ -264,24 +264,14 @@ assign [class="Joplin"] $workspace10
 # End assign programs to specific workspaces }}}
 
 # ** 4.19. Automatically starting applications on i3 startup {{{
-# Start compton
-## exec --no-startup-id 'compton -b'
+# Start picom
+exec --no-startup-id 'sleep 15 && picom --experimental-backends -b'
 
 # Start autotiling script
 exec_always --no-startup-id ~/bin/autotiling
 
-# Set laptop screen as primary display
-## exec --no-startup-id 'xrandr --output LVDS-0 --primary'
-
-# start pulseaudio
-## exec --no-startup-id i3-msg 'exec /usr/bin/pulseaudio --start'
-
 # Set bass speaker volume to 60% because it's busted
 exec --no-startup-id "sleep 10 && amixer set 'Bass Speaker' 60%"
-
-# Start xautolock to automatically lock the screen after a timeout
-## exec_always xautolock -locker "/usr/bin/i3lock -i \
-## /home/michael/Pictures/Wallpapers/lock.jpg"
 
 # Enable tapping of Touchpad
 exec xinput set-prop 13 287 1
@@ -305,7 +295,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id parcellite
 
 # Start Joplin notes
-exec --no-startup-id Joplin
+exec --no-startup-id /opt/Joplin/Joplin
 
 # End Automatically starting applications }}}
 
