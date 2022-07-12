@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-07-10 22:06                                               #
+# Last edit  : 2022-07-12 17:49                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3                                                             #
@@ -265,13 +265,13 @@ assign [class="Joplin"] $workspace10
 
 # ** 4.19. Automatically starting applications on i3 startup {{{
 # Start picom
-exec --no-startup-id 'sleep 15 && picom --experimental-backends -b'
+##exec_always --no-startup-id picom --experimental-backends -b
 
 # Start autotiling script
 exec_always --no-startup-id ~/bin/autotiling
 
 # Set bass speaker volume to 60% because it's busted
-exec --no-startup-id "sleep 10 && amixer set 'Bass Speaker' 60%"
+exec --no-startup-id "sleep 10 ; amixer set 'Bass Speaker' 60%"
 
 # Enable tapping of Touchpad
 exec xinput set-prop 13 287 1
