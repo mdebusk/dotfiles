@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-07-12 17:49                                               #
+# Last edit  : 2022-07-27 00:51                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3                                                             #
@@ -232,7 +232,7 @@ default_border pixel 3
 # End default border style for new windows }}}
 
 # ** 4.13: Hiding Borders Adjacent To The Screen Edges {{{
-# None currently set
+hide_edge_borders smart
 # End hiding borders adjacent to the screen edges }}}
 
 # ** 4.14: Arbitrary Commands For Specific Windows (for_window) {{{
