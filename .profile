@@ -2,7 +2,7 @@
 # Filename   : .profile                                                       #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-07-02 13:26                                               #
+# Last edit  : 2022-08-04 19:53                                               #
 # Purpose    : Sets environment variables                                     #
 # Depends    : N/A                                                            #
 # Arguments  : N/A                                                            #
@@ -31,9 +31,8 @@ export TESSDATA_PREFIX=/usr/share/tesseract-ocr/4.00/tessdata/
 export VISUAL=/usr/local/bin/vim
 export EDITOR=$VISUAL
 
-# Google Test Libraries
+# Google Test Libraries, needed for compiling GnuCash
 # See https://wiki.gnucash.org/wiki/Google_Test
-# export GTEST_ROOT=$HOME/Source/googletest/googletest
 export GTEST_ROOT=$HOME/Source/googletest/
 export GMOCK_ROOT=$HOME/Source/googletest/googlemock
 
