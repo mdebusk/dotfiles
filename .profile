@@ -2,7 +2,7 @@
 # Filename   : .profile                                                       #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-08-04 19:53                                               #
+# Last edit  : 2022-08-10 20:18                                               #
 # Purpose    : Sets environment variables                                     #
 # Depends    : N/A                                                            #
 # Arguments  : N/A                                                            #
@@ -19,10 +19,6 @@ fi
 # mesg n
 
 export JAVA_HOME=$(dirname $(dirname $(readlink -f  /usr/bin/javac)))
-export PATH=$PATH:$JAVA_HOME
-
-# Set PATH so it includes user's private bin if it exists
-test -d "$HOME/bin" && PATH="$HOME/bin:$PATH"
 
 # For Tesseract OCR
 export TESSDATA_PREFIX=/usr/share/tesseract-ocr/4.00/tessdata/
@@ -31,10 +27,22 @@ export TESSDATA_PREFIX=/usr/share/tesseract-ocr/4.00/tessdata/
 export VISUAL=/usr/local/bin/vim
 export EDITOR=$VISUAL
 
-# Google Test Libraries, needed for compiling GnuCash
+# Modify path for various programs {{{
+# Add $JAVA_HOME to path
+export PATH=$PATH:$JAVA_HOME
+
+# Set PATH so it includes user's private bin if it exists
+test -d "$HOME/bin" && PATH="$HOME/bin:$PATH"
+
+# Add rust/cargo to path
+test -f "$HOME/.local/share/cargo/env" && . "$HOME/.local/share/cargo/env"
+# End path modifications }}}
+
+# Google Test Libraries, needed for compiling GnuCash {{{
 # See https://wiki.gnucash.org/wiki/Google_Test
-export GTEST_ROOT=$HOME/Source/googletest/
-export GMOCK_ROOT=$HOME/Source/googletest/googlemock
+# Commented out because they're now available in the repos
+##export GTEST_ROOT=$HOME/Source/googletest/
+##export GMOCK_ROOT=$HOME/Source/googletest/googlemock }}}
 
 # Help programs use the XDG standard {{{
 test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && source ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
@@ -76,8 +84,8 @@ export WORKON_HOME="$XDG_DATA_HOME/virtualenvs"
 ## export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 # End xdg }}}
 
-# For NPM
+# For NPM {{{
 export NPM_PACKAGES="/home/michael/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
 export PATH="$NPM_PACKAGES/bin:$PATH"
-
+# End NPM }}}
