@@ -2,7 +2,7 @@
 # Filename   : .gitignore                                                     #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022                                                           #
-# Last edit  : 2022-07-02 18:07                                               #
+# Last edit  : 2022-08-10 21:25                                               #
 # Purpose    : causes git to ignore specific files in dotfiles repo           #
 # Depends    : git                                                            #
 # Arguments  : N/A                                                            #
@@ -10,7 +10,7 @@
 # To do      : N/A                                                            #
 ###############################################################################
 
-/*
+/**
 !/.gitignore
 !/.profile
 !/.bashrc
