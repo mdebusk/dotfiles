@@ -1,13 +1,16 @@
 # My configuration files ("dotfiles") for Linux
 
 ## What this repo is for
+
 - [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles)
 
 ## My hardware
+
 - [ASUS ROG G75VW-AH71](https://rog.asus.com/articles/hands-on/asus-g75vw-gaming-laptop-overview/) laptop purchased in August 2013
 
 ## Some of the software I use
-- [Ubuntu](https://ubuntu.com/download/desktop) 20.04.4 LTS "Focal Fossa"
+
+- [Ubuntu](https://ubuntu.com/download/desktop) 22.04.1 LTS "Jammy Jellyfish"
 - [bash](https://www.gnu.org/software/bash/) shell
 - [boxes](https://boxes.thomasjensen.com/) text utility I use to create comment boxes in vim
 - [Chordpro](https://www.chordpro.org/chordpro/) creates well-formatted song sheets from ascii text
