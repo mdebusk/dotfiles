@@ -2,7 +2,7 @@
 ! Filename   : .Xresources                                                    !
 ! Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   !
 ! Created    : 2021-05-01                                                     !
-! Last edit  : 2022-07-09 23:59                                               !
+! Last edit  : 2022-08-17 17:17                                               !
 ! Purpose    : Configuration file for xorg and related programs               !
 ! Depends    : xorg                                                           !
 ! Arguments  : x                                                              !
@@ -301,6 +301,12 @@ URxvt.keysym.KP_Divide: string:/
 ! End keypad config }}}
 
 ! *** Configure other keys {{{2
+! Scroll to bottom when a non-special key pressed
+URxvt*scrollTtyKeypress:  true
+
+! Do not scroll with scrollback buffer when tty recieves new lines
+URxvt*scrollWithBuffer:  false
+
 ! Scroll up one line
 URxvt.keysym.Shift-Up: command:\033]720;1\007
 
@@ -319,15 +325,15 @@ URxvt.keysym.Control-Left: \033[1;5D
 ! internal border
 URxvt.internalBorder: 8
 
-! double-click to select whole URLs :D
+! double-click to select whole URLs
 URxvt.charClass:33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+!Set scrollbar style to rxvt, plain, next or xterm.
+URxvt*scrollstyle: plain
 
 ! right hand side scrollbar
 URxvt.scrollBar_right: true
 URxvt.scrollBar: true
-
-!Set scrollbar style to rxvt, plain, next or xterm.
-URxvt*scrollstyle: plain
 
 ! Turn on/off ISO 14755 (default enabled).
 ! https://unix.stackexchange.com/questions/444773/how-to-disable-the-ctrlshift-binding-iso-14755-in-urxvt
@@ -335,14 +341,19 @@ URxvt*iso14755: False
 URxvt.iso14755_52: false
 
 ! *** URxvt Plugins {{{2
-URxvt.perl-ext:           default,matcher,font-size
+URxvt*perl-lib: ~/.urxvt/ext/
+URxvt.perl-ext-common: default,matcher,font-size,keyboard-select
+
 ! `font-size` plugin
 URxvt.font-size.step: 2
 
 ! "matcher" plugin
-URxvt.url-launcher:       xdg_open
+URxvt.url-launcher: xdg_open
 
-! URxvt.keysym.C-Delete:    perl:matcher:last
+! Keyboard-select plugin
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+
 URxvt.keysym.M-Delete:    perl:matcher:list
 ! End URxvt plugins}}}
 
