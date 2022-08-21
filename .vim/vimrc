@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-07-10 22:21                                               "
+" Last edit  : 2022-08-20 22:44                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/
 " Depends    : vim                                                            "
@@ -162,7 +162,7 @@ set ttimeoutlen=200 " Time to time out (in milliseconds)
 " ** 19. Reading and writing files {{{
 set autowrite    " Writes file when switching to another buffer
 set backup       " keep a backup file
-set backupdir=$XDG_STATE_HOME/vim/backup,~/,/tmp " location of backup files
+set backupdir=$XDG_STATE_HOME/vim/backup,.,/tmp,$HOME " location of backup files
 " https://www.techrepublic.com/article/turn-off-modeline-support-in-vim/
 set modelines=0  " Do not check for existing modelines
 set nomodeline   " Disable modeline support
