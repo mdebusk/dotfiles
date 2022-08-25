@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-08-23 20:53                                               #
+# Last edit  : 2022-08-25 05:17                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3                                                             #
@@ -268,7 +268,7 @@ assign [class="Joplin"] $workspace10
 
 # ** 4.19. Automatically starting applications on i3 startup {{{
 # Start picom
-exec_always --no-startup-id ~/bin/picom --experimental-backends -b
+exec_always --no-startup-id ~/bin/picom -b
 
 # Start autotiling script
 exec_always --no-startup-id ~/bin/autotiling
