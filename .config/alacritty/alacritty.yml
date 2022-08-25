@@ -2,7 +2,7 @@
 # Filename   : alacritty,yml                                                  #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-09-26                                                     #
-# Last edit  : 2022-07-10 16:20                                               #
+# Last edit  : 2022-08-25 02:06                                               #
 # Purpose    : Configuration for Alacritty                                    #
 # Depends    : alacritty                                                      #
 # Arguments  : N/A                                                            #
@@ -102,7 +102,7 @@ window:
   #
   # Override the variant of the GTK theme. Commonly supported values are `dark`
   # and `light`. Set this to `None` to use the default theme variant.
-  gtk_theme_variant: dark
+  window.decorations_theme_variant: dark
 # End window }}}
 
   # ** Scrolling {{{
