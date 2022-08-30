@@ -17,10 +17,10 @@ if [[ ! "$PATH" == */home/michael/Source/fzf/bin* ]]; then
 fi
 
 # Auto-completion
-[[ $- == *i* ]] && source "/home/michael/Source/fzf/shell/completion.bash" 2> /dev/null
-
+##[[ $- == *i* ]] && source"/home/michael/Source/fzf/shell/completion.bash" 2> /dev/null
+[[ $- == *i* ]] && source"/usr/share/bash-completion/completions/fzf" 2> /dev/null
 # Key bindings
-source "/home/michael/Source/fzf/shell/key-bindings.bash"
+source "/home/michael/.config/fzf/key-bindings.bash"
 
 # Color scheme (Solarized Light) {{{
 # Author: Ethan Schoonover (https://ethanschoonover.com/solarized/)
@@ -49,3 +49,5 @@ export FZF_DEFAULT_OPTS+=" --border"
 export FZF_DEFAULT_OPTS+=" --margin=1"
 export FZF_DEFAULT_OPTS+=" --padding=1"
 # End layout }}}
+
+
