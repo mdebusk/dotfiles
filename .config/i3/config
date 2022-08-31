@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-08-25 05:17                                               #
+# Last edit  : 2022-08-30 20:08                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3                                                             #
@@ -248,6 +248,7 @@ for_window [class="Gnome-calculator" instance="gnome-calculator"] floating enabl
 for_window [class="Veracrypt" instance="veracrypt"] floating enable
 for_window [class="Anki" instance="anki"] floating enable
 for_window [class="Tali" instance="tali"] floating enable
+for_window [class="XClock" instance="xclock"] floating enable move absolute position 1550 px 0 px
 # End floating windows }}}
 
 # End arbitrary commands for specific windows }}}

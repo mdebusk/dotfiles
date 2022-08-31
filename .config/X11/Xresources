@@ -2,7 +2,7 @@
 ! Filename   : .Xresources                                                    !
 ! Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   !
 ! Created    : 2021-05-01                                                     !
-! Last edit  : 2022-08-17 17:17                                               !
+! Last edit  : 2022-08-30 20:46                                               !
 ! Purpose    : Configuration file for xorg and related programs               !
 ! Depends    : xorg                                                           !
 ! Arguments  : x                                                              !
@@ -16,32 +16,22 @@
 
 ! **** Source Code Pro (Inactive) {{{3
 !! URxvt.font:\
-!!   xft:Source Code Pro:style=Regular:size=9, \
-!!   xft:IBM Plex Mono:style=Regular:size=9
+!!   Xft:Source Code Pro:style=Regular:size=9, \
+!!   Xft:IBM Plex Mono:style=Regular:size=9
 !! URxvt.boldFont:\
-!!   xft:Source Code Pro:style=Bold:size=9, \
-!!   xft:IBM Plex Mono:style=Bold:size=9
+!!   Xft:Source Code Pro:style=Bold:size=9, \
+!!   Xft:IBM Plex Mono:style=Bold:size=9
 !! URxvt.italicFont:\
-!!   xft:Source Code Pro:style=Italic:size=9, \
-!!   xft:IBM Plex Mono:style=Italic:size=9
+!!   Xft:Source Code Pro:style=Italic:size=9, \
+!!   Xft:IBM Plex Mono:style=Italic:size=9
 !! URxvt.boldItalicFont:\
-!!   xft:Source Code Pro:style=Bold Italic:size=9, \
-!!   xft:IBM Plex Mono:style=Bold Italic:size=9
+!!   Xft:Source Code Pro:style=Bold Italic:size=9, \
+!!   Xft:IBM Plex Mono:style=Bold Italic:size=9
 ! End Source Code Pro }}}
 
 ! **** Azeret Mono (Active) {{{3
-*font:\
-    xft:Azeret Mono:style=Regular:antialias=true:size:minspace=false=9, \
-    xft:IBM Plex Mono:style=Regular:antialias=true:size:minspace=false=9
-*boldFont:\
-    xft:Azeret Mono:style=Bold:antialias=true:size:minspace=false=9, \
-    xft:IBM Plex Mono:style=Bold:antialias=true:size:minspace=false=9
-*italicFont:\
-    xft:Azeret Mono:style=Italic:antialias=true:size:minspace=false=9, \
-    xft:IBM Plex Mono:style=Bold:antialias=true:size:minspace=false=9
-*boldItalicFont:\
-    xft:Azeret Mono:style=Bold Italic:antialias=true:size:minspace=false=9, \
-    xft:IBM Plex Mono:style=Bold Italic:antialias=true:size:minspace=false=9
+*facename:xft:Azeret Mono Medium
+*facesize:9
 ! End Azeret Mono }}}
 
 ! **** Font display settings {{{3
@@ -50,7 +40,9 @@ Xft.dpi:        96
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
+Xft.autohint:   true
 Xft.hintstyle:  hintfull
+Xft.minspace:   false
 ! End font display settings }}}
 
 ! End fonts }}}
@@ -358,3 +350,9 @@ URxvt.keysym.M-Delete:    perl:matcher:list
 ! End URxvt plugins}}}
 
 ! End URxvt-specific settings }}}
+
+! ** XClock-specific settings {{{
+XClock.Clock.analog:false
+XClock.Clock.face:Azeret Mono Medium:size=72
+XClock.Clock.twentyfour:true
+! End XClock }}}
