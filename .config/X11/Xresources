@@ -2,7 +2,7 @@
 ! Filename   : .Xresources                                                    !
 ! Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   !
 ! Created    : 2021-05-01                                                     !
-! Last edit  : 2022-08-30 20:46                                               !
+! Last edit  : 2022-08-31 16:51                                               !
 ! Purpose    : Configuration file for xorg and related programs               !
 ! Depends    : xorg                                                           !
 ! Arguments  : x                                                              !
@@ -31,12 +31,12 @@
 
 ! **** Azeret Mono (Active) {{{3
 *facename:xft:Azeret Mono Medium
-*facesize:9
+*facesize:12
 ! End Azeret Mono }}}
 
 ! **** Font display settings {{{3
 URxvt.letterSpace: -1
-Xft.dpi:        96
+Xft.dpi:        128
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
