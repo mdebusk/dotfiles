@@ -2,7 +2,7 @@
 ! Filename   : .Xresources                                                    !
 ! Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   !
 ! Created    : 2021-05-01                                                     !
-! Last edit  : 2022-08-31 16:51                                               !
+! Last edit  : 2022-09-01 17:19                                               !
 ! Purpose    : Configuration file for xorg and related programs               !
 ! Depends    : xorg                                                           !
 ! Arguments  : x                                                              !
@@ -14,27 +14,29 @@
 
 ! *** Fonts {{{2
 
+! **** DejaVu Sans Mono (Inactive) {{{3
+!! URxvt.font:xft:DejaVu Sans Mono:style=Book:size=9
+!! URxvt.boldFontxft:DejaVu Sans Mono:style=Bold:size=9
+!! URxvt.italicFontxft:DejaVu Sans Mono:style=Oblique:size=9
+!! URxvt.boldItalicFont:xft:DejaVu Sans Mono:style=BoldOblique:size=9
+! End DejaVu Sans Mono }}}
+
 ! **** Source Code Pro (Inactive) {{{3
-!! URxvt.font:\
-!!   Xft:Source Code Pro:style=Regular:size=9, \
-!!   Xft:IBM Plex Mono:style=Regular:size=9
-!! URxvt.boldFont:\
-!!   Xft:Source Code Pro:style=Bold:size=9, \
-!!   Xft:IBM Plex Mono:style=Bold:size=9
-!! URxvt.italicFont:\
-!!   Xft:Source Code Pro:style=Italic:size=9, \
-!!   Xft:IBM Plex Mono:style=Italic:size=9
-!! URxvt.boldItalicFont:\
-!!   Xft:Source Code Pro:style=Bold Italic:size=9, \
-!!   Xft:IBM Plex Mono:style=Bold Italic:size=9
+!! URxvt.font:xft:Source Code Pro:style=Regular:size=9
+!! URxvt.boldFontxft:Source Code Pro:style=Bold:size=9
+!! URxvt.italicFontxft:Source Code Pro:style=Italic:size=9
+!! URxvt.boldItalicFont:xft:Source Code Pro:style=Bold Italic:size=9
 ! End Source Code Pro }}}
 
 ! **** Azeret Mono (Active) {{{3
-*facename:xft:Azeret Mono Medium
-*facesize:12
+URxvt.font:xft:Azeret Mono:style=Regular:size=9
+URxvt.boldFont:xft:Azeret Mono:style=Bold:size=9
+URxvt.italicFont:xft:Azeret Mono:style=Italic:size=9
+URxvt.boldItalicFont:xft:Azeret Mono:style=Bold Italic:size=9
 ! End Azeret Mono }}}
 
 ! **** Font display settings {{{3
+*renderFont: true
 URxvt.letterSpace: -1
 Xft.dpi:        128
 Xft.antialias:  true
