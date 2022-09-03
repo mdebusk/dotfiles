@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-08-30 20:08                                               #
+# Last edit  : 2022-09-02 19:52                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3                                                             #
@@ -13,6 +13,11 @@
 
 
 # ** 4.16: Variables {{{1
+
+# Set variables for physical displays {{{2
+set $tv HDMI-0
+set $laptop LVDS-0
+# End physical displays }}}
 
 # Set the modifier key to the "Windows" key {{{2
 set $mod Mod4
@@ -38,6 +43,9 @@ set $workspace10 "10: Notes"
 
 # Font for window titles. Will also be used by the bar unless
 # a different font is used in the bar {} block below.
+##font pango:Ubuntu 9
+##font pango:Noto Sans Display 9
+##font pango:Calibri 9
 font pango:Roboto Regular 9
 # End fonts }}}
 
@@ -304,16 +312,16 @@ exec --no-startup-id /opt/Joplin/Joplin
 # End Automatically starting applications }}}
 
 # ** 4.20: Automatically Putting Workspaces On Specific Screens {{{
-workspace 1 output primary
-workspace 2 output HDMI-0
-workspace 3 output primary
-workspace 4 output primary
-workspace 5 output primary
-workspace 6 output primary
-workspace 7 output primary
-workspace 8 output primary
-workspace 9 output HDMI-0
-workspace 10 output primary
+workspace 1 output $laptop
+workspace 2 output $tv
+workspace 3 output $laptop
+workspace 4 output $laptop
+workspace 5 output $laptop
+workspace 6 output $laptop
+workspace 7 output $laptop
+workspace 8 output $laptop
+workspace 9 output $tv
+workspace 10 output $laptop
 # End automatically put workspaces on specific screens }}}
 
 # ** 4.21: Changing Colors {{{
@@ -364,8 +372,8 @@ workspace 10 output primary
 # Start i3bar to display a workspace bar (plus the system
 # information i3status finds out, if available)
 bar {
-    output primary
-    tray_output primary
+    output $laptop
+    tray_output $laptop
     font pango:Roboto Regular 9, Font Awesome 5 Brands Regular 9, Font Awesome 5 Free Regular 9
     status_command i3status
     colors {
