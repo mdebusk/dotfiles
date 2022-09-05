@@ -2,7 +2,7 @@
 # Filename   : .profile                                                       #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-09-04 18:31                                               #
+# Last edit  : 2022-09-05 12:32                                               #
 # Purpose    : Sets environment variables                                     #
 # Depends    : N/A                                                            #
 # Arguments  : N/A                                                            #
@@ -37,12 +37,6 @@ test -d "$HOME/bin" && PATH="$HOME/bin:$PATH"
 # Add rust/cargo to path
 test -f "$HOME/.local/share/cargo/env" && . "$HOME/.local/share/cargo/env"
 # End path modifications }}}
-
-# Google Test Libraries, needed for compiling GnuCash {{{
-# See https://wiki.gnucash.org/wiki/Google_Test
-# Commented out because they're now available in the repos
-##export GTEST_ROOT=$HOME/Source/googletest/
-##export GMOCK_ROOT=$HOME/Source/googletest/googlemock }}}
 
 # Help programs use the XDG standard {{{
 export ANDROID_HOME=$XDG_DATA_HOME/android

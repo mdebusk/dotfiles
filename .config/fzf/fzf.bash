@@ -2,7 +2,7 @@
 # Filename   : fzf.bash                                                       #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-11-30 20:45:58.485227149 -0500                            #
-# Last edit  : 2022-07-02 13:50                                               #
+# Last edit  : 2022-09-05 11:15                                               #
 # Purpose    : Initialization for fzf utility                                 #
 # Reference  : https://gitlab.com/junegunn/                                   #
 # Depends    : fzf                                                            #
@@ -12,9 +12,9 @@
 ###############################################################################
 
 # Setup fzf
-if [[ ! "$PATH" == */home/michael/Source/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/home/michael/Source/fzf/bin"
-fi
+##if [[ ! "$PATH" == */home/michael/Source/fzf/bin* ]]; then
+##  export PATH="${PATH:+${PATH}:}/home/michael/Source/fzf/bin"
+##fi
 
 # Auto-completion
 ##[[ $- == *i* ]] && source"/home/michael/Source/fzf/shell/completion.bash" 2> /dev/null

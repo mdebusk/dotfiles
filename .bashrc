@@ -2,7 +2,7 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2022-07-25 14:13                                               #
+# Last edit  : 2022-09-05 13:12                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash                                                           #
 # Arguments  : none                                                           #
@@ -45,7 +45,8 @@ export NNTPSERVER='news.eternal-september.org'
 # End environment variables }}}
 
 # ** History {{{
-export HISTFILESIZE=1000000         # Lines of histyry stored on disk
+export HISTFILE="$XDG_STATE_HOME"/bash/history
+export HISTFILESIZE=1000000         # Lines of history stored on disk
 export HISTIGNORE="&:ls:[bf]g:exit" # Ignore duplicates, as well as ls, bg, fg and exit
 export HISTSIZE=100000              # Lines of history stored in memory
 export HISTTIMEFORMAT="%FT%T: "     # Add timestamp to history file
@@ -107,5 +108,5 @@ fi
 [ -f $XDG_CONFIG_HOME/fzf/fzf.bash ] && source $XDG_CONFIG_HOME/fzf/fzf.bash
 
 # Add completions for Alacritty
-[ -f "$XDG_CONFIG_HOME"/bash_functions ] && . $HOME/Source/alacritty/extra/completions/alacritty.bash
+[ -f $HOME/Source/alacritty/extra/completions/alacritty.bash ] && . $HOME/Source/alacritty/extra/completions/alacritty.bash
 # End sourcing of external files }}}
