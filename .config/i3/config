@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-09-02 19:52                                               #
+# Last edit  : 2022-09-06 22:02                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3                                                             #
@@ -297,7 +297,7 @@ exec --no-startup-id /usr/bin/udiskie --tray
 
 # Start Dropbox, PCloud, and InSync
 ## exec --no-startup-id dropbox start
-exec --no-startup-id insync start
+## exec --no-startup-id insync start
 exec --no-startup-id /opt/Pcloud/pcloud start
 
 # Start Network Manager Applet
@@ -313,14 +313,16 @@ exec --no-startup-id /opt/Joplin/Joplin
 
 # ** 4.20: Automatically Putting Workspaces On Specific Screens {{{
 workspace 1 output $laptop
-workspace 2 output $tv
+## workspace 2 output $tv
+workspace 2 output $laptop
 workspace 3 output $laptop
 workspace 4 output $laptop
 workspace 5 output $laptop
 workspace 6 output $laptop
 workspace 7 output $laptop
 workspace 8 output $laptop
-workspace 9 output $tv
+## workspace 9 output $tv
+workspace 9 output $laptop
 workspace 10 output $laptop
 # End automatically put workspaces on specific screens }}}
 
@@ -380,7 +382,7 @@ bar {
         separator #859900
         background #073642
         statusline #839496
-        ## focused_workspace  #fdf6e3  #fdf6e3     #657b83
+        # focused_workspace  #fdf6e3  #fdf6e3     #657b83
         active_workspace   #fdf6e3  #fdf6e3     #657b83
         inactive_workspace #93a1a1  #93a1a1     #fdf6e3
         urgent_workspace   #dc322f  #dc322f     #eee8d5
