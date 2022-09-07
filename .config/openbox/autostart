@@ -2,7 +2,7 @@
 # Filename   : autostart                                                      #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-02-21                                                     #
-# Last edit  : 2022-07-10 22:43                                               #
+# Last edit  : 2022-09-06 21:59                                               #
 # Purpose    : automatically starts programs when booting openbox             #
 # Depends    : openbox                                                        #
 # Arguments  : N/A                                                            #
@@ -11,5 +11,5 @@
 ###############################################################################
 
 tint2 &
-picom --experimental-backends -b &
+picom -b &
 feh --bg-scale "/home/michael/Pictures/Wallpapers/Openbox.jpg" &
