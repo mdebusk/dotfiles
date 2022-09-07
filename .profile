@@ -2,7 +2,7 @@
 # Filename   : .profile                                                       #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-09-05 12:32                                               #
+# Last edit  : 2022-09-06 20:02                                               #
 # Purpose    : Sets environment variables                                     #
 # Depends    : N/A                                                            #
 # Arguments  : N/A                                                            #
@@ -39,6 +39,11 @@ test -f "$HOME/.local/share/cargo/env" && . "$HOME/.local/share/cargo/env"
 # End path modifications }}}
 
 # Help programs use the XDG standard {{{
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+
 export ANDROID_HOME=$XDG_DATA_HOME/android
 export CALOPT="--col=$XDG_CONFIG_HOME/ccal/cal.col --d=$XDG_DATA_HOME/ccal/cal.dat --u --f"
 export CARGO_HOME=$XDG_DATA_HOME/cargo
@@ -72,10 +77,6 @@ export TEXMFHOME=$XDG_DATA_HOME/texmf
 export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
 export WGETRC=$XDG_CONFIG_HOME/wgetrc
 export WORKON_HOME="$XDG_DATA_HOME/virtualenvs"
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_STATE_HOME=$HOME/.local/state
 export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME"/.nv
 test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && source ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
 # I'm not quite ready to take this step

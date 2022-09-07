@@ -2,7 +2,7 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2022-09-05 13:12                                               #
+# Last edit  : 2022-09-05 23:24                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash                                                           #
 # Arguments  : none                                                           #
@@ -89,11 +89,12 @@ shopt -s checkwinsize
 
 # enable color support of ls
 if [ "$TERM" != "dumb" ]; then
-    d=$XDG_CONFIG_HOME/dircolors
+    d="$XDG_CONFIG_HOME"/dircolors
     test -r $d && eval "$(dircolors $d)"
 fi
 
 # ** Sourcing of external files {{{
+
 # Aliases
 [ -f "$XDG_CONFIG_HOME"/bash_aliases ] && . "$XDG_CONFIG_HOME"/bash_aliases
 
@@ -105,7 +106,7 @@ fi
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 
 # Add support for fzf
-[ -f $XDG_CONFIG_HOME/fzf/fzf.bash ] && source $XDG_CONFIG_HOME/fzf/fzf.bash
+[ -f "$XDG_CONFIG_HOME"/fzf/fzf.bash ] && source "$XDG_CONFIG_HOME"/fzf/fzf.bash
 
 # Add completions for Alacritty
 [ -f $HOME/Source/alacritty/extra/completions/alacritty.bash ] && . $HOME/Source/alacritty/extra/completions/alacritty.bash
