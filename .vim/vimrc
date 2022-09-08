@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-09-08 01:34                                               "
+" Last edit  : 2022-09-08 01:36                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/
 " Depends    : vim                                                            "
@@ -175,7 +175,7 @@ set nomodeline   " Disable modeline support
 " End Reading and writing files }}}
 
 " ** 20. The swap file {{{
-if !has('nvim)
+if !has('nvim')
     set directory=$XDG_STATE_HOME/vim/swap,~/,/tmp
 endif
 " End The swap file }}}
