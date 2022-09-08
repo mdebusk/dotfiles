@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-09-08 01:19                                               "
+" Last edit  : 2022-09-08 01:34                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/
 " Depends    : vim                                                            "
@@ -133,7 +133,9 @@ set nojoinspaces         " Don't use two spaces when joining lines
 set omnifunc=syntaxcomplete#Complete
 set matchpairs+=<:>      " Add angle brackets to matchpairs
 set nrformats-=octal     " Remove octal from auto-increment and auto-decrement
-set undodir=$XDG_STATE_HOME/vim/undo,~/,/tmp
+if !has('nvim')
+    set undodir=$XDG_STATE_HOME/vim/undo,~/,/tmp
+endif
 set undofile              " Save and restore undo file
 " End Editing text }}}
 
@@ -164,14 +166,18 @@ set ttimeoutlen=200 " Time to time out (in milliseconds)
 " ** 19. Reading and writing files {{{
 set autowrite    " Writes file when switching to another buffer
 set backup       " keep a backup file
-set backupdir=$XDG_STATE_HOME/vim/backup,.,/tmp,$HOME " location of backup files
+if !has('nvim')
+    set backupdir=$XDG_STATE_HOME/vim/backup,.,/tmp,$HOME " location of backup files
+endif
 " https://www.techrepublic.com/article/turn-off-modeline-support-in-vim/
 set modelines=0  " Do not check for existing modelines
 set nomodeline   " Disable modeline support
 " End Reading and writing files }}}
 
 " ** 20. The swap file {{{
-set directory=$XDG_STATE_HOME/vim/swap,~/,/tmp
+if !has('nvim)
+    set directory=$XDG_STATE_HOME/vim/swap,~/,/tmp
+endif
 " End The swap file }}}
 
 " ** 21. Command line editing {{{
@@ -198,8 +204,8 @@ set bufhidden=hide  " Hide buffer when not in window
 set signcolumn=yes
 if !has('nvim')
     set viminfo=%,<800,'10,/50,:100,h,f0,n$XDG_STATE_HOME/vim/viminfo
+    set viewdir=$XDG_STATE_HOME/vim/view
 endif
-set viewdir=$XDG_STATE_HOME/vim/view
 " End Various }}}
 
 " ** Color scheme {{{
