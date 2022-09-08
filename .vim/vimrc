@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-08-20 22:44                                               "
+" Last edit  : 2022-09-08 01:19                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/
 " Depends    : vim                                                            "
@@ -84,10 +84,12 @@ set statusline+=\ [Lines\:%L]              " Total lines in file
 " End Multiple tab pages }}}
 
 " ** 8. Terminal {{{
-set term=alacritty     " Which terminal shall vim run?
-set title              " show title in console title bar
-set ttytype=alacritty  " Alias for 'term'
-set ttyfast            " smoother changes
+if !has('nvim')
+    set term=alacritty     " Which terminal shall vim run?
+    set title              " show title in console title bar
+    set ttytype=alacritty  " Alias for 'term'
+    set ttyfast            " smoother changes
+endif
 " End Terminal }}}
 
 " ** 9. Using the mouse {{{
@@ -194,7 +196,9 @@ set encoding=utf-8       " Use an encoding that supports unicode.
 " ** 26. Various {{{
 set bufhidden=hide  " Hide buffer when not in window
 set signcolumn=yes
-set viminfo=%,<800,'10,/50,:100,h,f0,n$XDG_STATE_HOME/vim/viminfo
+if !has('nvim')
+    set viminfo=%,<800,'10,/50,:100,h,f0,n$XDG_STATE_HOME/vim/viminfo
+endif
 set viewdir=$XDG_STATE_HOME/vim/view
 " End Various }}}
 
