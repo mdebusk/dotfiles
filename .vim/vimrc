@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-09-08 01:36                                               "
+" Last edit  : 2022-09-10 01:28                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/
 " Depends    : vim                                                            "
@@ -224,7 +224,7 @@ augroup views            " Back up and restore views on buffer open
     au BufWinEnter ?* silent loadview
 augroup END
 
-augroup markdown {{{2
+augroup markdown "{{{2
     au BufNewFile,BufRead *.md :set iskeyword=@,48-57,_,-,192-255
     au BufNewFile,BufRead *.md :iab (c) &#169;
     au BufNewFile,BufRead *.md :iab (r) &#174;
@@ -234,7 +234,7 @@ augroup markdown {{{2
     let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'sql']
 augroup END " markdown }}}
 
-augroup filetype_LaTeX {{{2
+augroup filetype_LaTeX "{{{2
     autocmd!
     " copy document template into empty new buffer
     au BufNewFile *.tex
@@ -244,14 +244,14 @@ augroup filetype_LaTeX {{{2
     map <F9> :!pdflatex %<CR>
 augroup END "}}}
 
-augroup filetype_bash {{{2
+augroup filetype_bash "{{{2
     autocmd!
     " copy script template into empty new buffer
     au BufNewFile *.sh
                 \ 0r $HOME/Templates/shell_script.sh
 augroup END "}}}
 
-augroup filetype_python {{{2
+augroup filetype_python "{{{2
     " Delete all trailing whitespace before saving
     au BufWritePre *.py :%s/\s\+$//e
     " copy script template into empty new buffer
@@ -269,7 +269,7 @@ augroup filetype_python {{{2
                 \ set fileformat=unix
 augroup END "}}}
 
-augroup web_development {{{2
+augroup web_development "{{{2
     au BufNewFile,BufRead *.js, *.html, *.css, *.php
                 \ set tabstop=2 |
                 \ set softtabstop=2 |
