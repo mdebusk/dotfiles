@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-09-10 01:28                                               "
+" Last edit  : 2022-09-11 21:57                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/
 " Depends    : vim                                                            "
@@ -454,4 +454,15 @@ function! Writer()
 endfunction
 com! WR call Writer()
 " End Writer function }}}
+
+nnoremap <F5> :call ToggleNetRW()<CR>
+function ToggleNetRW()
+    if exists("g:netrw_buffer") && bufexists(g:netrw_buffer)
+        exe "bd".g:netrw_buffer | unlet g:netrw_buffer
+    else
+        Vexplore | let g:netrw_buffer=bufnr("%")
+    endif
+endfunction
+
+
 " End Miscellaneous stuff }}}
