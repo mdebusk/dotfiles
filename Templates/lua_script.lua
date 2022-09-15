@@ -8,7 +8,7 @@ Last edit :
 Purpose   :
 Arguments :
 Depends   :
-To do     :
+TODO      :
 End description }}}--]]
 
 --[[ License and copyright {{{

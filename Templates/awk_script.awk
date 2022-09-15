@@ -10,7 +10,7 @@
 # Depends    : awk                                                            #
 # Arguments  : x                                                              #
 # Known bugs : x                                                              #
-# To do      : x                                                              #
+# TODO       : x                                                              #
 ###############################################################################
 
 # GNU All-Permissive License {{{

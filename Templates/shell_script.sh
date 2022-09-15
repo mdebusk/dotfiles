@@ -8,7 +8,7 @@
 # Purpose    : x                                                              #
 # Arguments  : h=Help, g=License, V=version                                   #
 # Known bugs : NKA                                                            #
-# To do      : N.A                                                            #
+# TODO       : N.A                                                            #
 ###############################################################################
 
 # License and copyright {{{

@@ -6,7 +6,7 @@
 # Reference  : https://www.chordpro.org/chordpro/chordpro-file-format-specification/ #
 # Depends    : chordpro                                                              #
 # Known bugs : NKA                                                                   #
-# To do      : x                                                                     #
+# TODO       : x                                                                     #
 ######################################################################################
 
 {new_song}
