@@ -2,21 +2,18 @@
 # Filename   : .profile                                                       #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-09-06 20:02                                               #
+# Last edit  : 2022-09-14 22:15                                               #
 # Purpose    : Sets environment variables                                     #
-# Depends    : N/A                                                            #
-# Arguments  : N/A                                                            #
-# Known bugs : NKA                                                            #
-# To do      : N/A                                                            #
 ###############################################################################
 
+# ** Source ~/.bashrc if appropriate {{{
 if [ "$BASH" ]; then
   if [ -f ~/.bashrc ]; then
     . ~/.bashrc
   fi
 fi
+# End sourcing ~/.bashrc }}}
 
-# mesg n
 
 export JAVA_HOME=$(dirname $(dirname $(readlink -f  /usr/bin/javac)))
 
@@ -27,7 +24,7 @@ export TESSDATA_PREFIX=/usr/share/tesseract-ocr/4.00/tessdata/
 export VISUAL=/usr/local/bin/vim
 export EDITOR=$VISUAL
 
-# Modify path for various programs {{{
+# ** Modify path for various programs {{{
 # Add $JAVA_HOME to path
 export PATH=$PATH:$JAVA_HOME
 
@@ -38,12 +35,17 @@ test -d "$HOME/bin" && PATH="$HOME/bin:$PATH"
 test -f "$HOME/.local/share/cargo/env" && . "$HOME/.local/share/cargo/env"
 # End path modifications }}}
 
-# Help programs use the XDG standard {{{
+# ** Help programs use the XDG standard {{{
+# Establish the standard directories' locations {{{2
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
+test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && source ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
+# End standard locations }}}
 
+# Specific programs {{{
+# Useful: https://wiki.archlinux.org/title/XDG_Base_Directory
 export ANDROID_HOME=$XDG_DATA_HOME/android
 export CALOPT="--col=$XDG_CONFIG_HOME/ccal/cal.col --d=$XDG_DATA_HOME/ccal/cal.dat --u --f"
 export CARGO_HOME=$XDG_DATA_HOME/cargo
@@ -78,12 +80,12 @@ export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
 export WGETRC=$XDG_CONFIG_HOME/wgetrc
 export WORKON_HOME="$XDG_DATA_HOME/virtualenvs"
 export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME"/.nv
-test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && source ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
 # I'm not quite ready to take this step
 ## export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+# End specific programs }}}
 # End xdg }}}
 
-# For NPM {{{
+# ** For NPM {{{
 export NPM_PACKAGES="/home/michael/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
 export PATH="$NPM_PACKAGES/bin:$PATH"
