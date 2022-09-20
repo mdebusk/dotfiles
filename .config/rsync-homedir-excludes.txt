@@ -6,9 +6,7 @@
 # Last edit  : 2022-08-20 23:46                                               #
 # Purpose    : list of files rsync will ignore when backing up %HOME          #
 # Depends    : rsync                                                          #
-# Arguments  :                                                                #
-# Known bugs :                                                                #
-# To do      :                                                                #
+# TODO       : N/A                                                            #
 ###############################################################################
 
 # ** Usage {{{
@@ -21,6 +19,7 @@
 ##.AndroidStudio*/
 ##Android/Sdk
 .config/BraveSoftware/Brave-Browser/BrowserMetrics/
+.config/BraveSoftware/Brave-Browser/BraveWallet/
 ##.gradle
 ##.gvm
 ##.grails/
@@ -54,7 +53,7 @@
 ##/games
 ##.local/share/Steam
 ##.var/app/com.valvesoftware.Steam/.local/share/Steam
-##.steam
+.steam
 ##/Steam
 ##.minecraft
 ##.technic
@@ -72,8 +71,9 @@
 # End temporary movies }}}
 
 # ** History files {{{
+.local/state/
+.local/share/mysql_history
 .python_history
-.bash_history
 .local/share/sqlite_history
 .local/share/node_repl_history
 .config/nano/search_history
