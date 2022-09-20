@@ -2,7 +2,7 @@
 # Filename   : .profile                                                       #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-09-14 22:15                                               #
+# Last edit  : 2022-09-19 20:14                                               #
 # Purpose    : Sets environment variables                                     #
 ###############################################################################
 
@@ -79,6 +79,7 @@ export TEXMFHOME=$XDG_DATA_HOME/texmf
 export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
 export WGETRC=$XDG_CONFIG_HOME/wgetrc
 export WORKON_HOME="$XDG_DATA_HOME/virtualenvs"
+export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
 export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME"/.nv
 # I'm not quite ready to take this step
 ## export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
