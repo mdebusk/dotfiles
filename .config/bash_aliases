@@ -2,7 +2,7 @@
 # Filename   : bash_aliases                                                   #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-07-04 13:16                                               #
-# Last edit  : 2022-09-05 11:12                                               #
+# Last edit  : 2022-09-21 05:54                                               #
 # Purpose    : aliases for interactive bas shell, sourced from ~/.bashrc      #
 # Depends    : bash                                                           #
 # Arguments  : none                                                           #
@@ -32,12 +32,13 @@ alias nvlc='nvlc --browse-dir ~/Music' # Start VLC from the command line
 # End other useful defaults }}}
 
 # ** Help programs use the XDG Base Directory standard {{{
-alias dosbox='dosbox -conf $XDG_CONFIG_HOME/dosbox/dosbox-0.74-3.conf'
+alias abook='abook --config "$XDG_CONFIG_HOME"/abook/abookrc --datafile "$XDG_DATA_HOME"/abook/addressbook'
+alias dosbox='dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox-0.74-3.conf'
 ## alias mysql-workbench="mysql_workbench.sh"
-alias remind='remind -@2 $XDG_CONFIG_HOME/remind/reminders.rem'
-alias slrn='slrn -i $XDG_CONFIG_HOME/slrn/slrnrc -f $XDG_CONFIG_HOME/slrn/jnewsrc-september'
-alias sqlite3='sqlite3 -init $XDG_CONFIG_HOME/sqlite3/sqliterc'
-alias tkremind='tkremind $XDG_CONFIG_HOME/remind/reminders.rem'
+alias remind='remind -@2 "$XDG_CONFIG_HOME"/remind/reminders.rem'
+alias slrn='slrn -i "$XDG_CONFIG_HOME"/slrn/slrnrc -f "$XDG_CONFIG_HOME"/slrn/jnewsrc-september'
+alias sqlite3='sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc'
+alias tkremind='tkremind "$XDG_CONFIG_HOME"/remind/reminders.rem'
 # End XDG Base Directory Standard }}}
 
 # ** New "commands" {{{
