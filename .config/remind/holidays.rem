@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-06-19 10:11                                               #
+# Last edit  : 2022-09-25 22:03                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Arguments  : N/A                                                            #
@@ -93,21 +93,33 @@ OMIT     Dec 25		MSG %"Christmas%" Day
 # End Federal }}}
 
 REM      Jan  6         MSG %"Epiphany%"%
+REM      Jan  9         MSG %"National Law Enforcement Appreciation Day%"%
+REM      Jan 16         MSG %"National Nothing Day%"%
+REM      Jan 25         MSG %"Opposite Day%"%
 REM      Feb  2		MSG %"Groundhog Day%"
 REM      Feb 14		MSG %"Valentine's%" Day
+REM      Mar  1		MSG %"Bachelor's%" Day
+REM      Mar 14		MSG %"Steak and Blowjob%" Day
 REM      Mar 17		MSG %"St. Patrick's%" Day
+REM      Mar 24         MSG %"National Cheesesteak Day%
 REM      Mar 25         MSG %"Maryland Day%
+REM      Mar 30         MSG %"National Doctors Day%
 REM      Apr  1		MSG %"April Fool's%" Day
 REM  Mon Tue Wed Thu Fri Sat 15 Apr MSG %"Income tax%" due
+REM      May  4		MSG %"Star Wars Day%"
 REM      May  5		MSG %"Cinco de Mayo%"
+REM      May  6		MSG %"National Nurses Day%"
 REM      May  15	MSG %"National Peace Officer Memorial Day%"
 REM  Sat May [Week_1]	MSG %"Kentucky Derby%"
 REM  Sun May [Week_2]	MSG %"Mother's Day%"
 REM  Sat May [Week_3]	MSG %"Armed Forces Day%"
+REM      May  28	MSG %"National Burger Day%"
 REM      Jun 14		MSG %"Flag Day%"
 REM  Sun Jun [Week_3]	MSG %"Father's Day%"
 REM      Sep 11         MSG %"Patriot Day%"
 REM      Sep 17         MSG %"Constitution Day%"
+REM      Sep 25         MSG %"National Daughters Day%"
+REM      Sep 28         MSG %"National Sons Day%"
 REM      Oct 30		MSG %"Mischief Night%"
 REM      Oct 31		MSG %"Halloween%"
 REM  Tue Nov  2		SCANFROM [_back(7)] \
