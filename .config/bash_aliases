@@ -2,10 +2,9 @@
 # Filename   : bash_aliases                                                   #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-07-04 13:16                                               #
-# Last edit  : 2022-09-21 05:54                                               #
-# Purpose    : aliases for interactive bas shell, sourced from ~/.bashrc      #
+# Last edit  : 2022-09-30 00:39                                               #
+# Purpose    : aliases for interactive bash shell, sourced from ~/.bashrc     #
 # Depends    : bash                                                           #
-# Arguments  : none                                                           #
 # Known bugs : NKA                                                            #
 # To do      : none yet                                                       #
 ###############################################################################
@@ -23,8 +22,9 @@ alias rm='rm -i'
 # ** Other useful defaults {{{
 alias df="df -Tha --total"
 alias free="free -hltw"
-alias ls='ls -lhpv --color=auto --group-directories-first --time-style=long-iso'
-alias ping="ping -c 5"
+alias la='ls -Ahlpv --color=auto --group-directories-first --time-style=long-iso'
+alias ls='ls -hlpv --color=auto --group-directories-first --time-style=long-iso'
+alias ping="ping -c 3"
 alias wget="wget -c"
 alias grep='grep --color=auto'
 alias nvlc='nvlc --browse-dir ~/Music' # Start VLC from the command line
@@ -58,10 +58,10 @@ alias zombie='ps axo stat,ppid,pid,comm | grep -w defunct'
 alias joplincli='~/bin/Joplin/bin/joplin'
 
 # What are my external and internal IP addresses?
-alias ips="echo -n 'External IP: ' ; curl ifconfig.co; echo -n 'Internal IP: ' ; ifconfig wlp3s0 | grep inet\ | awk '{ print \$2 }' "
+alias ips="echo -n 'External IP: ' ; curl ifconfig.co; echo -n 'Internal IP: ' ; ip address show wlp3s0 | grep inet\ | awk '{ print \$2 }' "
 
 # Diary
-alias dz='pushd ~/Documents && echo -e "\n## `date +%F\ %T` {{{\n\n}}}" >> diary.md && vim "+ normal Gk" +startinsert diary.md && popd'
+alias dz='pushd ~/Documents && echo -e "\n## `date -Is` {{{\n\n}}}" >> diary.md && vim "+ normal Gk" +startinsert diary.md && popd'
 
 # alias for bare git repo use (dotfile repo)
 # https://www.atlassian.com/git/tutorials/dotfiles
