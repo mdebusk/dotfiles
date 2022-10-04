@@ -3,7 +3,7 @@
 # Author     : Ruben Barkow-Kuder                                             #
 #              <https://github.com/rubo77/rsync-homedir-excludes>             #
 # Created    : 2019-11-30                                                     #
-# Last edit  : 2022-08-20 23:46                                               #
+# Last edit  : 2022-10-02 23:17                                               #
 # Purpose    : list of files rsync will ignore when backing up %HOME          #
 # Depends    : rsync                                                          #
 # TODO       : N/A                                                            #
@@ -35,10 +35,18 @@
 ##/twister
 ##Applications/eclipse*
 ##/Downloads
+/Dropbox
+/Insync
+/mdebusk@gmail.com
+/nlphilia-Desktop
+/nlphilia-Hostmonster
+/nlphilia-Netbook
+/pCloudDrive/
 ##*Popcorntime*
 ##/.aMule
 ##/Scribus
 /Source
+/Team\ Drives/
 /VirtualBox\ VMs/
 ##.local/share/gnome-boxes/images
 ##/Nextcloud
