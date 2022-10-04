@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-09-25 22:03                                               #
+# Last edit  : 2022-10-04 10:22                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Arguments  : N/A                                                            #
@@ -118,6 +118,7 @@ REM      Jun 14		MSG %"Flag Day%"
 REM  Sun Jun [Week_3]	MSG %"Father's Day%"
 REM      Sep 11         MSG %"Patriot Day%"
 REM      Sep 17         MSG %"Constitution Day%"
+REM      Sep 22         MSG %"Hobbit Day%"
 REM      Sep 25         MSG %"National Daughters Day%"
 REM      Sep 28         MSG %"National Sons Day%"
 REM      Oct 30		MSG %"Mischief Night%"
