@@ -2,7 +2,7 @@
 ! Filename   : .Xresources                                                    !
 ! Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   !
 ! Created    : 2021-05-01                                                     !
-! Last edit  : 2022-09-01 17:19                                               !
+! Last edit  : 2022-10-17 13:01                                               !
 ! Purpose    : Configuration file for xorg and related programs               !
 ! Depends    : xorg                                                           !
 ! Arguments  : x                                                              !
@@ -43,7 +43,7 @@ Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.autohint:   true
-Xft.hintstyle:  hintfull
+Xft.hintstyle:  hintslight
 Xft.minspace:   false
 ! End font display settings }}}
 
@@ -259,7 +259,8 @@ Xft.minspace:   false
 
 ! ** URxvt-specific settings {{{
 
-! Every shell is a login shell by default (for inclusion of all necessary environment variables)
+! Every shell is a login shell by default (for inclusion of all
+! necessary environment variables)
 URxvt.loginshell:true
 
 ! I like a LOT of scrollback...
@@ -316,8 +317,7 @@ URxvt.keysym.Control-Right: \033[1;5C
 URxvt.keysym.Control-Left: \033[1;5D
 ! End keys config }}}
 
-! internal border
-URxvt.internalBorder: 8
+URxvt.internalBorder: 11
 
 ! double-click to select whole URLs
 URxvt.charClass:33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
@@ -330,7 +330,7 @@ URxvt.scrollBar_right: true
 URxvt.scrollBar: true
 
 ! Turn on/off ISO 14755 (default enabled).
-! https://unix.stackexchange.com/questions/444773/how-to-disable-the-ctrlshift-binding-iso-14755-in-urxvt
+! https://urxvt.wordpress.com/tag/iso-14755-mode/
 URxvt*iso14755: False
 URxvt.iso14755_52: false
 
