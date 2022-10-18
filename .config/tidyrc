@@ -2,13 +2,12 @@
 # Filename   : tidyrc                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : unknown                                                        #
-# Last edit  : 2022-07-02 13:53                                               #
+# Last edit  : 2022-10-18 14:09                                               #
 # Purpose    : Configuration file for HTML Tidy                               #
+# Reference  : https://api.html-tidy.org/tidy/quickref_next.html              #
 # Depends    : HTML Tidy version 5.9.20                                       #
-#              https://api.html-tidy.org/tidy/quickref_next.html              #
-# Arguments  : N/A                                                            #
 # Known bugs : NKA                                                            #
-# To do      : N/A                                                            #
+# TODO       : N/A                                                            #
 ###############################################################################
 
 # ** Document Display Options {{{
@@ -52,3 +51,4 @@ indent yes
 sort-attributes alpha
 wrap 72
 # End Pretty Print Options }}}
+
