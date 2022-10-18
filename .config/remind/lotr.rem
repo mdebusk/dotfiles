@@ -3,7 +3,7 @@
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 #            : Swiped from the unix calendar utility                          #
 # Created    : Unknown, maybe late 1970s                                      #
-# Last edit  : 2022-07-02 13:51                                               #
+# Last edit  : 2022-10-18 15:06                                               #
 # Purpose    : Lord of the Rings days file for remind                         #
 # Depends    : remind                                                         #
 # Arguments  : N/A                                                            #
@@ -12,7 +12,7 @@
 ###############################################################################
 
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
-# include /home/michael/.config/remind/lotr.rem
+# include [getenv("XDG_CONFIG_HOME")]/remind/lotr.rem
 
 REM Jan  5 MSG %"Lord of the Rings: Fellowship enters Moria%"%
 REM Jan  9 MSG %"Lord of the Rings: Fellowship reaches Lorien%"%

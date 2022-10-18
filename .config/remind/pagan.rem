@@ -11,7 +11,7 @@
 ###############################################################################
 
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
-# include /home/michael/.config/remind/pagan.rem
+# include [getenv("XDG_CONFIG_HOME")]/remind/pagan.rem
 
 REM Jan 02 %"Pagan Holiday: Frigg's Distaff%"%
 REM Jan 06 %"Pagan Holiday: Celtic day of the Three-Fold Goddess%"%

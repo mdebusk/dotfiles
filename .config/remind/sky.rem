@@ -5,13 +5,13 @@
 # Last edit  : 2022-07-02 13:52                                               #
 # Purpose    : Moon phases file for remind                                    #
 # Depends    : remind                                                         #
-# Arguments  : N/A                                                            #
 # Known bugs : NKA                                                            #
 # To do      : N/A                                                            #
 ###############################################################################
 
 
-# Place in $XDG_CONFIG_HOME/remind/
+# Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
+# include [getenv("XDG_CONFIG_HOME")]/remind/sky.rem
 
 ## Phases of the moon {{{
 #IF moonphase(today(), 12:00)==0

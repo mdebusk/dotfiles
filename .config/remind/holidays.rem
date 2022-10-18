@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-10-04 10:22                                               #
+# Last edit  : 2022-10-18 15:06                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Arguments  : N/A                                                            #
@@ -11,7 +11,7 @@
 ###############################################################################
 
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
-# include /home/michael/.config/remind/holidays.rem
+# include [getenv("XDG_CONFIG_HOME")]/remind/holidays.rem
 
 # ** Daylight Savings TIme {{{
 SET Week_2 8

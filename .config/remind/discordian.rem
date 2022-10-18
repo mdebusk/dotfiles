@@ -3,7 +3,7 @@
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 #            : Swiped from the nic 'calendar' utility                         #
 # Created    : Unknown, probably late 1970s                                   #
-# Last edit  : 2022-07-02 13:52                                               #
+# Last edit  : 2022-10-18 15:05                                               #
 # Purpose    : Discordian holidays file for remind                            #
 # Depends    : remind                                                         #
 # Arguments  : N/A                                                            #
@@ -13,7 +13,7 @@
 
 
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
-# include /home/michael/.config/remind/discordian.rem
+# include [getenv("XDG_CONFIG_HOME")]/remind/discordian.rem
 
 REM Jan 05 MSG %"Discordian Holiday: Mungday (5th of the Season of Chaos) Festival of Hung Mung%"%
 REM Feb 19 MSG %"Discordian Holiday: Chaoflux (50th of the Season of Chaos)%"%

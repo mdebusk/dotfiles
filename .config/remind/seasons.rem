@@ -1,25 +1,30 @@
-# http://lists.whatexit.org/mailman/private/remind-fans/2006/000576.html
+###############################################################################
+# Filename   : seasons.rem                                                    #
+# Author     : Dianne Skoll (https://dianne.skoll.ca/)                        #
+# Created    : Unknown                                                        #
+# Last edit  : 2022-09-30 11:25                                               #
+# Purpose    : Provides remind with change-of-season dates                    #
+# Reference  : man remind                                                     #
+# Depends    : remind                                                         #
+# Known bugs : NKA                                                            #
+# TODO       : N/A                                                            #
+###############################################################################
 
-# ~mark/.remind/seasons
-# Data from http://aa.usno.navy.mil/data/docs/EarthSeasons.html
-# Year 1990 and 1991 are from an old set of data.  At present (2006-01-25),
-#  the USNO page shows 1992 - 2020.
-#
-# Updated from http://aa.usno.navy.mil/seasons through 2100, thanks to
-# script from Steve Jones
-#
-# Times of Perihelion and Aphelion are approximate to the hour.
-# Why not tag the Vernal Equinox and Autumnal Equinox?
-#  Because that naming is specific to the Northern Hemisphere.
-#  Reversed for the Southern Hemisphere
-#  Likewise for Summer Solstice and Winter Solstice.
-# Using [trigger(date(y,m,d),time(h,m),1)] form because values are in UTC
-#  and are independent of timezone.
-#
-# Edited by Michael DeBusk to trim old dates
-# https://gitlab.com/mdebusk
-# Last edit : 2022-09-30 11:25
+###############################################################################
+# Updated from http://aa.usno.navy.mil/seasons through 2100, thanks to        #
+# script from Steve Jones                                                     #
+#                                                                             #
+# Times of Perihelion and Aphelion are approximate to the hour. Using         #
+# [trigger(date(y,m,d),time(h,m),1)] form because values are in UTC and       #
+# are independent of timezone.                                                #
+#                                                                             #
+# Edited by Michael DeBusk (https://gitlab.com/mdebusk) to trim old dates     #
+###############################################################################
 
+# Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
+# include [getenv("XDG_CONFIG_HOME")]/remind/seasons.rem
+
+# ** 2020s {{{
 REM [trigger(date(2022,12,21), time(21,48), 1)] Winter Solstice%
 REM [trigger(date(2023,1,04), time(16,17), 1)] Perihelion%
 REM [trigger(date(2023,3,20), time(21,24), 1)] Vernal Equinox%
@@ -63,6 +68,9 @@ REM [trigger(date(2029,6,21), time(01,48), 1)] Summer Solstice%
 REM [trigger(date(2029,7,06), time(05,12), 1)] Aphelion%
 REM [trigger(date(2029,9,22), time(17,38), 1)] Autumnal Equinox%
 REM [trigger(date(2029,12,21), time(14,14), 1)] Winter Solstice%
+# }}}
+
+# ** 2030s {{{
 REM [trigger(date(2030,1,03), time(10,12), 1)] Perihelion%
 REM [trigger(date(2030,3,20), time(13,52), 1)] Vernal Equinox%
 REM [trigger(date(2030,6,21), time(07,31), 1)] Summer Solstice%
@@ -123,6 +131,9 @@ REM [trigger(date(2039,6,21), time(11,57), 1)] Summer Solstice%
 REM [trigger(date(2039,7,05), time(13,25), 1)] Aphelion%
 REM [trigger(date(2039,9,23), time(03,49), 1)] Autumnal Equinox%
 REM [trigger(date(2039,12,22), time(00,40), 1)] Winter Solstice%
+# }}}
+
+# ** 2040s {{{
 REM [trigger(date(2040,1,03), time(11,32), 1)] Perihelion%
 REM [trigger(date(2040,3,20), time(00,11), 1)] Vernal Equinox%
 REM [trigger(date(2040,6,20), time(17,46), 1)] Summer Solstice%
@@ -183,6 +194,9 @@ REM [trigger(date(2049,6,20), time(21,47), 1)] Summer Solstice%
 REM [trigger(date(2049,7,04), time(09,06), 1)] Aphelion%
 REM [trigger(date(2049,9,22), time(13,42), 1)] Autumnal Equinox%
 REM [trigger(date(2049,12,21), time(10,52), 1)] Winter Solstice%
+# }}}
+
+# ** 2050s {{{
 REM [trigger(date(2050,1,04), time(19,35), 1)] Perihelion%
 REM [trigger(date(2050,3,20), time(10,19), 1)] Vernal Equinox%
 REM [trigger(date(2050,6,21), time(03,33), 1)] Summer Solstice%
@@ -243,6 +257,9 @@ REM [trigger(date(2059,6,21), time(07,47), 1)] Summer Solstice%
 REM [trigger(date(2059,7,06), time(21,25), 1)] Aphelion%
 REM [trigger(date(2059,9,23), time(00,03), 1)] Autumnal Equinox%
 REM [trigger(date(2059,12,21), time(21,18), 1)] Winter Solstice%
+# }}}
+
+# ** 2060s {{{
 REM [trigger(date(2060,1,04), time(22,56), 1)] Perihelion%
 REM [trigger(date(2060,3,19), time(20,38), 1)] Vernal Equinox%
 REM [trigger(date(2060,6,20), time(13,46), 1)] Summer Solstice%
@@ -303,6 +320,9 @@ REM [trigger(date(2069,6,20), time(17,41), 1)] Summer Solstice%
 REM [trigger(date(2069,7,05), time(23,15), 1)] Aphelion%
 REM [trigger(date(2069,9,22), time(09,52), 1)] Autumnal Equinox%
 REM [trigger(date(2069,12,21), time(07,22), 1)] Winter Solstice%
+# }}}
+
+# ** 2070s {{{
 REM [trigger(date(2070,1,03), time(02,50), 1)] Perihelion%
 REM [trigger(date(2070,3,20), time(06,35), 1)] Vernal Equinox%
 REM [trigger(date(2070,6,20), time(23,23), 1)] Summer Solstice%
@@ -363,6 +383,9 @@ REM [trigger(date(2079,6,21), time(03,50), 1)] Summer Solstice%
 REM [trigger(date(2079,7,04), time(21,26), 1)] Aphelion%
 REM [trigger(date(2079,9,22), time(20,14), 1)] Autumnal Equinox%
 REM [trigger(date(2079,12,21), time(17,44), 1)] Winter Solstice%
+# }}}
+
+# ** 2080s {{{
 REM [trigger(date(2080,1,05), time(07,55), 1)] Perihelion%
 REM [trigger(date(2080,3,19), time(16,45), 1)] Vernal Equinox%
 REM [trigger(date(2080,6,20), time(09,35), 1)] Summer Solstice%
@@ -423,6 +446,9 @@ REM [trigger(date(2089,6,20), time(13,44), 1)] Summer Solstice%
 REM [trigger(date(2089,7,06), time(07,15), 1)] Aphelion%
 REM [trigger(date(2089,9,22), time(06,08), 1)] Autumnal Equinox%
 REM [trigger(date(2089,12,21), time(03,53), 1)] Winter Solstice%
+# }}}
+
+# ** 2090s {{{
 REM [trigger(date(2090,1,05), time(04,45), 1)] Perihelion%
 REM [trigger(date(2090,3,20), time(03,03), 1)] Vernal Equinox%
 REM [trigger(date(2090,6,20), time(19,37), 1)] Summer Solstice%
@@ -483,9 +509,13 @@ REM [trigger(date(2099,6,20), time(23,43), 1)] Summer Solstice%
 REM [trigger(date(2099,7,07), time(08,08), 1)] Aphelion%
 REM [trigger(date(2099,9,22), time(16,12), 1)] Autumnal Equinox%
 REM [trigger(date(2099,12,21), time(14,05), 1)] Winter Solstice%
+# }}}
+
+# ** 2100s {{{
 REM [trigger(date(2100,1,03), time(13,54), 1)] Perihelion%
 REM [trigger(date(2100,3,20), time(13,05), 1)] Vernal Equinox%
 REM [trigger(date(2100,6,21), time(05,33), 1)] Summer Solstice%
 REM [trigger(date(2100,7,06), time(15,59), 1)] Aphelion%
 REM [trigger(date(2100,9,22), time(22,02), 1)] Autumnal Equinox%
 REM [trigger(date(2100,12,21), time(19,52), 1)] Winter Solstice%
+# }}}
