@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-09-11 13:21                                               #
+# Last edit  : 2022-10-19 03:11                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3                                                             #
@@ -328,7 +328,13 @@ workspace 10 output $laptop
 # End automatically put workspaces on specific screens }}}
 
 # ** 4.21: Changing Colors {{{
-# Currently depending on .XResources
+# class                 border  backgr. text    indicator child_border
+## client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+## client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+## client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+## client.urgent           #2f343a #900000 #ffffff #900000   #900000
+## client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+## client.background       #ffffff
 # End changing colors }}}
 
 # ** 4.22: Interprocess Communication {{{
