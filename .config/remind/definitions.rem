@@ -2,7 +2,7 @@
 # Filename   : definitions.rem                                                #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/)                        #
 # Created    : 1992                                                           #
-# Last edit  : 2022-10-18 23:53                                               #
+# Last edit  : 2022-10-19 13:32                                               #
 # Purpose    : Definitions for remind                                         #
 # Reference  : man remind                                                     #
 # Depends    : remind                                                         #
@@ -30,9 +30,9 @@ ENDIF
 # End version check }}}
 
 # ** Location information {{{
-SET $Latitude   "39.5096"
+SET $Latitude  "39.5096"
 SET $Longitude "-76.1641"
-SET $Location "Aberdeen, Harford, Maryland, United States"
+SET $Location  "Aberdeen, Harford, Maryland, United States"
 # End location }}}
 
 # ** Display directives {{{
@@ -129,7 +129,7 @@ FSET _last(mo)     "1 " + MON((mo%12)+1) + " --7"
 
 # ** Function which removes a single leading zero from a string {{{
 FSET _no_lz(s) IIF(SUBSTR(s, 1, 1)=="0", SUBSTR(s, 2), s)
-### End removing leading zero }}}
+# End removing leading zero }}}
 
 # ** Return length in minutes of daylight/night portion of a date {{{
 FSET _light_len(date) MAX(SUNSET(date)-SUNRISE(date), 0)
@@ -152,10 +152,8 @@ FSET _mo_num(mo, yr)    ORD(12 * ($Ty - yr) + $Tm - mo)
 # PS-type reminders.  You need a PostScript printer or viewer to
 # appreciate these.  To use them, pipe the output of remind -p into the
 # rem2ps program.  More examples are in the PSSTUFF2 section, below.
-#
 
-# The following reminder will shade the Saturday and Sunday calendar
-# entries. This is solarized color scheme's BASE02
+# The following reminder will shade Saturday and Sunday
 REM Sat Sun SPECIAL SHADE [col_base02]
 # }}}
 
