@@ -2,7 +2,7 @@
 # Filename   : sky.rem                                                        #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-07-02 13:52                                               #
+# Last edit  : 2022-10-18 21:38                                               #
 # Purpose    : Moon phases file for remind                                    #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -13,40 +13,12 @@
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
 # include [getenv("XDG_CONFIG_HOME")]/remind/sky.rem
 
-## Phases of the moon {{{
-#IF moonphase(today(), 12:00)==0
-    #SET phase="🌑"
-#ENDIF
-#IF moonphase(today(), 12:00)>0&&moonphase(today(), 12:00)<90
-    #SET phase="🌒"
-#ENDIF
-#IF moonphase(today(), 12:00)==90
-    #SET phase="🌓"
-#ENDIF
-#IF moonphase(today(), 12:00)>90&&moonphase(today(), 12:00)<180
-    #SET phase="🌔"
-#ENDIF
-#IF moonphase(today(), 12:00)==180
-    #SET phase="🌕"
-#ENDIF
-#IF moonphase(today(), 12:00)>180&&moonphase(today(), 12:00)<270
-    #SET phase="🌖"
-#ENDIF
-#IF moonphase(today(), 12:00)==270
-    #SET phase="🌗"
-#ENDIF
-#IF moonphase(today(), 12:00)>270&&moonphase(today(), 12:00)<360
-    #SET phase="🌘"
-#ENDIF
-## End phases of the moon }}}
-
-REM Sunrise       : [sunrise(trigdate())]%
-REM Sunset        : [sunset(trigdate())]%
-# REM Moon phase : [phase]%
-REM New moon      : [moondate(0)] at [moontime(0)]%
-# REM First quarter : [moondate(1)] at [moontime(1)]%
-REM Full moon     : [moondate(2)] at [moontime(2)]%
-# REM Third quarter : [moondate(3)] at [moontime(3)]%
+SPECIAL COLOR 255 255 0 Sunrise       : 🌅 [sunrise()] today and [sunrise(today()+1)] tomorrow
+SPECIAL COLOR 255 128 0 Sunset        : 🌇 [sunset()] today and [sunset(today()+1)] tomorrow%_
+REM [moondate(0)] +60 SPECIAL COLOR 255 255 0 New moon      : 🌚 [moondate(0)] (%b)
+REM [moondate(1)] +60 SPECIAL COLOR 255 255 128 First Quarter : 🌛 [moondate(1)] (%b)
+REM [moondate(2)] +60 SPECIAL COLOR 255 255 255 Full moon     : 🌝 [moondate(2)] (%b)
+REM [moondate(3)] +60 SPECIAL COLOR 255 255 128 Last Quarter  : 🌜 [moondate(3)] (%b)%_
 
 # Moon icons {{{
 # New moon: 🌑

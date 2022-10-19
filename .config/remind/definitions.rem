@@ -1,214 +1,132 @@
-# **  Description of Definitions File{{{
-# DEFS.REM
-#
-# This file is a reminder script, which contains a few handy definitions.
-# Cut and paste as desired!  Also, near the end, there are a bunch of
-# holiday definitions for the U.S.
-#
-# Some examples provided by George M. Sipe <gsipe@pyratl.ga.pyramid.com>
-#
-# U.S. holidays provided by Dave Rickel <drickel@sjc.mentorg.com>
-#
-# Use your text editor to search for:
-#  "#USHOLS" for U.S. holidays
-#  "#JHOLS"  for Jewish holidays
-#  "#PSSTUFF" for nifty PostScript examples
-#  "#COLORS" for examples of ANSI color escape sequences.
-#
-# This file is part of REMIND.
-# Copyright (C) 1992-1997 Dianne Skoll
-# Copyright (C) 1999-2000 Roaring Penguin Software Inc.
-#
-# }}}
+###############################################################################
+# Filename   : definitions.rem                                                #
+# Author     : Dianne Skoll (https://dianne.skoll.ca/)                        #
+# Created    : 1992                                                           #
+# Last edit  : 2022-10-18 19:21                                               #
+# Purpose    : Definitions for remind                                         #
+# Reference  : man remind                                                     #
+# Depends    : remind                                                         #
+# Known bugs : NKA                                                            #
+# TODO       : I think maybe some of the entries are deprecated               #
+###############################################################################
+
+# Notes {{{
+###############################################################################
+# Some examples provided by George M. Sipe <gsipe@pyratl.ga.pyramid.com>      #
+# Some edits by Michael DeBusk (https://gitlab.com/mdebusk/) for personal use #
+# This file is part of REMIND.                                                #
+# Copyright (C) 1992-2022 Dianne Skoll                                        #
+###############################################################################
+# End notes }}}
 
 RUN OFF
 
-# Ensure required version of remind is used... #{{{
-IF version() < "03.01.08"
-   ERRMSG This file requires at least version 03.01.08 of Remind.%
+# ** Ensure required version of remind is used {{{
+IF version() < "03.04.02"
+   ERRMSG This file requires at least version 03.04.02 of Remind.%
    ERRMSG This version is version [version()].
    EXIT
 ENDIF
-# }}}
+# End version check }}}
 
-# Symbolic constants for weekdays... #{{{
-SET Sunday    0
-SET Monday    1
-SET Tuesday   2
-SET Wednesday 3
-SET Thursday  4
-SET Friday    5
-SET Saturday  6
+# ** Location information {{{
+SET $Latitude   "39.5096"
+SET $Longitude "-76.1641"
+SET $Location "Aberdeen, Harford, Maryland, United States"
+# End location }}}
 
-SET Sun 0
-SET Mon 1
-SET Tue 2
-SET Wed 3
-SET Thu 4
-SET Fri 5
-SET Sat 6
-# }}}
+# ** Display directives {{{
+SET $AddBlankLines 0
+SET $DateSep "-"
+SET $TimeSep ":"
+# End miscellaneous }}}
 
-# Symbolic constants for month names... #{{{
+# ** TODO: Are these deprecated? {{{
+# ** Symbolic constants for weekdays {{{2
+## SET Sunday    0
+## SET Monday    1
+## SET Tuesday   2
+## SET Wednesday 3
+## SET Thursday  4
+## SET Friday    5
+## SET Saturday  6
+##
+## SET Sun 0
+## SET Mon 1
+## SET Tue 2
+## SET Wed 3
+## SET Thu 4
+## SET Fri 5
+## SET Sat 6
+# End weekdays constants }}}
 
-SET Jan 1
-SET Feb 2
-SET Mar 3
-SET Apr 4
-SET May 5
-SET Jun 6
-SET Jul 7
-SET Aug 8
-SET Sep 9
-SET Oct 10
-SET Nov 11
-SET Dec 12
+# ** Symbolic constants for month names {{{2
 
-SET January   1
-SET February  2
-SET March     3
-SET April     4
-SET May       5
-SET June      6
-SET July      7
-SET August    8
-SET September 9
-SET October   10
-SET November  11
-SET December  12
-# }}}
+## SET Jan 1
+## SET Feb 2
+## SET Mar 3
+## SET Apr 4
+## SET May 5
+## SET Jun 6
+## SET Jul 7
+## SET Aug 8
+## SET Sep 9
+## SET Oct 10
+## SET Nov 11
+## SET Dec 12
+##
+## SET January   1
+## SET February  2
+## SET March     3
+## SET April     4
+## SET May       5
+## SET June      6
+## SET July      7
+## SET August    8
+## SET September 9
+## SET October   10
+## SET November  11
+## SET December  12
+# End month constants }}}
+# End maybe deprecated constants }}}
 
-# Other symbolic constants and functions for "pasting"{{{
+# ** Symbolic constants and functions for "pasting" {{{
 
 SET Quote CHAR(34)
 
-# Handy constants/function for specifing week of month...
-SET  Week_1		 1
-SET  Week_2		 8
-SET  Week_3		15
-SET  Week_4		22
-FSET _last(mo)		"1 " + MON((mo%12)+1) + " --7"
-# }}}
+# Handy constants/function for specifing week of month
+SET  Week_1         1
+SET  Week_2         8
+SET  Week_3        15
+SET  Week_4        22
+FSET _last(mo)     "1 " + MON((mo%12)+1) + " --7"
+# End "pasting" }}}
 
-# Handy function to provide SCANFROM dates...{{{
-FSET _back(days)	TODAY()-days
+# ** Function to provide SCANFROM dates {{{
+# TODO: Might be deprecated
+## FSET _back(days)    TODAY()-days
+# End scanfrom dates function }}}
 
-# Function which returns a string in "am/pm" format based
-# on the time.  For example, set a am_pm(NOW())...
-
-FSET _am_pm(tm)	IIF(tm<01:00, tm+12*60+"am", \
-                    tm<12:00, tm+"am", \
-                    tm<13:00, tm+"pm", \
-                              tm-12*60+"pm")
-# }}}
-
-# Function which removes a single leading zero from a string...{{{
+# ** Function which removes a single leading zero from a string {{{
 FSET _no_lz(s) IIF(SUBSTR(s, 1, 1)=="0", SUBSTR(s, 2), s)
-# }}}
+### End removing leading zero }}}
 
-# Return the length in minutes of the daylight/night portion of a date,{{{
+# ** Return length in minutes of daylight/night portion of a date {{{
 FSET _light_len(date) MAX(SUNSET(date)-SUNRISE(date), 0)
 FSET _dark_len(date) 1440-_light_len(date)
-# }}}
+# End length in minutes }}}
 
-# Function to calculate number of years since a given year{{{
-# or number of months since a given month and year...
-
-FSET _yr_num(yr)		ORD(YEAR(TRIGDATE()) - yr)
-FSET _mo_num(mo, yr)		ORD(12 * (YEAR(TRIGDATE()) - yr) + \
-					MONNUM(TRIGDATE()) - mo)
+# ** Function to calculate number of years since a given year {{{
+# or number of months since a given month and year
+FSET _yr_num(yr)        ORD($Ty - yr)
+FSET _mo_num(mo, yr)    ORD(12 * ($Ty - yr) + $Tm - mo)
 
 # Here's an example of how to use them
 # REM 1 Nov ++12 MSG %"Dean's [_yr_num(1984)] birthday%" is %b.
 # REM 1 MSG Dean's [_mo_num(11, 1984)] 'monthly' anniversary
 # }}}
 
-# Function to send mail via elm's "fastmail" (by GMS!)...{{{
-
-#FSET _mail(from, subj)	"mailx -s " + \
-#				Quote + from + " : " + subj + Quote \
-#				GETENV("LOGNAME") + " < /dev/null 1>&0"
-FSET _mail(from, subj)	"fastmail -f " + \
-				Quote + from + Quote + \
-				" -s " + Quote + subj + Quote + \
-				" /dev/null " + GETENV("LOGNAME")
-# }}}
-
-# A meeting on the first Monday of every month which is moved to the{{{
-# second Monday in the event of a holiday.
-#
-
-# First, the normal meeting.  However, the SKIP keyword means this
-# one won't be triggered if the first Monday is a holiday
-# REM Mon 1 SKIP MSG Meeting
-
-# Now, calculate the "potential" delayed meeting
-# REM Mon 8 SATISFY 1
-
-# But only actually trigger the delayed meeting if the previous
-# Monday was a holiday
-# IF ISOMITTED(TRIGDATE()-7)
-   # REM [TRIGDATE()] MSG Delayed meeting
-# ENDIF
-# }}}
-
-# A very complicated reminder sent in by a Remind user.{{{
-# This person gets paid every two weeks, starting from 8 January 1993.
-# If a pay date occurs before the twelfth of a month, then that
-# he pays his mortgage on that pay date.  Otherwise, he pays the mortgage
-# on the previous pay date.  Furthermore, he has to schedule his
-# mortgage payment six days before it is due.  He wants to be reminded
-# a further four days before the scheduling deadline.  He also
-# wants to be mailed a notice two weeks before the scheduling deadline.
-#
-# Here's the solution - if you can follow this, consider yourself a
-# Remind programmer extraordinaire!
-
-# A function to determine whether or not a pay-date is a mortgage-date.
-
-# FSET _IsMortDate(x) DAY(x) < 12 || (DAY(x+14) >= 12 && DAY(x+14) <= 14)
-
-# Paydays - for reference
-# REM 8 Jan 1993 *14 MSG Payday
-
-# Calculate the mortgage payment six days ahead of time.  Note that this
-# is done "implicitly" by subtracting 6 from the starting date - we start
-# on 2 Jan rather than 8 Jan.  We add 6 to TRIGDATE() in _IsMortDate to
-# compensate.
-# REM 2 Jan 1993 *14 ++4 SATISFY [_IsMortDate(TRIGDATE()+6)] \
-	# MSG %"Schedule mortgage payment%" for %a.
-
-# Now the mail reminder two weeks before the payment date - because two
-# weeks before a payment date is also a payment date, no pre-compensation
-# in the starting date of 8 Jan is necessary - convince yourself of this!
-# This uses the _mail() function defined earlier.
-# REM ONCE 8 Jan 1993 *14 SATISFY [_IsMortDate(TRIGDATE()+14)] \
-	# RUN [_mail("Decatur Federal", \
-		# "Pay mortgage by the " + ORD(DAY(TRIGDATE()+14)))]
-
-# Make an entry on the calendar when the mortgage should be paid
-# REM 8 Jan 1993 *14 SATISFY [_IsMortDate(TRIGDATE())] \
-	# CAL Mortgage payment
-# }}}
-
-# A script to tell you when your library books are due{{{
-# On our UNIX system, I run a program which queries the university
-# library and creates a file called ".booksdue".  This file is
-# a REMIND script to tell me when my library books are due.  Here's
-# an example from my reminder file - it shows the use of filedate().
-# When the .booksdue file is at least 7 days old, I create a new version
-# by querying the library computer.  Note the use of realtoday() rather
-# than today.
-#
-
-# IF !$RunOff && !$CalMode && !$SimpleCal
-   # IF REALTODAY()-FILEDATE("/home/dfs/.booksdue") >= 7
-      # REM RUN /home/dfs/bilge/library/getbooks
-   # ENDIF
-# ENDIF
-# }}}
-
-#PSSTUFF1{{{
+# ** Postscript Stuff 1 {{{
 #
 # This portion of the file contains some cute examples of the new
 # PS-type reminders.  You need a PostScript printer or viewer to
@@ -217,22 +135,15 @@ FSET _mail(from, subj)	"fastmail -f " + \
 #
 
 # The following reminder will shade the Saturday and Sunday calendar
-# entries.
-REM Sat Sun SPECIAL SHADE 220
+# entries. This is solarized color scheme's BASE02
+REM Sat Sun SPECIAL SHADE 7 54 66
 # }}}
 
-#PSSTUFF2{{{
+# ** Postscript Stuff 2 {{{
 #
 # Since the SHADE special blots out any previous PostScript
 # reminders for a date, these examples need to follow the US Holidays
 # section, which uses SHADE.
-#
-
-# The following will fill in the Hebrew dates on the calendar.  For this
-# example, I recommend that you use the -sd 10 option for Rem2PS.
-REM PS Border Border moveto \
-   /DayFont findfont DaySize scalefont setfont \
-   ([hebday(today())] [hebmon(today())]) show
 
 # Fill in the phases of the moon on the PostScript calendar
 [moondate(0)] SPECIAL MOON 0
@@ -243,21 +154,20 @@ REM PS Border Border moveto \
 # The following example puts sunrise and sunset times in PostScript in the
 # calendar - the sizes are hard-coded, however, and work best in landscape.
 REM PS Border Border 5 sub moveto \
-	/SmallFont findfont 4 scalefont setfont \
-	(Sunrise: [sunrise(trigdate())] Sunset: [sunset(trigdate())]) show
+    /SmallFont findfont 4 scalefont setfont \
+    (Sunrise: [sunrise(trigdate())] Sunset: [sunset(trigdate())]) show
 
 # The next one puts the day number (1-366) and days left in the year at the
 # bottom of the post-script calendar.  Again, the hard-coded sizes work best
 # in landscape.
 FSET _DayOfYear(x) x-(date(year(x),1,1) - 1)
 REM PS BoxWidth 3 mul 4 div Border 5 sub moveto \
-	/SmallFont findfont 4 scalefont setfont \
-	([_DayOfYear(today())]([365+isleap(today())-_DayOfYear(today())])) show
+    /SmallFont findfont 4 scalefont setfont \
+    ([_DayOfYear(today())]([365+isleap(today())-_DayOfYear(today())])) show
 # }}}
 
-#COLORS{{{
-# ANSI colors have been deprecated. One should now use the SPECIAL COLORS
-# directive and RGB values. The following are from the Solarized pallette:
+# ** Colors {{{
+# The following are from the Solarized pallette:
 # base0     131 148 150 Body text
 # base01     88 110 117 Comments
 # base1     147 161 161 Optional emphasized content
@@ -269,4 +179,4 @@ REM PS BoxWidth 3 mul 4 div Border 5 sub moveto \
 # red       220  50  47
 # violet    108 113 196
 # yellow    181 137   0
-# }}}
+# End colors }}}
