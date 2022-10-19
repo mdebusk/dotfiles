@@ -2,7 +2,7 @@
 # Filename   : definitions.rem                                                #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/)                        #
 # Created    : 1992                                                           #
-# Last edit  : 2022-10-18 19:21                                               #
+# Last edit  : 2022-10-18 23:53                                               #
 # Purpose    : Definitions for remind                                         #
 # Reference  : man remind                                                     #
 # Depends    : remind                                                         #
@@ -40,6 +40,26 @@ SET $AddBlankLines 0
 SET $DateSep "-"
 SET $TimeSep ":"
 # End miscellaneous }}}
+
+# ** Colors {{{
+# Solarized (https://ethanschoonover.com/solarized/)
+SET col_base03 "0 43 54"
+SET col_base02 "7 54 66"
+SET col_base01 "88 110 117"
+SET col_base00 "101 123 131"
+SET col_base0 "131 148 150"
+SET col_base1 "147 161 161"
+SET col_base2 "238 232 213"
+SET col_base3 "253 246 227"
+SET col_yellow "181 137 0"
+SET col_orange "203 75 22"
+SET col_red "220 50 47"
+SET col_magenta "211 54 130"
+SET col_violet "108 113 196"
+SET col_blue "38 139 210"
+SET col_cyan "42 161 152"
+SET col_green "133 153 0"
+# End colors }}}
 
 # ** TODO: Are these deprecated? {{{
 # ** Symbolic constants for weekdays {{{2
@@ -136,7 +156,7 @@ FSET _mo_num(mo, yr)    ORD(12 * ($Ty - yr) + $Tm - mo)
 
 # The following reminder will shade the Saturday and Sunday calendar
 # entries. This is solarized color scheme's BASE02
-REM Sat Sun SPECIAL SHADE 7 54 66
+REM Sat Sun SPECIAL SHADE [col_base02]
 # }}}
 
 # ** Postscript Stuff 2 {{{
@@ -165,18 +185,3 @@ REM PS BoxWidth 3 mul 4 div Border 5 sub moveto \
     /SmallFont findfont 4 scalefont setfont \
     ([_DayOfYear(today())]([365+isleap(today())-_DayOfYear(today())])) show
 # }}}
-
-# ** Colors {{{
-# The following are from the Solarized pallette:
-# base0     131 148 150 Body text
-# base01     88 110 117 Comments
-# base1     147 161 161 Optional emphasized content
-# blue       38 139 210
-# cyan       42 161 152
-# green     133 153   0
-# magenta   211  54 130
-# orange    203  75  22
-# red       220  50  47
-# violet    108 113 196
-# yellow    181 137   0
-# End colors }}}

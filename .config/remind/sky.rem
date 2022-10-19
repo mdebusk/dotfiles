@@ -2,7 +2,7 @@
 # Filename   : sky.rem                                                        #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-10-18 21:38                                               #
+# Last edit  : 2022-10-19 00:15                                               #
 # Purpose    : Moon phases file for remind                                    #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -13,12 +13,12 @@
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
 # include [getenv("XDG_CONFIG_HOME")]/remind/sky.rem
 
-SPECIAL COLOR 255 255 0 Sunrise       : 🌅 [sunrise()] today and [sunrise(today()+1)] tomorrow
-SPECIAL COLOR 255 128 0 Sunset        : 🌇 [sunset()] today and [sunset(today()+1)] tomorrow%_
-REM [moondate(0)] +60 SPECIAL COLOR 255 255 0 New moon      : 🌚 [moondate(0)] (%b)
-REM [moondate(1)] +60 SPECIAL COLOR 255 255 128 First Quarter : 🌛 [moondate(1)] (%b)
-REM [moondate(2)] +60 SPECIAL COLOR 255 255 255 Full moon     : 🌝 [moondate(2)] (%b)
-REM [moondate(3)] +60 SPECIAL COLOR 255 255 128 Last Quarter  : 🌜 [moondate(3)] (%b)%_
+SPECIAL COLOR [col_yellow] Sunrise       : 🌅 [sunrise()] today and [sunrise(today()+1)] tomorrow
+SPECIAL COLOR [col_orange] Sunset        : 🌇 [sunset()] today and [sunset(today()+1)] tomorrow%_
+REM [moondate(0)] +60 SPECIAL COLOR [col_blue] New moon      : 🌚 [moondate(0)] (%b)
+REM [moondate(1)] +60 SPECIAL COLOR [col_base1] First Quarter : 🌛 [moondate(1)] (%b)
+REM [moondate(2)] +60 SPECIAL COLOR [col_base2] Full moon     : 🌝 [moondate(2)] (%b)
+REM [moondate(3)] +60 SPECIAL COLOR [col_base1] Last Quarter  : 🌜 [moondate(3)] (%b)%_
 
 # Moon icons {{{
 # New moon: 🌑
