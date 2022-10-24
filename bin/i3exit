@@ -4,7 +4,7 @@
 # Filename   : i3exit                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-08-23 19:22                                               #
-# Last edit  : 2022-10-21 18:44                                               #
+# Last edit  : 2022-10-24 19:57                                               #
 # Purpose    : Present a logout/restart/etc. menu                             #
 # Reference  : https://youtu.be/R9m723tAurA                                   #
 # Depends    : dmenu, systemd, i3-lock, i3-msg                                #
@@ -41,7 +41,13 @@
 # End license }}}
 
 # ** Declare variables {{{
-choices="Lock\nLogout\nRestart\nShutdown\nSuspend\nHibernate"
+choices=""
+choices+="Lock\n"
+choices+="Logout\n"
+choices+="Restart\n"
+choices+="Shutdown\n"
+choices+="Suspend\n"
+choices+="Hibernate"
 lock_paper="$HOME"/Pictures/Wallpapers/lock.png
 # End variables }}}
 
