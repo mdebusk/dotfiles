@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+###############################################################################
+# Filename   : config_edit                                                    #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : 2022-09-14 11:46                                               #
+# Last edit  : 2022-10-24 17:52                                               #
+# Purpose    : Choose a config file to edit                                   #
+# Depends    : dmenu, bash                                                    #
+# TODO       : N/A                                                            #
+###############################################################################
+
+# ** License {{{
+###############################################################################
+# This is free and unencumbered software released into the public domain.     #
+#                                                                             #
+# Anyone is free to copy, modify, publish, use, compile, sell, or             #
+# distribute this software, either in source code form or as a compiled       #
+# binary, for any purpose, commercial or non-commercial, and by any means.    #
+#                                                                             #
+# In jurisdictions that recognize copyright laws, the author or authors of    #
+# this software dedicate any and all copyright interest in the software to    #
+# the public domain. We make this dedication for the benefit of the public    #
+# at large and to the detriment of our heirs and successors. We intend        #
+# this dedication to be an overt act of relinquishment in perpetuity of       #
+# all present and future rights to this software under copyright law.         #
+#                                                                             #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,             #
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF          #
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.      #
+# IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER     #
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     #
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         #
+# DEALINGS IN THE SOFTWARE.                                                   #
+#                                                                             #
+# For more information, please refer to <http://unlicense.org/>               #
+###############################################################################
+# End license }}}
+
+# ** Variables {{{
+[ -z "$VISUAL" ] && VISUAL=/usr/local/bin/vim
+choices=""
+choices+="bash_profile\n"
+choices+="bashrc\n"
+choices+="profile\n"
+choices+="vimrc\n"
+choices+="bash_aliases\n"
+choices+="Xresources\n"
+choices+="i3\n"
+choices+="i3status\n"
+choices+="reminders\n"
+choices+="cal\n"
+# End variables }}}
+
+# ** Get the choice {{{
+chosen=$(echo -e "$choices" | \
+    dmenu \
+    -i \
+    -p  'Edit:'\
+    -fn 'Roboto-12' \
+    -nb '#d33682' \
+    -sf '#d33682' \
+    -sb '#eee8d5' \
+    -nf '#eee8d5')
+# End choice }}}
+
+case "$chosen" in
+    bash_profile) "$VISUAL" "$HOME/.bash_profile" ;;
+    bashrc) "$VISUAL" "$HOME/.bashrc" ;;
+    profile) "$VISUAL" "$HOME/.profile" ;;
+    vimrc) "$VISUAL" "$HOME/.vim/vimrc" ;;
+    bash_aliases) "$VISUAL" "$XDG_CONFIG_HOME/bash_aliases" ;;
+    Xresources) "$VISUAL" "$XDG_CONFIG_HOME/X11/Xresources" ;;
+    i3) "$VISUAL" "$XDG_CONFIG_HOME/i3/config" ;;
+    i3status) "$VISUAL" "$XDG_CONFIG_HOME/i3status/config" ;;
+    reminders) "$VISUAL" "$XDG_CONFIG_HOME/remind/reminders.rem" ;;
+    cal) "$VISUAL" "$XDG_DATA_HOME/cal.dat" ;;
+    *) exit 2 ;;
+esac
+
+exit 0
