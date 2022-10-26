@@ -4,7 +4,7 @@
 # Filename   : config_edit                                                    #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-09-14 11:46                                               #
-# Last edit  : 2022-10-24 17:52                                               #
+# Last edit  : 2022-10-25 20:58                                               #
 # Purpose    : Choose a config file to edit                                   #
 # Depends    : dmenu, bash                                                    #
 # TODO       : N/A                                                            #
@@ -40,7 +40,6 @@
 # ** Variables {{{
 [ -z "$VISUAL" ] && VISUAL=/usr/local/bin/vim
 choices=""
-choices+="bash_profile\n"
 choices+="bashrc\n"
 choices+="profile\n"
 choices+="vimrc\n"
@@ -64,18 +63,19 @@ chosen=$(echo -e "$choices" | \
     -nf '#eee8d5')
 # End choice }}}
 
+# ** Assign the config file {{{
 case "$chosen" in
-    bash_profile) "$VISUAL" "$HOME/.bash_profile" ;;
-    bashrc) "$VISUAL" "$HOME/.bashrc" ;;
-    profile) "$VISUAL" "$HOME/.profile" ;;
-    vimrc) "$VISUAL" "$HOME/.vim/vimrc" ;;
-    bash_aliases) "$VISUAL" "$XDG_CONFIG_HOME/bash_aliases" ;;
-    Xresources) "$VISUAL" "$XDG_CONFIG_HOME/X11/Xresources" ;;
-    i3) "$VISUAL" "$XDG_CONFIG_HOME/i3/config" ;;
-    i3status) "$VISUAL" "$XDG_CONFIG_HOME/i3status/config" ;;
-    reminders) "$VISUAL" "$XDG_CONFIG_HOME/remind/reminders.rem" ;;
-    cal) "$VISUAL" "$XDG_DATA_HOME/cal.dat" ;;
-    *) exit 2 ;;
+    bashrc) fn="$HOME/.bashrc" ;;
+    profile) fn="$HOME/.profile" ;;
+    vimrc) fn="$HOME/.vim/vimrc" ;;
+    bash_aliases) fn="$XDG_CONFIG_HOME/bash_aliases" ;;
+    Xresources) fn="$XDG_CONFIG_HOME/X11/Xresources" ;;
+    i3) fn="$XDG_CONFIG_HOME/i3/config" ;;
+    i3status) fn="$XDG_CONFIG_HOME/i3status/config" ;;
+    reminders) fn="$XDG_CONFIG_HOME/remind/reminders.rem" ;;
+    cal) fn="$XDG_DATA_HOME/cal.dat" ;;
+    *) exit 1 ;;
 esac
+# End assign the file }}}
 
-exit 0
+alacritty -e $VISUAL "$fn"
