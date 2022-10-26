@@ -65,17 +65,17 @@ chosen=$(echo -e "$choices" | \
 
 # ** Assign the config file {{{
 case "$chosen" in
-    bashrc) fn="$HOME/.bashrc" ;;
-    profile) fn="$HOME/.profile" ;;
-    vimrc) fn="$HOME/.vim/vimrc" ;;
-    bash_aliases) fn="$XDG_CONFIG_HOME/bash_aliases" ;;
-    Xresources) fn="$XDG_CONFIG_HOME/X11/Xresources" ;;
-    i3) fn="$XDG_CONFIG_HOME/i3/config" ;;
-    i3status) fn="$XDG_CONFIG_HOME/i3status/config" ;;
-    reminders) fn="$XDG_CONFIG_HOME/remind/reminders.rem" ;;
-    cal) fn="$XDG_DATA_HOME/cal.dat" ;;
+    bashrc) chosen="$HOME/.bashrc" ;;
+    profile) chosen="$HOME/.profile" ;;
+    vimrc) chosen="$HOME/.vim/vimrc" ;;
+    bash_aliases) chosen="$XDG_CONFIG_HOME/bash_aliases" ;;
+    Xresources) chosen="$XDG_CONFIG_HOME/X11/Xresources" ;;
+    i3) chosen="$XDG_CONFIG_HOME/i3/config" ;;
+    i3status) chosen="$XDG_CONFIG_HOME/i3status/config" ;;
+    reminders) chosen="$XDG_CONFIG_HOME/remind/reminders.rem" ;;
+    cal) chosen="$XDG_DATA_HOME/cal.dat" ;;
     *) exit 1 ;;
 esac
 # End assign the file }}}
 
-alacritty -e $VISUAL "$fn"
+alacritty -e $VISUAL "$chosen"
