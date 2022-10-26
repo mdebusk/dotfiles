@@ -4,7 +4,7 @@
 # Filename   : i3exit                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-08-23 19:22                                               #
-# Last edit  : 2022-10-24 19:57                                               #
+# Last edit  : 2022-10-26 11:29                                               #
 # Purpose    : Present a logout/restart/etc. menu                             #
 # Reference  : https://youtu.be/R9m723tAurA                                   #
 # Depends    : dmenu, systemd, i3-lock, i3-msg                                #
@@ -45,7 +45,7 @@ choices=""
 choices+="Lock\n"
 choices+="Logout\n"
 choices+="Restart\n"
-choices+="Shutdown\n"
+choices+="Poweroff\n"
 choices+="Suspend\n"
 choices+="Hibernate"
 lock_paper="$HOME"/Pictures/Wallpapers/lock.png
@@ -56,7 +56,7 @@ chosen=$(echo -e "$choices" | \
     dmenu \
     -p  'Select:' \
     -i \
-    -fn 'Roboto Black-16' \
+    -fn 'Roboto-21' \
     -nb '#dc322f' \
     -sf '#dc322f' \
     -sb '#eee8d5' \
@@ -67,7 +67,7 @@ case "$chosen" in
     Lock) i3lock -i $lock_paper ;;
     Logout) i3-msg exit ;;
     Restart) systemctl reboot ;;
-    Shutdown) systemctl poweroff ;;
+    Poweroff) systemctl poweroff ;;
     Suspend) systemctl suspend ;;
     Hibernate) systemctl hibernate ;;
     *) exit 2 ;;
