@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-10-25 18:02                                               #
+# Last edit  : 2022-10-27 22:49                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3 version 4.20+                                               #
@@ -71,6 +71,9 @@ bindsym $mod+Shift+i exec $web_browser
 
 # Start my notes program
 bindsym $mod+Shift+n exec $notes_program
+
+# Scratchpad terminal
+bindsym $mod+u [title="dropdown"] scratchpad show [title="dropdown"] move position center
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -264,6 +267,13 @@ for_window [class="Veracrypt" instance="veracrypt"] floating enable move absolut
 for_window [class="XClock" instance="xclock"] floating enable move absolute position 1485 px 0 px
 # End floating windows }}}
 
+# Dropdown terminal {{{2
+for_window [title="dropdown"] floating enable
+for_window [title="dropdown"] resize set 1210 790
+for_window [title="dropdown"] move scratchpad
+for_window [title="dropdown"] border pixel 5
+# End dropdown }}}
+
 # End arbitrary commands for specific windows }}}
 
 # ** 4.15: Don’t Focus Window Upon Opening {{{
@@ -310,6 +320,9 @@ exec --no-startup-id /opt/Pcloud/pcloud start
 
 # Network Manager Applet
 exec --no-startup-id nm-applet
+
+# Dropdown terminal
+exec --no-startup-id $terminal_program -t dropdown
 
 # clipboard manager
 exec --no-startup-id $clipboard_manager
