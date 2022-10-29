@@ -4,7 +4,7 @@
 # Filename   : config_edit                                                    #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-09-14 11:46                                               #
-# Last edit  : 2022-10-25 20:58                                               #
+# Last edit  : 2022-10-28 23:54                                               #
 # Purpose    : Choose a config file to edit                                   #
 # Depends    : dmenu, bash                                                    #
 # TODO       : N/A                                                            #
@@ -56,7 +56,7 @@ chosen=$(echo -e "$choices" | \
     dmenu \
     -i \
     -p  'Edit:'\
-    -fn 'Roboto-12' \
+    -fn 'Roboto Medium-12' \
     -nb '#d33682' \
     -sf '#d33682' \
     -sb '#eee8d5' \
