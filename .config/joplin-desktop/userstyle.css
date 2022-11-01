@@ -2,7 +2,7 @@
 /* Filename   : userstyle.css                                                 */
 /* Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                  */
 /* Created    : 2022-05-05                                                    */
-/* Last edit  : 2022-09-24 10:16                                              */
+/* Last edit  : 2022-11-01 02:56                                              */
 /* Purpose    : user stylesheet for Joplin                                    */
 /* Depends    : joplin                                                        */
 /* Arguments  : N/A                                                           */
@@ -42,30 +42,33 @@ h6 {
 }
 /* End headings }}}*/
 
-/* Lists {{{ */
+/* Ordered and Unordered Lists {{{ */
 ol,ul,td {
     line-height: 1.5;
 }
-/* End unordered Lists }}} */
+/* End (un)ordered Lists }}} */
 
 /* Definition lists {{{ */
 /* https://www.the-art-of-web.com/css/format-dl/ */
+
 dl {
-    border: 3px double;
+    border: 3px double #073642;
     padding: 0.5em;
-}
-dt {
+  }
+  dt {
     float: left;
     clear: left;
-    /* width: 100px; */
+    width: 100px;
     text-align: right;
     font-weight: bold;
-}
-dt::after {
-    content: ": ";
-}
-dd {
+    color: #859900;
+  }
+  dt::after {
+    content: ":";
+  }
+  dd {
     margin: 0 0 0 110px;
     padding: 0 0 0.5em 0;
-}
+  }
+
 /* End definition lists }}} */
