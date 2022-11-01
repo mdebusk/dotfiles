@@ -1,0 +1,12 @@
+###############################################################################
+# Filename   : muttrc                                                         #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : Unknown                                                        #
+# Last edit  : 2022-09-13 23:36                                               #
+# Purpose    : mutt configuration file for mdebusk@gmail.com                  #
+# Reference  : http://mutt.org/doc/manual/                                    #
+# Depends    : mutt                                                           #
+# To do      : x                                                              #
+###############################################################################
+
+source $XDG_CONFIG_HOME/mutt/muttrc-common

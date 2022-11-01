@@ -1,0 +1,34 @@
+###############################################################################
+# Filename   : muttrc-common                                                  #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : 2022-09-13 10:33                                               #
+# Last edit  : 2022-09-17 01:08                                               #
+# Purpose    : Configuration settings shared among muttrc files               #
+# Reference  : http://mutt.org/doc/manual/                                    #
+# Depends    : mutt                                                           #
+# TODO       : N/A                                                            #
+###############################################################################
+
+
+auto_view text/html
+hdr_order Date From To Cc
+
+set alias_file        = "$XDG_CONFIG_HOME/mutt/aliases"
+set assumed_charset   = "utf-8"
+set charset           = "utf-8"
+set editor            = "vim +/^$ ++1"
+set mailcap_path      = "$XDG_CONFIG_HOME/mutt/mailcap:/etc/mailcap"
+set realname          = 'Michael DeBusk'
+set send_charset      = "utf-8:iso-8859-15:us-ascii"
+set sidebar_visible   = yes
+set signature         = "$XDG_CONFIG_HOME/signature-mail"
+set sort              = 'threads'
+set sort_aux          = 'last-date-received'
+set status_format     = "$from -%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"
+set text_flowed       = yes
+set tmpdir            = "$XDG_CONFIG_HOME/mutt/tmp"
+set use_from          = yes
+
+source "$XDG_CONFIG_HOME/mutt/colors"
+source "$XDG_CONFIG_HOME/mutt/keymappings"
+source $alias_file
