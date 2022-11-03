@@ -1,17 +1,14 @@
 # Exact Solarized Dark color theme for the color GNU ls utility.
 # Designed for dircolors (GNU coreutils) 5.97
-# Folds added by Michael DeBusk
-# Last edit: 2022-07-05 14:12
-
-# This simple theme was simultaneously designed for these terminal color schemes: {{{
+#
+# This simple theme was simultaneously designed for these terminal color schemes:
 # - Solarized dark  (best)
 # - Solarized light
 # - default dark
 # - default light
 # with a slight optimization for Solarized Dark.
-#}}}
-
-# How the colors were selected: {{{
+#
+# How the colors were selected:
 # - Terminal emulators often have an option typically enabled by default that makes
 #   bold a different color.  It is important to leave this option enabled so that
 #   you can access the entire 16-color Solarized palette, and not just 8 colors.
@@ -23,7 +20,7 @@
 #   editable text including source, unimportant text, binary docs & multimedia source
 #   files, viewable multimedia, archived/compressed, and unimportant non-text
 # - For uniqueness, we stay away from the Solarized foreground colors are -- either
-#   base00 (brightyellow) or base0 (brighblue).  However, they can be used if
+#   base00 (brightyellow) or base0 (brightblue).  However, they can be used if
 #   you know what the bg/fg colors of your terminal are, in order to optimize the display.
 # - 3 different options are provided: universal, solarized dark, and solarized light.
 #   The only difference between the universal scheme and one that's optimized for
@@ -34,20 +31,19 @@
 #   for multimedia files which are usually accessed in a GUI folder browser anyway.
 #   And blue is kept for custom use of this scheme's user.
 # - See table below to see the assignments.
-# }}}
 
-# Installation instructions: {{{
+
+# Installation instructions:
 # This file goes in the /etc directory, and must be world readable.
 # You can copy this file to .dir_colors in your $HOME directory to override
 # the system defaults.
-# }}}
 
 # COLOR needs one of these arguments: 'tty' colorizes output to ttys, but not
 # pipes. 'all' adds color characters to all output. 'none' shuts colorization
 # off.
 COLOR tty
 
-# Below, there should be one TERM entry for each termtype that is colorizable {{{
+# Below, there should be one TERM entry for each termtype that is colorizable
 TERM alacritty
 TERM ansi
 TERM color_xterm
@@ -66,6 +62,8 @@ TERM cons25
 TERM console
 TERM cygwin
 TERM dtterm
+TERM dvtm
+TERM dvtm-256color
 TERM Eterm
 TERM eterm-color
 TERM fbterm
@@ -90,31 +88,44 @@ TERM rxvt-unicode
 TERM rxvt-unicode256
 TERM rxvt-unicode-256color
 TERM screen
+TERM screen-16color
+TERM screen-16color-bce
+TERM screen-16color-s
+TERM screen-16color-bce-s
 TERM screen-256color
 TERM screen-256color-bce
 TERM screen-256color-s
+TERM screen-256color-bce-s
+TERM screen-256color-italic
 TERM screen-bce
 TERM screen-w
 TERM screen.linux
+TERM screen.xterm-256color
 TERM screen.xterm-new
+TERM st
+TERM st-meta
+TERM st-256color
+TERM st-meta-256color
+TERM tmux
+TERM tmux-256color
 TERM vt100
 TERM xterm
 TERM xterm-new
 TERM xterm-16color
 TERM xterm-256color
+TERM xterm-256color-italic
 TERM xterm-88color
 TERM xterm-color
 TERM xterm-debian
+TERM xterm-kitty
 TERM xterm-termite
-# }}}
 
 # EIGHTBIT, followed by '1' for on, '0' for off. (8-bit output)
 EIGHTBIT 1
 
-# Below are the color init strings for the basic file types. {{{
-# Notes {{{2
-# A color init string consists of one or more of the following
-# numeric codes:
+#############################################################################
+# Below are the color init strings for the basic file types. A color init
+# string consists of one or more of the following numeric codes:
 #
 # Attribute codes:
 #   00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
@@ -146,9 +157,9 @@ EIGHTBIT 1
 #   37    white           base2
 #   01;37 bright white    base3      bg in SolLight
 #   05;37;41                         unclear in Putty dark
-# }}}
 
-### By file type {{{2
+
+### By file type
 
 # global default
 NORMAL 00
@@ -162,14 +173,15 @@ OTHER_WRITABLE 34;40
 LINK 35
 
 # pipe, socket, block device, character device (blue bg)
-BLK  33;44
-CHR  37;44
-DOOR 35;44 # Solaris 2.5 and later
 FIFO 30;44
 SOCK 35;44
-# }}}
+DOOR 35;44 # Solaris 2.5 and later
+BLK  33;44
+CHR  37;44
 
-### By file attributes {{{2
+
+#############################################################################
+### By file attributes
 
 # Orphaned symlinks (blinking white on red)
 # Blink may or may not work (works on iTerm dark or light, and Putty dark)
@@ -178,16 +190,16 @@ ORPHAN  05;37;41
 MISSING 05;37;41
 
 # files with execute permission
-.app 01;31  # OSX
-.bat 01;31  # Win
-.cmd 01;31  # Win
-.com 01;31  # Win
-.exe 01;31  # Win
-.reg 01;31  # Win
 EXEC 01;31  # Unix
-# }}}
+.cmd 01;31  # Win
+.exe 01;31  # Win
+.com 01;31  # Win
+.bat 01;31  # Win
+.reg 01;31  # Win
+.app 01;31  # OSX
 
-### By extension {{{2
+#############################################################################
+### By extension
 
 # List any file extensions like '.gz' or '.tar' that you would like ls
 # to colorize below. Put the extension, a space, and the color init string.
@@ -195,17 +207,49 @@ EXEC 01;31  # Unix
 
 ### Text formats
 
-# Text that we can edit with a regular editor {{{3
-.abc 32
-.fountain 32
-.markdown 32
+# Text that we can edit with a regular editor
+.txt 32
+.org 32
 .md 32
 .mkd 32
-.org 32
-.txt 32
-# }}}
 
-# Source text {{{3
+# Source text
+.h 32
+.hpp 32
+.c 32
+.C 32
+.cc 32
+.cpp 32
+.cxx 32
+.objc 32
+.cl 32
+.sh 32
+.bash 32
+.csh 32
+.zsh 32
+.el 32
+.vim 32
+.java 32
+.pl 32
+.pm 32
+.py 32
+.rb 32
+.hs 32
+.php 32
+.htm 32
+.html 32
+.shtml 32
+.erb 32
+.haml 32
+.xml 32
+.rdf 32
+.css 32
+.sass 32
+.scss 32
+.less 32
+.js 32
+.coffee 32
+.man 32
 .0 32
 .1 32
 .2 32
@@ -216,51 +260,23 @@ EXEC 01;31  # Unix
 .7 32
 .8 32
 .9 32
-.C 32
-.c 32
-.cc 32
-.coffee 32
-.cpp 32
-.csh 32
-.css 32
-.cxx 32
-.el 32
-.erb 32
-.h 32
-.haml 32
-.hs 32
-.htm 32
-.html 32
-.java 32
-.js 32
 .l 32
-.less 32
-.man 32
 .n 32
-.objc 32
 .p 32
-.php 32
-.pl 32
-.pm 32
 .pod 32
-.py 32
-.rb 32
-.rdf 32
-.rexx 32
-.sass 32
-.scss 32
-.sh 32
-.shtml 32
 .tex 32
-.vim 32
-.xml 32
-.zsh 32
-# }}}
+.go 32
+.sql 32
+.csv 32
+.sv 32
+.svh 32
+.v 32
+.vh 32
+.vhd 32
 
 ### Multimedia formats
 
-# Image {{{3
-.JPG 33
+# Image
 .bmp 33
 .cgm 33
 .dl 33
@@ -270,12 +286,14 @@ EXEC 01;31  # Unix
 .gif 33
 .jpeg 33
 .jpg 33
+.JPG 33
 .mng 33
 .pbm 33
 .pcx 33
 .pdf 33
 .pgm 33
 .png 33
+.PNG 33
 .ppm 33
 .pps 33
 .ppsx 33
@@ -291,12 +309,16 @@ EXEC 01;31  # Unix
 .xwd 33
 .xwd 33
 .yuv 33
-# }}}
+.nef 33 # Nikon RAW format
+.NEF 33
+.heic 33
+.HEIC 33
 
-# Audio {{{3
+# Audio
 .aac 33
 .au  33
 .flac 33
+.m4a 33
 .mid 33
 .midi 33
 .mka 33
@@ -305,11 +327,11 @@ EXEC 01;31  # Unix
 .mpeg 33
 .mpg 33
 .ogg  33
+.opus 33
 .ra 33
 .wav 33
-# }}}
 
-# Video {{{3
+# Video
 .anx 33
 .asf 33
 .avi 33
@@ -322,6 +344,7 @@ EXEC 01;31  # Unix
 .m4v 33
 .mkv 33
 .mov 33
+.MOV 33
 .mp4 33
 .mp4v 33
 .mpeg 33
@@ -335,28 +358,32 @@ EXEC 01;31  # Unix
 .rmvb 33
 .swf 33
 .vob 33
+.webm 33
 .wmv 33
-# }}}
 
 ### Misc
 
-# Binary document formats and multimedia source {{{3
+# Binary document formats and multimedia source
 .doc 31
 .docx 31
+.rtf 31
+.odt 31
 .dot 31
 .dotx 31
-.fla 31
-.ppt 31
-.pptx 31
-.psd 31
-.rtf 31
+.ott 31
 .xls 31
 .xlsx 31
-# }}}
+.ods 31
+.ots 31
+.ppt 31
+.pptx 31
+.odp 31
+.otp 31
+.fla 31
+.psd 31
 
-# Archives, compressed {{{3
+# Archives, compressed
 .7z   1;35
-.Z    1;35
 .apk  1;35
 .arj  1;35
 .bin  1;35
@@ -381,73 +408,72 @@ EXEC 01;31  # Unix
 .xpi  1;35
 .xz   1;35
 .z    1;35
+.Z    1;35
 .zip  1;35
-# }}}
+.zst  1;35
 
-# }}}
-
-# For testing {{{2
-.ANSI-01;30-brblack 01;30
-.ANSI-01;31-brred 01;31
-.ANSI-01;32-brgreen 01;32
-.ANSI-01;33-bryellow 01;33
-.ANSI-01;34-brblue 01;34
-.ANSI-01;35-brmagenta 01;35
-.ANSI-01;36-brcyan 01;36
-.ANSI-01;37-brwhite 01;37
+# For testing
 .ANSI-30-black 30
+.ANSI-01;30-brblack 01;30
 .ANSI-31-red 31
+.ANSI-01;31-brred 01;31
 .ANSI-32-green 32
+.ANSI-01;32-brgreen 01;32
 .ANSI-33-yellow 33
+.ANSI-01;33-bryellow 01;33
 .ANSI-34-blue 34
+.ANSI-01;34-brblue 01;34
 .ANSI-35-magenta 35
+.ANSI-01;35-brmagenta 01;35
 .ANSI-36-cyan 36
+.ANSI-01;36-brcyan 01;36
 .ANSI-37-white 37
-# }}}
+.ANSI-01;37-brwhite 01;37
 
-# Your customizations {{{2
+#############################################################################
+# Your customizations
 
 # Unimportant text files
 # For universal scheme, use brightgreen 01;32
 # For optimal on light bg (but too prominent on dark bg), use white 01;34
-*# 01;32
-*~ 01;32
 .log 01;32
-##.log 01;34
-##*~ 01;34
-##*# 01;34
+*~ 01;32
+*# 01;32
+#.log 01;34
+#*~ 01;34
+#*# 01;34
 
 # Unimportant non-text files
 # For universal scheme, use brightcyan 01;36
 # For optimal on dark bg (but too prominent on light bg), change to 01;33
-##*,v 01;36
-##.BAK 01;36
-##.DIST 01;36
-##.OFF 01;36
-##.OLD 01;36
-##.ORIG 01;36
-##.bak 01;36
-##.dist 01;36
-##.off 01;36
-##.old 01;36
-##.org_archive 01;36
-##.orig 01;36
-##.swo 01;36
-##.swp 01;36
-*,v 01;33
-.BAK 01;33
-.DIST 01;33
-.OFF 01;33
-.OLD 01;33
-.ORIG 01;33
+#.bak 01;36
+#.BAK 01;36
+#.old 01;36
+#.OLD 01;36
+#.org_archive 01;36
+#.off 01;36
+#.OFF 01;36
+#.dist 01;36
+#.DIST 01;36
+#.orig 01;36
+#.ORIG 01;36
+#.swp 01;36
+#.swo 01;36
+#*.v 01;36
 .bak 01;33
-.dist 01;33
-.off 01;33
+.BAK 01;33
 .old 01;33
+.OLD 01;33
 .org_archive 01;33
+.off 01;33
+.OFF 01;33
+.dist 01;33
+.DIST 01;33
 .orig 01;33
-.swo 01;33
+.ORIG 01;33
 .swp 01;33
+.swo 01;33
+*.v 01;33
 
 # The brightmagenta (Solarized: purple) color is free for you to use for your
 # custom file type
@@ -458,5 +484,4 @@ EXEC 01;31  # Unix
 .3des 34
 .aes 34
 .enc 34
-# }}}
-# }}}
+.sqlite 34
