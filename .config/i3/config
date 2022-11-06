@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-10-28 23:43                                               #
+# Last edit  : 2022-11-06 03:01                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3 version 4.20+                                               #
@@ -264,6 +264,7 @@ for_window [class="KeePassXC" instance="keepassxc"] floating enable move absolut
 for_window [class="Pwsafe" instance="pwsafe"] floating enable move absolute position 1400 px 40 px
 for_window [class="Tali" instance="tali"] floating enable move absolute position 472 px 40 px
 for_window [class="Veracrypt" instance="veracrypt"] floating enable move absolute position 472 px 40 px
+for_window [class="VirtualBox Machine" instance="VirtualBox Machine"] floating enable resize set 1280 960
 for_window [class="XClock" instance="xclock"] floating enable move absolute position 1485 px 0 px
 # End floating windows }}}
 
