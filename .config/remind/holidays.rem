@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2022-10-18 20:43                                               #
+# Last edit  : 2022-11-06 08:19                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -13,8 +13,10 @@
 # include [getenv("XDG_CONFIG_HOME")]/remind/holidays.rem
 
 # ** Daylight Savings TIme {{{
-REM MAYBE-UNCOMPUTABLE Sun November SATISFY [isdst($T) != isdst($T+1)] MSG Daylight Saving Time Ends
-REM MAYBE-UNCOMPUTABLE Sun March SATISFY [isdst($T) != isdst($T+1)] MSG Daylight Saving Time Starts
+# REM MAYBE-UNCOMPUTABLE Sun November SATISFY [isdst($T) != isdst($T+1)] MSG Daylight Saving Time Ends %c
+# REM MAYBE-UNCOMPUTABLE Sun March    SATISFY [isdst($T) != isdst($T+1)] MSG Daylight Saving Time Starts %c
+REM First  Sun November +3 MSG Daylight Savings Time Ends %c
+REM Second Sun March    +3 MSG Daylight Savings Time Begins %c
 # End Daylight Savings TIme }}}
 
 # ** Easter and related days {{{
