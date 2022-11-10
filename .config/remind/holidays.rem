@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2022-11-06 08:19                                               #
+# Last edit  : 2022-11-10 17:20                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -78,16 +78,22 @@ REM     May  15                                   MSG National Peace Officer Mem
 REM     Third Sat in May                          MSG Armed Forces Day
 REM     May  28                                   MSG National Burger Day
 REM     Jun 14                                    MSG Flag Day
+REM     Jun 14                                    MSG United States Army's [_yr_num(1775)] Birthday
 REM     Third Sun in June                         MSG Father's Day
+REM     Aug  4                                    MSG United States Coast Guard's [_yr_num(1790)] Birthday
 REM     Sep 11                                    MSG Patriot Day
+REM     Sep 14                                    MSG United States Air Force's [_yr_num(1947)] Birthday
 REM     Sep 17                                    MSG Constitution Day
 REM     Sep 22                                    MSG Hobbit Day
 REM     Sep 25                                    MSG National Daughters Day
 REM     Sep 28                                    MSG National Sons Day
+REM     Oct 13                                    MSG United States Navy's [_yr_num(1775)] Birthday
 REM     Oct 30                                    MSG Mischief Night
 REM     Oct 31                                    MSG Halloween
 REM     Tue Nov  2 SCANFROM -7 SATISFY [($Ty % 4) == 0] MSG Election Day
+REM     Nov 10                                    MSG US Marine Corps' [_yr_num(1775)] Birthday
 REM     Dec  7                                    MSG Pearl Harbor Rememberance Day
+REM     Dec 20                                    MSG United States Space Force's [_yr_num(2019)] Birthday
 OMIT    Dec 24                                    MSG Christmas Eve
 OMIT    Dec 31                                    MSG New Year's Eve
 # End US Holidays }}}
