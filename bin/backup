@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+
+################################################################################
+# Filename   : backup                                                          #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk)                     #
+# Created    : Unknown                                                         #
+# Last edit  : 2022-11-13 18:34                                                #
+# Purpose    : backing up laptop hard drive using excludes file                #
+# Depends    : rsync, xdg-user-dir, date, veracrypt, cvlc                      #
+# Arguments  : none currently                                                  #
+# TODO       : Consider adding command-line parameters for help, media, etc.   #
+################################################################################
+
+# **License {{{
+###############################################################################
+# This is free and unencumbered software released into the public domain.     #
+#                                                                             #
+# Anyone is free to copy, modify, publish, use, compile, sell, or             #
+# distribute this software, either in source code form or as a compiled       #
+# binary, for any purpose, commercial or non-commercial, and by any means.    #
+#                                                                             #
+# In jurisdictions that recognize copyright laws, the author or authors of    #
+# this software dedicate any and all copyright interest in the software to    #
+# the public domain. We make this dedication for the benefit of the public    #
+# at large and to the detriment of our heirs and successors. We intend        #
+# this dedication to be an overt act of relinquishment in perpetuity of       #
+# all present and future rights to this software under copyright law.         #
+#                                                                             #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,             #
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF          #
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.      #
+# IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER     #
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     #
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         #
+# DEALINGS IN THE SOFTWARE.                                                   #
+#                                                                             #
+# For more information, please refer to <http://unlicense.org/>               #
+###############################################################################
+# End license }}}
+
+# Change these variables to suit your system {{{
+backup_drive_name="My Passport"
+veracrypt_container="g75vw.vc"
+container_mountpoint="/media/veracrypt1"
+exclude_from="$XDG_CONFIG_HOME/rsync-homedir-excludes.txt"
+user_media_dir="/media/$USER"
+backup_drive="$user_media_dir/$backup_drive_name"
+target=$backup_drive/$veracrypt_container
+logfile="$(xdg-user-dir DESKTOP)/$(date +%Y%m%d%H%M)_rsync.log"
+dependencies="rsync xdg-user-dir date veracrypt cvlc"
+error_alert="$HOME/Documents/Sounds/backup_failed.mp3"
+okay_alert="$HOME/Documents/Sounds/backup_succeeded.mp3"
+# End variables }}}
+
+# Dependencies check
+for i in $dependencies; do
+    command -v "$i" > /dev/null 2>&1 ||\
+        { echo -e "$0 requires $i to be installed. Exiting..." ; exit 127; }
+done
+
+# Check if external backup drive is connected and mounted
+if [ ! -f "$target" ]; then
+    echo -e \
+        "\nExternal backup drive not connected or not mounted. Exiting...\n"
+    exit 1
+fi
+
+# Mount veracrypt container file and check for success
+echo -e "\nExternal backup drive is connected. Mounting veracrypt volume...\n"
+veracrypt -t -k "" --pim=0 --protect-hidden=no "$target" "$container_mountpoint"
+
+if [ ! -d "$container_mountpoint" ]; then
+    echo -e "\nVeracrypt backup volume is not mounted. Exiting...\n"
+    exit 1
+fi
+
+echo -e "\nVeracrypt volume mounted successfully. Beginning backup...\n"
+
+# Back up desired directories {{{
+# Back up /home
+rsync -aPv --delete --log-file="$logfile" --exclude-from="$exclude_from"\
+    /home/"$USER"/ "$container_mountpoint"/home/"$USER"/
+
+# Back up /etc
+sudo rsync -aPv --delete --log-file="$logfile" \
+    /etc/ "$container_mountpoint"/etc/
+
+# Back up /opt
+sudo rsync -aPv --delete --log-file="$logfile" \
+    /opt/ "$container_mountpoint"/opt/
+# End back up desired directories }}}
+
+# Let user know if something went wrong with backup
+if [ $? -gt 0 ]; then
+    notify-send -u critical\
+        "Backup" "Something went wrong.\nInspect log for details."
+    cvlc --play-and-exit "$error_alert"
+    echo -e "\nAn error occorred during backup. See log for details."
+    echo "Drive $backup_drive remains mounted."
+    echo "Veracrypt volume $target also remains mounted."
+    echo -e "See log $logfile for details. Exiting...\n"
+    exit 1
+fi
+
+# Let me know when it's done
+notify-send "Backup" "Backup completed successfully"
+cvlc --play-and-exit "$okay_alert"
+veracrypt -d && echo -e "\nVeracrypt volume unmounted."
+
+umount "$backup_drive" && echo -e "\nExternal drive unmounted."
+exit 0

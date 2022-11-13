@@ -1,0 +1,130 @@
+#!/usr/bin/env bash
+###############################################################################
+# Filename   : update                                                         #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : 2018                                                           #
+# Last edit  : 2022-11-10 16:43                                               #
+# Purpose    : Updates everything                                             #
+# Depends    : bash, git, sudo, pushd, popd, one or more package managers     #
+# Known bugs : NKA                                                            #
+# TODO       : N/A                                                            #
+###############################################################################
+
+# ** License {{{
+###############################################################################
+# This is free and unencumbered software released into the public domain.     #
+#                                                                             #
+# Anyone is free to copy, modify, publish, use, compile, sell, or             #
+# distribute this software, either in source code form or as a compiled       #
+# binary, for any purpose, commercial or non-commercial, and by any means.    #
+#                                                                             #
+# In jurisdictions that recognize copyright laws, the author or authors of    #
+# this software dedicate any and all copyright interest in the software to    #
+# the public domain. We make this dedication for the benefit of the public    #
+# at large and to the detriment of our heirs and successors. We intend        #
+# this dedication to be an overt act of relinquishment in perpetuity of       #
+# all present and future rights to this software under copyright law.         #
+#                                                                             #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,             #
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF          #
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.      #
+# IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER     #
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     #
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         #
+# DEALINGS IN THE SOFTWARE.                                                   #
+#                                                                             #
+# For more information, please refer to <http://unlicense.org/>               #
+###############################################################################
+# End license }}}
+
+# ** Variables {{{
+pkg_mngrs="apt dnf pacman emerge zypper"
+# Directory where you keep your source files
+source_directory="$HOME/Source"
+# End variables }}}
+
+# ** Functions for package managers {{{
+function is_apt { #{{{2
+    echo -e "\n\033[1mUpdating system repos and upgrading installed packages...\n\033[0m"
+    sudo apt update && sudo apt full-upgrade -y
+
+    echo -e "\n\033[1mRemoving unneeded packages and configuration files...\n\033[0m"
+    sudo apt autoremove && sudo apt purge
+    sudo apt remove --purge $(dpkg -l | grep "^rc" | awk '{print $2}')
+
+    echo -e "\n\033[1mRemoving old packages from apt cache...\n\033[0m"
+    sudo apt autoclean
+} #}}}
+
+function is_dnf { #{{{2
+    echo -e "\n\033[1mUpdating system repos and upgrading installed packages...\n\033[0m"
+    sudo dnf upgrade
+
+    echo -e "\n\033[1mRemoving unneeded packages...\n\033[0m"
+    sudo dnf autoremove
+} #}}}
+
+function is_pacman { #{{{2
+    echo -e "\n\033[1mUpdating system repos and upgrading installed packages...\n\033[0m"
+    sudo pacman -Syu
+
+    echo -e "\n\033[1mRemoving unneeded packages...\n\033[0m"
+    Sudo pacman -Qdt
+} #}}}
+
+function is_emerge { #{{{2
+    echo -e "\n\033[1mUpdating system repos and upgrading installed packages...\n\033[0m"
+    emerge --sync && emerge -uDN world
+
+    echo -e "\n\033[1mRemoving unneeded packages and configuration files...\n\033[0m"
+    emerge –depclean
+} #}}}
+
+function is_zypper { #{{{2
+    echo -e "\n\033[1mUpdating system repos and upgrading installed packages...\n\033[0m"
+    sudo zypper refresh && sudo zypper update
+
+    echo -e "\n\033[1mRemoving unneeded packages and configuration files...\n\033[0m"
+    zypper clean -a
+} #}}}
+
+# End package manager functions }}}
+
+# ** System packages {{{
+for i in $pkg_mngrs; do
+    command -v $i > /dev/null 2>&1 && is_$i
+   done
+# End system packages }}}
+
+# ** Universal packages {{{
+# If snapd is installed, update installed snap packages
+command -v snap > /dev/null 2>&1 &&\
+    sudo snap refresh
+
+# If flatpak is installed, update installed flatpak packages
+command -v flatpak > /dev/null 2>&1 &&\
+    sudo flatpak update
+# End universal packages }}}
+
+# ** Git repos {{{
+# If git isn't installed, quit.
+command -v git > /dev/null 2>&1 ||\
+        { echo -e "\n\033[1m$0 requires git to be installed. Exiting...\n\033[0m" ; exit 1; }
+
+# Update cloned git repos
+pushd "$source_directory" || \
+    { echo -e "\n\033[1mFailed to change to $source_directory. Exiting...\n\033[0m" ; exit 1 ; }
+
+echo -e "\n\033[1mUpdating git repositories...\n\033[0m"
+
+for i in *; do
+    if [ -d "$i/.git" ]
+    then
+        cd "$i" && echo "Updating $i... " && git pull --quiet && cd ..
+    fi
+done
+
+popd || exit
+# End git repos }}}
+
+echo -e "\n\033[1mUpdates complete.\n\033[0m"
