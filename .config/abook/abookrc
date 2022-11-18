@@ -2,11 +2,11 @@
 # Filename   : abookrc                                                        #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-09-21 05:33                                               #
-# Last edit  : 2022-09-21 06:43                                               #
+# Last edit  : 2022-11-17 20:38                                               #
 # Purpose    : configuration file for abook                                   #
 # Reference  : man abookrc                                                    #
 # Depends    : abook                                                          #
-# To do      : x                                                              #
+# TODO       : N/A                                                            #
 ###############################################################################
 
 #  ** Commands {{{
@@ -17,10 +17,9 @@
 # with <type> being one of 'string' (default), 'emails', 'list', or 'date'
 
 field address_lines = Address, list
-field birthday = Birthday, date
-field employer = Employer, string
-field job_title = Title, string
-
+field birthday      = Birthday, date
+field employer      = Employer, string
+field job_title     = Title, string
 # End custom fields }}}
 
 #  Defining a view/tab {{{2
@@ -30,17 +29,14 @@ field job_title = Title, string
 # command, or the identifier of a standard field.
 #
 # Standard fields:
-#    name, email, address, address2,
-#    city, state, zip, country,
-#    phone, workphone, fax, mobile,
-#    nick, url, notes, anniversary
+#    name, email, address, address2, city, state, zip, country,
+#    phone, workphone, fax, mobile, nick, url, notes, anniversary
 
 view CONTACT = name, email
 view ADDRESS = address_lines, city, state, zip, country
-view PHONE = phone, workphone, mobile, fax
-view OTHER = url, birthday, anniversary
-view WORK = employer, job_title, workphone
-
+view PHONE   = phone, workphone, mobile, fax
+view OTHER   = url, birthday, anniversary
+view WORK    = employer, job_title, workphone
 # End view/tab }}}
 #
 # End commands }}}
@@ -48,7 +44,7 @@ view WORK = employer, job_title, workphone
 #  ** Variables {{{
 
 # Automatically save database on exit
-set autosave=true
+set autosave = true
 
 # Specify how fields not declared with the 'field' command nor
 # in a view should be preserved while loading an abook database.
@@ -59,10 +55,10 @@ set autosave=true
 #                 description of the 'view' command) and the legacy
 #                 'custom[1-5]' fields.
 #   * 'none': discards any unknown field.
-set preserve_fields=standard
+set preserve_fields = all
 
 # Show all email addresses in list
-set show_all_emails=true
+set show_all_emails = true
 
 # Format of an entry's line in the main abook screen
 #
@@ -71,38 +67,59 @@ set show_all_emails=true
 #  * the first of the 'phone', 'workphone' or 'mobile' fields
 #    happening not to be empty (left aligned within 20 characters)
 #  * the 'birthday' field, with no length limit
-set index_format=" {name:40} {email:40} {phone:20|workphone|mobile} {birthday}"
+set index_format = " {name:40} {email:40} {phone:20|workphone|mobile} {birthday}"
 
 # Command used to start mutt
-set mutt_command=mutt
+set mutt_command = mutt
 
 # Return all email addresses to a mutt query
-set mutt_return_all_emails=true
+set mutt_return_all_emails = true
 
 # Command used to print
-set print_command=lpr
+set print_command = lpr
 
 # Command used to start the web browser
-## set www_command=
+set www_command = www-browser
 
 # address style [eu|us|uk]
-set address_style=us
+set address_style = us
 
 # use ASCII characters only
-set use_ascii_only=false
+set use_ascii_only = false
 
-set add_email_prevent_duplicates=false
+# Whether to avoid adding addresses already in data
+set add_email_prevent_duplicates = false
 
 # field to be used with "sort by field" command
-set sort_field=name
+set sort_field = name
 
 # show cursor in main display
-set show_cursor=false
+set show_cursor = false
 
-# colors
-set use_colors = true
-set color_header_fg = red
-set color_header_bg = default
-set color_list_header_fg = blue
-set color_list_header_bg = default
+# colors {{{2
+set use_colors                 = true
+# Where color can be:
+#     black, blue, cyan, default, green,
+#     magenta, red, white, yellow
+set color_field_name_bg        = default
+set color_field_name_fg        = default
+set color_field_value_bg       = default
+set color_field_value_fg       = default
+set color_footer_bg            = default
+set color_footer_fg            = green
+set color_header_bg            = default
+set color_header_fg            = green
+set color_list_even_bg         = default
+set color_list_even_fg         = default
+set color_list_header_bg       = default
+set color_list_header_fg       = blue
+set color_list_highlight_bg    = default
+set color_list_highlight_fg    = default
+set color_list_odd_bg          = default
+set color_list_odd_fg          = yellow
+set color_tab_border_bg        = default
+set color_tab_border_fg        = default
+set color_tab_label_bg         = default
+set color_tab_label_fg         = blue
+# End colors }}}
 # End variables }}}
