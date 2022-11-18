@@ -1,13 +1,12 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! Filename   : .Xresources                                                    !
+! Filename   : Xresources                                                     !
 ! Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   !
 ! Created    : 2021-05-01                                                     !
-! Last edit  : 2022-11-17 10:10                                               !
+! Last edit  : 2022-11-17 17:34                                               !
 ! Purpose    : Configuration file for xorg and related programs               !
 ! Depends    : xorg                                                           !
-! Arguments  : x                                                              !
-! Known bugs : x                                                              !
-! To do      : x                                                              !
+! Known bugs : NKA                                                            !
+! TODO       : Consider moving color schemes to separate files                !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ! ** General settings {{{
@@ -37,7 +36,6 @@ URxvt.boldItalicFont:xft:Azeret Mono:style=Bold Italic:size=9
 
 ! **** Font display settings {{{3
 *renderFont: true
-URxvt.letterSpace: -1
 Xft.dpi:        128
 Xft.antialias:  true
 Xft.rgba:       rgb
@@ -50,7 +48,6 @@ Xft.minspace:   false
 ! End fonts }}}
 
 ! *** Colors {{{2
-
 ! **** Solarized Dark color scheme (ACTIVE) {{{3
 ! https://gitlab.com/solarized/xresources
 #define S_base03        #002b36
@@ -285,9 +282,8 @@ Xft.minspace:   false
 ! white
 !! *color7:       #baa67f
 !! *color15:      #fce8c3
-
-! End Colors }}}
 ! End Srcery }}}
+! End Colors }}}
 
 *visualBell:      true
 *urgentOnBell:    true
@@ -298,6 +294,9 @@ Xft.minspace:   false
 ! End general settings }}}
 
 ! ** URxvt-specific settings {{{
+
+! Space between characters
+URxvt.letterSpace: -1
 
 ! Every shell is a login shell by default (for inclusion of all
 ! necessary environment variables)
