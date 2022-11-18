@@ -2,7 +2,7 @@
 # Filename   : muttrc-common                                                  #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-09-13 10:33                                               #
-# Last edit  : 2022-09-17 01:08                                               #
+# Last edit  : 2022-11-17 19:19                                               #
 # Purpose    : Configuration settings shared among muttrc files               #
 # Reference  : http://mutt.org/doc/manual/                                    #
 # Depends    : mutt                                                           #
@@ -13,11 +13,15 @@
 auto_view text/html
 hdr_order Date From To Cc
 
+macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
+macro index,pager A "<pipe-message>abook --add-email<return>" "add the sender address to abook"
+
 set alias_file        = "$XDG_CONFIG_HOME/mutt/aliases"
 set assumed_charset   = "utf-8"
 set charset           = "utf-8"
 set editor            = "vim +/^$ ++1"
 set mailcap_path      = "$XDG_CONFIG_HOME/mutt/mailcap:/etc/mailcap"
+set query_command     = "abook --mutt-query '%s'"
 set realname          = 'Michael DeBusk'
 set send_charset      = "utf-8:iso-8859-15:us-ascii"
 set sidebar_visible   = yes
