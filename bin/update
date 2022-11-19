@@ -3,7 +3,7 @@
 # Filename   : update                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2018                                                           #
-# Last edit  : 2022-11-18 14:48                                               #
+# Last edit  : 2022-11-19 15:49                                               #
 # Purpose    : Updates everything                                             #
 # Depends    : bash, git, sudo, pushd, popd, one or more package managers     #
 # Known bugs : NKA                                                            #
@@ -115,11 +115,13 @@ command -v git > /dev/null 2>&1 ||\
 pushd "$source_directory" || \
     { echo -e "\n\033[1mFailed to change to $source_directory. Exiting...\n\033[0m" ; exit 1 ; }
 
-echo -e "\n\033[1mUpdating git repositories...\n\033[0m"
+## echo -e "\n\033[1mUpdating git repositories...\n\033[0m"
+echo -en "\n\033[1mUpdating git repositories..."
 
-for i in */.git; do cd $(dirname $i); git pull --quiet; cd ..; done
+for i in */.git; do cd $(dirname $i) && echo -n "."; git pull --quiet; cd ..; done
 
 popd || exit
 # End git repos }}}
 
-echo -e "\n\033[1mUpdates complete.\n\033[0m"
+## echo -e "\n\033[1mUpdates complete.\n\033[0m"
+echo -e "\nUpdates complete.\n\033[0m"
