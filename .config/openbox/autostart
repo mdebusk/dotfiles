@@ -2,14 +2,14 @@
 # Filename   : autostart                                                      #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-02-21                                                     #
-# Last edit  : 2022-09-06 21:59                                               #
+# Last edit  : 2022-11-20 16:13                                               #
 # Purpose    : automatically starts programs when booting openbox             #
 # Depends    : openbox                                                        #
-# Arguments  : N/A                                                            #
 # Known bugs : NKA                                                            #
-# To do      : N/A                                                            #
+# TODO       : N/A                                                            #
 ###############################################################################
 
 tint2 &
+/usr/bin/nvidia-settings --config=~/.config/nvidia/nvidia-settings-rc --load-config-only &
 picom -b &
 feh --bg-scale "/home/michael/Pictures/Wallpapers/Openbox.jpg" &
