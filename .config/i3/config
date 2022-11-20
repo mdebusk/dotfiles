@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-11-06 03:01                                               #
+# Last edit  : 2022-11-20 13:12                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3 version 4.20+                                               #
@@ -292,6 +292,10 @@ assign [class="Joplin"] $workspace10
 # End assign programs to specific workspaces }}}
 
 # ** 4.19. Automatically starting applications on i3 startup {{{
+
+# NVidia Settings
+exec_always --no-startup-id /usr/bin/nvidia-settings --config=~/.config/nvidia/nvidia-settings-rc --load-config-only
+
 # picom
 exec_always --no-startup-id ~/bin/picom -b
 
