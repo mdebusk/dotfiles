@@ -1,34 +1,30 @@
-###############################################################################
-# Filename   : nvidia-settings-rc                                             #
-# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
-# Created    : 2022-11-20 11:57                                               #
-# Last edit  : 2022-11-20 12:56                                               #
-# Purpose    : Configuration file for nvidia-settings                         #
-# Reference  : man nvidia-settings                                            #
-# Depends    : nvidia-settings                                                #
-# Known bugs : NKA                                                            #
-# TODO       : N/A                                                            #
-###############################################################################
+#
+# /home/michael/.config/nvidia/nvidia-settings-rc
+#
+# Configuration file for nvidia-settings - the NVIDIA Settings utility
+# Generated on Sun Nov 20 13:14:13 2022
+#
 
-# ConfigProperties: {{{
+# ConfigProperties:
+
 RcFileLocale = C
 DisplayStatusBar = Yes
 SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = Yes
 ShowQuitDialog = Yes
 UpdateRulesOnProfileNameChange = Yes
-Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
-Timer = Thermal_Monitor_(GPU_0),Yes,1000
 Timer = Memory_Used_(GPU_0),Yes,3000
-# End ConfigProperties }}}
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 
-# Attributes: {{{
+# Attributes:
+
 michael-G75VW:1.0/SyncToVBlank=1
 michael-G75VW:1.0/LogAniso=0
 michael-G75VW:1.0/FSAA=0
 michael-G75VW:1.0/TextureClamping=1
 michael-G75VW:1.0/FXAA=0
-michael-G75VW:1.0/AllowFlipping=0
+michael-G75VW:1.0/AllowFlipping=1
 michael-G75VW:1.0/FSAAAppControlled=1
 michael-G75VW:1.0/LogAnisoAppControlled=1
 michael-G75VW:1.0/OpenGLImageSettings=1
@@ -71,4 +67,3 @@ michael-G75VW:1[DPY:DP-1]/DitheringDepth=0
 michael-G75VW:1[DPY:DP-1]/ColorSpace=0
 michael-G75VW:1[DPY:DP-1]/ColorRange=0
 michael-G75VW:1[DPY:DP-1]/SynchronousPaletteUpdates=0
-# End Attributes }}}
