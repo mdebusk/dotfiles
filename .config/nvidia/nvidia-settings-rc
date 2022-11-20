@@ -1,0 +1,74 @@
+###############################################################################
+# Filename   : nvidia-settings-rc                                             #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : 2022-11-20 11:57                                               #
+# Last edit  : 2022-11-20 12:56                                               #
+# Purpose    : Configuration file for nvidia-settings                         #
+# Reference  : man nvidia-settings                                            #
+# Depends    : nvidia-settings                                                #
+# Known bugs : NKA                                                            #
+# TODO       : N/A                                                            #
+###############################################################################
+
+# ConfigProperties: {{{
+RcFileLocale = C
+DisplayStatusBar = Yes
+SliderTextEntries = Yes
+IncludeDisplayNameInConfigFile = Yes
+ShowQuitDialog = Yes
+UpdateRulesOnProfileNameChange = Yes
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = Memory_Used_(GPU_0),Yes,3000
+# End ConfigProperties }}}
+
+# Attributes: {{{
+michael-G75VW:1.0/SyncToVBlank=1
+michael-G75VW:1.0/LogAniso=0
+michael-G75VW:1.0/FSAA=0
+michael-G75VW:1.0/TextureClamping=1
+michael-G75VW:1.0/FXAA=0
+michael-G75VW:1.0/AllowFlipping=0
+michael-G75VW:1.0/FSAAAppControlled=1
+michael-G75VW:1.0/LogAnisoAppControlled=1
+michael-G75VW:1.0/OpenGLImageSettings=1
+michael-G75VW:1.0/FSAAAppEnhanced=0
+michael-G75VW:1[DPY:VGA-0]/Dithering=0
+michael-G75VW:1[DPY:VGA-0]/DitheringMode=0
+michael-G75VW:1[DPY:VGA-0]/DitheringDepth=0
+michael-G75VW:1[DPY:VGA-0]/SynchronousPaletteUpdates=0
+michael-G75VW:1[DPY:LVDS-0]/RedBrightness=0.000000
+michael-G75VW:1[DPY:LVDS-0]/GreenBrightness=0.000000
+michael-G75VW:1[DPY:LVDS-0]/BlueBrightness=0.000000
+michael-G75VW:1[DPY:LVDS-0]/RedContrast=0.000000
+michael-G75VW:1[DPY:LVDS-0]/GreenContrast=0.000000
+michael-G75VW:1[DPY:LVDS-0]/BlueContrast=0.000000
+michael-G75VW:1[DPY:LVDS-0]/RedGamma=1.000000
+michael-G75VW:1[DPY:LVDS-0]/GreenGamma=1.000000
+michael-G75VW:1[DPY:LVDS-0]/BlueGamma=1.000000
+michael-G75VW:1[DPY:LVDS-0]/Dithering=0
+michael-G75VW:1[DPY:LVDS-0]/DitheringMode=0
+michael-G75VW:1[DPY:LVDS-0]/DitheringDepth=0
+michael-G75VW:1[DPY:LVDS-0]/DigitalVibrance=0
+michael-G75VW:1[DPY:LVDS-0]/ColorSpace=0
+michael-G75VW:1[DPY:LVDS-0]/ColorRange=0
+michael-G75VW:1[DPY:LVDS-0]/SynchronousPaletteUpdates=0
+michael-G75VW:1[DPY:DP-0]/Dithering=0
+michael-G75VW:1[DPY:DP-0]/DitheringMode=0
+michael-G75VW:1[DPY:DP-0]/DitheringDepth=0
+michael-G75VW:1[DPY:DP-0]/ColorSpace=0
+michael-G75VW:1[DPY:DP-0]/ColorRange=0
+michael-G75VW:1[DPY:DP-0]/SynchronousPaletteUpdates=0
+michael-G75VW:1[DPY:HDMI-0]/Dithering=0
+michael-G75VW:1[DPY:HDMI-0]/DitheringMode=0
+michael-G75VW:1[DPY:HDMI-0]/DitheringDepth=0
+michael-G75VW:1[DPY:HDMI-0]/ColorSpace=0
+michael-G75VW:1[DPY:HDMI-0]/ColorRange=0
+michael-G75VW:1[DPY:HDMI-0]/SynchronousPaletteUpdates=0
+michael-G75VW:1[DPY:DP-1]/Dithering=0
+michael-G75VW:1[DPY:DP-1]/DitheringMode=0
+michael-G75VW:1[DPY:DP-1]/DitheringDepth=0
+michael-G75VW:1[DPY:DP-1]/ColorSpace=0
+michael-G75VW:1[DPY:DP-1]/ColorRange=0
+michael-G75VW:1[DPY:DP-1]/SynchronousPaletteUpdates=0
+# End Attributes }}}
