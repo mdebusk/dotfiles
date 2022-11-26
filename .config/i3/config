@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-11-20 13:12                                               #
+# Last edit  : 2022-11-26 08:13                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3 version 4.20+                                               #
@@ -336,8 +336,7 @@ exec --no-startup-id $clipboard_manager
 
 # ** 4.20: Automatically Putting Workspaces On Specific Screens {{{
 workspace 1 output $laptop
-## workspace 2 output $tv
-workspace 2 output $tv $laptop
+workspace 2 output $laptop
 workspace 3 output $laptop
 workspace 4 output $laptop
 workspace 5 output $laptop
