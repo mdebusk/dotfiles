@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-07-02 13:50                                               #
+# Last edit  : 2022-11-28 12:02                                               #
 # Purpose    : Configuration file for i3status                                #
 # Depends    : i3status                                                       #
 # Arguments  : N/A                                                            #
@@ -42,16 +42,15 @@ wireless _first_ {
 
 ethernet _first_ {
 # if you use %speed, i3status requires root privileges
-    format_up = "E: %ip (%speed)"
-# format_down = "E: ❌"
+    format_up = "🖧 %ip (%speed)"
     format_down = ""
 }
 battery 0 {
     format = "Battery: %status %percentage %remaining %emptytime"
     format_down = "No battery"
-    status_chr = "⚡ CHR"
+    status_chr = " 🔌CHR"
     status_bat = "🔋 BAT"
-    status_unk = "? UNK"
+    status_unk = "❓UNK"
     status_full = "☻ FULL"
     path = "/sys/class/power_supply/BAT%d/uevent"
     low_threshold = 10
@@ -75,8 +74,7 @@ load {
 }
 
 volume master {
-    format = " %volume"
-# format_muted = " %volume"
+    format = "🔊 %volume"
     format_muted = "🔇"
     device = "default"
     mixer = "Master"
@@ -84,5 +82,5 @@ volume master {
 }
 
 disk "/" {
-    format = "🗄️ %avail"
+    format = "💾 %avail"
 }
