@@ -14,6 +14,7 @@
 - [bash](https://www.gnu.org/software/bash/) shell
 - [boxes](https://boxes.thomasjensen.com/) text utility I use to create comment boxes in vim
 - [Chordpro](https://www.chordpro.org/chordpro/) creates well-formatted song sheets from ascii text
+- [dmenu](https://tools.suckless.org/dmenu/) dynamic menu from suckless.org
 - [fzf](https://github.com/junegunn/fzf) command-line fuzzy-finder
 - [i3wm](https://i3wm.org/) Window Manager, almost all the time
 - [Joplin](https://joplinapp.org/) note-taking app has a text UI available
@@ -21,9 +22,17 @@
 - [nano](https://www.nano-editor.org/) text editor (on rare occasion)
 - [pandoc](https://pandoc.org/) convertor for [markdown](https://daringfireball.net/projects/markdown/)
 - [remind](https://dianne.skoll.ca/projects/remind/) calendar
-- [alacritty](https://alacritty.org/) is something I'm experimenting with right now, and may replace the following with it:
-- [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) terminal emulator
+- [alacritty](https://alacritty.org/) terminal emulator
+- [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) terminal emulator, once in a while
 - [slrn](https://slrn.info/) news reader
 - [solarized](https://ethanschoonover.com/solarized/) is my preferred terminal color scheme
 - [vim](https://www.vim.org/) text editor
 - [vlc](https://www.videolan.org/) media player has a command-line interface
+
+## Where else you might find me
+
+- [Facebook](https://www.facebook.com/michael.debusk.31)
+- [GitLab](https://gitlab.com/mdebusk)
+- [StackExchange](https://stackexchange.com/users/2998028/mdebusk)
+- [Twitter](https://twitter.com/nlphilia)
+
