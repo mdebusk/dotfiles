@@ -2,7 +2,7 @@
 ! Filename   : Xresources                                                     !
 ! Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   !
 ! Created    : 2021-05-01                                                     !
-! Last edit  : 2022-11-17 17:34                                               !
+! Last edit  : 2022-12-14 11:03                                               !
 ! Purpose    : Configuration file for xorg and related programs               !
 ! Depends    : xorg                                                           !
 ! Known bugs : NKA                                                            !
@@ -374,7 +374,7 @@ URxvt*iso14755: False
 URxvt.iso14755_52: false
 
 ! *** URxvt Plugins {{{2
-URxvt*perl-lib: ~/.urxvt/ext/
+URxvt*perl-lib: ~/.local/lib/
 URxvt.perl-ext-common: default,matcher,font-size,keyboard-select
 
 ! `font-size` plugin
