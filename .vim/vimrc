@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-09-11 21:57                                               "
+" Last edit  : 2022-12-15 20:07                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/                                           "
 " Depends    : vim                                                            "
@@ -324,16 +324,17 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
-" Disable arrow movement; resize splits instead.
-" TODO: I never use these. Consider remapping to <NOP>
-nnoremap <Up> :resize +2<CR>
-nnoremap <Down> :resize -2<CR>
-nnoremap <Left> :vertical resize +2<CR>
-nnoremap <Right> :vertical resize -2<CR>
+" Disable arrow movement
+nnoremap <Up>    <NOP>
+nnoremap <Down>  <NOP>
+nnoremap <Left>  <NOP>
+nnoremap <Right> <NOP>
 
-" Keep the cursor centered during search and join
+" Keep the cursor centered during half-page jumps, search, and join
 nnoremap n nzzzv
 nnoremap N Nzzzv
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
 nnoremap J mzJ`z
 
 " Undo break points
