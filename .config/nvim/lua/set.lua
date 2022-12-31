@@ -7,7 +7,7 @@
 -- Reference  : :options                                                     --
 -- Depends    : neovim                                                       --
 -- Known bugs : NKA                                                          --
--- TODO       : Turn this into something useful                              --
+-- TODO       : N/A                                                          --
 -------------------------------------------------------------------------------
 
 -- ** 1. Important {{{
