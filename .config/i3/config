@@ -2,19 +2,19 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-11-26 15:34                                               #
+# Last edit  : 2023-01-05 00:37                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3 version 4.20+                                               #
 # Known bugs : NKA                                                            #
-# To do      : N/A                                                            #
+# TODO       : N/A                                                            #
 ###############################################################################
 
 # ** Include Directives {{{
 # None yet
 # End includes }}}
 
-# ** 4.16: Variables {{{1
+# ** 4.17: Variables {{{1
 
 # Set variables for physical displays {{{2
 set $tv HDMI-0
@@ -252,7 +252,11 @@ for_window [all] border pixel 3
 hide_edge_borders smart
 # End hiding borders adjacent to the screen edges }}}
 
-# ** 4.14: Arbitrary Commands For Specific Windows (for_window) {{{
+# ** 4.14. Smart borders {{{
+## smart_borders on
+# End smart borders }}}
+
+# ** 4.15: Arbitrary Commands For Specific Windows (for_window) {{{
 
 # Open all of the following in a floating window {{{2
 for_window [class="Anki" instance="Anki"] floating enable move absolute position 485 px 40 px
@@ -277,21 +281,21 @@ for_window [title="dropdown"] border pixel 5
 
 # End arbitrary commands for specific windows }}}
 
-# ** 4.15: Don’t Focus Window Upon Opening {{{
+# ** 4.16: Don’t Focus Window Upon Opening {{{
 # None currently set
 # End don't focus window upon opening }}}
 
-# ** 4.17: X Resources {{{
+# ** 4.18: X Resources {{{
 # None set yet
 # End X Resources }}}
 
-# ** 4.18: Automatically Putting Clients On Specific Workspaces {{{
+# ** 4.19: Automatically Putting Clients On Specific Workspaces {{{
 assign [class="Brave-browser"] $workspace2
 assign [class="Nautilus"] $workspace3
 assign [class="Joplin"] $workspace10
 # End assign programs to specific workspaces }}}
 
-# ** 4.19. Automatically starting applications on i3 startup {{{
+# ** 4.20. Automatically starting applications on i3 startup {{{
 
 # NVidia Settings
 exec_always --no-startup-id /usr/bin/nvidia-settings --config=~/.config/nvidia/nvidia-settings-rc --load-config-only
@@ -334,7 +338,7 @@ exec --no-startup-id $clipboard_manager
 
 # End Automatically starting applications }}}
 
-# ** 4.20: Automatically Putting Workspaces On Specific Screens {{{
+# ** 4.21: Automatically Putting Workspaces On Specific Screens {{{
 workspace 1 output $laptop
 workspace 2 output $laptop
 workspace 3 output $laptop
@@ -348,7 +352,7 @@ workspace 9 output $tv $laptop
 workspace 10 output $laptop
 # End automatically put workspaces on specific screens }}}
 
-# ** 4.21: Changing Colors {{{
+# ** 4.22: Changing Colors {{{
 # class                 border  backgr. text    indicator child_border
 ## client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
 ## client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
@@ -358,49 +362,61 @@ workspace 10 output $laptop
 ## client.background       #ffffff
 # End changing colors }}}
 
-# ** 4.22: Interprocess Communication {{{
+# ** 4.23: Interprocess Communication {{{
 # None set yet
 # End interprocess communication }}}
 
-# ** 4.23: Focus Follows Mouse {{{
+# ** 4.24: Focus Follows Mouse {{{
 # Defaults to "yes"
 # End focus follows mouse }}}
 
-# ** 4.24: Mouse Warping {{{
+# ** 4.25: Mouse Warping {{{
 # Defaults to "output"
 # End mouse warping }}}
 
-# ** 4.25: Popups During Fullscreen Mode {{{
+# ** 4.26: Popups During Fullscreen Mode {{{
 # None set yet
 # End popups during fullscreen mode }}}
 
-# ** 4.26: Focus Wrapping {{{
+# ** 4.27: Focus Wrapping {{{
 # None set yet
 # End focus wrapping }}}
 
-# ** 4.27: Forcing Xinerama {{{
+# ** 4.28: Forcing Xinerama {{{
 # None set yet
 # End forcing Xinerama }}}
 
-# ** 4.28: Automatic Back-And-Forth When Switching To The Current Workspace {{{
+# ** 4.29: Automatic Back-And-Forth When Switching To The Current Workspace {{{
 # None set yet
 # End automatic back-and-forth }}}
 
-# ** 4.29 Delaying Urgency Hint Reset On Workspace Change {{{
+# ** 4.30 Delaying Urgency Hint Reset On Workspace Change {{{
 # None set yet
 # End delaying urgency hint }}}
 
-# ** 4.30: Focus On Window Activation {{{
+# ** 4.31: Focus On Window Activation {{{
 # None set yet
 # End focus on window activation }}}
 
-# ** 4.31: Drawing Marks On Window Decoration {{{
+# ** 4.32: Drawing Marks On Window Decoration {{{
 # None set yet
 # End drawing marks on window decortion }}}
 
-# ** 4.33: Tiling Drag {{{
+# ** 4.34: Tiling Drag {{{
 ## tiling_drag off
 # End tiling drag }}}
+
+# ** 4.35: Gaps {{{
+# Inner gaps for all windows
+## gaps inner 5px
+
+# Outer gaps for all windows: space along the screen edges.
+## gaps outer 5px
+
+# Enabling “Smart Gaps” means no gaps will be shown when there is
+# precisely one window or split container on the workspace.
+## smart_gaps on
+# End gaps }}}
 
 # 5: Configuring i3bar {{{
 # Start i3bar to display a workspace bar (plus the system
