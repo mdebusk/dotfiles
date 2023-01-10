@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2023-01-05 00:37                                               #
+# Last edit  : 2023-01-09 15:11                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3 version 4.20+                                               #
@@ -259,7 +259,7 @@ hide_edge_borders smart
 # ** 4.15: Arbitrary Commands For Specific Windows (for_window) {{{
 
 # Open all of the following in a floating window {{{2
-for_window [class="Anki" instance="Anki"] floating enable move absolute position 485 px 40 px
+for_window [class="Anki" instance="anki"] floating enable move absolute position 485 px 40 px
 for_window [class="Bitwarden" instance="bitwarden"] floating enable move absolute position 1000 px 40 px
 for_window [class="Five-or-more" instance="five-or-more"] floating enable move absolute position 540 px 40 px
 for_window [class="Gnome-calculator" instance="gnome-calculator"] floating enable move absolute position 775 px 140 px
