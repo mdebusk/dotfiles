@@ -2,7 +2,7 @@
 -- Filename   : set.lua                                                      --
 -- Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                 --
 -- Created    : 2022-07-05 15:44                                             --
--- Last edit  : 2022-12-15 22:33                                             --
+-- Last edit  : 2023-01-09 19:26                                             --
 -- Purpose    : set stsatements configuration for neovim                     --
 -- Reference  : :options                                                     --
 -- Depends    : neovim                                                       --
@@ -69,8 +69,6 @@ vim.opt.mousefocus = true
 -- End 10 }}}
 
 -- ** 11. Printing {{{
-vim.opt.printdevice = "pdf"
-vim.opt.printfont = "courier:h12"
 -- End 11 }}}
 
 -- ** 12. Messages and info {{{
