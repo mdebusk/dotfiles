@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2023-01-09 15:11                                               #
+# Last edit  : 2023-01-12 10:00                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3 version 4.20+                                               #
@@ -253,7 +253,7 @@ hide_edge_borders smart
 # End hiding borders adjacent to the screen edges }}}
 
 # ** 4.14. Smart borders {{{
-## smart_borders on
+smart_borders on
 # End smart borders }}}
 
 # ** 4.15: Arbitrary Commands For Specific Windows (for_window) {{{
@@ -408,14 +408,14 @@ workspace 10 output $laptop
 
 # ** 4.35: Gaps {{{
 # Inner gaps for all windows
-## gaps inner 5px
+gaps inner 5px
 
 # Outer gaps for all windows: space along the screen edges.
-## gaps outer 5px
+gaps outer 5px
 
 # Enabling “Smart Gaps” means no gaps will be shown when there is
 # precisely one window or split container on the workspace.
-## smart_gaps on
+smart_gaps on
 # End gaps }}}
 
 # 5: Configuring i3bar {{{
