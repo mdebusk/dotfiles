@@ -4,7 +4,7 @@
 # Filename   : i3exit                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-08-23 19:22                                               #
-# Last edit  : 2023-01-04 19:48                                               #
+# Last edit  : 2023-01-12 13:10                                               #
 # Purpose    : Present a logout/restart/etc. menu                             #
 # Reference  : https://youtu.be/R9m723tAurA                                   #
 # Depends    : dmenu, systemd, i3-lock, i3-msg                                #
@@ -56,7 +56,7 @@ chosen=$(echo -e "$choices" | \
     dmenu \
     -p  'Select:' \
     -i \
-    -fn 'Roboto Medium-21' \
+    -fn 'Roboto Medium-16' \
     -nb '#dc322f' \
     -sf '#dc322f' \
     -sb '#eee8d5' \
