@@ -2,7 +2,7 @@
 # Filename   : dunstrc                                                        #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-21                                                     #
-# Last edit  : 2023-01-21 17:57                                               #
+# Last edit  : 2023-01-21 19:32                                               #
 # Purpose    : Condiguration file for dunst notification daemon               #
 # Reference  : https://dunst-project.org/documentation/#DESCRIPTION           #
 # Depends    : dunst 1.5.0                                                    #
@@ -69,7 +69,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "0x0-30+20"
+    geometry = "489x0-25+23"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -91,17 +91,17 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
+    separator_height = 3
 
     # Padding between text and separator.
-    padding = 8
+    padding = 6
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 6
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 3
+    frame_width = 4
 
     # Defines color of the frame around the notification window.
     frame_color = "#93a1a1"
@@ -233,7 +233,7 @@
 # Misc/Advanced {{{2
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/local/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/sensible-browser
@@ -344,7 +344,8 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#fdf6e3"
-    foreground = "#657b83"
+    foreground = "#839496"
+    frame_color = "#839496"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
@@ -353,15 +354,16 @@
 [urgency_normal] #{{{2
     background = "#eee8d5"
     foreground = "#586e75"
+    frame_color = "#586e75"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 # End normal urgency }}}
 
 [urgency_critical] #{{{2
-    background = "#dc322f"
-    foreground = "#fdf6e3"
-    ## frame_color = "#cb4b16"
+    background = "#eee8d5"
+    foreground = "#dc322f"
+    frame_color = "#dc322f"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
