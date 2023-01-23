@@ -2,7 +2,7 @@
 # Filename   : bash_aliases                                                   #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-07-04 13:16                                               #
-# Last edit  : 2022-10-19 15:55                                               #
+# Last edit  : 2023-01-23 11:13                                               #
 # Purpose    : aliases for interactive bash shell, sourced from ~/.bashrc     #
 # Depends    : bash                                                           #
 # Known bugs : NKA                                                            #
@@ -67,7 +67,4 @@ alias dz='pushd ~/Documents && echo -e "\n## `date -Is` {{{\n\n}}}" >> diary.md 
 # alias for bare git repo use (dotfile repo)
 # https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
-# Use local git clone of weather program
-alias weather='/home/michael/Source/weather/weather'
 # End new "commands" }}}
