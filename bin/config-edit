@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 ###############################################################################
-# Filename   : config_edit                                                    #
+# Filename   : config-edit                                                    #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-09-14 11:46                                               #
-# Last edit  : 2022-10-28 23:54                                               #
+# Last edit  : 2023-01-25 16:44                                               #
 # Purpose    : Choose a config file to edit                                   #
 # Depends    : dmenu, bash                                                    #
 # TODO       : N/A                                                            #
@@ -38,7 +38,11 @@
 # End license }}}
 
 # ** Variables {{{
-[ -z "$VISUAL" ] && VISUAL=/usr/local/bin/vim
+## [ -z "$VISUAL" ] && VISUAL=/usr/local/bin/vim
+
+# alacritty doesn't work well in this situation
+## [ -z "$TERM" ] || [ "$TERM" = "alacritty" ] && TERM=st
+
 choices=""
 choices+="bashrc\n"
 choices+="profile\n"
@@ -78,4 +82,4 @@ case "$chosen" in
 esac
 # End assign the file }}}
 
-alacritty -e $VISUAL "$chosen"
+gvim "$chosen"
