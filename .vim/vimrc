@@ -2,13 +2,12 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2022-12-15 20:07                                               "
+" Last edit  : 2023-01-25 23:10                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/                                           "
 " Depends    : vim                                                            "
-" Arguments  : none                                                           "
 " Known bugs : NKA                                                            "
-" To do      : none yet                                                       "
+" TODO       : none yet                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " ** 1. Important {{{
@@ -84,12 +83,10 @@ set statusline+=\ [Lines\:%L]              " Total lines in file
 " End Multiple tab pages }}}
 
 " ** 8. Terminal {{{
-if !has('nvim')
-    set term=alacritty     " Which terminal shall vim run?
-    set title              " show title in console title bar
-    set ttytype=alacritty  " Alias for 'term'
-    set ttyfast            " smoother changes
-endif
+set term=alacritty     " Which terminal shall vim run?
+set title              " show title in console title bar
+set ttytype=alacritty  " Alias for 'term'
+set ttyfast            " smoother changes
 " End Terminal }}}
 
 " ** 9. Using the mouse {{{
@@ -98,7 +95,7 @@ set mousefocus  " May as well use it if it's there
 
 " ** 10. GUI {{{
 if has("gui_running")
-    set guifont=Azeret\ Mono\ 12 " Set the font and size
+    set guifont=Azeret\ Mono\ 9 " Set the font and size
     set guioptions-=l            " Remove left scrollbar
     set guioptions-=R            " Remove right scrollbar if vsplit
     set guioptions-=b            " Remove bottom scrollbar
@@ -133,9 +130,7 @@ set nojoinspaces         " Don't use two spaces when joining lines
 set omnifunc=syntaxcomplete#Complete
 set matchpairs+=<:>      " Add angle brackets to matchpairs
 set nrformats-=octal     " Remove octal from auto-increment and auto-decrement
-if !has('nvim')
-    set undodir=$XDG_STATE_HOME/vim/undo,~/,/tmp
-endif
+set undodir=$XDG_STATE_HOME/vim/undo,~/,/tmp
 set undofile              " Save and restore undo file
 " End Editing text }}}
 
@@ -160,24 +155,20 @@ set foldmethod=marker
 " ** 18. Mapping {{{
 set notimeout       " Never time out on mappings
 set ttimeout        " Allow time out on keycodes
-set ttimeoutlen=200 " Time to time out (in milliseconds)
+set ttimeoutlen=500 " Time to time out (in milliseconds)
 " End Mapping }}}
 
 " ** 19. Reading and writing files {{{
 set autowrite    " Writes file when switching to another buffer
 set backup       " keep a backup file
-if !has('nvim')
-    set backupdir=$XDG_STATE_HOME/vim/backup,.,/tmp,$HOME " location of backup files
-endif
+set backupdir=$XDG_STATE_HOME/vim/backup,.,/tmp,$HOME " location of backup files
 " https://www.techrepublic.com/article/turn-off-modeline-support-in-vim/
 set modelines=0  " Do not check for existing modelines
 set nomodeline   " Disable modeline support
 " End Reading and writing files }}}
 
 " ** 20. The swap file {{{
-if !has('nvim')
-    set directory=$XDG_STATE_HOME/vim/swap,~/,/tmp
-endif
+set directory=$XDG_STATE_HOME/vim/swap,~/,/tmp
 " End The swap file }}}
 
 " ** 21. Command line editing {{{
@@ -202,10 +193,8 @@ set encoding=utf-8       " Use an encoding that supports unicode.
 " ** 26. Various {{{
 set bufhidden=hide  " Hide buffer when not in window
 set signcolumn=yes
-if !has('nvim')
-    set viminfo=%,<800,'10,/50,:100,h,f0,n$XDG_STATE_HOME/vim/viminfo
-    set viewdir=$XDG_STATE_HOME/vim/view
-endif
+set viminfo=%,<800,'10,/50,:100,h,f0,n$XDG_STATE_HOME/vim/viminfo
+set viewdir=$XDG_STATE_HOME/vim/view
 " End Various }}}
 
 " ** Color scheme {{{
