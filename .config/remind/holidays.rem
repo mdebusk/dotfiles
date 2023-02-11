@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2022-11-10 17:20                                               #
+# Last edit  : 2023-02-10 21:51                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -13,10 +13,10 @@
 # include [getenv("XDG_CONFIG_HOME")]/remind/holidays.rem
 
 # ** Daylight Savings TIme {{{
-# REM MAYBE-UNCOMPUTABLE Sun November SATISFY [isdst($T) != isdst($T+1)] MSG Daylight Saving Time Ends %c
-# REM MAYBE-UNCOMPUTABLE Sun March    SATISFY [isdst($T) != isdst($T+1)] MSG Daylight Saving Time Starts %c
-REM First  Sun November +3 MSG Daylight Savings Time Ends %c
-REM Second Sun March    +3 MSG Daylight Savings Time Begins %c
+REM MAYBE-UNCOMPUTABLE Sun November SATISFY [isdst($T) != isdst($T+1)] MSG Daylight Saving Time Ends %c
+REM MAYBE-UNCOMPUTABLE Sun March    SATISFY [isdst($T) != isdst($T+1)] MSG Daylight Saving Time Starts %c
+## REM First  Sun November +3 MSG Daylight Savings Time Ends %c
+## REM Second Sun March    +3 MSG Daylight Savings Time Begins %c
 # End Daylight Savings TIme }}}
 
 # ** Easter and related days {{{
@@ -38,6 +38,19 @@ REM  [easterdate($Uy)+49] MSG Pentecost
 OMIT    Jan 1                                     MSG New Year's Day
 REM     Third Monday in Jan                       MSG Martin Luther King Day
 REM     Third Monday in Feb SCANFROM -7 ADDOMIT   MSG President's Day
+# Emancipation Day {{{3
+PUSH-OMIT-CONTEXT
+# Normal case: 16 April falls Mon-Fri
+REM 16 Apr SCANFROM -7 ADDOMIT SATISFY [$Tw >= 1 && $Tw <= 5] MSG Emancipation Day
+
+# 16 April falls on Saturday: Observe on the 15th
+REM 15 Apr SCANFROM -7 ADDOMIT SATISFY [$Tw == 5] MSG Emancipation Day (observed)
+
+# 16 April falls on Sunday: Observe on the 17th
+REM 17 Apr SCANFROM -7 ADDOMIT SATISFY [$Tw == 1] MSG Emancipation Day (observed)
+# End Emancipation Day }}}
+REM Apr 15 OMIT Sat Sun AFTER MSG %"Income tax%" due
+POP-OMIT-CONTEXT
 REM     Last Monday in May SCANFROM -7 ADDOMIT    MSG Memorial Day
 OMIT    Jun 19                                    MSG Juneteenth
 # Independence Day {{{3
@@ -68,7 +81,6 @@ REM     Mar 24                                    MSG National Cheesesteak Day
 REM     Mar 25                                    MSG Maryland Day
 REM     Mar 30                                    MSG National Doctors Day
 REM     Apr  1                                    MSG April Fool's Day
-REM     Mon Tue Wed Thu Fri Sat 15 Apr            MSG Income tax due
 REM     First Sat in May                          MSG Kentucky Derby
 REM     May  4                                    MSG Star Wars Day
 REM     May  5                                    MSG Cinco de Mayo
