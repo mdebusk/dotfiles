@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2023-02-10 21:51                                               #
+# Last edit  : 2023-02-23 14:41                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -20,8 +20,8 @@ REM MAYBE-UNCOMPUTABLE Sun March    SATISFY [isdst($T) != isdst($T+1)] MSG Dayli
 # End Daylight Savings TIme }}}
 
 # ** Easter and related days {{{
+REM  [easterdate($Uy)-47] MSG Shrove Tuesday/Mardi Gras
 REM  [easterdate($Uy)-46] MSG Ash Wednesday
-REM  [easterdate($Uy)-45] MSG Shrove Tuesday/Mardi Gras
 REM  [easterdate($Uy)-7]  MSG Palm Sunday
 OMIT [easterdate($Uy)-2]  MSG Good Friday
 OMIT [easterdate($Uy)]    MSG Easter Sunday
