@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2023-02-23 14:41                                               #
+# Last edit  : 2023-03-10 16:27                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -75,6 +75,7 @@ REM     Jan 25                                    MSG Opposite Day
 REM     Feb  2                                    MSG Groundhog Day
 REM     Feb 14                                    MSG Valentine's Day
 REM     Mar  1                                    MSG Bachelor's Day
+REM     Mar 10                                    MSG Mario Day
 REM     Mar 14                                    MSG Steak and Blowjob Day
 REM     Mar 17                                    MSG St. Patrick's Day
 REM     Mar 24                                    MSG National Cheesesteak Day
