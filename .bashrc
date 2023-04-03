@@ -2,7 +2,7 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2022-09-05 23:24                                               #
+# Last edit  : 2023-04-03 13:08                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash                                                           #
 # Arguments  : none                                                           #
@@ -47,7 +47,8 @@ export NNTPSERVER='news.eternal-september.org'
 # ** History {{{
 export HISTFILE="$XDG_STATE_HOME"/bash/history
 export HISTFILESIZE=1000000         # Lines of history stored on disk
-export HISTIGNORE="&:ls:[bf]g:exit" # Ignore duplicates, as well as ls, bg, fg and exit
+# Ignore duplicates, as well as ls, bg, fg, exit, pwd, and clear
+export HISTIGNORE="&:ls:[bf]g:exit:pwd:clear"
 export HISTSIZE=100000              # Lines of history stored in memory
 export HISTTIMEFORMAT="%FT%T: "     # Add timestamp to history file
 shopt -s cmdhist                    # combine multiline commands in history
