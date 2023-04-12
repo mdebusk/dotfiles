@@ -10,7 +10,7 @@
 
 ## Some of the software I use
 
-- [Ubuntu](https://ubuntu.com/download/desktop) 22.04.1 LTS "Jammy Jellyfish"
+- [Ubuntu](https://ubuntu.com/download/desktop) 22.04.2 LTS "Jammy Jellyfish"
 - [bash](https://www.gnu.org/software/bash/) shell
 - [boxes](https://boxes.thomasjensen.com/) text utility I use to create comment boxes in vim
 - [Chordpro](https://www.chordpro.org/chordpro/) creates well-formatted song sheets from ascii text
@@ -35,4 +35,3 @@
 - [GitLab](https://gitlab.com/mdebusk)
 - [StackExchange](https://stackexchange.com/users/2998028/mdebusk)
 - [Twitter](https://twitter.com/nlphilia)
-
