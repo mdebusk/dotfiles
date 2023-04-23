@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2023-03-10 16:27                                               #
+# Last edit  : 2023-04-21 19:48                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -107,6 +107,7 @@ REM     Tue Nov  2 SCANFROM -7 SATISFY [($Ty % 4) == 0] MSG Election Day
 REM     Nov 10                                    MSG US Marine Corps' [_yr_num(1775)] Birthday
 REM     Dec  7                                    MSG Pearl Harbor Rememberance Day
 REM     Dec 20                                    MSG United States Space Force's [_yr_num(2019)] Birthday
+REM     Dec 21                                    MSG National Short Girl Appreciation Day
 OMIT    Dec 24                                    MSG Christmas Eve
 OMIT    Dec 31                                    MSG New Year's Eve
 # End US Holidays }}}
