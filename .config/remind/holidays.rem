@@ -2,11 +2,11 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2023-04-21 19:48                                               #
+# Last edit  : 2023-05-05 16:58                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
-# To do      : N/A                                                            #
+# TODO       : N/A                                                            #
 ###############################################################################
 
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
@@ -79,7 +79,6 @@ REM     Mar 10                                    MSG Mario Day
 REM     Mar 14                                    MSG Steak and Blowjob Day
 REM     Mar 17                                    MSG St. Patrick's Day
 REM     Mar 24                                    MSG National Cheesesteak Day
-REM     Mar 25                                    MSG Maryland Day
 REM     Mar 30                                    MSG National Doctors Day
 REM     Apr  1                                    MSG April Fool's Day
 REM     First Sat in May                          MSG Kentucky Derby
@@ -111,3 +110,10 @@ REM     Dec 21                                    MSG National Short Girl Apprec
 OMIT    Dec 24                                    MSG Christmas Eve
 OMIT    Dec 31                                    MSG New Year's Eve
 # End US Holidays }}}
+
+# ** Maryland Holidays {{{
+REM     Mar 25                                    MSG Maryland Day
+REM     First Fri in May                          MSG Fallen Heroes Day (Maryland)
+REM     Third Sat in May                          MSG Preakness Stakes (Maryland)
+REM     Sep 12                                    MSG Defenders Day (Maryland)
+# End Maryland Holidays }}}
