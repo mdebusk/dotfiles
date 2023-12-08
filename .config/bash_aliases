@@ -2,7 +2,7 @@
 # Filename   : bash_aliases                                                   #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-07-04 13:16                                               #
-# Last edit  : 2023-01-23 11:13                                               #
+# Last edit  : 2023-12-07 19:58                                               #
 # Purpose    : aliases for interactive bash shell, sourced from ~/.bashrc     #
 # Depends    : bash                                                           #
 # Known bugs : NKA                                                            #
@@ -35,7 +35,7 @@ alias nvlc='nvlc --browse-dir ~/Music' # Start VLC from the command line
 alias abook='abook --config "$XDG_CONFIG_HOME"/abook/abookrc --datafile "$XDG_DATA_HOME"/abook/addressbook'
 alias dosbox='dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox-0.74-3.conf'
 ## alias mysql-workbench="mysql_workbench.sh"
-alias remind='remind -@2,0,1 "$XDG_CONFIG_HOME"/remind/reminders.rem'
+alias remind='ccal -3 && remind -@2,0,1 "$XDG_CONFIG_HOME"/remind/reminders.rem'
 alias slrn='slrn -i "$XDG_CONFIG_HOME"/slrn/slrnrc -f "$XDG_CONFIG_HOME"/slrn/jnewsrc-september'
 alias sqlite3='sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc'
 alias t='python "$HOME"/Source/t/t.py --task-dir "$XDG_DATA_HOME"/tasks --list tasks'
@@ -67,4 +67,8 @@ alias dz='pushd ~/Documents && echo -e "\n## `date -Is` {{{\n\n}}}" >> diary.md 
 # alias for bare git repo use (dotfile repo)
 # https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# Emulates MS-DOS "pause" command
+alias pause='echo -n "Press any key to continue... " && read -n 1 -s && echo'
+
 # End new "commands" }}}
