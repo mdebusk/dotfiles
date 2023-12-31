@@ -3,7 +3,7 @@
 # Filename   : update                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2018                                                           #
-# Last edit  : 2022-11-19 15:49                                               #
+# Last edit  : 2023-11-15 13:20                                               #
 # Purpose    : Updates everything                                             #
 # Depends    : bash, git, sudo, pushd, popd, one or more package managers     #
 # Known bugs : NKA                                                            #
@@ -119,9 +119,9 @@ pushd "$source_directory" || \
 echo -en "\n\033[1mUpdating git repositories..."
 
 for i in */.git; do cd $(dirname $i) && echo -n "."; git pull --quiet; cd ..; done
+## for i in */.git; do cd $(dirname $i) && pwd; git pull; cd ..; done
 
 popd || exit
 # End git repos }}}
 
-## echo -e "\n\033[1mUpdates complete.\n\033[0m"
 echo -e "\nUpdates complete.\n\033[0m"
