@@ -2,7 +2,7 @@
 # Filename   : bash_aliases                                                   #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-07-04 13:16                                               #
-# Last edit  : 2023-12-07 19:58                                               #
+# Last edit  : 2024-01-15 17:14                                               #
 # Purpose    : aliases for interactive bash shell, sourced from ~/.bashrc     #
 # Depends    : bash                                                           #
 # Known bugs : NKA                                                            #
@@ -44,7 +44,7 @@ alias tkremind='tkremind "$XDG_CONFIG_HOME"/remind/reminders.rem'
 
 # ** New "commands" {{{
 # Use vim as a pager with syntax highlighting
-alias vless='/usr/local/share/vim/vim90/macros/less.sh'
+alias vless='/usr/local/share/vim/vim91/macros/less.sh'
 
 # Password generator
 alias pwgen='echo -e "\n$(tr -dc A-Za-z0-9_ < /dev/urandom | head -c 32 | xargs)\n"'
