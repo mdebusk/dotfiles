@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2023-01-12 10:00                                               #
+# Last edit  : 2024-01-25 21:36                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3 version 4.20+                                               #
@@ -46,8 +46,9 @@ set $notes_program /opt/Joplin/Joplin
 set $screenshot_program gnome-screenshot -i
 set $clipboard_manager parcellite
 set $web_browser x-www-browser
-set $program_launcher i3-dmenu-desktop --dmenu="dmenu -i\
-    -fn 'Roboto Medium-9' -nb '#586e75' -sf  '#657b83' -sb '#eee8d5' -nf '#eee8d5'"
+set $program_launcher rofi -show drun
+## set $program_launcher i3-dmenu-desktop --dmenu="dmenu -i\
+##     -fn 'Roboto Medium-9' -nb '#586e75' -sf  '#657b83' -sb '#eee8d5' -nf '#eee8d5'"
 # End preferred programs }}}
 
 # End variables }}}

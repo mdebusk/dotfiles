@@ -4,10 +4,10 @@
 # Filename   : i3exit                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-08-23 19:22                                               #
-# Last edit  : 2023-01-12 13:10                                               #
+# Last edit  : 2024-01-25 22:17                                               #
 # Purpose    : Present a logout/restart/etc. menu                             #
 # Reference  : https://youtu.be/R9m723tAurA                                   #
-# Depends    : dmenu, systemd, i3-lock, i3-msg                                #
+# Depends    : rofi, systemd, i3-lock, i3-msg                                 #
 # Arguments  : None                                                           #
 # Known bugs : NKA                                                            #
 # TODO       : N/A                                                            #
@@ -51,16 +51,21 @@ choices+="Hibernate"
 lock_paper="$HOME"/Pictures/Wallpapers/lock.png
 # End variables }}}
 
-# ** Get selection {{{
+## ** Get selection with dmenu (commented out) {{{
+#chosen=$(echo -e "$choices" | \
+#    dmenu \
+#    -p  'Select:' \
+#    -i \
+#    -fn 'Roboto Medium-16' \
+#    -nb '#dc322f' \
+#    -sf '#dc322f' \
+#    -sb '#eee8d5' \
+#    -nf '#eee8d5')
+## End dmenu selection }}}
+
+# ** Get selection with rofi {{{
 chosen=$(echo -e "$choices" | \
-    dmenu \
-    -p  'Select:' \
-    -i \
-    -fn 'Roboto Medium-16' \
-    -nb '#dc322f' \
-    -sf '#dc322f' \
-    -sb '#eee8d5' \
-    -nf '#eee8d5')
+    rofi -dmenu -i -p 'Select' )
 # End selection }}}
 
 case "$chosen" in

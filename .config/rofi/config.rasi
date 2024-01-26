@@ -2,7 +2,7 @@
 /* Filename   : config.rasi                                                  */
 /* Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                 */
 /* Created    : 2022-03-07                                                   */
-/* Last edit  : 2022-08-24 14:55                                             */
+/* Last edit  : 2024-01-25 22:52                                             */
 /* Purpose    : rofi configuration file                                      */
 /* Reference  : https://github.com/davatorium/rofi                           */
 /* Depends    : rofi 1.7.1                                                   */
@@ -10,11 +10,11 @@
 
 configuration {
   modi: "window,run,ssh,drun,keys";
-  font: "Roboto Regular 12";
-//  location: 0;
-//  yoffset: 0;
-//  xoffset: 0;
-//  fixed-num-lines: true;
+  font: "Roboto Regular 21";
+  location: 0;
+  yoffset: -334;
+  xoffset: 0;
+  fixed-num-lines: false;
   show-icons: true;
   terminal: "Alacritty";
 //  ssh-client: "ssh";
