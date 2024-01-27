@@ -4,9 +4,9 @@
 # Filename   : config-edit                                                    #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-09-14 11:46                                               #
-# Last edit  : 2023-01-25 16:44                                               #
+# Last edit  : 2024-01-27 14:32                                               #
 # Purpose    : Choose a config file to edit                                   #
-# Depends    : dmenu, bash                                                    #
+# Depends    : rofi or dmenu, an editor, bash                                 #
 # TODO       : N/A                                                            #
 ###############################################################################
 
@@ -52,19 +52,26 @@ choices+="Xresources\n"
 choices+="i3\n"
 choices+="i3status\n"
 choices+="reminders\n"
-choices+="cal\n"
+choices+="cal"
 # End variables }}}
 
-# ** Get the choice {{{
+## ** Get the choice with dmenu (commented out) {{{
+#chosen=$(echo -e "$choices" | \
+#    dmenu \
+#    -i \
+#    -p  'Edit:'\
+#    -fn 'Roboto Medium-12' \
+#    -nb '#d33682' \
+#    -sf '#d33682' \
+#    -sb '#eee8d5' \
+#    -nf '#eee8d5')
+## End choice }}}
+
+# ** Get the choice with rofi {{{
 chosen=$(echo -e "$choices" | \
-    dmenu \
+    rofi -dmenu \
     -i \
-    -p  'Edit:'\
-    -fn 'Roboto Medium-12' \
-    -nb '#d33682' \
-    -sf '#d33682' \
-    -sb '#eee8d5' \
-    -nf '#eee8d5')
+    -p  'Edit')
 # End choice }}}
 
 # ** Assign the config file {{{
