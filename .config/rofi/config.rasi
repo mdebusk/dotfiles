@@ -2,14 +2,14 @@
 /* Filename   : config.rasi                                                  */
 /* Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                 */
 /* Created    : 2022-03-07                                                   */
-/* Last edit  : 2024-01-25 22:52                                             */
+/* Last edit  : 2024-01-28 02:58                                             */
 /* Purpose    : rofi configuration file                                      */
 /* Reference  : https://github.com/davatorium/rofi                           */
 /* Depends    : rofi 1.7.1                                                   */
 /*****************************************************************************/
 
 configuration {
-  modi: "window,run,ssh,drun,keys";
+  modi: "window,run,ssh,drun,keys,filebrowser";
   font: "Roboto Regular 21";
   location: 0;
   yoffset: -334;
