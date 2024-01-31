@@ -4,9 +4,10 @@
 # Filename   : i3exit                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-08-23 19:22                                               #
-# Last edit  : 2024-01-25 22:17                                               #
+# Last edit  : 2024-01-31 02:11                                               #
 # Purpose    : Present a logout/restart/etc. menu                             #
 # Reference  : https://youtu.be/R9m723tAurA                                   #
+#            : https://randomgeekery.org/config/linux/rofi/                   #
 # Depends    : rofi, systemd, i3-lock, i3-msg                                 #
 # Arguments  : None                                                           #
 # Known bugs : NKA                                                            #
@@ -41,41 +42,34 @@
 # End license }}}
 
 # ** Declare variables {{{
-choices=""
-choices+="Lock\n"
-choices+="Logout\n"
-choices+="Restart\n"
-choices+="Poweroff\n"
-choices+="Suspend\n"
-choices+="Hibernate"
 lock_paper="$HOME"/Pictures/Wallpapers/lock.png
+font="Azeret Mono Bold 37"
+lock="🔐   Lock"
+logout="😘   Logout"
+shutdown="😵   Shutdown"
+reboot="🫢   Reboot"
+sleep="😴   Sleep"
+hibernate="🐻   Hibernate"
 # End variables }}}
 
-## ** Get selection with dmenu (commented out) {{{
-#chosen=$(echo -e "$choices" | \
-#    dmenu \
-#    -p  'Select:' \
-#    -i \
-#    -fn 'Roboto Medium-16' \
-#    -nb '#dc322f' \
-#    -sf '#dc322f' \
-#    -sb '#eee8d5' \
-#    -nf '#eee8d5')
-## End dmenu selection }}}
-
 # ** Get selection with rofi {{{
-chosen=$(echo -e "$choices" | \
-    rofi -dmenu -i -p 'Select' )
+chosen=$(echo "$lock
+$logout
+$sleep
+$reboot
+$shutdown
+$hibernate" | rofi -dmenu -i -p "Select" -font "$font" -lines 6\
+    -line-margin 3 -line-padding 10 -scrollbar-width "0" )
 # End selection }}}
 
+# Do something based on selected option
 case "$chosen" in
-    Lock) i3lock -i "$lock_paper" ;;
-    Logout) i3-msg exit ;;
-    Restart) systemctl reboot ;;
-    Poweroff) systemctl poweroff ;;
-    Suspend) systemctl suspend ;;
-    Hibernate) systemctl hibernate ;;
-    *) exit 2 ;;
+    $lock) i3lock -i "$lock_paper" ;;
+    $logout) i3-msg exit ;;
+    $shutdown) systemctl poweroff ;;
+    $reboot) systemctl reboot ;;
+    $sleep) systemctl suspend ;;
+    $hibernate) systemctl hibernate ;;
 esac
 
 exit 0
