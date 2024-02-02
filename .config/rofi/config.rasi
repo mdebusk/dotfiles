@@ -154,4 +154,5 @@ configuration {
       sorting-method:    "name";
   }
 }
-@theme "/usr/share/rofi/themes/solarized_alternate.rasi"
+//@theme "/usr/share/rofi/themes/solarized_alternate.rasi"
+@theme "/home/michael/.local/share/rofi/themes/solarized_light.rasi"
