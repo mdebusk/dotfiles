@@ -4,7 +4,7 @@
 # Filename   : i3exit                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-08-23 19:22                                               #
-# Last edit  : 2024-01-31 02:11                                               #
+# Last edit  : 2024-02-02 11:20                                               #
 # Purpose    : Present a logout/restart/etc. menu                             #
 # Reference  : https://youtu.be/R9m723tAurA                                   #
 #            : https://randomgeekery.org/config/linux/rofi/                   #
@@ -43,7 +43,7 @@
 
 # ** Declare variables {{{
 lock_paper="$HOME"/Pictures/Wallpapers/lock.png
-font="Azeret Mono Bold 37"
+font="Roboto 37"
 lock="🔐   Lock"
 logout="😘   Logout"
 shutdown="😵   Shutdown"
