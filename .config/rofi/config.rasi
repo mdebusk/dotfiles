@@ -155,4 +155,5 @@ configuration {
   }
 }
 //@theme "/usr/share/rofi/themes/solarized_alternate.rasi"
-@theme "/home/michael/.local/share/rofi/themes/solarized_light.rasi"
+@theme "/home/michael/.local/share/rofi/themes/solarized_light_alternate.rasi"
+//@theme "/home/michael/.local/share/rofi/themes/solarized_light.rasi"
