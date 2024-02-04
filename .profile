@@ -2,7 +2,7 @@
 # Filename   : .profile                                                       #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-09-19 20:14                                               #
+# Last edit  : 2024-02-04 17:07                                               #
 # Purpose    : Sets environment variables                                     #
 ###############################################################################
 
@@ -60,7 +60,7 @@ export HISTFILE=$XDG_STATE_HOME/bash/history
 export HTML_TIDY=$XDG_CONFIG_HOME/tidyrc
 export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
-export JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export JAVA_OPTIONS="-Djava.util.prefs.userRoot=${XDG_CONFIG_HOME}/java - Djavafx.cachedir=${XDG_CACHE_HOME}/openjfx"
 export KDEHOME="$XDG_CONFIG_HOME"/kde
 export MPLAYER_HOME=$XDG_CONFIG_HOME/mplayer
 export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql_history
