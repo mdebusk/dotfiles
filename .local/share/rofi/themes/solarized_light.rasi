@@ -2,63 +2,71 @@
  * ROFI Color theme
  * User: mdebusk
  * Copyright: Michael DeBusk
- * Date : 2024-02-02
+ * Date : 2024-02-03 18:09
  ******************************************************************************/
 
-// Solarized colors {{{
+// ** Solarized colors {{{
 * {
-    base03:  rgba ( 0, 43, 54, 100 % );
-    base02:  rgba ( 7, 54, 66, 100 % );
-    base01:  rgba ( 88, 110, 117, 100 % );
-    base00:  rgba ( 101, 123, 131, 100 % );
-    base0:   rgba ( 131, 148, 150, 100 % );
-    base1:   rgba ( 147, 161, 161, 100 % );
-    base2:   rgba ( 238, 232, 213, 100 % );
-    base3:   rgba ( 253, 246, 227, 100 % );
-    black:   rgba ( 0, 0, 0, 0 % );
-    white:   rgba ( 100, 100, 100, 100 % );
-    yellow:  rgba ( 181, 137, 0, 100 % );
-    orange:  rgba ( 203, 75, 22, 100 % );
-    red:     rgba ( 220, 50, 47, 100 % );
-    magenta: rgba ( 211, 54, 130, 100 % );
-    violet:  rgba ( 108, 113, 196, 100 % );
-    blue:    rgba ( 38, 139, 210, 100 % );
-    cyan:    rgba ( 42, 161, 152, 100 % );
-    green:   rgba ( 133, 153, 0, 100 % );
+    base03:  #002b36;
+    base02:  #073642;
+    base01:  #586e75;
+    base00:  #657b83;
+    base0:   #839496;
+    base1:   #93a1a1;
+    base2:   #eee8d5;
+    base3:   #fdf6e3;
+    yellow:  #b58900;
+    orange:  #cb4b16;
+    red:     #dc322f;
+    magenta: #d33682;
+    violet:  #6c71c4;
+    blue:    #268bd2;
+    cyan:    #2aa198;
+    green:   #859900;
+    black:   #000000;
+    white:   #ffffff;
 }
 // End solarized colors }}}
 
-// Selectors {{{
+// ** Selectors {{{
 * {
-    active-background:           @base2;
-    active-foreground:           @base00;
-    alternate-active-background: @base1;
-    alternate-active-foreground: @active-foreground;
-    alternate-normal-background: @base1;
-    alternate-normal-foreground: @foreground;
-    alternate-urgent-background: @base1;
-    alternate-urgent-foreground: @urgent-foreground;
-    background-color:            @black;
-    background:                  @base3;
-    border-color:                @foreground;
-    foreground:                  @base01;
-    lightbg:                     @base02;
-    lightfg:                     @base0;
-    normal-background:           @base2;
-    normal-foreground:           @foreground;
-    selected-active-background:  @blue;
-    selected-active-foreground:  @violet;
-    selected-normal-background:  @blue;
-    selected-normal-foreground:  @base2;
-    selected-urgent-background:  @blue;
-    selected-urgent-foreground:  @magenta;
-    separatorcolor:              @base1;
-    spacing:                     2;
-    urgent-background:           @base2;
-    urgent-foreground:           @magenta;
+    background:                      @base3;
+    border-color:                    @base03;
+    separatorcolor:                  @black;
+    normal-background:               @base3;
+    normal-foreground:               @base03;
+    alternate-normal-background:     @normal-background;
+    alternate-normal-foreground:     @base2;
+    selected-normal-background:      @base01;
+    selected-normal-foreground:      @base2;
+    active-background:               @base3;
+    active-foreground:               @blue;
+    alternate-active-background:     @base2;
+    selected-active-background:      @blue;
+    selected-active-foreground:      @base3;
+    urgent-background:               @base3;
+    urgent-foreground:               @red;
+    alternate-urgent-background:     @base2;
+    selected-urgent-background:      @red;
+    selected-urgent-foreground:      @base3;
+    alternate-normal-foreground:     @normal-foreground;
+    alternate-urgent-foreground:     @urgent-foreground;
+    alternate-active-foreground:     @active-foreground;
+    foreground:                      @normal-foreground;
+    background-color:                @black;
+    // lightbg:                     @alternate-active-background;
+    // lightfg:                     @base00;
+    // selected-urgent-background:  @alternate-urgent-foreground;
+    // selected-urgent-foreground:  @active-background;
+    // spacing:                     2;
 }
 // End selectors }}}
 
+* {
+    spacing:          2;
+    border-color:     @foreground;
+    background-color: transparent;
+}
 window {
     background-color: @background;
     border:           1;
@@ -72,15 +80,15 @@ mainbox {
 }
 message {
     border:       1px solid 0px 0px ;
+    padding:      1px 0px 0px ;
     border-color: @separatorcolor;
-    padding:      1px ;
 }
 textbox {
     text-color: @foreground;
 }
 listview {
     fixed-height: 0;
-    border:       2px dash 0px 0px ;
+    border:       2px solid 0px 0px ;
     border-color: @separatorcolor;
     spacing:      2px ;
     scrollbar:    true;
@@ -93,11 +101,9 @@ element {
     border:  0;
     padding: 5px;
 }
-
 element-icon {
     size: 1em;
 }
-
 element-text {
     background-color: inherit;
     text-color:       inherit;
@@ -145,9 +151,14 @@ scrollbar {
     border:       0;
     handle-width: 8px ;
     padding:      0;
+    handle-color: @normal-foreground;
 }
 mode-switcher {
-    border:       2px dash 0px 0px ;
+    border:       2px solid 0px 0px ;
+    border-color: @separatorcolor;
+}
+sidebar {
+    border:       2px solid 0px 0px ;
     border-color: @separatorcolor;
 }
 button.selected {
