@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2024-02-08 15:26                                               #
+# Last edit  : 2024-02-08 16:17                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3 version 4.20+                                               #
@@ -424,7 +424,7 @@ smart_gaps on
 # information i3status finds out, if available)
 bar {
     ## output $laptop
-    tray_output $laptop
+    ## tray_output $laptop
     font pango:Roboto Medium 9
     status_command i3status
     separator_symbol "┋"
