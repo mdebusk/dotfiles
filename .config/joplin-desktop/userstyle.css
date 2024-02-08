@@ -2,7 +2,7 @@
 /* Filename   : userstyle.css                                                 */
 /* Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                  */
 /* Created    : 2022-05-05                                                    */
-/* Last edit  : 2022-11-01 02:56                                              */
+/* Last edit  : 2024-02-05 02:40                                              */
 /* Purpose    : user stylesheet for Joplin                                    */
 /* Depends    : joplin                                                        */
 /* Arguments  : N/A                                                           */
@@ -54,21 +54,29 @@ ol,ul,td {
 dl {
     border: 3px double #073642;
     padding: 0.5em;
-  }
-  dt {
+}
+dt {
     float: left;
     clear: left;
     width: 100px;
     text-align: right;
     font-weight: bold;
     color: #859900;
-  }
-  dt::after {
+}
+dt::after {
     content: ":";
-  }
-  dd {
+}
+dd {
     margin: 0 0 0 110px;
     padding: 0 0 0.5em 0;
-  }
+}
 
 /* End definition lists }}} */
+
+/* Resource icon {{{ */
+.resource-icon {
+    width: 0.75em;
+    height: 0.9em;
+    top: 0.1em;
+}
+/* End resource icon }}} */
