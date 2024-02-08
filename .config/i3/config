@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2024-02-08 13:27                                               #
+# Last edit  : 2024-02-08 15:26                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3 version 4.20+                                               #
@@ -17,8 +17,8 @@
 # ** 4.17: Variables {{{1
 
 # Set variables for physical displays {{{2
-set $tv HDMI-0
-set $laptop LVDS-0
+## set $tv HDMI-0
+## set $laptop LVDS-0
 # End physical displays }}}
 
 # Set the modifier key to the "Windows" key {{{2
@@ -299,7 +299,7 @@ assign [class="Joplin"] $workspace10
 # ** 4.20. Automatically starting applications on i3 startup {{{
 
 # NVidia Settings
-exec_always --no-startup-id /usr/bin/nvidia-settings --config=~/.config/nvidia/nvidia-settings-rc --load-config-only
+## exec_always --no-startup-id /usr/bin/nvidia-settings --config=~/.config/nvidia/nvidia-settings-rc --load-config-only
 
 # picom
 exec_always --no-startup-id ~/bin/picom -b
@@ -423,7 +423,7 @@ smart_gaps on
 # Start i3bar to display a workspace bar (plus the system
 # information i3status finds out, if available)
 bar {
-    output $laptop
+    ## output $laptop
     tray_output $laptop
     font pango:Roboto Medium 9
     status_command i3status
@@ -432,7 +432,7 @@ bar {
         separator #859900
         background #073642
         statusline #839496
-        # focused_workspace  #fdf6e3  #fdf6e3     #657b83
+        ## focused_workspace  #fdf6e3  #fdf6e3     #657b83
         active_workspace   #fdf6e3  #fdf6e3     #657b83
         inactive_workspace #93a1a1  #93a1a1     #fdf6e3
         urgent_workspace   #dc322f  #dc322f     #eee8d5
