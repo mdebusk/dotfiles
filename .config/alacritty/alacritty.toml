@@ -1,59 +1,109 @@
-######################################################################
-# Filename   : alacritty.toml                                        #
-# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)          #
-# Created    : 2023-07-24 01:30                                      #
-# Last edit  : 2023-12-31 13:14                                      #
-# Purpose    : Configuration file for alacritty                      #
-# Depends    : alacritty                                             #
-# Known bugs : NKA                                                   #
-# TODO       : N/A                                                   #
-######################################################################
+ ###############################################################################
+ # Filename   : alacritty.toml                                                 #
+ # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+ # Created    : 2023-07-24 01:30                                               #
+ # Last edit  : 2024-02-08 19:12                                               #
+ # Purpose    : Configuration file for alacritty                               #
+ # Depends    : alacritty version 13.0 or above                                #
+ # Known bugs : NKA                                                            #
+ # TODO       : N/A                                                            #
+ ###############################################################################
 
+# ** General {{{
 import = [
     "~/.config/alacritty/solarized_dark.toml"
 ]
 
-[bell]
-animation = "EaseOutExpo"
-color = "#fdf6e3"
-duration = 20
+working_directory = "None"
 
-[env]
-WINIT_X11_SCALE_FACTOR = "1.0"
-
-[font.bold]
-family = "Azeret Mono"
-style = "Bold"
-
-[font.bold_italic]
-family = "Azeret Mono"
-style = "Bold Italic"
-
-[font.italic]
-family = "Azeret Mono"
-style = "Italic"
-
-[font.normal]
-family = "Azeret Mono"
-style = "Regular"
-
-[mouse]
-hide_when_typing = true
-
-[scrolling]
-history = 10000
+live_config_reload = true
 
 [shell]
 program="/usr/bin/bash"
+# End general }}}
 
-[window]
+[env] # {{{
+WINIT_X11_SCALE_FACTOR = "1.0"
+# End env }}}
+
+[window] # {{{
 ## blur = true # needs Wayland
-decorations = "none"
+class = { instance = "Alacritty", general = "Alacritty" }
+decorations = "full" # | "none"
+decorations_theme_variant = "Dark" # "Light" "None"
+dimensions = { columns = 0, lines = 0 }
+dynamic_padding = false
 dynamic_title = true
 opacity = 0.8
+padding = { x = 5, y = 5 }
+position = "None" # | { x = <integer>, y = <integer> }
+## startup_mode = "Windowed" | "Maximized" | "Fullscreen" | "SimpleFullscreen"
+resize_increments = false
 title = "Alacritty"
-## "window.decorations_theme_variant" = "dark"
+# End window }}}
 
-[window.padding]
-x = 5
-y = 5
+[scrolling] # {{{
+history = 10000
+multiplier = 3
+# End scrolling }}}
+
+[font] # {{{
+builtin_box_drawing = true
+normal = { family = "Azeret Mono", style = "Regular" }
+bold = { family = "Azeret Mono", style = "Bold" }
+bold_italic = { family = "Azeret Mono", style = "Bold Italic" }
+italic = { family = "Azeret Mono", style = "Italic" }
+offset = { x = 0, y = 0 }
+glyph_offset = { x = 0, y = 0 }
+size = 12
+# End font }}}
+
+[bell] # {{{
+###############################################################################
+# Available animation types are "Ease", "EaseOut", "EaseOutSine",             #
+#                               "EaseOutQuad", "EaseOutCubic",                #
+#                               "EaseOutQuart", "EaseOutQuint",               #
+#                               "EaseOutExpo", "EaseOutCirc",                 #
+#                                and "Linear"                                 #
+###############################################################################
+animation = "EaseOutExpo"
+command = "None"
+color = "#fdf6e3"
+duration = 20
+# End ball }}}
+
+[selection] # {{{
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = false
+# End selection }}}
+
+[cursor] # {{{
+## style = { "Block", "Off" }
+vi_mode_style = "None"
+blink_interval = 750
+blink_timeout = 5
+unfocused_hollow = true
+thickness = 0.15
+# End cursor }}}
+
+[terminal] # {{{
+osc52 = "OnlyCopy"
+# End terminal }}}
+
+[mouse] # {{{
+hide_when_typing = true
+# End mouse }}}
+
+[hints] # {{{
+# See the manual
+# End hints }}}
+
+[keyboard] # {{{
+# This should be an external file for organization
+# See the manual
+# End keyboard }}}
+
+[debug] # {{{
+# See the manual
+# End debug }}}
+
