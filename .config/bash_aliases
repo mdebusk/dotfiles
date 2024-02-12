@@ -6,7 +6,7 @@
 # Purpose    : aliases for interactive bash shell, sourced from ~/.bashrc     #
 # Depends    : bash                                                           #
 # Known bugs : NKA                                                            #
-# To do      : none yet                                                       #
+# TODO       : N/A                                                            #
 ###############################################################################
 
 # ** Sane defaults for potentially-destructive commands {{{
@@ -22,7 +22,6 @@ alias rm='rm -i'
 # ** Other useful defaults {{{
 alias df="df -Tha --total"
 alias free="free -hltw"
-alias la='ls -Ahlpv --color=auto --group-directories-first --time-style=long-iso'
 alias ls='ls -hlpv --color=auto --group-directories-first --time-style=long-iso'
 alias ping="ping -c 3"
 alias wget="wget -c"
@@ -43,6 +42,9 @@ alias tkremind='tkremind "$XDG_CONFIG_HOME"/remind/reminders.rem'
 # End XDG Base Directory Standard }}}
 
 # ** New "commands" {{{
+# Show hidden files in directory listing
+alias la='ls -Ahlpv --color=auto --group-directories-first --time-style=long-iso'
+
 # Use vim as a pager with syntax highlighting
 alias vless='/usr/local/share/vim/vim91/macros/less.sh'
 
