@@ -2,12 +2,11 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2023-04-03 13:08                                               #
+# Last edit  : 2024-02-12 01:09                                               #
 # Purpose    : Configuration file for bash shell                              #
-# Depends    : bash                                                           #
-# Arguments  : none                                                           #
+# Depends    : bash, readlink, cut, cat, lesspipe, dircolors, test            #
 # Known bugs : NKA                                                            #
-# To do      : none yet                                                       #
+# TODO       : N/A                                                            #
 ###############################################################################
 
 # If not running interactively, don't do anything
@@ -34,8 +33,7 @@ export LESSHISTFILE=-
 export LESS="-F -i -J -M -R -x4 -z-4"
 # End less}}}
 
-# Unset manpath so we can inherit from /etc/manpath via
-# the `manpath` command
+# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
@@ -64,11 +62,10 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# My old prompt
+# Old single-line prompt
 ## PS1='${debian_chroot:+($debian_chroot)}\[\033[00;32m\]\u@\h\[\033[00m\]:\[\033[00;34m\]\w\[\033[00m\]\$ '
 
-# New two-line prompt I'm trying on to see if I like it
-# Modeled after a video on "Steve's Teacher" YouTube channel
+# Current two-line prompt
 PS1='${debian_chroot:+($debian_chroot)}\[\033[00;31m\]┌─[\[\033[00;32m\]\u@\h\[\033[00;31m\]]━[\033[00;34m\]\w\[\033[00;31m\]]\n└──╼ \[\033[00;00m\]$\[\033[00m\] '
 
 # If this is an xterm, set the title to user@host:dir
@@ -112,3 +109,7 @@ fi
 # Add completions for Alacritty
 [ -f $HOME/Source/alacritty/extra/completions/alacritty.bash ] && . $HOME/Source/alacritty/extra/completions/alacritty.bash
 # End sourcing of external files }}}
+
+# Which terminal emulator am I using?
+# https://askubuntu.com/questions/210182/how-to-check-which-terminal-emulator-is-being-currently-used/1361088#1361088
+echo -n "Terminal emulator: " ; readlink "/proc/$(cat /proc/$(echo $$)/stat|cut -d ' ' -f 4)/exe"
