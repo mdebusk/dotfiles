@@ -4,7 +4,7 @@
 # Filename   : i3exit                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-08-23 19:22                                               #
-# Last edit  : 2024-02-02 11:26                                               #
+# Last edit  : 2024-02-13 01:07                                               #
 # Purpose    : Present a logout/restart/etc. menu                             #
 # Reference  : https://youtu.be/R9m723tAurA                                   #
 #            : https://randomgeekery.org/config/linux/rofi/                   #
@@ -42,6 +42,9 @@
 # End license }}}
 
 # ** Declare variables {{{
+uptime="$(uptime -p | sed -e 's/up //g')"
+host="$(hostname)"
+
 lock_paper="$HOME"/Pictures/Wallpapers/lock.png
 font="Roboto 37"
 lock="🤐   Lock"
@@ -58,8 +61,8 @@ $logout
 $sleep
 $reboot
 $shutdown
-$hibernate" | rofi -dmenu -i -p "Select" -font "$font" -lines 6\
-    -line-margin 3 -line-padding 10 -scrollbar-width "0" )
+$hibernate" | rofi -dmenu -i -p "$host" -mesg "Uptime: $uptime" -font "$font"\
+    -lines 6 -line-margin 3 -line-padding 10 -scrollbar-width "0" )
 # End selection }}}
 
 # Do something based on selected option
