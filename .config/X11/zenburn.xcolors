@@ -1,0 +1,56 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Filename   : zenburn.xcolors                                                !
+! Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   !
+! Created    : 2011-07-15                                                     !
+! Last edit  : 2024-02-13 02:09                                               !
+! Purpose    : Zenburn color scheme for Xresources                            !
+! Reference  : https://github.com/jnurmine/Zenburn                            !
+! Depends    : xorg                                                           !
+! Known bugs : NKA                                                            !
+! TODO       : N/A                                                            !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! ** License {{{
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Copyright © 2020 Jani Nurminen                                              !
+! Licensed under the GNU General Public License                               !
+! https://www.gnu.org/licenses/gpl-3.0.html                                   !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! End license }}}
+
+! special
+XTerm*.foreground:   #c5c8c6
+XTerm*.background:   #1d1f21
+XTerm*.cursorColor:  #c5c8c6
+
+! black
+XTerm*.color0:       #282a2e
+XTerm*.color8:       #373b41
+
+! red
+XTerm*.color1:       #a54242
+XTerm*.color9:       #cc6666
+
+! green
+XTerm*.color2:       #8c9440
+XTerm*.color10:      #b5bd68
+
+! yellow
+XTerm*.color3:       #de935f
+XTerm*.color11:      #f0c674
+
+! blue
+XTerm*.color4:       #5f819d
+XTerm*.color12:      #81a2be
+
+! magenta
+XTerm*.color5:       #85678f
+XTerm*.color13:      #b294bb
+
+! cyan
+XTerm*.color6:       #5e8d87
+XTerm*.color14:      #8abeb7
+
+! white
+XTerm*.color7:       #707880
+XTerm*.color15:      #c5c8c6
