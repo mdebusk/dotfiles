@@ -2,11 +2,11 @@
 ! Filename   : Xresources                                                     !
 ! Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   !
 ! Created    : 2021-05-01                                                     !
-! Last edit  : 2024-02-10 21:06                                               !
+! Last edit  : 2024-02-13 01:56                                               !
 ! Purpose    : Configuration file for xorg and related programs               !
 ! Depends    : xorg                                                           !
 ! Known bugs : NKA                                                            !
-! TODO       : Consider moving font config to an external file                !
+! TODO       : N/A                                                            !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ! ** License {{{
@@ -36,9 +36,9 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! End license }}}
 
-! ** General settings {{{
-
+! General settings
 #include "/home/michael/.config/X11/solarized_dark.xcolors"
+#include "/home/michael/.config/X11/fonts.cfg"
 
 *visualBell:      true
 *urgentOnBell:    true
@@ -46,54 +46,13 @@
 *scrollKey:       True
 *customization:   -color
 
-! End general settings }}}
-
-! ** Fonts {{{
-
-! *** DejaVu Sans Mono (Inactive) {{{2
-!! URxvt.font:xft:DejaVu Sans Mono:style=Book:size=9
-!! URxvt.boldFontxft:DejaVu Sans Mono:style=Bold:size=9
-!! URxvt.italicFontxft:DejaVu Sans Mono:style=Oblique:size=9
-!! URxvt.boldItalicFont:xft:DejaVu Sans Mono:style=BoldOblique:size=9
-! End DejaVu Sans Mono }}}
-
-! *** Source Code Pro (Inactive) {{{2
-!! URxvt.font:xft:Source Code Pro:style=Regular:size=9
-!! URxvt.boldFontxft:Source Code Pro:style=Bold:size=9
-!! URxvt.italicFontxft:Source Code Pro:style=Italic:size=9
-!! URxvt.boldItalicFont:xft:Source Code Pro:style=Bold Italic:size=9
-! End Source Code Pro }}}
-
-! **** Azeret Mono (Active) {{{2
-URxvt.font:xft:Azeret Mono:style=Regular:size=9
-URxvt.boldFont:xft:Azeret Mono:style=Bold:size=9
-URxvt.italicFont:xft:Azeret Mono:style=Italic:size=9
-URxvt.boldItalicFont:xft:Azeret Mono:style=Bold Italic:size=9
-! End Azeret Mono }}}
-
-! *** Font display settings {{{2
-*renderFont: true
-Xft.dpi:        128
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.autohint:   true
-Xft.hintstyle:  hintslight
-Xft.minspace:   false
-! End font display settings }}}
-
-! End fonts }}}
-
-! ** XClock-specific settings {{{
-XClock.Clock.analog:false
-XClock.Clock.face:Azeret Mono Medium:size=72
+! XClock-specific settings
+XClock.Clock.analog:    false
+XClock.Clock.face:      Azeret Mono Medium:size=72
 XClock.Clock.twentyfour:true
-! End XClock }}}
 
-! ** urxvt-specific settings {{{
+! urxvt-specific settings
 #include "/home/michael/.config/X11/urxvt.cfg"
-! End urxvt }}}
 
-! ** XTerm-specific settings {{{
+! XTerm-specific settings
 #include "/home/michael/.config/X11/xterm.cfg"
-! End XTerm }}}
