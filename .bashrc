@@ -2,7 +2,7 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2024-02-12 01:09                                               #
+# Last edit  : 2024-02-13 03:02                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash, readlink, cut, cat, lesspipe, dircolors, test            #
 # Known bugs : NKA                                                            #
@@ -112,4 +112,5 @@ fi
 
 # Which terminal emulator am I using?
 # https://askubuntu.com/questions/210182/how-to-check-which-terminal-emulator-is-being-currently-used/1361088#1361088
-echo -n "Terminal emulator: " ; readlink "/proc/$(cat /proc/$(echo $$)/stat|cut -d ' ' -f 4)/exe"
+# Commented out because I didn't like it after all
+## echo -n "Terminal emulator: " ; readlink "/proc/$(cat /proc/$(echo $$)/stat|cut -d ' ' -f 4)/exe"
