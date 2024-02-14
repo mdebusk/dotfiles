@@ -3,11 +3,11 @@
 # Filename   : popup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-22 20:19                                               #
-# Last edit  : 2024-02-14 02:08                                               #
+# Last edit  : 2024-02-14 03:09                                               #
 # Purpose    : Display information in notifications                           #
 # Reference  : N/A                                                            #
 # Depends    : date, fastfetch, notify-send, bash, weather                    #
-# Arguments  : -w, -d, -s                                                     #
+# Arguments  : -c -d -h -s -w -t                                              #
 # Known bugs : NKA                                                            #
 # TODO       : N/A                                                            #
 ###############################################################################
@@ -41,50 +41,60 @@
 
 
 # ** Functions {{{
+# Icons can be found at # /usr/share/icons/Yaru/scalable/
 show_weather() {
     notify-send -t 6000\
         "Weather in Aberdeen, MD" "$(weather)"\
-            -i weather-app-symbolic
-}
+        -i weather-app-symbolic
+    }
 
 
 date_and_time() {
     notify-send -t 3500\
         "Date and Time" "$(date '+%Y-%m-%d (%A) %H:%M')"\
         -i calendar-app-symbolic
-}
+    }
 
 
 system_details() {
     notify-send\
         "System Status"\
-        "$(fastfetch -c $XDG_CONFIG_HOME/fastfetch/plain.jsonc)"\
+        "$(fastfetch -c "$XDG_CONFIG_HOME"/fastfetch/plain.jsonc)"\
         -i dialog-information-symbolic
-}
+    }
 
 
 todo_list() {
     notify-send\
         "To Do"\
-        "$(python ~/Source/t/t.py --task-dir $XDG_DATA_HOME/tasks --list tasks)"\
-        -i to-do-app-symbolic
-}
+        "$(python ~/Source/t/t.py --task-dir "$XDG_DATA_HOME"/tasks --list tasks)"\
+        -i checkbox-checked-symbolic
+    }
+
+
+wireless() {
+    notify-send\
+        "Wireless"\
+        "$(awk 'NR==3 {printf("WiFi Signal Strength = %.0f%%\n",$3*10/7)}' /proc/net/wireless)"\
+        -i network-wireless-symbolic
+    }
 
 
 help_screen() {
     echo "usage: popup [OPTION]"
-    echo "    -w    weather"
     echo "    -d    date and time"
-    echo "    -s    system information"
-    echo "    -t    todo list"
     echo "    -h    this help screen"
+    echo "    -s    system information"
+    echo "    -w    weather"
+    echo "    -t    todo list"
 }
-
 # End functions }}}
 
 
-while getopts "wdsth" option; do
+while getopts "cwdsth" option; do
     case $option in
+        c) wireless
+            exit;;
         w) show_weather
             exit;;
         d) date_and_time
@@ -100,3 +110,4 @@ while getopts "wdsth" option; do
             exit;;
     esac
 done
+
