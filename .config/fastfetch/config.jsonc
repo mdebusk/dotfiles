@@ -2,7 +2,7 @@
 // Filename   : config.jsonc                                                   /
 // Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   /
 // Created    : 2024-02-13 20:00                                               /
-// Last edit  : 2024-02-14 15:54                                               /
+// Last edit  : 2024-02-14 17:45                                               /
 // Purpose    : Main configuration file for fastfetch                          /
 // Reference  : https://github.com/fastfetch-cli/fastfetch/wiki/Json-Schema    /
 // Depends    : fastfetch                                                      /
@@ -56,7 +56,7 @@
         },
         {
             "type": "custom",
-            "format": "├───────\u001b[33mHardware\u001b[39m──────────────────────────────────────────────◉"
+            "format": "├──────────────────────────\u001b[33mHARDWARE\u001b[39m───────────────────────────◉"
         },
         {
             "type": "bios",
@@ -101,7 +101,7 @@
         },
         {
             "type": "custom",
-            "format": "├───────\u001b[33mOperating System\u001b[39m───────────────────────────────────────◉"
+            "format": "├───────────────────────\u001b[33mOPERATING SYSTEM\u001b[39m───────────────────────◉"
         },
         {
             "type": "os",
@@ -135,7 +135,7 @@
         },
         {
             "type": "custom",
-            "format": "├───────\u001b[33mSoftware\u001b[39m───────────────────────────────────────────────◉"
+            "format": "├───────────────────────────\u001b[33mSOFTWARE\u001b[39m───────────────────────────◉"
         },
         {
             "type": "packages",
