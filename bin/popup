@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+###############################################################################
+# Filename   : popup                                                          #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : 2023-01-22 20:19                                               #
+# Last edit  : 2024-02-14 02:08                                               #
+# Purpose    : Display information in notifications                           #
+# Reference  : N/A                                                            #
+# Depends    : date, fastfetch, notify-send, bash, weather                    #
+# Arguments  : -w, -d, -s                                                     #
+# Known bugs : NKA                                                            #
+# TODO       : N/A                                                            #
+###############################################################################
+
+# ** License {{{
+###############################################################################
+# This is free and unencumbered software released into the public domain.     #
+#                                                                             #
+# Anyone is free to copy, modify, publish, use, compile, sell, or             #
+# distribute this software, either in source code form or as a compiled       #
+# binary, for any purpose, commercial or non-commercial, and by any means.    #
+#                                                                             #
+# In jurisdictions that recognize copyright laws, the author or authors of    #
+# this software dedicate any and all copyright interest in the software to    #
+# the public domain. We make this dedication for the benefit of the public    #
+# at large and to the detriment of our heirs and successors. We intend        #
+# this dedication to be an overt act of relinquishment in perpetuity of       #
+# all present and future rights to this software under copyright law.         #
+#                                                                             #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,             #
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF          #
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.      #
+# IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER     #
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     #
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         #
+# DEALINGS IN THE SOFTWARE.                                                   #
+#                                                                             #
+# For more information, please refer to <http://unlicense.org/>               #
+###############################################################################
+# End license }}}
+
+
+# ** Functions {{{
+show_weather() {
+    notify-send -t 6000\
+        "Weather in Aberdeen, MD" "$(weather)"\
+            -i weather-app-symbolic
+}
+
+
+date_and_time() {
+    notify-send -t 3500\
+        "Date and Time" "$(date '+%Y-%m-%d (%A) %H:%M')"\
+        -i calendar-app-symbolic
+}
+
+
+system_details() {
+    notify-send\
+        "System Status"\
+        "$(fastfetch -c $XDG_CONFIG_HOME/fastfetch/plain.jsonc)"\
+        -i dialog-information-symbolic
+}
+
+
+todo_list() {
+    notify-send\
+        "To Do"\
+        "$(python ~/Source/t/t.py --task-dir $XDG_DATA_HOME/tasks --list tasks)"\
+        -i to-do-app-symbolic
+}
+
+
+help_screen() {
+    echo "usage: popup [OPTION]"
+    echo "    -w    weather"
+    echo "    -d    date and time"
+    echo "    -s    system information"
+    echo "    -t    todo list"
+    echo "    -h    this help screen"
+}
+
+# End functions }}}
+
+
+while getopts "wdsth" option; do
+    case $option in
+        w) show_weather
+            exit;;
+        d) date_and_time
+            exit;;
+        s) system_details
+            exit;;
+        t) todo_list
+            exit;;
+        h) help_screen
+            exit;;
+        *) # incorrect option
+            echo "Error: Invalid option"
+            exit;;
+    esac
+done
