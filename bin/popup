@@ -3,7 +3,7 @@
 # Filename   : popup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-22 20:19                                               #
-# Last edit  : 2024-02-14 05:03                                               #
+# Last edit  : 2024-02-14 05:05                                               #
 # Purpose    : Display information in notifications                           #
 # Reference  : N/A                                                            #
 # Depends    : date, fastfetch, notify-send, bash, weather                    #
@@ -91,6 +91,7 @@ wireless() {
 
 help_screen() {
     echo "usage: popup [OPTION]"
+    echo "    -c    wireless connection info"
     echo "    -d    date and time"
     echo "    -h    this help screen"
     echo "    -s    system information"
