@@ -1,0 +1,126 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "modules": [
+        {
+            "type": "custom",
+            "format": "╭─────────────────────────────────────────────────────────────◉"
+        },
+        {
+            "type": "title",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mHost"
+        },
+        {
+            "type": "datetime",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mDate"
+        },
+        {
+            "type": "custom",
+            "format": "├───────\u001b[33mHardware\u001b[39m──────────────────────────────────────────────◉"
+        },
+        {
+            "type": "bios",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mBios"
+        },
+        {
+            "type": "battery",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mBattery"
+        },
+        {
+            "type": "cpu",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mCPU",
+        },
+        {
+            "type": "disk",
+            "folders": "/:/home:/opt",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mDisk"
+        },
+        {
+            "type": "gpu",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mGPU",
+        },
+        {
+            "type": "display",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mDisplay"
+        },
+        {
+            "type": "localip",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mLocal IP"
+        },
+        {
+            "type": "memory",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mMemory"
+        },
+        {
+            "type": "custom",
+            "format": "├───────\u001b[33mOperating System\u001b[39m───────────────────────────────────────◉"
+        },
+        {
+            "type": "os",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mDistro"
+        },
+        {
+            "type": "kernel",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mKernel"
+        },
+        {
+            "type": "locale",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mLocale"
+        },
+        {
+            "type": "wifi",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mWiFi"
+        },
+        {
+            "type": "shell",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mShell"
+        },
+        {
+            "type": "uptime",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mUptime"
+        },
+        {
+            "type": "custom",
+            "format": "├───────\u001b[33mSoftware\u001b[39m──────────────────────────────────────────────◉"
+        },
+        {
+            "type": "packages",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mPackages"
+        },
+        {
+            "type": "terminal",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mTerminal"
+        },
+        {
+            "type": "wm",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mWindow Manager"
+        },
+        {
+            "type": "custom",
+            "format": "╰─────────────────────────────────────────────────────────────◉"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "  \u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m     \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m  \u001b[31m  \u001b[90m"
+        }
+            ]
+}
