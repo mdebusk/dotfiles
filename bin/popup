@@ -3,7 +3,7 @@
 # Filename   : popup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-22 20:19                                               #
-# Last edit  : 2024-02-14 03:09                                               #
+# Last edit  : 2024-02-14 05:03                                               #
 # Purpose    : Display information in notifications                           #
 # Reference  : N/A                                                            #
 # Depends    : date, fastfetch, notify-send, bash, weather                    #
@@ -72,13 +72,22 @@ todo_list() {
     }
 
 
+display_wireless_info() {
+    echo "Network SSID : $(iwgetid | awk -F '"' '{ print $2 }')"
+    echo "Internal IP Address : $(hostname -I)"
+    echo "External IP Address : $(curl -s https://ifconfig.co)"
+    awk 'NR==3 {printf("WiFi Signal Strength : %.0f%%\n",$3*10/7)}'\
+        /proc/net/wireless
+}
+
+
 wireless() {
     notify-send\
         "Wireless"\
-        "$(awk 'NR==3 {printf("WiFi Signal Strength = %.0f%%\n",$3*10/7)}' /proc/net/wireless)"\
+        "$(display_wireless_info)"\
         -i network-wireless-symbolic
     }
-
+## "$(awk 'NR==3 {printf("WiFi Signal Strength = %.0f%%\n",$3*10/7)}' /proc/net/wireless)"\
 
 help_screen() {
     echo "usage: popup [OPTION]"
