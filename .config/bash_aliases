@@ -2,12 +2,39 @@
 # Filename   : bash_aliases                                                   #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-07-04 13:16                                               #
-# Last edit  : 2024-01-15 17:14                                               #
+# Last edit  : 2024-02-14 19:14                                               #
 # Purpose    : aliases for interactive bash shell, sourced from ~/.bashrc     #
-# Depends    : bash                                                           #
+# Depends    : bash, other programs as listed                                 #
 # Known bugs : NKA                                                            #
 # TODO       : N/A                                                            #
 ###############################################################################
+
+# ** License {{{
+###############################################################################
+# This is free and unencumbered software released into the public domain.     #
+#                                                                             #
+# Anyone is free to copy, modify, publish, use, compile, sell, or             #
+# distribute this software, either in source code form or as a compiled       #
+# binary, for any purpose, commercial or non-commercial, and by any means.    #
+#                                                                             #
+# In jurisdictions that recognize copyright laws, the author or authors of    #
+# this software dedicate any and all copyright interest in the software to    #
+# the public domain. We make this dedication for the benefit of the public    #
+# at large and to the detriment of our heirs and successors. We intend        #
+# this dedication to be an overt act of relinquishment in perpetuity of       #
+# all present and future rights to this software under copyright law.         #
+#                                                                             #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,             #
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF          #
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.      #
+# IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER     #
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     #
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         #
+# DEALINGS IN THE SOFTWARE.                                                   #
+#                                                                             #
+# For more information, please refer to <http://unlicense.org/>               #
+###############################################################################
+# End license }}}
 
 # ** Sane defaults for potentially-destructive commands {{{
 alias chgrp='chgrp --preserve-root'
@@ -27,7 +54,6 @@ alias ping="ping -c 3"
 alias wget="wget -c"
 alias grep='grep --color=auto'
 alias nvlc='nvlc --browse-dir ~/Music' # Start VLC from the command line
-
 # End other useful defaults }}}
 
 # ** Help programs use the XDG Base Directory standard {{{
@@ -61,7 +87,7 @@ alias zombie='ps axo stat,ppid,pid,comm | grep -w defunct'
 alias joplincli='~/bin/Joplin/bin/joplin'
 
 # What are my external and internal IP addresses?
-alias ips="echo -n 'External IP: ' ; curl ifconfig.co; echo -n 'Internal IP: ' ; ip address show wlp3s0 | grep inet\ | awk '{ print \$2 }' "
+alias ips='echo "External IP: $(curl -s https://ifconfig.co)" ; echo "Internal IP: $(hostname -I)"'
 
 # Diary
 alias dz='pushd ~/Documents && echo -e "\n## `date -Is` {{{\n\n}}}" >> diary.md && vim "+ normal Gk" +startinsert diary.md && popd'
