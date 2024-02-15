@@ -2,7 +2,7 @@
 # Filename   : seasons.rem                                                    #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/)                        #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-10-18 21:10                                               #
+# Last edit  : 2024-02-15 01:05                                               #
 # Purpose    : Provides remind with change-of-season dates                    #
 # Reference  : man remind                                                     #
 # Depends    : remind                                                         #
@@ -25,13 +25,6 @@
 # include [getenv("XDG_CONFIG_HOME")]/remind/seasons.rem
 
 # ** 2020s {{{
-REM [trigger(date(2022,12,21), time(21,48), 1)] MSG Winter Solstice
-REM [trigger(date(2023,1,04), time(16,17), 1)] MSG Perihelion
-REM [trigger(date(2023,3,20), time(21,24), 1)] MSG Vernal Equinox
-REM [trigger(date(2023,6,21), time(14,58), 1)] MSG Summer Solstice
-REM [trigger(date(2023,7,06), time(20,06), 1)] MSG Aphelion
-REM [trigger(date(2023,9,23), time(06,50), 1)] MSG Autumnal Equinox
-REM [trigger(date(2023,12,22), time(03,27), 1)] MSG Winter Solstice
 REM [trigger(date(2024,1,03), time(00,38), 1)] MSG Perihelion
 REM [trigger(date(2024,3,20), time(03,06), 1)] MSG Vernal Equinox
 REM [trigger(date(2024,6,20), time(20,51), 1)] MSG Summer Solstice
