@@ -3,13 +3,15 @@
 # Filename   : popup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-22 20:19                                               #
-# Last edit  : 2024-02-14 05:05                                               #
+# Last edit  : 2024-02-16 20:48                                               #
 # Purpose    : Display information in notifications                           #
 # Reference  : N/A                                                            #
 # Depends    : date, fastfetch, notify-send, bash, weather                    #
 # Arguments  : -c -d -h -s -w -t                                              #
 # Known bugs : NKA                                                            #
-# TODO       : N/A                                                            #
+# TODO       : This tool is meant to be invoked from a keyboard               #
+#            : combination in i3, but it might be nice to have it             #
+#            : show a menu if invoked from the command line                   #
 ###############################################################################
 
 # ** License {{{
@@ -97,9 +99,11 @@ help_screen() {
     echo "    -s    system information"
     echo "    -w    weather"
     echo "    -t    todo list"
+    echo ""
 }
 # End functions }}}
 
+[[ $# -eq 0 ]] && ( help_screen ; exit 0 ; )
 
 while getopts "cwdsth" option; do
     case $option in
