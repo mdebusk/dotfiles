@@ -4,7 +4,7 @@
 # Filename   : i3exit                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-08-23 19:22                                               #
-# Last edit  : 2024-02-13 01:07                                               #
+# Last edit  : 2024-02-16 22:05                                               #
 # Purpose    : Present a logout/restart/etc. menu                             #
 # Reference  : https://youtu.be/R9m723tAurA                                   #
 #            : https://randomgeekery.org/config/linux/rofi/                   #
@@ -46,7 +46,7 @@ uptime="$(uptime -p | sed -e 's/up //g')"
 host="$(hostname)"
 
 lock_paper="$HOME"/Pictures/Wallpapers/lock.png
-font="Roboto 37"
+font="Roboto 28"
 lock="🤐   Lock"
 logout="😘   Logout"
 shutdown="😵   Shutdown"
