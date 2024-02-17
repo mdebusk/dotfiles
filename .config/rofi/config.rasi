@@ -2,7 +2,7 @@
 /* Filename   : config.rasi                                                  */
 /* Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                 */
 /* Created    : 2022-03-07                                                   */
-/* Last edit  : 2024-01-28 02:58                                             */
+/* Last edit  : 2024-02-17 16:41                                             */
 /* Purpose    : rofi configuration file                                      */
 /* Reference  : https://github.com/davatorium/rofi                           */
 /* Depends    : rofi 1.7.1                                                   */
@@ -154,6 +154,5 @@ configuration {
       sorting-method:    "name";
   }
 }
-//@theme "/usr/share/rofi/themes/solarized_alternate.rasi"
-@theme "/home/michael/.local/share/rofi/themes/solarized_light_alternate.rasi"
-//@theme "/home/michael/.local/share/rofi/themes/solarized_light.rasi"
+@theme "solarized_light_alternate.rasi"
+//// @theme "solarized_light.rasi"
