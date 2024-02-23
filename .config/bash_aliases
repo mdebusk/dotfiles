@@ -2,7 +2,7 @@
 # Filename   : bash_aliases                                                   #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-07-04 13:16                                               #
-# Last edit  : 2024-02-14 19:14                                               #
+# Last edit  : 2024-02-23 02:58                                               #
 # Purpose    : aliases for interactive bash shell, sourced from ~/.bashrc     #
 # Depends    : bash, other programs as listed                                 #
 # Known bugs : NKA                                                            #
@@ -60,7 +60,7 @@ alias nvlc='nvlc --browse-dir ~/Music' # Start VLC from the command line
 alias abook='abook --config "$XDG_CONFIG_HOME"/abook/abookrc --datafile "$XDG_DATA_HOME"/abook/addressbook'
 alias dosbox='dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox-0.74-3.conf'
 ## alias mysql-workbench="mysql_workbench.sh"
-alias remind='ccal -3 && remind -@2,0,1 "$XDG_CONFIG_HOME"/remind/reminders.rem'
+alias remind='remind -@2,0,1 "$XDG_CONFIG_HOME"/remind/reminders.rem'
 alias slrn='slrn -i "$XDG_CONFIG_HOME"/slrn/slrnrc -f "$XDG_CONFIG_HOME"/slrn/jnewsrc-september'
 alias sqlite3='sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc'
 alias t='python "$HOME"/Source/t/t.py --task-dir "$XDG_DATA_HOME"/tasks --list tasks'
