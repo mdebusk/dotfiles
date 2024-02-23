@@ -1,0 +1,50 @@
+###############################################################################
+# Filename   : dracula_colors.rem                                             #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : 2024-02-23 16:50                                               #
+# Last edit  : 2024-02-23 16:57                                               #
+# Purpose    : Dracula theme for remind                                       #
+# Reference  : https://draculatheme.com/                                      #
+# Depends    : remind                                                         #
+# Known bugs : NKA                                                            #
+# TODO       : N/A                                                            #
+###############################################################################
+
+
+# ** License {{{
+###############################################################################
+# Copyright (c) 2013 Zeno Rocha                                               #
+#                                                                             #
+# Permission is hereby granted, free of charge, to any person obtaining       #
+# a copy of this software and associated documentation files (the             #
+# "Software"), to deal in the Software without restriction, including         #
+# without limitation the rights to use, copy, modify, merge, publish,         #
+# distribute, sublicense, and/or sell copies of the Software, and to          #
+# permit persons to whom the Software is furnished to do so, subject to       #
+# the following conditions:                                                   #
+#                                                                             #
+# The above copyright notice and this permission notice shall be included     #
+# in all copies or substantial portions of the Software.                      #
+#                                                                             #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,             #
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF          #
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.      #
+# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY        #
+# CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,        #
+# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE           #
+# SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                      #
+###############################################################################
+# End license }}}
+
+
+SET col_background  "40 42 54"
+SET col_currentline "68 71 90"
+SET col_foreground  "248 248 242"
+SET col_comment     "98 114 164"
+SET col_cyan        "139 233 253"
+SET col_green       "80 250 123"
+SET col_orange      "255 184 108"
+SET col_pink        "255 121 198"
+SET col_purple      "189 147 249"
+SET col_red         "255 85 85"
+SET col_yellow      "241 250 140"

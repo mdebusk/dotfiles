@@ -1,0 +1,75 @@
+###############################################################################
+# Filename   : gruvbox_colors.rem                                             #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : 2024-02-23 18:00                                               #
+# Last edit  : 2024-02-23 18:29                                               #
+# Purpose    : Gruvbox color theme for remind                                 #
+# Reference  : https://github.com/morhetz/gruvbox/                            #
+# Depends    : remind                                                         #
+# Known bugs : NKA                                                            #
+# TODO       : N/A                                                            #
+###############################################################################
+
+
+# ** License {{{
+###############################################################################
+# Copyright (c) 2011 Ethan Schoonover                                         #
+#                                                                             #
+# Permission is hereby granted, free of charge, to any person obtaining       #
+# a copy of this software and associated documentation files (the             #
+# "Software"), to deal in the Software without restriction, including         #
+# without limitation the rights to use, copy, modify, merge, publish,         #
+# distribute, sublicense, and/or sell copies of the Software, and to          #
+# permit persons to whom the Software is furnished to do so, subject to       #
+# the following conditions:                                                   #
+#                                                                             #
+# The above copyright notice and this permission notice shall be included     #
+# in all copies or substantial portions of the Software.                      #
+#                                                                             #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,             #
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF          #
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.      #
+# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY        #
+# CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,        #
+# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE           #
+# SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                      #
+###############################################################################
+# End license }}}
+
+SET col_dark0_hard     "29, 32, 33"
+SET col_dark0          "40, 40, 40"
+SET col_dark0_soft     "50, 48, 47"
+SET col_dark1          "60, 56, 54"
+SET col_dark2          "80, 73, 69"
+SET col_dark3          "102, 92, 84"
+SET col_dark4          "124, 111, 100"
+SET col_gray_245       "146, 131, 116"
+SET col_gray_244       "146, 131, 116"
+SET col_light0_hard    "249, 245, 215"
+SET col_light0         "251, 241, 199"
+SET col_light0_soft    "242, 229, 188"
+SET col_light1         "235, 219, 178"
+SET col_light2         "213, 196, 161"
+SET col_light3         "189, 174, 147"
+SET col_light4         "168, 153, 132"
+SET col_bright_red     "251, 73, 52"
+SET col_bright_green   "184, 187, 38"
+SET col_bright_yellow  "250, 189, 47"
+SET col_bright_blue    "131, 165, 152"
+SET col_bright_purple  "211, 134, 155"
+SET col_bright_aqua    "142, 192, 124"
+SET col_bright_orange  "254, 128, 25"
+SET col_neutral_red    "204, 36, 29"
+SET col_neutral_green  "152, 151, 26"
+SET col_neutral_yellow "215, 153, 33"
+SET col_neutral_blue   "69, 133, 136"
+SET col_neutral_purple "177, 98, 134"
+SET col_neutral_aqua   "104, 157, 106"
+SET col_neutral_orange "214, 93, 14"
+SET col_faded_red      "157, 0, 6"
+SET col_faded_green    "121, 116, 14"
+SET col_faded_yellow   "181, 118, 20"
+SET col_faded_blue     "7, 102, 120"
+SET col_faded_purple   "143, 63, 113"
+SET col_faded_aqua     "66, 123, 88"
+SET col_faded_orange   "175, 58, 3"
