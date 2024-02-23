@@ -3,7 +3,7 @@
 # Filename   : popup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-22 20:19                                               #
-# Last edit  : 2024-02-16 20:48                                               #
+# Last edit  : 2024-02-19 12:28                                               #
 # Purpose    : Display information in notifications                           #
 # Reference  : N/A                                                            #
 # Depends    : date, fastfetch, notify-send, bash, weather                    #
@@ -42,39 +42,80 @@
 # End license }}}
 
 
-# ** Functions {{{
-# Icons can be found at # /usr/share/icons/Yaru/scalable/
+# ** Functions {{{1
+# *** Moon {{{2
+get_moon_phase() {
+    icon_dir="$XDG_DATA_HOME/icons/Moon/"
+
+    # Calculate moon phase
+    local lunar_month=2551443
+    local day_length=86400
+    local now=$(date '+%s')
+    local new_moon=1707519540 # On 2024-02-09T17:59
+    local phase=$((($now - $new_moon) % $lunar_month))
+    local phase_number=$((((phase / day_length) + 1)*100000))
+
+    # Multiply by 100000 so that we can do integer comparison in bash.
+    if   [ $phase_number -lt 184566 ];   then phase_icon="New Moon"
+    elif [ $phase_number -lt 553699 ];   then phase_icon="Waxing Crescent Moon"
+    elif [ $phase_number -lt 922831 ];   then phase_icon="First Quarter Moon"
+    elif [ $phase_number -lt 1291963 ];  then phase_icon="Waxing Gibbous Moon"
+    elif [ $phase_number -lt 1661096 ];  then phase_icon="Full Moon"
+    elif [ $phase_number -lt 2030228 ];  then phase_icon="Waning Gibbous Moon"
+    elif [ $phase_number -lt 2399361 ];  then phase_icon="Last Quarter Moon"
+    elif [ $phase_number -lt 2768493 ];  then phase_icon="Waning Crescent Moon"
+    else
+      phase_icon="Undetermined"
+    fi
+
+    # Echo the current Moon Phase Icon, name, and day number
+    echo $phase_icon
+}
+
+show_moon_phase() {
+    notify-send -t 3500\
+        "Moon Phase" "$(get_moon_phase)"\
+        -i dialog-information-symbolic
+    } # }}}
+
+
+# *** Weather {{{2
 show_weather() {
+# Icons can be found at # /usr/share/icons/Yaru/scalable/
     notify-send -t 6000\
         "Weather in Aberdeen, MD" "$(weather)"\
         -i weather-app-symbolic
-    }
+    } # }}}
 
 
+# *** Date and Time {{{2
 date_and_time() {
     notify-send -t 3500\
         "Date and Time" "$(date '+%Y-%m-%d (%A) %H:%M')"\
         -i calendar-app-symbolic
-    }
+    } # }}}
 
 
+# *** SysInfo {{{2
 system_details() {
     notify-send\
         "System Status"\
         "$(fastfetch -c "$XDG_CONFIG_HOME"/fastfetch/plain.jsonc)"\
         -i dialog-information-symbolic
-    }
+    } # }}}
 
 
+# *** To Do List {{{2
 todo_list() {
     notify-send\
         "To Do"\
         "$(python ~/Source/t/t.py --task-dir "$XDG_DATA_HOME"/tasks --list tasks)"\
         -i checkbox-checked-symbolic
-    }
+    } # }}}
 
 
-display_wireless_info() {
+# *** Wireless {{{2
+wireless_info() {
     echo "Network SSID : $(iwgetid | awk -F '"' '{ print $2 }')"
     echo "Internal IP Address : $(hostname -I)"
     echo "External IP Address : $(curl -s https://ifconfig.co)"
@@ -83,14 +124,15 @@ display_wireless_info() {
 }
 
 
-wireless() {
+show_wireless_info() {
     notify-send\
         "Wireless"\
-        "$(display_wireless_info)"\
+        "$(wireless_info)"\
         -i network-wireless-symbolic
-    }
-## "$(awk 'NR==3 {printf("WiFi Signal Strength = %.0f%%\n",$3*10/7)}' /proc/net/wireless)"\
+    } # }}}
 
+
+# *** Help {{{2
 help_screen() {
     echo "usage: popup [OPTION]"
     echo "    -c    wireless connection info"
@@ -100,24 +142,26 @@ help_screen() {
     echo "    -w    weather"
     echo "    -t    todo list"
     echo ""
-}
+} # }}}
 # End functions }}}
 
 [[ $# -eq 0 ]] && ( help_screen ; exit 0 ; )
 
-while getopts "cwdsth" option; do
+while getopts "cdhmstw" option; do
     case $option in
-        c) wireless
-            exit;;
-        w) show_weather
+        c) show_wireless_info
             exit;;
         d) date_and_time
+            exit;;
+        h) help_screen
+            exit;;
+        m) show_moon_phase
             exit;;
         s) system_details
             exit;;
         t) todo_list
             exit;;
-        h) help_screen
+        w) show_weather
             exit;;
         *) # incorrect option
             echo "Error: Invalid option"
