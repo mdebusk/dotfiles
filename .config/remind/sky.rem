@@ -2,17 +2,51 @@
 # Filename   : sky.rem                                                        #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2024-02-22 22:55                                               #
+# Last edit  : 2024-02-23 01:26                                               #
 # Purpose    : Moon phases and sunrise/sunset file for remind                 #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
-# TODO       : N/A                                                            #
+# TODO       : Is there a better way to do the current moon phase?            #
 ###############################################################################
 
 
-# Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
-# include [getenv("XDG_CONFIG_HOME")]/remind/sky.rem
+# ** License {{{
+###############################################################################
+# This is free and unencumbered software released into the public domain.     #
+#                                                                             #
+# Anyone is free to copy, modify, publish, use, compile, sell, or             #
+# distribute this software, either in source code form or as a compiled       #
+# binary, for any purpose, commercial or non-commercial, and by any means.    #
+#                                                                             #
+# In jurisdictions that recognize copyright laws, the author or authors of    #
+# this software dedicate any and all copyright interest in the software to    #
+# the public domain. We make this dedication for the benefit of the public    #
+# at large and to the detriment of our heirs and successors. We intend        #
+# this dedication to be an overt act of relinquishment in perpetuity of       #
+# all present and future rights to this software under copyright law.         #
+#                                                                             #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,             #
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF          #
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.      #
+# IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER     #
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     #
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         #
+# DEALINGS IN THE SOFTWARE.                                                   #
+#                                                                             #
+# For more information, please refer to <http://unlicense.org/>               #
+###############################################################################
+# End license }}}
 
+
+# ** Usage notes {{{
+###############################################################################
+# Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:        #
+# include [getenv("XDG_CONFIG_HOME")]/remind/sky.rem                          #
+###############################################################################
+# End usage notes }}}
+
+
+# ** Dawn, sunrise, sunset, dusk {{{
 REM SPECIAL COLOR [col_violet] Astronomical Dawn : 🌌 [adawn()] today and [adawn(today()+1)] tomorrow%
 REM SPECIAL COLOR [col_red] Nautical Dawn     : 🌃 [dawn()] today and [dawn(today()+1)] tomorrow%
 REM SPECIAL COLOR [col_orange] Civil Dawn        : 🌆 [ndawn()] today and [ndawn(today()+1)] tomorrow%
@@ -21,11 +55,43 @@ REM SPECIAL COLOR [col_orange] Sunset            : 🌇 [sunset()] today and [su
 REM SPECIAL COLOR [col_red] Civil Dusk        : 🌆 [ndusk()] today and [ndusk(today()+1)] tomorrow%
 REM SPECIAL COLOR [col_violet] Nautical Dusk     : 🌃 [dusk()] today and [dusk(today()+1)] tomorrow%
 REM SPECIAL COLOR [col_blue] Astronomical Dusk : 🌌 [adusk()] today and [adusk(today()+1)] tomorrow%_
+# End sun }}}
 
+
+# ** Current moon phase {{{
+IF moonphase() == 0
+    REM SPECIAL COLOR [col_base3] Current Moon      : 🌑 New%_
+ENDIF
+IF moonphase() > 0 && moonphase() < 90
+    REM SPECIAL COLOR [col_base3] Current Moon      : 🌒 Waxing Crescent%_
+ENDIF
+IF moonphase() == 90
+    REM SPECIAL COLOR [col_base3] Current Moon      : 🌓 First Quarter%_
+ENDIF
+IF moonphase() > 90 && moonphase() < 180
+    REM SPECIAL COLOR [col_base3] Current Moon      : 🌔 Waxing Gibbous%_
+ENDIF
+IF moonphase() == 180
+    REM SPECIAL COLOR [col_base3] Current Moon      : 🌕 Full%_
+ENDIF
+IF moonphase() > 180 && moonphase() < 90
+    REM SPECIAL COLOR [col_base3] Current Moon      : 🌖 Waning Gibbous%_
+ENDIF
+IF moonphase() == 270
+    REM SPECIAL COLOR [col_base3] Current Moon      : 🌗 Last Quarter%_
+ENDIF
+IF moonphase() > 270 && moonphase() < 360
+    REM SPECIAL COLOR [col_base3] Current Moon      : 🌘 Waning Crescent%_
+ENDIF
+# End current moon phase }}}
+
+
+# ** Future moon phases {{{
 REM [moondate(0)] +60 SPECIAL COLOR [col_blue] New moon          : 🌚 [moondate(0)] (%b)
 REM [moondate(1)] +60 SPECIAL COLOR [col_base1] First Quarter     : 🌛 [moondate(1)] (%b)
 REM [moondate(2)] +60 SPECIAL COLOR [col_base2] Full moon         : 🌝 [moondate(2)] (%b)
 REM [moondate(3)] +60 SPECIAL COLOR [col_base1] Last Quarter      : 🌜 [moondate(3)] (%b)%_
+# End future moon phases }}}
 
 
 # ** Moon icons {{{
