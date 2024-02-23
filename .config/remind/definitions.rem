@@ -2,24 +2,26 @@
 # Filename   : definitions.rem                                                #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/)                        #
 # Created    : 1992                                                           #
-# Last edit  : 2022-10-19 13:32                                               #
+# Last edit  : 2024-02-23 17:40                                               #
 # Purpose    : Definitions for remind                                         #
 # Reference  : man remind                                                     #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
-# TODO       : I think maybe some of the entries are deprecated               #
+# TODO       : N/A                                                            #
 ###############################################################################
 
-# Notes {{{
+# ** Notes {{{
 ###############################################################################
 # Some examples provided by George M. Sipe <gsipe@pyratl.ga.pyramid.com>      #
 # Some edits by Michael DeBusk (https://gitlab.com/mdebusk/) for personal use #
 # This file is part of REMIND.                                                #
-# Copyright (C) 1992-2022 Dianne Skoll                                        #
+# Copyright (C) 1992-2024 Dianne Skoll                                        #
 ###############################################################################
 # End notes }}}
 
+# ** Prevent malicious RUN entries from running {{{
 RUN OFF
+# }}}
 
 # ** Ensure required version of remind is used {{{
 IF version() < "03.04.02"
@@ -30,9 +32,9 @@ ENDIF
 # End version check }}}
 
 # ** Location information {{{
-SET $Latitude  "39.5096"
-SET $Longitude "-76.1641"
-SET $Location  "Aberdeen, Harford, Maryland, United States"
+SET $Latitude  "39.4633"
+SET $Longitude "-76.1204"
+SET $Location  "Aberdeen, Harford, Maryland, USA"
 # End location }}}
 
 # ** Display directives {{{
@@ -40,75 +42,6 @@ SET $AddBlankLines 0
 SET $DateSep "-"
 SET $TimeSep ":"
 # End miscellaneous }}}
-
-# ** Colors {{{
-# Solarized (https://ethanschoonover.com/solarized/)
-SET col_base03 "0 43 54"
-SET col_base02 "7 54 66"
-SET col_base01 "88 110 117"
-SET col_base00 "101 123 131"
-SET col_base0 "131 148 150"
-SET col_base1 "147 161 161"
-SET col_base2 "238 232 213"
-SET col_base3 "253 246 227"
-SET col_yellow "181 137 0"
-SET col_orange "203 75 22"
-SET col_red "220 50 47"
-SET col_magenta "211 54 130"
-SET col_violet "108 113 196"
-SET col_blue "38 139 210"
-SET col_cyan "42 161 152"
-SET col_green "133 153 0"
-# End colors }}}
-
-# ** TODO: Are these deprecated? {{{
-# ** Symbolic constants for weekdays {{{2
-## SET Sunday    0
-## SET Monday    1
-## SET Tuesday   2
-## SET Wednesday 3
-## SET Thursday  4
-## SET Friday    5
-## SET Saturday  6
-##
-## SET Sun 0
-## SET Mon 1
-## SET Tue 2
-## SET Wed 3
-## SET Thu 4
-## SET Fri 5
-## SET Sat 6
-# End weekdays constants }}}
-
-# ** Symbolic constants for month names {{{2
-
-## SET Jan 1
-## SET Feb 2
-## SET Mar 3
-## SET Apr 4
-## SET May 5
-## SET Jun 6
-## SET Jul 7
-## SET Aug 8
-## SET Sep 9
-## SET Oct 10
-## SET Nov 11
-## SET Dec 12
-##
-## SET January   1
-## SET February  2
-## SET March     3
-## SET April     4
-## SET May       5
-## SET June      6
-## SET July      7
-## SET August    8
-## SET September 9
-## SET October   10
-## SET November  11
-## SET December  12
-# End month constants }}}
-# End maybe deprecated constants }}}
 
 # ** Symbolic constants and functions for "pasting" {{{
 
@@ -121,11 +54,6 @@ SET  Week_3        15
 SET  Week_4        22
 FSET _last(mo)     "1 " + MON((mo%12)+1) + " --7"
 # End "pasting" }}}
-
-# ** Function to provide SCANFROM dates {{{
-# TODO: Might be deprecated
-## FSET _back(days)    TODAY()-days
-# End scanfrom dates function }}}
 
 # ** Function which removes a single leading zero from a string {{{
 FSET _no_lz(s) IIF(SUBSTR(s, 1, 1)=="0", SUBSTR(s, 2), s)
@@ -140,28 +68,16 @@ FSET _dark_len(date) 1440-_light_len(date)
 # or number of months since a given month and year
 FSET _yr_num(yr)        ORD($Ty - yr)
 FSET _mo_num(mo, yr)    ORD(12 * ($Ty - yr) + $Tm - mo)
-
-# Here's an example of how to use them
-# REM 1 Nov ++12 MSG %"Dean's [_yr_num(1984)] birthday%" is %b.
-# REM 1 MSG Dean's [_mo_num(11, 1984)] 'monthly' anniversary
 # }}}
 
-# ** Postscript Stuff 1 {{{
-#
+# ** Postscript Stuff {{{
 # This portion of the file contains some cute examples of the new
 # PS-type reminders.  You need a PostScript printer or viewer to
 # appreciate these.  To use them, pipe the output of remind -p into the
 # rem2ps program.  More examples are in the PSSTUFF2 section, below.
 
 # The following reminder will shade Saturday and Sunday
-REM Sat Sun SPECIAL SHADE [col_base02]
-# }}}
-
-# ** Postscript Stuff 2 {{{
-#
-# Since the SHADE special blots out any previous PostScript
-# reminders for a date, these examples need to follow the US Holidays
-# section, which uses SHADE.
+REM Sat Sun SPECIAL SHADE 220
 
 # Fill in the phases of the moon on the PostScript calendar
 [moondate(0)] SPECIAL MOON 0
