@@ -2,35 +2,74 @@
 # Filename   : sky.rem                                                        #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-10-19 00:15                                               #
-# Purpose    : Moon phases file for remind                                    #
+# Last edit  : 2024-02-22 22:55                                               #
+# Purpose    : Moon phases and sunrise/sunset file for remind                 #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
-# To do      : N/A                                                            #
+# TODO       : N/A                                                            #
 ###############################################################################
 
 
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
 # include [getenv("XDG_CONFIG_HOME")]/remind/sky.rem
 
-SPECIAL COLOR [col_yellow] Sunrise       : 🌅 [sunrise()] today and [sunrise(today()+1)] tomorrow
-SPECIAL COLOR [col_orange] Sunset        : 🌇 [sunset()] today and [sunset(today()+1)] tomorrow%_
-REM [moondate(0)] +60 SPECIAL COLOR [col_blue] New moon      : 🌚 [moondate(0)] (%b)
-REM [moondate(1)] +60 SPECIAL COLOR [col_base1] First Quarter : 🌛 [moondate(1)] (%b)
-REM [moondate(2)] +60 SPECIAL COLOR [col_base2] Full moon     : 🌝 [moondate(2)] (%b)
-REM [moondate(3)] +60 SPECIAL COLOR [col_base1] Last Quarter  : 🌜 [moondate(3)] (%b)%_
+REM SPECIAL COLOR [col_violet] Astronomical Dawn : 🌌 [adawn()] today and [adawn(today()+1)] tomorrow%
+REM SPECIAL COLOR [col_red] Nautical Dawn     : 🌃 [dawn()] today and [dawn(today()+1)] tomorrow%
+REM SPECIAL COLOR [col_orange] Civil Dawn        : 🌆 [ndawn()] today and [ndawn(today()+1)] tomorrow%
+REM SPECIAL COLOR [col_yellow] Sunrise           : 🌅 [sunrise()] today and [sunrise(today()+1)] tomorrow%
+REM SPECIAL COLOR [col_orange] Sunset            : 🌇 [sunset()] today and [sunset(today()+1)] tomorrow%
+REM SPECIAL COLOR [col_red] Civil Dusk        : 🌆 [ndusk()] today and [ndusk(today()+1)] tomorrow%
+REM SPECIAL COLOR [col_violet] Nautical Dusk     : 🌃 [dusk()] today and [dusk(today()+1)] tomorrow%
+REM SPECIAL COLOR [col_blue] Astronomical Dusk : 🌌 [adusk()] today and [adusk(today()+1)] tomorrow%_
 
-# Moon icons {{{
-# New moon: 🌑
-# New moon face: 🌚
-# Waxing crescent: 🌒
-# First quarter: 🌓
-# First quarter moon face: 🌛
-# Waxing gibbous: 🌔
-# Full moon: 🌕
-# Full moon face: 🌝
-# Waning gibbous: 🌖
-# Last quarter: 🌗
-# Last quarter moon face: 🌜
-# Waning crescent: 🌘
+REM [moondate(0)] +60 SPECIAL COLOR [col_blue] New moon          : 🌚 [moondate(0)] (%b)
+REM [moondate(1)] +60 SPECIAL COLOR [col_base1] First Quarter     : 🌛 [moondate(1)] (%b)
+REM [moondate(2)] +60 SPECIAL COLOR [col_base2] Full moon         : 🌝 [moondate(2)] (%b)
+REM [moondate(3)] +60 SPECIAL COLOR [col_base1] Last Quarter      : 🌜 [moondate(3)] (%b)%_
+
+
+# ** Moon icons {{{
+# New moon                : 🌑
+# New moon face           : 🌚
+# Waxing crescent         : 🌒
+# First quarter           : 🌓
+# First quarter moon face : 🌛
+# Waxing gibbous          : 🌔
+# Full moon               : 🌕
+# Full moon face          : 🌝
+# Waning gibbous          : 🌖
+# Last quarter            : 🌗
+# Last quarter moon face  : 🌜
+# Waning crescent         : 🌘
 # End moon icons }}}
+
+
+# ** Sun icons {{{
+# Smiling face with sunglasses : 😎
+# Sun behind cloud             : ⛅
+# Sun behind large cloud       : 🌥️
+# Sun behind rain cloud        : 🌦️
+# Sun behind small cloud       : 🌤️
+# Sun with face                : 🌞
+# Sun                          : ☀️
+# Sun                          : ☉
+# Sunrise                      : 🌅
+# Sunset over mountains        : 🌄
+# Sunset                       : 🌇
+# White sun with rays          : ☼
+# Whote sun with rays          : ☼
+# End sun }}}
+
+
+# ** Other icons {{{
+# Cityscape at dusk   : 🌆
+# Milky Way           : 🌌
+# Night with stars    : 🌃
+# Rainbow             : 🌈
+# Five-point star     : ⭐
+# Glowing star        : 🌟
+# Shooting star       : 🌠
+# Eight-point star    : ✴️
+# Black star          : ★
+# Outlined white star : ⚝
+# End others }}}
