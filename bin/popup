@@ -3,9 +3,8 @@
 # Filename   : popup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-22 20:19                                               #
-# Last edit  : 2024-02-19 12:28                                               #
+# Last edit  : 2024-02-24 16:43                                               #
 # Purpose    : Display information in notifications                           #
-# Reference  : N/A                                                            #
 # Depends    : date, fastfetch, notify-send, bash, weather                    #
 # Arguments  : -c -d -h -s -w -t                                              #
 # Known bugs : NKA                                                            #
@@ -13,6 +12,27 @@
 #            : combination in i3, but it might be nice to have it             #
 #            : show a menu if invoked from the command line                   #
 ###############################################################################
+
+
+# ** Notes {{{
+###############################################################################
+# The part of this program that displays the phase of th moon wants           #
+# an icon set with the icons named exactly after each moon phase. I           #
+# have these icons in $XDG_DATA_HOME/icons/Moon. The icons are named as       #
+# follows:                                                                    #
+#                                                                             #
+# - "First Quarter.png"                                                       #
+# - "Full Moon.png"                                                           #
+# - "Last Quarter.png"                                                        #
+# - "New Moon.png"                                                            #
+# - "Undetermined.png"                                                        #
+# - "Waning Crescent.png"                                                     #
+# - "Waning Gibbous.png"                                                      #
+# - "Waxing Crescent.png"                                                     #
+# - "Waxing Gibbous.png"                                                      #
+###############################################################################
+# End notes }}}
+
 
 # ** License {{{
 ###############################################################################
@@ -45,8 +65,6 @@
 # ** Functions {{{1
 # *** Moon {{{2
 get_moon_phase() {
-    icon_dir="$XDG_DATA_HOME/icons/Moon/"
-
     # Calculate moon phase
     local lunar_month=2551443
     local day_length=86400
@@ -56,26 +74,28 @@ get_moon_phase() {
     local phase_number=$((((phase / day_length) + 1)*100000))
 
     # Multiply by 100000 so that we can do integer comparison in bash.
-    if   [ $phase_number -lt 184566 ];   then phase_icon="New Moon"
-    elif [ $phase_number -lt 553699 ];   then phase_icon="Waxing Crescent Moon"
-    elif [ $phase_number -lt 922831 ];   then phase_icon="First Quarter Moon"
-    elif [ $phase_number -lt 1291963 ];  then phase_icon="Waxing Gibbous Moon"
-    elif [ $phase_number -lt 1661096 ];  then phase_icon="Full Moon"
-    elif [ $phase_number -lt 2030228 ];  then phase_icon="Waning Gibbous Moon"
-    elif [ $phase_number -lt 2399361 ];  then phase_icon="Last Quarter Moon"
-    elif [ $phase_number -lt 2768493 ];  then phase_icon="Waning Crescent Moon"
+    if   [ $phase_number -lt 184566 ];  then phase="New Moon"
+    elif [ $phase_number -lt 553699 ];  then phase="Waxing Crescent"
+    elif [ $phase_number -lt 922831 ];  then phase="First Quarter"
+    elif [ $phase_number -lt 1291963 ]; then phase="Waxing Gibbous"
+    elif [ $phase_number -lt 1661096 ]; then phase="Full Moon"
+    elif [ $phase_number -lt 2030228 ]; then phase="Waning Gibbous"
+    elif [ $phase_number -lt 2399361 ]; then phase="Last Quarter"
+    elif [ $phase_number -lt 2768493 ]; then phase="Waning Crescent"
     else
-      phase_icon="Undetermined"
+        phase="Undetermined"
     fi
 
     # Echo the current Moon Phase Icon, name, and day number
-    echo $phase_icon
+    echo $phase
 }
 
 show_moon_phase() {
+    phase="$(get_moon_phase)"
+    icn=$XDG_DATA_HOME/icons/Moon/$phase.png
     notify-send -t 3500\
-        "Moon Phase" "$(get_moon_phase)"\
-        -i dialog-information-symbolic
+        "Moon Phase" "$phase"\
+        -i "$icn"
     } # }}}
 
 
@@ -144,6 +164,7 @@ help_screen() {
     echo ""
 } # }}}
 # End functions }}}
+
 
 [[ $# -eq 0 ]] && ( help_screen ; exit 0 ; )
 
