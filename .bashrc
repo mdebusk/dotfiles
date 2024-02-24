@@ -2,15 +2,31 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2024-02-13 03:02                                               #
+# Last edit  : 2024-02-24 12:56                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash, readlink, cut, cat, lesspipe, dircolors, test            #
 # Known bugs : NKA                                                            #
 # TODO       : N/A                                                            #
 ###############################################################################
 
+# ** Odd stuff {{{
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
+
+# enable color support of ls
+if [ "$TERM" != "dumb" ]; then
+    d="$XDG_CONFIG_HOME"/dircolors
+    test -r $d && eval "$(dircolors $d)"
+fi
+# End odd stuff }}}
+
 
 # ** Environment Variables {{{
 
@@ -40,7 +56,11 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 # News server, for SLRN
 export NNTPSERVER='news.eternal-september.org'
 
+# Today I found out you can use vim as a man pager
+export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
+
 # End environment variables }}}
+
 
 # ** History {{{
 export HISTFILE="$XDG_STATE_HOME"/bash/history
@@ -55,6 +75,7 @@ shopt -s histappend                 # merge session histories
 # Ignore duplicates and commands starting with an empty space; also, delete duplicates
 export HISTCONTROL=ignoreboth:erasedups
 # End history }}}
+
 
 # ** Prompt {{{
 # set variable identifying the chroot you work in (used in the prompt below)
@@ -78,18 +99,6 @@ xterm*|rxvt*)
 esac
 # End prompt }}}
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
-
-# enable color support of ls
-if [ "$TERM" != "dumb" ]; then
-    d="$XDG_CONFIG_HOME"/dircolors
-    test -r $d && eval "$(dircolors $d)"
-fi
 
 # ** Sourcing of external files {{{
 
@@ -109,6 +118,7 @@ fi
 # Add completions for Alacritty
 [ -f $HOME/Source/alacritty/extra/completions/alacritty.bash ] && . $HOME/Source/alacritty/extra/completions/alacritty.bash
 # End sourcing of external files }}}
+
 
 # Which terminal emulator am I using?
 # https://askubuntu.com/questions/210182/how-to-check-which-terminal-emulator-is-being-currently-used/1361088#1361088
