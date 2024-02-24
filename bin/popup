@@ -16,7 +16,7 @@
 
 # ** Notes {{{
 ###############################################################################
-# The part of this program that displays the phase of th moon wants           #
+# The part of this program that displays the phase of the moon wants          #
 # an icon set with the icons named exactly after each moon phase. I           #
 # have these icons in $XDG_DATA_HOME/icons/Moon. The icons are named as       #
 # follows:                                                                    #
@@ -110,8 +110,8 @@ show_weather() {
 
 # *** Date and Time {{{2
 date_and_time() {
-    notify-send -t 3500\
-        "Date and Time" "$(date '+%Y-%m-%d (%A) %H:%M')"\
+    notify-send -t 5000\
+        "Date, Day, and Time" "$(date '+%F (%A) %R')"\
         -i calendar-app-symbolic
     } # }}}
 
@@ -139,7 +139,7 @@ wireless_info() {
     echo "Network SSID : $(iwgetid | awk -F '"' '{ print $2 }')"
     echo "Internal IP Address : $(hostname -I)"
     echo "External IP Address : $(curl -s https://ifconfig.co)"
-    awk 'NR==3 {printf("WiFi Signal Strength : %.0f%%\n",$3*10/7)}'\
+    awk 'NR==3 {printf("WiFi Signal Strength : %.0f%%\n",$3*10/7)}'
         /proc/net/wireless
 }
 
@@ -154,14 +154,17 @@ show_wireless_info() {
 
 # *** Help {{{2
 help_screen() {
-    echo "usage: popup [OPTION]"
-    echo "    -c    wireless connection info"
-    echo "    -d    date and time"
-    echo "    -h    this help screen"
-    echo "    -s    system information"
-    echo "    -w    weather"
-    echo "    -t    todo list"
-    echo ""
+    cat <<- EOF
+	usage: popup [OPTION]
+	    -c    wireless connection info
+	    -d    date and time
+	    -h    this help screen
+	    -m    current phase of the moon
+	    -s    system information
+	    -w    weather
+	    -t    todo list
+	
+	EOF
 } # }}}
 # End functions }}}
 
