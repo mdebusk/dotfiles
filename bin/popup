@@ -139,7 +139,7 @@ wireless_info() {
     echo "Network SSID : $(iwgetid | awk -F '"' '{ print $2 }')"
     echo "Internal IP Address : $(hostname -I)"
     echo "External IP Address : $(curl -s https://ifconfig.co)"
-    awk 'NR==3 {printf("WiFi Signal Strength : %.0f%%\n",$3*10/7)}'
+    awk 'NR==3 {printf("WiFi Signal Strength : %.0f%%\n",$3*10/7)}'\
         /proc/net/wireless
 }
 
