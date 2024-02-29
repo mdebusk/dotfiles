@@ -4,14 +4,15 @@
 # Filename   : backup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk)                     #
 # Created    : Unknown                                                         #
-# Last edit  : 2022-11-13 18:34                                                #
+# Last edit  : 2024-02-28 22:11                                                #
 # Purpose    : backing up laptop hard drive using excludes file                #
 # Depends    : rsync, xdg-user-dir, date, veracrypt, cvlc                      #
 # Arguments  : none currently                                                  #
 # TODO       : Consider adding command-line parameters for help, media, etc.   #
+# TODO       : Needs refactoring to make it use functions, etc.                #
 ################################################################################
 
-# **License {{{
+# ** License {{{
 ###############################################################################
 # This is free and unencumbered software released into the public domain.     #
 #                                                                             #
@@ -38,7 +39,8 @@
 ###############################################################################
 # End license }}}
 
-# Change these variables to suit your system {{{
+
+# ** Change these variables to suit your system {{{
 backup_drive_name="My Passport"
 veracrypt_container="g75vw.vc"
 container_mountpoint="/media/veracrypt1"
@@ -52,6 +54,8 @@ error_alert="$HOME/Documents/Sounds/backup_failed.mp3"
 okay_alert="$HOME/Documents/Sounds/backup_succeeded.mp3"
 # End variables }}}
 
+
+# ** Check for important stuff {{{
 # Dependencies check
 for i in $dependencies; do
     command -v "$i" > /dev/null 2>&1 ||\
@@ -64,8 +68,10 @@ if [ ! -f "$target" ]; then
         "\nExternal backup drive not connected or not mounted. Exiting...\n"
     exit 1
 fi
+# End checks }}}
 
-# Mount veracrypt container file and check for success
+
+# ** Mount veracrypt container file and check for success {{{
 echo -e "\nExternal backup drive is connected. Mounting veracrypt volume...\n"
 veracrypt -t -k "" --pim=0 --protect-hidden=no "$target" "$container_mountpoint"
 
@@ -75,8 +81,10 @@ if [ ! -d "$container_mountpoint" ]; then
 fi
 
 echo -e "\nVeracrypt volume mounted successfully. Beginning backup...\n"
+# End mount veracrypt container }}}
 
-# Back up desired directories {{{
+
+# ** Back up desired directories {{{
 # Back up /home
 rsync -aPv --delete --log-file="$logfile" --exclude-from="$exclude_from"\
     /home/"$USER"/ "$container_mountpoint"/home/"$USER"/
@@ -90,7 +98,8 @@ sudo rsync -aPv --delete --log-file="$logfile" \
     /opt/ "$container_mountpoint"/opt/
 # End back up desired directories }}}
 
-# Let user know if something went wrong with backup
+
+# ** Let user know if something went wrong with backup {{{
 if [ $? -gt 0 ]; then
     notify-send -u critical\
         "Backup" "Something went wrong.\nInspect log for details."
@@ -101,11 +110,14 @@ if [ $? -gt 0 ]; then
     echo -e "See log $logfile for details. Exiting...\n"
     exit 1
 fi
+# End error reorting }}}
 
-# Let me know when it's done
+
+# ** Let me know when it's done {{{
 notify-send "Backup" "Backup completed successfully"
 cvlc --play-and-exit "$okay_alert"
 veracrypt -d && echo -e "\nVeracrypt volume unmounted."
 
 umount "$backup_drive" && echo -e "\nExternal drive unmounted."
 exit 0
+# End done }}}
