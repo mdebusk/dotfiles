@@ -1,0 +1,52 @@
+###############################################################################
+# Filename   : onedark_colors.rem                                             #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : 2024-03-01 10:00                                               #
+# Last edit  : 2024-03-01 10:25                                               #
+# Purpose    : OneDark color scheme for remind                                #
+# Reference  : https://github.com/joshdick/onedark.vim                        #
+# Depends    : remind                                                         #
+# Known bugs : NKA                                                            #
+# TODO       : N/A                                                            #
+###############################################################################
+
+
+# ** License {{{
+###############################################################################
+#The MIT License (MIT)                                                        #
+#                                                                             #
+#Copyright (c) 2015 Joshua Dick                                               #
+#                                                                             #
+#Permission is hereby granted, free of charge, to any person obtaining a copy #
+#of this software and associated documentation files (the "Software"), to deal#
+#in the Software without restriction, including without limitation the rights #
+#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell    #
+#copies of the Software, and to permit persons to whom the Software is        #
+#furnished to do so, subject to the following conditions:                     #
+#                                                                             #
+#The above copyright notice and this permission notice shall be included in   #
+#all copies or substantial portions of the Software.                          #
+#                                                                             #
+#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR   #
+#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,     #
+#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE  #
+#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER       #
+#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,#
+#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN    #
+#THE SOFTWARE.                                                                #
+###############################################################################
+# End license }}}
+
+
+SET col_black        "40 44 52"
+SET col_white        "171 178 191"
+SET col_light_red    "224 108 117"
+SET col_dark_red     "190 80 70"
+SET col_green        "152 195 121"
+SET col_light_yellow "229 192 123"
+SET col_dark_yellow  "209 154 102"
+SET col_blue         "97 175 239"
+SET col_magenta      "198 120 221"
+SET col_cyan         "86 182 194"
+SET col_gutter_grey  "76 82 99"
+SET col_comment_grey "92 99 112"
