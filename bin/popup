@@ -3,7 +3,7 @@
 # Filename   : popup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-22 20:19                                               #
-# Last edit  : 2024-03-02 14:02                                               #
+# Last edit  : 2024-03-02 17:57                                               #
 # Purpose    : Hoping to replace a status bar, for the most part              #
 # Depends    : date, fastfetch, notify-send, bash, weather, on_ac_power,      #
 #            : iwgetid, hostname                                              #
@@ -66,11 +66,11 @@
 # ** Functions {{{1
 # *** Battery status {{{
 battery_status() {
-    power_source=$([[ on_ac_power ]] && echo "On A/C Power" || echo "On Battery Power")
+    power_source=$(on_ac_power ; [[ $? -eq 0 ]] && echo "On A/C Power" || echo "On Battery Power")
     bat_stat=$(echo $(</sys/class/power_supply/BAT0/capacity))
     notify-send -t 3500\
         "$power_source" "Battery level: $bat_stat%"\
-        -i battery-symbolic
+        -i preferences-system-power-symbolic
 }
 # End battery }}}
 
