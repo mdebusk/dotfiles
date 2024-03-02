@@ -3,10 +3,11 @@
 # Filename   : popup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-22 20:19                                               #
-# Last edit  : 2024-03-02 13:50                                               #
-# Purpose    : Display information in notifications                           #
-# Depends    : date, fastfetch, notify-send, bash, weather                    #
-# Arguments  : -c -d -h -s -w -t                                              #
+# Last edit  : 2024-03-02 14:02                                               #
+# Purpose    : Hoping to replace a status bar, for the most part              #
+# Depends    : date, fastfetch, notify-send, bash, weather, on_ac_power,      #
+#            : iwgetid, hostname                                              #
+# Arguments  : -b -c -d -h -s -w -t                                           #
 # Known bugs : NKA                                                            #
 # TODO       : This tool is meant to be invoked from a keyboard               #
 #            : combination in i3, but it might be nice to have it             #
