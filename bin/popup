@@ -3,7 +3,7 @@
 # Filename   : popup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-22 20:19                                               #
-# Last edit  : 2024-02-24 16:43                                               #
+# Last edit  : 2024-03-02 13:50                                               #
 # Purpose    : Display information in notifications                           #
 # Depends    : date, fastfetch, notify-send, bash, weather                    #
 # Arguments  : -c -d -h -s -w -t                                              #
@@ -63,6 +63,17 @@
 
 
 # ** Functions {{{1
+# *** Battery status {{{
+battery_status() {
+    power_source=$([[ on_ac_power ]] && echo "On A/C Power" || echo "On Battery Power")
+    bat_stat=$(echo $(</sys/class/power_supply/BAT0/capacity))
+    notify-send -t 3500\
+        "$power_source" "Battery level: $bat_stat%"\
+        -i battery-symbolic
+}
+# End battery }}}
+
+
 # *** Moon {{{2
 get_moon_phase() {
     # Calculate moon phase
@@ -156,6 +167,7 @@ show_wireless_info() {
 help_screen() {
     cat <<- EOF
 	usage: popup [OPTION]
+	    -b    battery status
 	    -c    wireless connection info
 	    -d    date and time
 	    -h    this help screen
@@ -171,8 +183,10 @@ help_screen() {
 
 [[ $# -eq 0 ]] && ( help_screen ; exit 0 ; )
 
-while getopts "cdhmstw" option; do
+while getopts "bcdhmstw" option; do
     case $option in
+        b) battery_status
+            exit ;;
         c) show_wireless_info
             exit;;
         d) date_and_time
