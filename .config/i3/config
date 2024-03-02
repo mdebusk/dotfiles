@@ -2,7 +2,7 @@
 # Filename   : config                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2024-02-08 16:17                                               #
+# Last edit  : 2024-03-02 02:58                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3 version 4.20+                                               #
@@ -332,7 +332,7 @@ exec --no-startup-id /opt/Pcloud/pcloud start
 exec --no-startup-id nm-applet
 
 # Dropdown terminal
-exec --no-startup-id $terminal_program -t dropdown
+exec --no-startup-id $terminal_program -T dropdown -o window.opacity=1.0
 
 # clipboard manager
 exec --no-startup-id $clipboard_manager
