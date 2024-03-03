@@ -2,7 +2,7 @@
 # Filename   : bash_aliases                                                   #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-07-04 13:16                                               #
-# Last edit  : 2024-02-23 02:58                                               #
+# Last edit  : 2024-03-03 13:24                                               #
 # Purpose    : aliases for interactive bash shell, sourced from ~/.bashrc     #
 # Depends    : bash, other programs as listed                                 #
 # Known bugs : NKA                                                            #
@@ -36,6 +36,7 @@
 ###############################################################################
 # End license }}}
 
+
 # ** Sane defaults for potentially-destructive commands {{{
 alias chgrp='chgrp --preserve-root'
 alias chmod='chmod --preserve-root'
@@ -46,15 +47,18 @@ alias mv='mv -i'
 alias rm='rm -i'
 # End sane defaults }}}
 
+
 # ** Other useful defaults {{{
 alias df="df -Tha --total"
 alias free="free -hltw"
+alias grep='grep --color=auto'
 alias ls='ls -hlpv --color=auto --group-directories-first --time-style=long-iso'
+alias nvlc='nvlc --browse-dir ~/Music' # NCurses version of VLC
 alias ping="ping -c 3"
 alias wget="wget -c"
-alias grep='grep --color=auto'
-alias nvlc='nvlc --browse-dir ~/Music' # Start VLC from the command line
+alias xclip='xclip -sel clip'
 # End other useful defaults }}}
+
 
 # ** Help programs use the XDG Base Directory standard {{{
 alias abook='abook --config "$XDG_CONFIG_HOME"/abook/abookrc --datafile "$XDG_DATA_HOME"/abook/addressbook'
@@ -67,36 +71,37 @@ alias t='python "$HOME"/Source/t/t.py --task-dir "$XDG_DATA_HOME"/tasks --list t
 alias tkremind='tkremind "$XDG_CONFIG_HOME"/remind/reminders.rem'
 # End XDG Base Directory Standard }}}
 
+
 # ** New "commands" {{{
-# Show hidden files in directory listing
-alias la='ls -Ahlpv --color=auto --group-directories-first --time-style=long-iso'
-
-# Use vim as a pager with syntax highlighting
-alias vless='/usr/local/share/vim/vim91/macros/less.sh'
-
-# Password generator
-alias pwgen='echo -e "\n$(tr -dc A-Za-z0-9_ < /dev/urandom | head -c 32 | xargs)\n"'
-
-# Use wget to mirror a Web site
-alias mirror='wget --mirror --convert-links --html-extension --wait=2 -o log'
-
-# Find zombie processes
-alias zombie='ps axo stat,ppid,pid,comm | grep -w defunct'
-
-# Start Joplin terminal version
-alias joplincli='~/bin/Joplin/bin/joplin'
-
-# What are my external and internal IP addresses?
-alias ips='echo "External IP: $(curl -s https://ifconfig.co)" ; echo "Internal IP: $(hostname -I)"'
-
-# Diary
-alias dz='pushd ~/Documents && echo -e "\n## `date -Is` {{{\n\n}}}" >> diary.md && vim "+ normal Gk" +startinsert diary.md && popd'
 
 # alias for bare git repo use (dotfile repo)
 # https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+# Diary
+alias dz='pushd ~/Documents && echo -e "\n## `date -Is` {{{\n\n}}}" >> diary.md && vim "+ normal Gk" +startinsert diary.md && popd'
+
+# What are my external and internal IP addresses?
+alias ips='echo "External IP: $(curl -s https://ifconfig.co)" ; echo "Internal IP: $(hostname -I)"'
+
+# Start Joplin terminal version
+alias joplincli='~/bin/Joplin/bin/joplin'
+
+# Show hidden files in directory listing
+alias la='ls -Ahlpv --color=auto --group-directories-first --time-style=long-iso'
+
+# Use wget to mirror a Web site
+alias mirror='wget --mirror --convert-links --html-extension --wait=2 -o log'
+
 # Emulates MS-DOS "pause" command
 alias pause='echo -n "Press any key to continue... " && read -n 1 -s && echo'
 
+# Password generator
+alias pwgen='echo -e "\n$(tr -dc A-Za-z0-9_ < /dev/urandom | head -c 32 | xargs)\n"'
+
+# Use vim as a pager with syntax highlighting
+alias vless='/usr/local/share/vim/vim91/macros/less.sh'
+
+# Find zombie processes
+alias zombie='ps axo stat,ppid,pid,comm | grep -w defunct'
 # End new "commands" }}}
