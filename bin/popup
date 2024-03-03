@@ -9,9 +9,7 @@
 #            : iwgetid, hostname                                              #
 # Arguments  : -b -c -d -h -s -w -t                                           #
 # Known bugs : NKA                                                            #
-# TODO       : This tool is meant to be invoked from a keyboard               #
-#            : combination in i3, but it might be nice to have it             #
-#            : show a menu if invoked from the command line                   #
+# TODO       : Consider making the battery icon reflect remaining percentage  #
 ###############################################################################
 
 
@@ -66,11 +64,14 @@
 # ** Functions {{{1
 # *** Battery status {{{
 battery_status() {
-    power_source=$(on_ac_power ; [[ $? -eq 0 ]] && echo "On A/C Power" || echo "On Battery Power")
+    power_source="On Battery Power"
+    icn=battery-symbolic
+    on_ac_power
+    [[ $? -eq 0 ]] && { power_source="On A/C Power" ; icn=preferences-system-power-symbolic ; }
     bat_stat=$(echo $(</sys/class/power_supply/BAT0/capacity))
     notify-send -t 3500\
         "$power_source" "Battery level: $bat_stat%"\
-        -i preferences-system-power-symbolic
+        -i $icn
 }
 # End battery }}}
 
