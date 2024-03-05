@@ -3,7 +3,7 @@
 # Filename   : popup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-22 20:19                                               #
-# Last edit  : 2024-03-04 18:42                                               #
+# Last edit  : 2024-03-05 18:08                                               #
 # Purpose    : Hoping to replace a status bar, for the most part              #
 # Depends    : date, fastfetch, notify-send, bash, weather, on_ac_power,      #
 #            : iwgetid, hostname                                              #
@@ -161,7 +161,12 @@ todo_list() {
 # Also, icon for wired network connection us named network-wired-symbolic
 # I dont have access to a wired connection right now to test.
 wireless_info() {
-    echo "Network SSID : $(iwgetid | awk -F '"' '{ print $2 }')"
+    # Get network SSID and, if empty, return an error message
+    ssid=$(iwgetid | awk -F '"' '{ print $2 }')
+
+    # If SSID is not empty, give the desired info
+    [[ -z $ssid ]] && { echo "Wireless network is disconnected"; return; }
+    echo "Network SSID : $ssid"
     echo "Internal IP Address : $(hostname -I)"
     echo "External IP Address : $(curl -s https://ifconfig.co)"
     awk 'NR==3 {printf("WiFi Signal Strength : %.0f%%\n",$3*10/7)}'\
