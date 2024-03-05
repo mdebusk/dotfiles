@@ -3,13 +3,15 @@
 # Filename   : popup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-22 20:19                                               #
-# Last edit  : 2024-03-02 17:57                                               #
+# Last edit  : 2024-03-04 18:42                                               #
 # Purpose    : Hoping to replace a status bar, for the most part              #
 # Depends    : date, fastfetch, notify-send, bash, weather, on_ac_power,      #
 #            : iwgetid, hostname                                              #
 # Arguments  : -b -c -d -h -s -w -t                                           #
 # Known bugs : NKA                                                            #
 # TODO       : Consider making the battery icon reflect remaining percentage  #
+# TODO       : When I get a wired connection, Change "Wireless" to "Network"  #
+#            : I'll need a wired connection to test                           #
 ###############################################################################
 
 
@@ -141,13 +143,23 @@ system_details() {
 # *** To Do List {{{2
 todo_list() {
     notify-send\
-        "To Do"\
+        "To-Do List:"\
         "$(python ~/Source/t/t.py --task-dir "$XDG_DATA_HOME"/tasks --list tasks)"\
         -i checkbox-checked-symbolic
     } # }}}
 
 
 # *** Wireless {{{2
+# I might need this later. It shows whether a connection is wired or wireless.
+# See comments on this StackExchange question:
+# https://unix.stackexchange.com/questions/260235/command-to-detect-if-internet-connection-is-wired-or-wireless
+# ip route get 8.8.8.8\
+#     | grep -Po 'dev \K\w+'\
+#     | grep -qFf - /proc/net/wireless\
+#     && echo wireless\
+#     || echo wired
+# Also, icon for wired network connection us named network-wired-symbolic
+# I dont have access to a wired connection right now to test.
 wireless_info() {
     echo "Network SSID : $(iwgetid | awk -F '"' '{ print $2 }')"
     echo "Internal IP Address : $(hostname -I)"
