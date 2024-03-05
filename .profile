@@ -2,7 +2,7 @@
 # Filename   : .profile                                                       #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2024-02-04 17:07                                               #
+# Last edit  : 2024-03-05 00:35                                               #
 # Purpose    : Sets environment variables                                     #
 ###############################################################################
 
@@ -52,6 +52,7 @@ export CARGO_HOME=$XDG_DATA_HOME/cargo
 export CHROMIUM_BSU_SCORE="$XDG_DATA_HOME"/chromium_bsu/
 export CHROMIUM_BSU_DATA="$XDG_DATA_HOME"/chromium_bsu/
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/.nv
+export DOTREMINDERS="$XDG_CONFIG_HOME/remind/reminders.rem"
 export DVDCSS_CACHE=$XDG_DATA_HOME/dvdcss
 export GPODDER_DOWNLOAD_DIR=$HOME/Podcasts/
 export GPODDER_HOME=$XDG_CONFIG_HOME/gpodder/
