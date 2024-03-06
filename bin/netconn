@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+###############################################################################
+# Filename   : netconn                                                        #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : 2024-03-05 18:15                                               #
+# Last edit  : 2024-03-05 21:32                                               #
+# Purpose    : Connect to, or disconnect from, a network using rofi/dmenu     #
+# Reference  : Inspired by https://github.com/IanLeCorbeau/dmenu-scripts      #
+# Depends    : nmcli, ping, rofi or dmenu, bash                               #
+# Arguments  : None                                                           #
+# Known bugs : NKA                                                            #
+# TODO       : N/A                                                            #
+###############################################################################
+
+# ** License {{{
+###############################################################################
+# This is free and unencumbered software released into the public domain.     #
+#                                                                             #
+# Anyone is free to copy, modify, publish, use, compile, sell, or             #
+# distribute this software, either in source code form or as a compiled       #
+# binary, for any purpose, commercial or non-commercial, and by any means.    #
+#                                                                             #
+# In jurisdictions that recognize copyright laws, the author or authors of    #
+# this software dedicate any and all copyright interest in the software to    #
+# the public domain. We make this dedication for the benefit of the public    #
+# at large and to the detriment of our heirs and successors. We intend        #
+# this dedication to be an overt act of relinquishment in perpetuity of       #
+# all present and future rights to this software under copyright law.         #
+#                                                                             #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,             #
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF          #
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.      #
+# IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER     #
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     #
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         #
+# DEALINGS IN THE SOFTWARE.                                                   #
+#                                                                             #
+# For more information, please refer to <http://unlicense.org/>               #
+###############################################################################
+# End license }}}
+
+PROG="rofi -dmenu -p"
+
+# ** Main {{{
+main() {
+    notify-send -t 1500 "Testing Network Connection..."\
+        & /usr/bin/ping -c 1 8.8.8.8 2>&1 > /dev/null
+    [[ $? -eq 0 ]] && disconnect || connect
+} # }}}
+
+
+# ** Connect if not connected {{{
+connect() {
+    nmcli con up id "$(nmcli -t -f name c\
+        | $PROG Connect)"\
+        && notify-send "Connected to\
+        $(nmcli con show --active\
+        | awk -F '[[:space:]][[:space:]]' 'FNR==2 { print $1 }')"
+} # }}}
+
+
+# ** Disconnect if connected {{{
+disconnect() {
+    nmcli con down id "$(nmcli -t -f name c \
+        | $PROG Disconnect)"\
+        && notify-send "Network Disconnected"
+} # }}}
+
+
+main "$@"
