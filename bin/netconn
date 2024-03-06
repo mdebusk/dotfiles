@@ -3,10 +3,10 @@
 # Filename   : netconn                                                        #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2024-03-05 18:15                                               #
-# Last edit  : 2024-03-05 21:32                                               #
+# Last edit  : 2024-03-05 22:22                                               #
 # Purpose    : Connect to, or disconnect from, a network using rofi/dmenu     #
 # Reference  : Inspired by https://github.com/IanLeCorbeau/dmenu-scripts      #
-# Depends    : nmcli, ping, rofi or dmenu, bash                               #
+# Depends    : bash, nmcli, ping, notify-send, rofi or dmenu                  #
 # Arguments  : None                                                           #
 # Known bugs : NKA                                                            #
 # TODO       : N/A                                                            #
@@ -39,32 +39,18 @@
 ###############################################################################
 # End license }}}
 
+
+# ** Config variables {{{
 PROG="rofi -dmenu -p"
-
-# ** Main {{{
-main() {
-    notify-send -t 1500 "Testing Network Connection..."\
-        & /usr/bin/ping -c 1 8.8.8.8 2>&1 > /dev/null
-    [[ $? -eq 0 ]] && disconnect || connect
-} # }}}
+up_or_down="up"
+prmpt="Disconnect"
+# End config }}}
 
 
-# ** Connect if not connected {{{
-connect() {
-    nmcli con up id "$(nmcli -t -f name c\
-        | $PROG Connect)"\
-        && notify-send "Connected to\
-        $(nmcli con show --active\
-        | awk -F '[[:space:]][[:space:]]' 'FNR==2 { print $1 }')"
-} # }}}
+notify-send -t 1500 "Testing Network Connection..."
+/usr/bin/ping -c 3 8.8.8.8 2>&1 > /dev/null
 
+# Change the config variables if not connected
+[[ $? -eq 0 ]] && { up_or_down="down" ; prmpt="Connect" ; }
 
-# ** Disconnect if connected {{{
-disconnect() {
-    nmcli con down id "$(nmcli -t -f name c \
-        | $PROG Disconnect)"\
-        && notify-send "Network Disconnected"
-} # }}}
-
-
-main "$@"
+nmcli con $up_or_down id "$(nmcli -t -f name c | $PROG $prmpt)"
