@@ -3,7 +3,7 @@
 # Filename   : popup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-22 20:19                                               #
-# Last edit  : 2024-03-05 18:08                                               #
+# Last edit  : 2024-03-06 01:15                                               #
 # Purpose    : Hoping to replace a status bar, for the most part              #
 # Depends    : date, fastfetch, notify-send, bash, weather, on_ac_power,      #
 #            : iwgetid, hostname                                              #
@@ -79,6 +79,8 @@ battery_status() {
 
 
 # *** Moon {{{2
+# I'm pretty sure I found this here:
+# https://gist.github.com/Crysknife007/29b00826c86b9a91945ce6e4efccc2b5
 get_moon_phase() {
     # Calculate moon phase
     local lunar_month=2551443
