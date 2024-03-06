@@ -4,7 +4,7 @@
 # Filename   : backup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk)                     #
 # Created    : Unknown                                                         #
-# Last edit  : 2024-02-28 22:11                                                #
+# Last edit  : 2024-03-06 10:32                                                #
 # Purpose    : backing up laptop hard drive using excludes file                #
 # Depends    : rsync, xdg-user-dir, date, veracrypt, cvlc                      #
 # Arguments  : none currently                                                  #
@@ -88,29 +88,27 @@ echo -e "\nVeracrypt volume mounted successfully. Beginning backup...\n"
 # Back up /home
 rsync -aPv --delete --log-file="$logfile" --exclude-from="$exclude_from"\
     /home/"$USER"/ "$container_mountpoint"/home/"$USER"/
+if [ $? -gt 0 ]; then
+    notify-send -u critical\
+        "Error during backup" "Something went wrong backing up\n$HOME.\nInspect log for details."
+    cvlc --play-and-exit "$error_alert"
 
 # Back up /etc
 sudo rsync -aPv --delete --log-file="$logfile" \
     /etc/ "$container_mountpoint"/etc/
+if [ $? -gt 0 ]; then
+    notify-send -u critical\
+        "Error during backup" "Something went wrong backing up\n/etc.\nInspect log for details."
+    cvlc --play-and-exit "$error_alert"
 
 # Back up /opt
 sudo rsync -aPv --delete --log-file="$logfile" \
     /opt/ "$container_mountpoint"/opt/
-# End back up desired directories }}}
-
-
-# ** Let user know if something went wrong with backup {{{
 if [ $? -gt 0 ]; then
     notify-send -u critical\
-        "Backup" "Something went wrong.\nInspect log for details."
+        "Error during backup" "Something went wrong backing up\n/opt.\nInspect log for details."
     cvlc --play-and-exit "$error_alert"
-    echo -e "\nAn error occorred during backup. See log for details."
-    echo "Drive $backup_drive remains mounted."
-    echo "Veracrypt volume $target also remains mounted."
-    echo -e "See log $logfile for details. Exiting...\n"
-    exit 1
-fi
-# End error reorting }}}
+# End back up desired directories }}}
 
 
 # ** Let me know when it's done {{{
