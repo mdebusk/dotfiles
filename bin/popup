@@ -3,7 +3,7 @@
 # Filename   : popup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-22 20:19                                               #
-# Last edit  : 2024-03-06 01:15                                               #
+# Last edit  : 2024-03-07 12:54                                               #
 # Purpose    : Hoping to replace a status bar, for the most part              #
 # Depends    : date, fastfetch, notify-send, bash, weather, on_ac_power,      #
 #            : iwgetid, hostname                                              #
@@ -121,33 +121,36 @@ show_weather() {
 # Icons can be found at # /usr/share/icons/Yaru/scalable/
     notify-send -t 6000\
         "Weather in Aberdeen, MD" "$(weather)"\
-        -i weather-app-symbolic
+        -i weather-app
     } # }}}
 
 
 # *** Date and Time {{{2
 date_and_time() {
+    icn=calendar-app
     notify-send -t 5000\
         "Date, Day, and Time" "$(date '+%F (%A) %R')"\
-        -i calendar-app-symbolic
+        -i $icn
     } # }}}
 
 
 # *** SysInfo {{{2
 system_details() {
+    icn=dialog-information
     notify-send\
         "System Status"\
         "$(fastfetch -c "$XDG_CONFIG_HOME"/fastfetch/plain.jsonc)"\
-        -i dialog-information-symbolic
+        -i $icn
     } # }}}
 
 
 # *** To Do List {{{2
 todo_list() {
+    icn=dialog-apply
     notify-send\
         "To-Do List:"\
         "$(python ~/Source/t/t.py --task-dir "$XDG_DATA_HOME"/tasks --list tasks)"\
-        -i checkbox-checked-symbolic
+        -i $icn
     } # }}}
 
 
@@ -177,10 +180,11 @@ wireless_info() {
 
 
 show_wireless_info() {
+    icn=nm-device-wireless
     notify-send\
         "Wireless"\
         "$(wireless_info)"\
-        -i network-wireless-symbolic
+        -i $icn
     } # }}}
 
 
