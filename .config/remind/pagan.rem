@@ -2,17 +2,16 @@
 # Filename   : pagan.rem                                                      #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2022-10-18 20:55                                               #
+# Last edit  : 2024-03-07 18:12                                               #
 # Purpose    : Pagan holidays file for remind                                 #
 # Depends    : remind                                                         #
-# Arguments  : N/A                                                            #
 # Known bugs : NKA                                                            #
 # To do      : N/A                                                            #
 ###############################################################################
 
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
 # include MSG [getenv("XDG_CONFIG_HOME")]/remind/pagan.rem
-SET pf "Pagan Holiday :"
+SET pf "🌳 Pagan Holiday  :"
 
 REM Jan 02 MSG [pf] Frigg's Distaff
 REM Jan 06 MSG [pf] Celtic day of the Three-Fold Goddess
