@@ -2,7 +2,7 @@
 # Filename   : bash_aliases                                                   #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-07-04 13:16                                               #
-# Last edit  : 2024-03-03 13:24                                               #
+# Last edit  : 2024-03-08 00:43                                               #
 # Purpose    : aliases for interactive bash shell, sourced from ~/.bashrc     #
 # Depends    : bash, other programs as listed                                 #
 # Known bugs : NKA                                                            #
@@ -49,13 +49,14 @@ alias rm='rm -i'
 
 
 # ** Other useful defaults {{{
-alias df="df -Tha --total"
-alias free="free -hltw"
+alias df='df -Tha --total'
+alias free='free -hltw'
+alias ip='ip -color=auto'
 alias grep='grep --color=auto'
 alias ls='ls -hlpv --color=auto --group-directories-first --time-style=long-iso'
 alias nvlc='nvlc --browse-dir ~/Music' # NCurses version of VLC
-alias ping="ping -c 3"
-alias wget="wget -c"
+alias ping='ping -c 3'
+alias wget='wget -c'
 alias xclip='xclip -sel clip'
 # End other useful defaults }}}
 
