@@ -4,7 +4,7 @@
 # Filename   : backup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk)                     #
 # Created    : Unknown                                                         #
-# Last edit  : 2024-03-06 10:32                                                #
+# Last edit  : 2024-03-09 14:39                                                #
 # Purpose    : backing up laptop hard drive using excludes file                #
 # Depends    : rsync, xdg-user-dir, date, veracrypt, cvlc                      #
 # Arguments  : none currently                                                  #
@@ -86,28 +86,29 @@ echo -e "\nVeracrypt volume mounted successfully. Beginning backup...\n"
 
 # ** Back up desired directories {{{
 # Back up /home
-rsync -aPv --delete --log-file="$logfile" --exclude-from="$exclude_from"\
-    /home/"$USER"/ "$container_mountpoint"/home/"$USER"/
-if [ $? -gt 0 ]; then
+if ! rsync -aPv --delete --log-file="$logfile" --exclude-from="$exclude_from"\
+    /home/"$USER"/ "$container_mountpoint"/home/"$USER"/; then
     notify-send -u critical\
-        "Error during backup" "Something went wrong backing up\n$HOME.\nInspect log for details."
+        "Error during backup"\
+        "Something went wrong backing up\n$HOME.\nInspect log for details."
     cvlc --play-and-exit "$error_alert"
+fi
 
 # Back up /etc
-sudo rsync -aPv --delete --log-file="$logfile" \
-    /etc/ "$container_mountpoint"/etc/
-if [ $? -gt 0 ]; then
+if ! sudo rsync -aPv --delete --log-file="$logfile" /etc/ "$container_mountpoint"/etc/; then
     notify-send -u critical\
-        "Error during backup" "Something went wrong backing up\n/etc.\nInspect log for details."
+        "Error during backup"\
+        "Something went wrong backing up\n/etc.\nInspect log for details."
     cvlc --play-and-exit "$error_alert"
+fi
 
 # Back up /opt
-sudo rsync -aPv --delete --log-file="$logfile" \
-    /opt/ "$container_mountpoint"/opt/
-if [ $? -gt 0 ]; then
+if ! sudo rsync -aPv --delete --log-file="$logfile" /opt/ "$container_mountpoint"/opt/; then
     notify-send -u critical\
-        "Error during backup" "Something went wrong backing up\n/opt.\nInspect log for details."
+        "Error during backup"\
+        "Something went wrong backing up\n/opt.\nInspect log for details."
     cvlc --play-and-exit "$error_alert"
+fi
 # End back up desired directories }}}
 
 

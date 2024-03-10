@@ -3,7 +3,7 @@
 # Filename   : update                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2018                                                           #
-# Last edit  : 2023-11-15 13:20                                               #
+# Last edit  : 2024-03-09 14:43                                               #
 # Purpose    : Updates everything                                             #
 # Depends    : bash, git, sudo, pushd, popd, one or more package managers     #
 # Known bugs : NKA                                                            #
@@ -50,7 +50,7 @@ function is_apt { #{{{2
 
     echo -e "\n\033[1mRemoving unneeded packages and configuration files...\n\033[0m"
     sudo apt autoremove && sudo apt purge
-    sudo apt remove --purge $(dpkg -l | grep "^rc" | awk '{print $2}')
+    sudo apt remove --purge "$(dpkg -l | grep "^rc" | awk '{print $2}')"
 
     echo -e "\n\033[1mRemoving old packages from apt cache...\n\033[0m"
     sudo apt autoclean
@@ -92,7 +92,7 @@ function is_zypper { #{{{2
 
 # ** System packages {{{
 for i in $pkg_mngrs; do
-    command -v $i > /dev/null 2>&1 && is_$i
+    command -v "$i" > /dev/null 2>&1 && is_"$i"
    done
 # End system packages }}}
 
@@ -118,7 +118,7 @@ pushd "$source_directory" || \
 ## echo -e "\n\033[1mUpdating git repositories...\n\033[0m"
 echo -en "\n\033[1mUpdating git repositories..."
 
-for i in */.git; do cd $(dirname $i) && echo -n "."; git pull --quiet; cd ..; done
+for i in */.git; do cd "$(dirname "$i")" && echo -n "."; git pull --quiet; cd ..; done
 ## for i in */.git; do cd $(dirname $i) && pwd; git pull; cd ..; done
 
 popd || exit
