@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2023-01-25 23:10                                               "
+" Last edit  : 2024-03-10 14:56                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/                                           "
 " Depends    : vim                                                            "
@@ -195,6 +195,11 @@ set bufhidden=hide  " Hide buffer when not in window
 set signcolumn=yes
 set viminfo=%,<800,'10,/50,:100,h,f0,n$XDG_STATE_HOME/vim/viminfo
 set viewdir=$XDG_STATE_HOME/vim/view
+augroup views            " Back up and restore views on buffer open
+    autocmd!
+    au BufWinLeave ?* mkview
+    au BufWinEnter ?* silent loadview
+augroup END
 " End Various }}}
 
 " ** Color scheme {{{
@@ -206,79 +211,10 @@ highlight clear SpellBad
 highlight SpellBad cterm=underline,bold gui=undercurl
 " End Color scheme }}}
 
-" ** Customized file types {{{
-augroup views            " Back up and restore views on buffer open
-    autocmd!
-    au BufWinLeave ?* mkview
-    au BufWinEnter ?* silent loadview
-augroup END
-
-augroup markdown "{{{2
-    au BufNewFile,BufRead *.md :set iskeyword=@,48-57,_,-,192-255
-    au BufNewFile,BufRead *.md :iab (c) &#169;
-    au BufNewFile,BufRead *.md :iab (r) &#174;
-    au BufNewFile,BufRead *.md :iab -- &#8211;
-    au BufNewFile,BufRead *.md :iab --- &#8212;
-    au BufNewFile,BufRead *.md :iab (tm) &#8482;
-    let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'sql']
-augroup END " markdown }}}
-
-augroup filetype_LaTeX "{{{2
-    autocmd!
-    " copy document template into empty new buffer
-    au BufNewFile *.tex
-                \ 0r $HOME/Templates/latex_document.tex
-
-    au BufNewFIle,BufRead *.tex :iab latex \LaTeX\
-    map <F9> :!pdflatex %<CR>
-augroup END "}}}
-
-augroup filetype_bash "{{{2
-    autocmd!
-    " copy script template into empty new buffer
-    au BufNewFile *.sh
-                \ 0r $HOME/Templates/shell_script.sh
-augroup END "}}}
-
-augroup filetype_python "{{{2
-    " Delete all trailing whitespace before saving
-    au BufWritePre *.py :%s/\s\+$//e
-    " copy script template into empty new buffer
-    au BufNewFile *.py
-                \ 0r $HOME/Templates/python_script.py
-    au BufNewFile,BufRead *.py
-                \ set tabstop=4 |
-                \ set softtabstop=4 |
-                \ set shiftwidth=4 |
-                \ set textwidth=79 |
-                \ set expandtab |
-                \ set autoindent |
-                \ set smartindent |
-                \ set colorcolumn=80 |
-                \ set fileformat=unix
-augroup END "}}}
-
-augroup web_development "{{{2
-    au BufNewFile,BufRead *.js, *.html, *.css, *.php
-                \ set tabstop=2 |
-                \ set softtabstop=2 |
-                \ set shiftwidth=2
-
-    " copy HTML document template into empty new buffer
-    au bufnewfile *.html
-                \ 0r $HOME/Templates/html_document.html
-augroup END "}}}
-
-" End Customized file types }}}
-
 " ** Abbreviations {{{
 " Insert date (and maybe time)
 :iab <expr> dts strftime("%F %R")    " Date/time stamp
 :iab <expr> dtg strftime("%e %b %Y") " Date style used in genealogy
-
-" for QIF files
-:iab ckng MAutopay<CR>LAssets:Current Assets:Capital One 360:Checking
-
 " End Abbreviations }}}
 
 " ** Plugins {{{
@@ -335,73 +271,6 @@ inoremap ? ?<c-g>u
 " Don't leave visual mode when (un)indenting
 vnoremap < <gv
 vnoremap > >gv
-
-" Autoclose mappings {{{2
-" https://alldrops.info/posts/vim-drops/2019-02-13_custom-autoclose-mappings/
-" autoclose and position cursor to write text inside
-"" inoremap ' ''<left>
-"" inoremap ` ``<left>
-"" inoremap " "<left>
-"" inoremap ( ()<left>
-"" inoremap [ []<left>
-"" inoremap { {}<left>
-"" autoclose with ; and position cursor to write text inside
-"" inoremap '; '';<left><left>
-"" inoremap `; ``;<left><left>
-"" inoremap "; "";<left><left>
-"" inoremap (; ();<left><left>
-"" inoremap [; [];<left><left>
-"" inoremap {; {};<left><left>
-"" autoclose with , and position cursor to write text inside
-"" inoremap ', '',<left><left>
-"" inoremap `, ``,<left><left>
-"" inoremap ", "",<left><left>
-"" inoremap (, (),<left><left>
-"" inoremap [, [],<left><left>
-"" inoremap {, {},<left><left>
-"" autoclose and position cursor after
-"" inoremap '<tab> ''
-"" inoremap `<tab> ``
-"" inoremap "<tab> ""
-"" inoremap (<tab> ()
-"" inoremap [<tab> []
-"" inoremap {<tab> {}
-"" autoclose with ; and position cursor after
-"" inoremap ';<tab> '';
-"" inoremap `;<tab> ``;
-"" inoremap ";<tab> "";
-"" inoremap (;<tab> ();
-"" inoremap [;<tab> [];
-"" inoremap {;<tab> {};
-"" autoclose with , and position cursor after
-"" inoremap ',<tab> '',
-"" inoremap `,<tab> ``,
-"" inoremap ",<tab> "",
-"" inoremap (,<tab> (),
-"" inoremap [,<tab> [],
-"" inoremap {,<tab> {},
-"" autoclose 2 lines below and position cursor in the middle
-"" inoremap '<CR> '<CR>'<ESC>O
-"" inoremap `<CR> `<CR>`<ESC>O
-"" inoremap "<CR> "<CR>"<ESC>O
-"" inoremap (<CR> (<CR>)<ESC>O
-"" inoremap [<CR> [<CR>]<ESC>O
-"" inoremap {<CR> {<CR>}<ESC>O
-"" autoclose 2 lines below adding ; and position cursor in the middle
-"" inoremap ';<CR> '<CR>';<ESC>O
-"" inoremap `;<CR> `<CR>`;<ESC>O
-"" inoremap ";<CR> "<CR>";<ESC>O
-"" inoremap (;<CR> (<CR>);<ESC>O
-"" inoremap [;<CR> [<CR>];<ESC>O
-"" inoremap {;<CR> {<CR>};<ESC>O
-"" autoclose 2 lines below adding , and position cursor in the middle
-"" inoremap ',<CR> '<CR>',<ESC>O
-"" inoremap `,<CR> `<CR>`,<ESC>O
-"" inoremap ",<CR> "<CR>",<ESC>O
-"" inoremap (,<CR> (<CR>),<ESC>O
-"" inoremap [,<CR> [<CR>],<ESC>O
-"" inoremap {,<CR> {<CR>},<ESC>O
-" End Autoclose mappings }}}
 " End remaps }}}
 
 " ** Miscellaneous stuff {{{
