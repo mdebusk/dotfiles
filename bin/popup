@@ -3,10 +3,10 @@
 # Filename   : popup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-22 20:19                                               #
-# Last edit  : 2024-03-07 12:54                                               #
+# Last edit  : 2024-03-11 18:02                                               #
 # Purpose    : Hoping to replace a status bar, for the most part              #
-# Depends    : date, fastfetch, notify-send, bash, weather, on_ac_power,      #
-#            : iwgetid, hostname                                              #
+# Depends    : date, notify-send, bash, weather, on_ac_power, awk,            #
+#            : iwgetid, hostname, free, sensors, df, sed, mpstat              #
 # Arguments  : -b -c -d -h -s -w -t                                           #
 # Known bugs : NKA                                                            #
 # TODO       : Consider making the battery icon reflect remaining percentage  #
@@ -64,6 +64,46 @@
 
 
 # ** Functions {{{1
+# ** Main {{{
+main() {
+    while getopts "bcdhmstw" option; do
+        case $option in
+            b) battery_status
+                exit ;;
+            c) show_wireless_info
+                exit;;
+            d) date_and_time
+                exit;;
+            h) help_screen
+                exit;;
+            m) show_moon_phase
+                exit;;
+            s) system_details
+                exit;;
+            t) todo_list
+                exit;;
+            w) show_weather
+                exit;;
+            *) # incorrect option
+                echo "Error: Invalid option"
+                exit;;
+        esac
+    done
+} # }}}
+
+
+# *** System Info {{{
+system_information() {
+    /usr/bin/free -h | awk '/Mem:/ { print "Memory   : " $3 " / " $2 }'
+    /usr/bin/sensors | head -n5 | awk '/temp1/ { print "CPU Temp : " $2 }'
+    /usr/bin/df -Th --total\
+        | awk '/total/ { print "Free Disk: " $5 " / " $3 " (" $6 ")" }'
+    /usr/bin/mpstat | awk '/all/ { print "CPU Load : " $6 }'
+    echo "Battery  : $(</sys/class/power_supply/BAT0/capacity)%"
+    /usr/bin/uptime -p | sed 's/up\ /Uptime\ \ \ :\ /g'
+} # }}}
+
+
 # *** Battery status {{{
 battery_status() {
     power_source="On Battery Power"
@@ -137,9 +177,10 @@ date_and_time() {
 # *** SysInfo {{{2
 system_details() {
     icn=dialog-information
+    info=$(system_information)
     notify-send\
         "System Status"\
-        "$(fastfetch -c "$XDG_CONFIG_HOME"/fastfetch/plain.jsonc)"\
+        "$info"\
         -i $icn
     } # }}}
 
@@ -205,30 +246,6 @@ help_screen() {
 } # }}}
 # End functions }}}
 
-
 [[ $# -eq 0 ]] && ( help_screen ; exit 0 ; )
 
-while getopts "bcdhmstw" option; do
-    case $option in
-        b) battery_status
-            exit ;;
-        c) show_wireless_info
-            exit;;
-        d) date_and_time
-            exit;;
-        h) help_screen
-            exit;;
-        m) show_moon_phase
-            exit;;
-        s) system_details
-            exit;;
-        t) todo_list
-            exit;;
-        w) show_weather
-            exit;;
-        *) # incorrect option
-            echo "Error: Invalid option"
-            exit;;
-    esac
-done
-
+main "$@"
