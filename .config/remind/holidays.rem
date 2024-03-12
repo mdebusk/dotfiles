@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2023-11-09 10:48                                               #
+# Last edit  : 2024-03-12 04:39                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -75,6 +75,7 @@ REM     Jan 25                                    MSG Opposite Day
 REM     Feb  2                                    MSG Groundhog Day
 REM     Feb 14                                    MSG Valentine's Day
 REM     Mar  1                                    MSG Bachelor's Day
+REM     Second Sat in Mar                         MSG National Genealogy Day
 REM     Mar 10                                    MSG Mario Day
 REM     Mar 14                                    MSG Steak and Blowjob Day
 REM     Mar 17                                    MSG St. Patrick's Day
@@ -105,6 +106,7 @@ REM     Sun  8 Oct SCANFROM -7 SATISFY 1
 SET t $T
 REM [t] THROUGH [t+6]                             MSG Healthcare Security and Safety Week
 # End Healthcare Safety and Security Week
+REM     Second Wed in Oct                         MSG Healthcare Security and Safety Officer Appreciation Day
 REM     Oct 13                                    MSG United States Navy's [_yr_num(1775)] Birthday
 REM     Oct 30                                    MSG Mischief Night
 REM     Oct 31                                    MSG Halloween
