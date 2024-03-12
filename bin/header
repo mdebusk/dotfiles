@@ -1,0 +1,110 @@
+#!/usr/bin/env bash
+###############################################################################
+# Filename   : header                                                         #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : 2022-09-11 21:35                                               #
+# Last edit  : 2024-03-12 16:06                                               #
+# Purpose    : Prints this header to a new file within vim                    #
+# Depends    : N/A                                                            #
+# Arguments  : none (meant to be read from within vim)                        #
+# TODO       : Find out if it's possible for a shell script to get the        #
+#            : name of the active buffer, assuming it has one                 #
+###############################################################################
+
+# ** License {{{
+###############################################################################
+# This is free and unencumbered software released into the public domain.     #
+#                                                                             #
+# Anyone is free to copy, modify, publish, use, compile, sell, or             #
+# distribute this software, either in source code form or as a compiled       #
+# binary, for any purpose, commercial or non-commercial, and by any means.    #
+#                                                                             #
+# In jurisdictions that recognize copyright laws, the author or authors of    #
+# this software dedicate any and all copyright interest in the software to    #
+# the public domain. We make this dedication for the benefit of the public    #
+# at large and to the detriment of our heirs and successors. We intend        #
+# this dedication to be an overt act of relinquishment in perpetuity of       #
+# all present and future rights to this software under copyright law.         #
+#                                                                             #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,             #
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF          #
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.      #
+# IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER     #
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     #
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         #
+# DEALINGS IN THE SOFTWARE.                                                   #
+#                                                                             #
+# For more information, please refer to <http://unlicense.org/>               #
+###############################################################################
+# End license }}}
+
+
+# ** Notes {{{
+###############################################################################
+# Inspired by the following video by Rob Muhlestein (rwxrob) titled           #
+# "Prefer Shell Scripts Over Plugins in Vim:"                                 #
+# https://www.youtube.com/live/2o3URIxG3Zs                                    #
+#                                                                             #
+# I thought it was a neat idea and worth experimenting with. I also was       #
+# working on learning shell scripting and was having to read in the same      #
+# boilerplate text on every file when it got to where it was worth using.     #
+# So I put this together to satisfy both desires.                             #
+#                                                                             #
+# This requires the following entry in your vimrc or some othe                #
+# configuration file so as to enable the insertion of $BUFNAME:               #
+#                                                                             #
+# let $BUFNAME=@%                                                             #
+#                                                                             #
+# Thanks to Stack OVerflow user Vivian De Smedt                               #
+# https://vi.stackexchange.com/users/23502/vivian-de-smedt                    #
+###############################################################################
+# End notes }}}
+
+
+# This is useless unless run inside vim. Error out in an interactive shell.
+[ -z "$VIMRUNTIME" ] &&\
+    { echo -e "\nThis script is to be run from inside vim\n" ; exit ; }
+
+cat << EOF
+#!/usr/bin/env bash
+###############################################################################
+# Filename   : $BUFNAME                                                       #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : $(date +'%F %R')                                               #
+# Last edit  : $(date +'%F %R')                                               #
+# Purpose    : x                                                              #
+# Reference  : x                                                              #
+# Depends    : x                                                              #
+# Arguments  : x                                                              #
+# Known bugs : NKA                                                            #
+# TODO       : N/A                                                            #
+###############################################################################
+
+# ** License {{{
+###############################################################################
+# This is free and unencumbered software released into the public domain.     #
+#                                                                             #
+# Anyone is free to copy, modify, publish, use, compile, sell, or             #
+# distribute this software, either in source code form or as a compiled       #
+# binary, for any purpose, commercial or non-commercial, and by any means.    #
+#                                                                             #
+# In jurisdictions that recognize copyright laws, the author or authors of    #
+# this software dedicate any and all copyright interest in the software to    #
+# the public domain. We make this dedication for the benefit of the public    #
+# at large and to the detriment of our heirs and successors. We intend        #
+# this dedication to be an overt act of relinquishment in perpetuity of       #
+# all present and future rights to this software under copyright law.         #
+#                                                                             #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,             #
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF          #
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.      #
+# IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER     #
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     #
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         #
+# DEALINGS IN THE SOFTWARE.                                                   #
+#                                                                             #
+# For more information, please refer to <http://unlicense.org/>               #
+###############################################################################
+# End license }}}
+
+EOF
