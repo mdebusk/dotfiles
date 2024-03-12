@@ -3,7 +3,7 @@
 # Filename   : update                                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2018                                                           #
-# Last edit  : 2024-03-09 14:43                                               #
+# Last edit  : 2024-03-12 18:50                                               #
 # Purpose    : Updates everything                                             #
 # Depends    : bash, git, sudo, pushd, popd, one or more package managers     #
 # Known bugs : NKA                                                            #
@@ -37,14 +37,26 @@
 ###############################################################################
 # End license }}}
 
+
 # ** Variables {{{
+# List of package managers (probably) supported)
 pkg_mngrs="apt dnf pacman emerge zypper"
+
 # Directory where you keep your source files
 source_directory="$HOME/Source"
 # End variables }}}
 
+
+main() { # {{{
+    system_packages
+    universal_packages
+    git_repos
+    echo -e "\nUpdates complete.\n\033[0m"
+} # }}}
+
+
 # ** Functions for package managers {{{
-function is_apt { #{{{2
+is_apt() { #{{{2
     echo -e "\n\033[1mUpdating system repos and upgrading installed packages...\n\033[0m"
     sudo apt update && sudo apt full-upgrade -y
 
@@ -56,7 +68,8 @@ function is_apt { #{{{2
     sudo apt autoclean
 } #}}}
 
-function is_dnf { #{{{2
+
+is_dnf() { #{{{2
     echo -e "\n\033[1mUpdating system repos and upgrading installed packages...\n\033[0m"
     sudo dnf upgrade
 
@@ -64,7 +77,8 @@ function is_dnf { #{{{2
     sudo dnf autoremove
 } #}}}
 
-function is_pacman { #{{{2
+
+is_pacman() { #{{{2
     echo -e "\n\033[1mUpdating system repos and upgrading installed packages...\n\033[0m"
     sudo pacman -Syu
 
@@ -72,7 +86,8 @@ function is_pacman { #{{{2
     Sudo pacman -Qdt
 } #}}}
 
-function is_emerge { #{{{2
+
+is_emerge() { #{{{2
     echo -e "\n\033[1mUpdating system repos and upgrading installed packages...\n\033[0m"
     emerge --sync && emerge -uDN world
 
@@ -80,23 +95,27 @@ function is_emerge { #{{{2
     emerge –depclean
 } #}}}
 
-function is_zypper { #{{{2
+
+is_zypper() { #{{{2
     echo -e "\n\033[1mUpdating system repos and upgrading installed packages...\n\033[0m"
     sudo zypper refresh && sudo zypper update
 
     echo -e "\n\033[1mRemoving unneeded packages and configuration files...\n\033[0m"
     zypper clean -a
 } #}}}
-
 # End package manager functions }}}
 
-# ** System packages {{{
-for i in $pkg_mngrs; do
-    command -v "$i" > /dev/null 2>&1 && is_"$i"
-   done
+
+# ** Functions for updating {{{
+system_packages() { # {{{
+    for i in $pkg_mngrs; do
+        command -v "$i" > /dev/null 2>&1 && is_"$i"
+    done
+}
 # End system packages }}}
 
-# ** Universal packages {{{
+
+universal_packages() { # {{{
 # If snapd is installed, update installed snap packages
 command -v snap > /dev/null 2>&1 &&\
     sudo snap refresh
@@ -104,24 +123,35 @@ command -v snap > /dev/null 2>&1 &&\
 # If flatpak is installed, update installed flatpak packages
 command -v flatpak > /dev/null 2>&1 &&\
     sudo flatpak update
-# End universal packages }}}
 
-# ** Git repos {{{
-# If git isn't installed, quit.
-command -v git > /dev/null 2>&1 ||\
+} # }}}
+
+
+git_repos() { # {{{
+    # If git isn't installed, quit.
+    command -v git > /dev/null 2>&1 ||\
         { echo -e "\n\033[1m$0 requires git to be installed. Exiting...\n\033[0m" ; exit 1; }
 
-# Update cloned git repos
-pushd "$source_directory" || \
-    { echo -e "\n\033[1mFailed to change to $source_directory. Exiting...\n\033[0m" ; exit 1 ; }
+    # Update cloned git repos
+    pushd "$source_directory" > /dev/null 2>&1 || \
+        { echo -e "\n\033[1mFailed to change to $source_directory. Exiting...\n\033[0m" ; exit 1 ; }
 
-## echo -e "\n\033[1mUpdating git repositories...\n\033[0m"
-echo -en "\n\033[1mUpdating git repositories..."
+        echo -e "\n\033[1mUpdating git repositories...\033[0m"
 
-for i in */.git; do cd "$(dirname "$i")" && echo -n "."; git pull --quiet; cd ..; done
-## for i in */.git; do cd $(dirname $i) && pwd; git pull; cd ..; done
+        for i in */.git; do
+            (
+            cd "$(dirname "$i")" || exit
+            echo -ne "\r$(dirname "$i")"
+            git pull --quiet
+            echo -ne "\033[1K"
+        )
+    done
 
-popd || exit
-# End git repos }}}
+    echo
 
-echo -e "\nUpdates complete.\n\033[0m"
+    popd > /dev/null 2>&1 || exit
+} # }}}
+# End updating }}}
+
+
+main "$@"
