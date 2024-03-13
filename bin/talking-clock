@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+###############################################################################
+# Filename   : talking_clock                                                  #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : 2022-09-24 14:03                                               #
+# Last edit  : 2024-03-12 23:09                                               #
+# Purpose    : Speaks the date and time                                       #
+# Depends    : espeak, date, bash                                             #
+# Known bugs : NKA                                                            #
+# TODO       : Come up with a better way to decide when to speak the date,    #
+#            : in case the user wants it done more or less often or at        #
+#            : different times of day.                                        #
+###############################################################################
+
+# ** License {{{
+###############################################################################
+# This is free and unencumbered software released into the public domain.     #
+#                                                                             #
+# Anyone is free to copy, modify, publish, use, compile, sell, or             #
+# distribute this software, either in source code form or as a compiled       #
+# binary, for any purpose, commercial or non-commercial, and by any means.    #
+#                                                                             #
+# In jurisdictions that recognize copyright laws, the author or authors of    #
+# this software dedicate any and all copyright interest in the software to    #
+# the public domain. We make this dedication for the benefit of the public    #
+# at large and to the detriment of our heirs and successors. We intend        #
+# this dedication to be an overt act of relinquishment in perpetuity of       #
+# all present and future rights to this software under copyright law.         #
+#                                                                             #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,             #
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF          #
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.      #
+# IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER     #
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     #
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         #
+# DEALINGS IN THE SOFTWARE.                                                   #
+#                                                                             #
+# For more information, please refer to <http://unlicense.org/>               #
+###############################################################################
+# End license }}}
+
+
+# ** Notes {{{
+##############################################################################################
+# I put this together in response to a Stack OVerflow question about                         #
+# someone wanting to help their blind father orient himself to time                          #
+# (and, I assumed, date) at regular intervals.                                               #
+#                                                                                            #
+# https://stackoverflow.com/questions/73839196/talking-clock-on-old-laptop-or-an-android-app #
+#                                                                                            #
+# I've made a few minor improvments since posting it, and have a                             #
+# couple more in mind.                                                                       #
+##############################################################################################
+# End notes }}}
+
+
+# ** If espeak-ng isn't installed, complain and quit {{{
+command -v espeak-ng > /dev/null 2>&1 ||\
+    { echo -e "$0 requires espeak to be installed. Exiting..." ; exit 1; }
+# End dependency check }}}
+
+
+# ** Set variables {{{
+date_now=$(date +'%A, %B %d, %Y')
+military_time=$(date +'%R') # 24-hour time
+minute=$(date +'%M')
+speak_program="espeak-ng -k20 -s 150"
+
+# We don't need espeak-ng to say "zero zero" for the minutes
+if [ "$minute" = "00" ]; then
+    time_now=$(date +'%l %p')
+else
+    time_now=$(date +'%l %M %p')
+fi
+# End variables }}}
+
+
+# Speak the date only if it's 9am or 5pm
+# This is in case you want to run it from a cron job
+[[ $military_time = "09:00" || $military_time = "17:00" ]] && \
+    $speak_program "Today is $date_now."
+
+# Speak the time every time
+$speak_program "The time is $time_now."
