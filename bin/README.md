@@ -14,5 +14,6 @@ Use them as you please. They are all released under [The Unlicense](https://unli
 | `header` | Run from inside vim; it creates a basic header for shell, python, ruby, and perl scripts |
 | `i3exit` | My rofi power menu |
 | `netconn` | A rofi menu that lets me either connect to or disconnect from an available network |
+| `podcast_update` | Updates my gPodder subscriptions overnight via cron job |
 | `popup` | A multi-purpose script that sends various status messages, such as date, system status, current weather, moon phase, etc., to notify-send |
 | `update `| A script that automates updating my computer |
