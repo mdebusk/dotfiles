@@ -3,7 +3,7 @@
 # Filename   : popup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-22 20:19                                               #
-# Last edit  : 2024-03-11 18:02                                               #
+# Last edit  : 2024-03-12 20:18                                               #
 # Purpose    : Hoping to replace a status bar, for the most part              #
 # Depends    : date, notify-send, bash, weather, on_ac_power, awk,            #
 #            : iwgetid, hostname, free, sensors, df, sed, mpstat              #
@@ -94,25 +94,27 @@ main() {
 
 # *** System Info {{{
 system_information() {
-    /usr/bin/free -h | awk '/Mem:/ { print "Memory   : " $3 " / " $2 }'
+    /usr/bin/free -h | awk '/Mem:/ { print "Memory : " $3 " / " $2 }'
     /usr/bin/sensors | head -n5 | awk '/temp1/ { print "CPU Temp : " $2 }'
     /usr/bin/df -Th --total\
-        | awk '/total/ { print "Free Disk: " $5 " / " $3 " (" $6 ")" }'
+        | awk '/total/ { print "Free Disk : " $5 " / " $3 " (" $6 ")" }'
     /usr/bin/mpstat | awk '/all/ { print "CPU Load : " $6 }'
-    echo "Battery  : $(</sys/class/power_supply/BAT0/capacity)%"
-    /usr/bin/uptime -p | sed 's/up\ /Uptime\ \ \ :\ /g'
+    /usr/bin/uptime -p | sed 's/up\ /Uptime\ :\ /g'
 } # }}}
 
 
 # *** Battery status {{{
 battery_status() {
+    bat_stat=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0\
+        | awk '/percentage:/ { print $2 }')
     power_source="On Battery Power"
     icn=battery-symbolic
-    on_ac_power
-    [[ $? -eq 0 ]] && { power_source="On A/C Power" ; icn=preferences-system-power-symbolic ; }
-    bat_stat=$(echo $(</sys/class/power_supply/BAT0/capacity))
+    if on_ac_power; then
+        power_source="On A/C Power"
+        icn=preferences-system-power-symbolic
+    fi
     notify-send -t 3500\
-        "$power_source" "Battery level: $bat_stat%"\
+        "$power_source" "Battery level: $bat_stat"\
         -i $icn
 }
 # End battery }}}
@@ -125,7 +127,7 @@ get_moon_phase() {
     # Calculate moon phase
     local lunar_month=2551443
     local day_length=86400
-    local now=$(date '+%s')
+    local now; now=$(date '+%s')
     local new_moon=1707519540 # On 2024-02-09T17:59
     local phase=$((($now - $new_moon) % $lunar_month))
     local phase_number=$((((phase / day_length) + 1)*100000))
@@ -245,6 +247,7 @@ help_screen() {
 	EOF
 } # }}}
 # End functions }}}
+
 
 [[ $# -eq 0 ]] && ( help_screen ; exit 0 ; )
 
