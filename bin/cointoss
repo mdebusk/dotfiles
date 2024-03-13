@@ -1,0 +1,96 @@
+#!/usr/bin/env bash
+###############################################################################
+# Filename   : cointoss                                                       #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : 2024-03-08 15:00                                               #
+# Last edit  : 2024-03-12 22:21                                               #
+# Purpose    : Make arbitrary decisions easier since I don't carry cash       #
+# Depends    : bash                                                           #
+# Known bugs : NKA                                                            #
+# TODO       : N/A                                                            #
+###############################################################################
+
+# ** License {{{
+###############################################################################
+# This is free and unencumbered software released into the public domain.     #
+#                                                                             #
+# Anyone is free to copy, modify, publish, use, compile, sell, or             #
+# distribute this software, either in source code form or as a compiled       #
+# binary, for any purpose, commercial or non-commercial, and by any means.    #
+#                                                                             #
+# In jurisdictions that recognize copyright laws, the author or authors of    #
+# this software dedicate any and all copyright interest in the software to    #
+# the public domain. We make this dedication for the benefit of the public    #
+# at large and to the detriment of our heirs and successors. We intend        #
+# this dedication to be an overt act of relinquishment in perpetuity of       #
+# all present and future rights to this software under copyright law.         #
+#                                                                             #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,             #
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF          #
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.      #
+# IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER     #
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     #
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         #
+# DEALINGS IN THE SOFTWARE.                                                   #
+#                                                                             #
+# For more information, please refer to <http://unlicense.org/>               #
+###############################################################################
+# End license }}}
+
+
+main() { # {{{
+    # https://gist.github.com/theycallmemac/f66b0afeca215df97869dd28612bea74?permalink_comment_id=4376049#gistcomment-4376049
+    (( RANDOM % 2 )) && say_heads || say_tails
+} # }}}
+
+
+say_heads() { # {{{
+    cat <<- EOF
+	
+	                                                                      dddddddd
+	HHHHHHHHH     HHHHHHHHH                                               d::::::d
+	H:::::::H     H:::::::H                                               d::::::d
+	H:::::::H     H:::::::H                                               d::::::d
+	HH::::::H     H::::::HH                                               d:::::d
+	  H:::::H     H:::::H      eeeeeeeeeeee    aaaaaaaaaaaaa      ddddddddd:::::d     ssssssssss
+	  H:::::H     H:::::H    ee::::::::::::ee  a::::::::::::a   dd::::::::::::::d   ss::::::::::s
+	  H::::::HHHHH::::::H   e::::::eeeee:::::eeaaaaaaaaa:::::a d::::::::::::::::d ss:::::::::::::s
+	  H:::::::::::::::::H  e::::::e     e:::::e         a::::ad:::::::ddddd:::::d s::::::ssss:::::s
+	  H:::::::::::::::::H  e:::::::eeeee::::::e  aaaaaaa:::::ad::::::d    d:::::d  s:::::s  ssssss
+	  H::::::HHHHH::::::H  e:::::::::::::::::e aa::::::::::::ad:::::d     d:::::d    s::::::s
+	  H:::::H     H:::::H  e::::::eeeeeeeeeee a::::aaaa::::::ad:::::d     d:::::d       s::::::s
+	  H:::::H     H:::::H  e:::::::e         a::::a    a:::::ad:::::d     d:::::d ssssss   s:::::s
+	HH::::::H     H::::::HHe::::::::e        a::::a    a:::::ad::::::ddddd::::::dds:::::ssss::::::s
+	H:::::::H     H:::::::H e::::::::eeeeeeeea:::::aaaa::::::a d:::::::::::::::::ds::::::::::::::s
+	H:::::::H     H:::::::H  ee:::::::::::::e a::::::::::aa:::a d:::::::::ddd::::d s:::::::::::ss
+	HHHHHHHHH     HHHHHHHHH    eeeeeeeeeeeeee  aaaaaaaaaa  aaaa  ddddddddd   ddddd  sssssssssss
+	
+	EOF
+} # }}}
+
+
+say_tails() { # {{{
+    cat <<- EOF
+	
+	TTTTTTTTTTTTTTTTTTTTTTT                  iiii  lllllll
+	T:::::::::::::::::::::T                 i::::i l:::::l
+	T:::::::::::::::::::::T                  iiii  l:::::l
+	T:::::TT:::::::TT:::::T                        l:::::l
+	TTTTTT  T:::::T  TTTTTTaaaaaaaaaaaaa   iiiiiii  l::::l     ssssssssss
+	        T:::::T        a::::::::::::a  i:::::i  l::::l   ss::::::::::s
+	        T:::::T        aaaaaaaaa:::::a  i::::i  l::::l ss:::::::::::::s
+	        T:::::T                 a::::a  i::::i  l::::l s::::::ssss:::::s
+	        T:::::T          aaaaaaa:::::a  i::::i  l::::l  s:::::s  ssssss
+	        T:::::T        aa::::::::::::a  i::::i  l::::l    s::::::s
+	        T:::::T       a::::aaaa::::::a  i::::i  l::::l       s::::::s
+	        T:::::T      a::::a    a:::::a  i::::i  l::::l ssssss   s:::::s
+	      TT:::::::TT    a::::a    a:::::a i::::::il::::::ls:::::ssss::::::s
+	      T:::::::::T    a:::::aaaa::::::a i::::::il::::::ls::::::::::::::s
+	      T:::::::::T     a::::::::::aa:::ai::::::il::::::l s:::::::::::ss
+	      TTTTTTTTTTT      aaaaaaaaaa  aaaaiiiiiiiillllllll  sssssssssss
+	
+	EOF
+} # }}}
+
+
+main "$@"
