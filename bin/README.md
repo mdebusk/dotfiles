@@ -9,6 +9,7 @@ Use them as you please. They are all released under [The Unlicense](https://unli
 | NAME | Purpose |
 | ---- | ---- |
 | `backup` | Backs up my computer when I ask |
+| `cointoss` | A little toy that simulates tossing a coin |
 | `config-edit` | A rofi menu to let me choose a frequently-edited file to change |
 | `header` | Run from inside vim; it creates a basic header for shell, python, ruby, and perl scripts |
 | `i3exit` | My rofi power menu |
