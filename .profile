@@ -2,8 +2,9 @@
 # Filename   : .profile                                                       #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2024-03-05 00:35                                               #
+# Last edit  : 2024-03-17 01:48                                               #
 # Purpose    : Sets environment variables                                     #
+# TODO       : Move ~/.vim to $XDG_CONFIG_HOME                                #
 ###############################################################################
 
 # ** Source ~/.bashrc if appropriate {{{
@@ -54,6 +55,7 @@ export CHROMIUM_BSU_DATA="$XDG_DATA_HOME"/chromium_bsu/
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/.nv
 export DOTREMINDERS="$XDG_CONFIG_HOME/remind/reminders.rem"
 export DVDCSS_CACHE=$XDG_DATA_HOME/dvdcss
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GPODDER_DOWNLOAD_DIR=$HOME/Podcasts/
 export GPODDER_HOME=$XDG_CONFIG_HOME/gpodder/
 export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
@@ -92,3 +94,6 @@ export NPM_PACKAGES="/home/michael/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 # End NPM }}}
+
+
+
