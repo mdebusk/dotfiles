@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2024-03-12 15:46                                               "
+" Last edit  : 2024-03-17 21:47                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/                                           "
 " Depends    : vim                                                            "
@@ -114,10 +114,11 @@ set printoptions=paper:letter,syntax:y,wrap:y,duplex:long
 " End Printing }}}
 
 " ** 12. Messages and info {{{
-set confirm     " ask if you wish to save changed files
-set ruler       " show the cursor position all the time
-set showcmd     " Show partial commands in the status line
-set visualbell  " Use visual bell instead of beeping when doing something wrong
+set confirm      " ask if you wish to save changed files
+set ruler        " show the cursor position all the time
+set shortmess+=c " Don't give ins_completion_menu messages
+set showcmd      " Show partial commands in the status line
+set visualbell   " Use visual bell instead of beeping when doing something wrong
 " End Messages and info }}}
 
 " ** 13. Selecting text {{{
