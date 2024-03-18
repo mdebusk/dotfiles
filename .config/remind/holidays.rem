@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2024-03-12 04:39                                               #
+# Last edit  : 2024-03-17 23:57                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -12,6 +12,8 @@
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
 # include [getenv("XDG_CONFIG_HOME")]/remind/holidays.rem
 
+SET pf "Holiday           : 🙂"
+
 # ** Daylight Savings TIme {{{
 REM MAYBE-UNCOMPUTABLE Sun November SATISFY [isdst($T) != isdst($T+1)] MSG Daylight Saving Time Ends %c
 REM MAYBE-UNCOMPUTABLE Sun March    SATISFY [isdst($T) != isdst($T+1)] MSG Daylight Saving Time Starts %c
@@ -20,13 +22,13 @@ REM MAYBE-UNCOMPUTABLE Sun March    SATISFY [isdst($T) != isdst($T+1)] MSG Dayli
 # End Daylight Savings TIme }}}
 
 # ** Easter and related days {{{
-REM  [easterdate($Uy)-47] MSG Shrove Tuesday/Mardi Gras
-REM  [easterdate($Uy)-46] MSG Ash Wednesday
-REM  [easterdate($Uy)-7]  MSG Palm Sunday
-OMIT [easterdate($Uy)-2]  MSG Good Friday
-OMIT [easterdate($Uy)]    MSG Easter Sunday
-REM  [easterdate($Uy)+39] MSG Ascension Day
-REM  [easterdate($Uy)+49] MSG Pentecost
+REM  [easterdate($Uy)-47] MSG [pf] Shrove Tuesday/Mardi Gras
+REM  [easterdate($Uy)-46] MSG [pf] Ash Wednesday
+REM  [easterdate($Uy)-7]  MSG [pf] Palm Sunday
+OMIT [easterdate($Uy)-2]  MSG [pf] Good Friday
+OMIT [easterdate($Uy)]    MSG [pf] Easter Sunday
+REM  [easterdate($Uy)+39] MSG [pf] Ascension Day
+REM  [easterdate($Uy)+49] MSG [pf] Pentecost
 # End Easter }}}
 
 # ** US Holidays {{{
@@ -35,94 +37,92 @@ REM  [easterdate($Uy)+49] MSG Pentecost
 # which ones are omitted.
 
 # Federal holidays {{{2
-OMIT    Jan 1                                     MSG New Year's Day
-REM     Third Monday in Jan                       MSG Martin Luther King Day
-REM     Third Monday in Feb SCANFROM -7 ADDOMIT   MSG President's Day
+OMIT    Jan 1                                     MSG [pf] New Year's Day
+REM     Third Monday in Jan                       MSG [pf] Martin Luther King Day
+REM     Third Monday in Feb SCANFROM -7 ADDOMIT   MSG [pf] President's Day
 # Emancipation Day {{{3
 PUSH-OMIT-CONTEXT
 # Normal case: 16 April falls Mon-Fri
-REM 16 Apr SCANFROM -7 ADDOMIT SATISFY [$Tw >= 1 && $Tw <= 5] MSG Emancipation Day
+REM 16 Apr SCANFROM -7 ADDOMIT SATISFY [$Tw >= 1 && $Tw <= 5] MSG [pf] Emancipation Day
 
 # 16 April falls on Saturday: Observe on the 15th
-REM 15 Apr SCANFROM -7 ADDOMIT SATISFY [$Tw == 5] MSG Emancipation Day (observed)
+REM 15 Apr SCANFROM -7 ADDOMIT SATISFY [$Tw == 5] MSG [pf] Emancipation Day (observed)
 
 # 16 April falls on Sunday: Observe on the 17th
-REM 17 Apr SCANFROM -7 ADDOMIT SATISFY [$Tw == 1] MSG Emancipation Day (observed)
+REM 17 Apr SCANFROM -7 ADDOMIT SATISFY [$Tw == 1] MSG [pf] Emancipation Day (observed)
 # End Emancipation Day }}}
-REM Apr 15 OMIT Sat Sun AFTER MSG %"Income tax%" due
-POP-OMIT-CONTEXT
-REM     Last Monday in May SCANFROM -7 ADDOMIT    MSG Memorial Day
-OMIT    Jun 19                                    MSG Juneteenth
+REM     Last Monday in May SCANFROM -7 ADDOMIT    MSG [pf] Memorial Day
+OMIT    Jun 19                                    MSG [pf] Juneteenth
 # Independence Day {{{3
-REM     July 4 SCANFROM -7 ADDOMIT                MSG Independence Day
-REM July 3 SCANFROM -7 ADDOMIT SATISFY [$Tw == 5] MSG Independence Day (observed)
-REM July 5 SCANFROM -7 ADDOMIT SATISFY [$Tw == 1] MSG Independence Day (observed)
+REM     July 4 SCANFROM -7 ADDOMIT                MSG [pf] Independence Day
+REM July 3 SCANFROM -7 ADDOMIT SATISFY [$Tw == 5] MSG [pf] Independence Day (observed)
+REM July 5 SCANFROM -7 ADDOMIT SATISFY [$Tw == 1] MSG [pf] Independence Day (observed)
 # End July 4th }}}
-REM     First Mon in Sep SCANFROM -7 ADDOMIT      MSG Labor Day
-REM     Second Mon in Oct                         MSG Columbus Day / Indigenous Peoples' Day
-REM     Nov 11                                    MSG Veterans Day
+REM     First Mon in Sep SCANFROM -7 ADDOMIT      MSG [pf] Labor Day
+REM     Second Mon in Oct                         MSG [pf] Columbus Day / Indigenous Peoples' Day
+REM     Nov 11                                    MSG [pf] Veterans Day
 # Thanksgiving {{{3
-REM     Thu 22 Nov SCANFROM -7 ADDOMIT            MSG Thanksgiving Day
-REM     Fri 23 Nov SCANFROM -7 ADDOMIT            MSG Thanksgiving (cont.)
+REM     Thu 22 Nov SCANFROM -7 ADDOMIT            MSG [pf] Thanksgiving Day
+REM     Fri 23 Nov SCANFROM -7 ADDOMIT            MSG [pf] Thanksgiving (cont.)
 # End Thanksgiving }}}
-OMIT    Dec 25                                    MSG Christmas Day
+OMIT    Dec 25                                    MSG [pf] Christmas Day
 # End Federal }}}
 
-REM     Jan  6                                    MSG Epiphany
-REM     Jan  9                                    MSG National Law Enforcement Appreciation Day
-REM     Jan 16                                    MSG National Nothing Day
-REM     Jan 25                                    MSG Opposite Day
-REM     Feb  2                                    MSG Groundhog Day
-REM     Feb 14                                    MSG Valentine's Day
-REM     Mar  1                                    MSG Bachelor's Day
-REM     Second Sat in Mar                         MSG National Genealogy Day
-REM     Mar 10                                    MSG Mario Day
-REM     Mar 14                                    MSG Steak and Blowjob Day
-REM     Mar 17                                    MSG St. Patrick's Day
-REM     Mar 24                                    MSG National Cheesesteak Day
-REM     Mar 30                                    MSG National Doctors Day
-REM     Apr  1                                    MSG April Fool's Day
-REM     First Sat in May                          MSG Kentucky Derby
-REM     May  4                                    MSG Star Wars Day
-REM     May  5                                    MSG Cinco de Mayo
-REM     May  6                                    MSG National Nurses Day
-REM     Second Sun in May                         MSG Mother's Day
-REM     May  15                                   MSG National Peace Officer Memorial Day
-REM     Third Sat in May                          MSG Armed Forces Day
-REM     May  28                                   MSG National Burger Day
-REM     Jun 14                                    MSG Flag Day
-REM     Jun 14                                    MSG United States Army's [_yr_num(1775)] Birthday
-REM     Third Sun in June                         MSG Father's Day
-REM     Aug  4                                    MSG United States Coast Guard's [_yr_num(1790)] Birthday
-REM     Aug  9                                    MSG National Book Lover's Day
-REM     Sep 11                                    MSG Patriot Day
-REM     Sep 14                                    MSG United States Air Force's [_yr_num(1947)] Birthday
-REM     Sep 17                                    MSG Constitution Day
-REM     Sep 22                                    MSG Hobbit Day
-REM     Sep 25                                    MSG National Daughters Day
-REM     Sep 28                                    MSG National Sons Day
+REM     Jan  6                                    MSG [pf] Epiphany
+REM     Jan  9                                    MSG [pf] National Law Enforcement Appreciation Day
+REM     Jan 16                                    MSG [pf] National Nothing Day
+REM     Jan 25                                    MSG [pf] Opposite Day
+REM     Feb  2                                    MSG [pf] Groundhog Day
+REM     Feb 14                                    MSG [pf] Valentine's Day
+REM     Mar  1                                    MSG [pf] Bachelor's Day
+REM     Second Sat in Mar                         MSG [pf] National Genealogy Day
+REM     Mar 10                                    MSG [pf] Mario Day
+REM     Mar 14                                    MSG [pf] Steak and Blowjob Day
+REM     Mar 17                                    MSG [pf] St. Patrick's Day
+REM     Mar 24                                    MSG [pf] National Cheesesteak Day
+REM     Mar 30                                    MSG [pf] National Doctors Day
+REM     Apr  1                                    MSG [pf] April Fool's Day
+REM     First Sat in May                          MSG [pf] Kentucky Derby
+REM     May  4                                    MSG [pf] Star Wars Day
+REM     May  5                                    MSG [pf] Cinco de Mayo
+REM     May  6                                    MSG [pf] National Nurses Day
+REM     Second Sun in May                         MSG [pf] Mother's Day
+REM     May  15                                   MSG [pf] National Peace Officer Memorial Day
+REM     Third Sat in May                          MSG [pf] Armed Forces Day
+REM     May  28                                   MSG [pf] National Burger Day
+REM     Jun 14                                    MSG [pf] Flag Day
+REM     Jun 14                                    MSG [pf] United States Army's [_yr_num(1775)] Birthday
+REM     Third Sun in June                         MSG [pf] Father's Day
+REM     Aug  4                                    MSG [pf] United States Coast Guard's [_yr_num(1790)] Birthday
+REM     Aug  9                                    MSG [pf] National Book Lover's Day
+REM     Sep 11                                    MSG [pf] Patriot Day
+REM     Sep 14                                    MSG [pf] United States Air Force's [_yr_num(1947)] Birthday
+REM     Sep 17                                    MSG [pf] Constitution Day
+REM     Sep 22                                    MSG [pf] Hobbit Day
+REM     Sep 25                                    MSG [pf] National Daughters Day
+REM     Sep 28                                    MSG [pf] National Sons Day
 # Healthcare Safety and Security Week
 REM     Sun  8 Oct SCANFROM -7 SATISFY 1
 SET t $T
-REM [t] THROUGH [t+6]                             MSG Healthcare Security and Safety Week
+REM [t] THROUGH [t+6]                             MSG [pf] Healthcare Security and Safety Week
 # End Healthcare Safety and Security Week
-REM     Second Wed in Oct                         MSG Healthcare Security and Safety Officer Appreciation Day
-REM     Oct 13                                    MSG United States Navy's [_yr_num(1775)] Birthday
-REM     Oct 30                                    MSG Mischief Night
-REM     Oct 31                                    MSG Halloween
-REM     Tue Nov  2 SCANFROM -7 SATISFY [($Ty % 4) == 0] MSG Election Day
-REM     Nov  9                                    MSG National Scrapple Day
-REM     Nov 10                                    MSG US Marine Corps' [_yr_num(1775)] Birthday
-REM     Dec  7                                    MSG Pearl Harbor Rememberance Day
-REM     Dec 20                                    MSG United States Space Force's [_yr_num(2019)] Birthday
-REM     Dec 21                                    MSG National Short Girl Appreciation Day
-OMIT    Dec 24                                    MSG Christmas Eve
-OMIT    Dec 31                                    MSG New Year's Eve
+REM     Second Wed in Oct                         MSG [pf] Healthcare Security and Safety Officer Appreciation Day
+REM     Oct 13                                    MSG [pf] United States Navy's [_yr_num(1775)] Birthday
+REM     Oct 30                                    MSG [pf] Mischief Night
+REM     Oct 31                                    MSG [pf] Halloween
+REM     Tue Nov  2 SCANFROM -7 SATISFY [($Ty % 4) == 0] MSG [pf] Election Day
+REM     Nov  9                                    MSG [pf] National Scrapple Day
+REM     Nov 10                                    MSG [pf] US Marine Corps' [_yr_num(1775)] Birthday
+REM     Dec  7                                    MSG [pf] Pearl Harbor Rememberance Day
+REM     Dec 20                                    MSG [pf] United States Space Force's [_yr_num(2019)] Birthday
+REM     Dec 21                                    MSG [pf] National Short Girl Appreciation Day
+OMIT    Dec 24                                    MSG [pf] Christmas Eve
+OMIT    Dec 31                                    MSG [pf] New Year's Eve
 # End US Holidays }}}
 
 # ** Maryland Holidays {{{
-REM     Mar 25                                    MSG Maryland Day
-REM     First Fri in May                          MSG Fallen Heroes Day (Maryland)
-REM     Third Sat in May                          MSG Preakness Stakes (Maryland)
-REM     Sep 12                                    MSG Defenders Day (Maryland)
+REM     Mar 25                                    MSG [pf] Maryland Day
+REM     First Fri in May                          MSG [pf] Fallen Heroes Day (Maryland)
+REM     Third Sat in May                          MSG [pf] Preakness Stakes (Maryland)
+REM     Sep 12                                    MSG [pf] Defenders Day (Maryland)
 # End Maryland Holidays }}}

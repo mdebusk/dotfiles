@@ -6,14 +6,13 @@
 # Last edit  : 2024-03-07 18:19                                               #
 # Purpose    : Lord of the Rings days file for remind                         #
 # Depends    : remind                                                         #
-# Arguments  : N/A                                                            #
 # Known bugs : NKA                                                            #
-# To do      : N/A                                                            #
+# TODO       : N/A                                                            #
 ###############################################################################
 
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
 # include [getenv("XDG_CONFIG_HOME")]/remind/lotr.rem
-SET pf "Lord of the Rings :"
+SET pf "Lord of the Rings : 🧙"
 
 REM Jan  5 MSG [pf] Fellowship enters Moria
 REM Jan  9 MSG [pf] Fellowship reaches Lorien
