@@ -58,6 +58,14 @@ REM SPECIAL COLOR [col_blue] Astronomical Dusk : 🌌 [adusk()] today and [adusk
 # End sun }}}
 
 
+# ** Daylight Savings Time {{{
+REM MAYBE-UNCOMPUTABLE Sun November SATISFY [isdst($T) != isdst($T+1)] MSG Daylight Saving Time Ends %c
+REM MAYBE-UNCOMPUTABLE Sun March    SATISFY [isdst($T) != isdst($T+1)] MSG Daylight Saving Time Starts %c
+## REM First  Sun November +3 MSG Daylight Savings Time Ends %c
+## REM Second Sun March    +3 MSG Daylight Savings Time Begins %c
+# End Daylight Savings TIme }}}
+
+
 # ** Current moon phase {{{
 IF moonphase() == 0
     REM SPECIAL COLOR [col_base3] Current Moon      : 🌑 New%_
