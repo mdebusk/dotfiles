@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2024-03-17 23:57                                               #
+# Last edit  : 2024-03-18 01:06                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -13,13 +13,9 @@
 # include [getenv("XDG_CONFIG_HOME")]/remind/holidays.rem
 
 SET pf "Holiday           : 🙂"
+SET bf "Bank Holiday      : 🏦"
+SET mf "Maryland Holiday  : 🏴"
 
-# ** Daylight Savings TIme {{{
-REM MAYBE-UNCOMPUTABLE Sun November SATISFY [isdst($T) != isdst($T+1)] MSG Daylight Saving Time Ends %c
-REM MAYBE-UNCOMPUTABLE Sun March    SATISFY [isdst($T) != isdst($T+1)] MSG Daylight Saving Time Starts %c
-## REM First  Sun November +3 MSG Daylight Savings Time Ends %c
-## REM Second Sun March    +3 MSG Daylight Savings Time Begins %c
-# End Daylight Savings TIme }}}
 
 # ** Easter and related days {{{
 REM  [easterdate($Uy)-47] MSG [pf] Shrove Tuesday/Mardi Gras
@@ -37,9 +33,9 @@ REM  [easterdate($Uy)+49] MSG [pf] Pentecost
 # which ones are omitted.
 
 # Federal holidays {{{2
-OMIT    Jan 1                                     MSG [pf] New Year's Day
-REM     Third Monday in Jan                       MSG [pf] Martin Luther King Day
-REM     Third Monday in Feb SCANFROM -7 ADDOMIT   MSG [pf] President's Day
+OMIT    Jan 1                                     MSG [bf] New Year's Day
+REM     Third Monday in Jan                       MSG [bf] Martin Luther King Day
+REM     Third Monday in Feb SCANFROM -7 ADDOMIT   MSG [bf] President's Day
 # Emancipation Day {{{3
 PUSH-OMIT-CONTEXT
 # Normal case: 16 April falls Mon-Fri
@@ -51,21 +47,21 @@ REM 15 Apr SCANFROM -7 ADDOMIT SATISFY [$Tw == 5] MSG [pf] Emancipation Day (obs
 # 16 April falls on Sunday: Observe on the 17th
 REM 17 Apr SCANFROM -7 ADDOMIT SATISFY [$Tw == 1] MSG [pf] Emancipation Day (observed)
 # End Emancipation Day }}}
-REM     Last Monday in May SCANFROM -7 ADDOMIT    MSG [pf] Memorial Day
-OMIT    Jun 19                                    MSG [pf] Juneteenth
+REM     Last Monday in May SCANFROM -7 ADDOMIT    MSG [bf] Memorial Day
+OMIT    Jun 19                                    MSG [bf] Juneteenth
 # Independence Day {{{3
-REM     July 4 SCANFROM -7 ADDOMIT                MSG [pf] Independence Day
-REM July 3 SCANFROM -7 ADDOMIT SATISFY [$Tw == 5] MSG [pf] Independence Day (observed)
-REM July 5 SCANFROM -7 ADDOMIT SATISFY [$Tw == 1] MSG [pf] Independence Day (observed)
+REM     July 4 SCANFROM -7 ADDOMIT                MSG [bf] Independence Day
+REM July 3 SCANFROM -7 ADDOMIT SATISFY [$Tw == 5] MSG [bf] Independence Day (observed)
+REM July 5 SCANFROM -7 ADDOMIT SATISFY [$Tw == 1] MSG [bf] Independence Day (observed)
 # End July 4th }}}
-REM     First Mon in Sep SCANFROM -7 ADDOMIT      MSG [pf] Labor Day
+REM     First Mon in Sep SCANFROM -7 ADDOMIT      MSG [bf] Labor Day
 REM     Second Mon in Oct                         MSG [pf] Columbus Day / Indigenous Peoples' Day
-REM     Nov 11                                    MSG [pf] Veterans Day
+REM     Nov 11                                    MSG [bf] Veterans Day
 # Thanksgiving {{{3
-REM     Thu 22 Nov SCANFROM -7 ADDOMIT            MSG [pf] Thanksgiving Day
-REM     Fri 23 Nov SCANFROM -7 ADDOMIT            MSG [pf] Thanksgiving (cont.)
+REM     Thu 22 Nov SCANFROM -7 ADDOMIT            MSG [bf] Thanksgiving Day
+REM     Fri 23 Nov SCANFROM -7 ADDOMIT            MSG [bf] Thanksgiving (cont.)
 # End Thanksgiving }}}
-OMIT    Dec 25                                    MSG [pf] Christmas Day
+OMIT    Dec 25                                    MSG [bf] Christmas Day
 # End Federal }}}
 
 REM     Jan  6                                    MSG [pf] Epiphany
@@ -121,8 +117,8 @@ OMIT    Dec 31                                    MSG [pf] New Year's Eve
 # End US Holidays }}}
 
 # ** Maryland Holidays {{{
-REM     Mar 25                                    MSG [pf] Maryland Day
-REM     First Fri in May                          MSG [pf] Fallen Heroes Day (Maryland)
-REM     Third Sat in May                          MSG [pf] Preakness Stakes (Maryland)
-REM     Sep 12                                    MSG [pf] Defenders Day (Maryland)
+REM     Mar 25                                    MSG [mf] Maryland Day
+REM     First Fri in May                          MSG [mf] Fallen Heroes Day (Maryland)
+REM     Third Sat in May                          MSG [mf] Preakness Stakes (Maryland)
+REM     Sep 12                                    MSG [mf] Defenders Day (Maryland)
 # End Maryland Holidays }}}
