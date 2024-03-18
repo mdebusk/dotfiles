@@ -1,0 +1,51 @@
+###############################################################################
+# Filename   : reminders.rem                                                  #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : Unknown                                                        #
+# Last edit  : 2024-03-18 01:36                                               #
+# Purpose    : General reminders file for remind                              #
+# Depends    : remind                                                         #
+# Known bugs : NKA                                                            #
+# TODO       : N/A                                                            #
+###############################################################################
+
+# Place in $XDG_CONFIG_HOME/remind/
+
+REM RUN ccal -3; echo
+
+BANNER Reminders for %w, %m %d, %y%o:%_━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Included files {{{
+DO solarized_colors.rem
+IF defined("tkremind")
+    DO definitions.rem
+    DO anniversaries.rem
+    DO birthdays.rem
+    DO deaths.rem
+    DO financial.rem
+    DO holidays.rem
+    DO seasons.rem
+    DO personal.rem
+ELSE
+    DO definitions.rem
+    IF ! $CalMode
+        DO sky.rem
+    ENDIF
+    DO seasons.rem
+    DO holidays.rem
+    IF ! $CalMode
+        DO discordian.rem
+        DO lotr.rem
+        DO pagan.rem
+        DO todo.rem
+    ENDIF
+    DO anniversaries.rem
+    DO birthdays.rem
+    DO deaths.rem
+    DO financial.rem
+    IF ! $CalMode
+        DO supplements.rem
+    ENDIF
+    DO personal.rem
+ENDIF
+#}}}
