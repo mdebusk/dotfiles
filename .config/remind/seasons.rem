@@ -2,7 +2,7 @@
 # Filename   : seasons.rem                                                    #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/)                        #
 # Created    : Unknown                                                        #
-# Last edit  : 2024-03-07 18:55                                               #
+# Last edit  : 2024-03-18 02:56                                               #
 # Purpose    : Provides remind with change-of-season dates                    #
 # Reference  : man remind                                                     #
 # Depends    : remind                                                         #
@@ -24,7 +24,7 @@
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
 # include [getenv("XDG_CONFIG_HOME")]/remind/seasons.rem
 
-SET pf "🌞 Season Change  :"
+SET pf "Season Change     : 🌞"
 
 # ** 2020s {{{
 REM [trigger(date(2024,1,03), time(00,38), 1)] MSG [pf] Perihelion
