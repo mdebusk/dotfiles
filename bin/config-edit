@@ -4,7 +4,7 @@
 # Filename   : config-edit                                                    #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-09-14 11:46                                               #
-# Last edit  : 2024-01-27 14:32                                               #
+# Last edit  : 2024-03-18 01:42                                               #
 # Purpose    : Choose a config file to edit                                   #
 # Depends    : rofi or dmenu, an editor, bash                                 #
 # TODO       : N/A                                                            #
@@ -83,7 +83,7 @@ case "$chosen" in
     Xresources) chosen="$XDG_CONFIG_HOME/X11/Xresources" ;;
     i3) chosen="$XDG_CONFIG_HOME/i3/config" ;;
     i3status) chosen="$XDG_CONFIG_HOME/i3status/config" ;;
-    reminders) chosen="$XDG_CONFIG_HOME/remind/reminders.rem" ;;
+    reminders) chosen="$XDG_CONFIG_HOME/remind/personal.rem" ;;
     cal) chosen="$XDG_DATA_HOME/cal.dat" ;;
     *) exit 1 ;;
 esac
