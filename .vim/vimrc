@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2024-03-17 21:47                                               "
+" Last edit  : 2024-03-19 02:34                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/                                           "
 " Depends    : vim                                                            "
@@ -95,7 +95,7 @@ set mousefocus  " May as well use it if it's there
 
 " ** 10. GUI {{{
 if has("gui_running")
-    set guifont=Azeret\ Mono\ 9 " Set the font and size
+    set guifont=Azeret\ Mono\ 12 " Set the font and size
     set guioptions-=l            " Remove left scrollbar
     set guioptions-=R            " Remove right scrollbar if vsplit
     set guioptions-=b            " Remove bottom scrollbar

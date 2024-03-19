@@ -2,7 +2,7 @@
  # Filename   : alacritty.toml                                                 #
  # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
  # Created    : 2023-07-24 01:30                                               #
- # Last edit  : 2024-02-14 19:37                                               #
+ # Last edit  : 2024-03-19 02:36                                               #
  # Purpose    : Configuration file for alacritty                               #
  # Depends    : alacritty version 13.0 or above                                #
  # Known bugs : NKA                                                            #
@@ -82,7 +82,7 @@ bold_italic = { family = "Azeret Mono", style = "Bold Italic" }
 italic = { family = "Azeret Mono", style = "Italic" }
 offset = { x = 0, y = 0 }
 glyph_offset = { x = 0, y = 0 }
-size = 12
+size = 16
 # End font }}}
 
 [bell] # {{{
