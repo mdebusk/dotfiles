@@ -2,7 +2,7 @@
 # Filename   : .bashrc                                                        #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2024-02-24 12:56                                               #
+# Last edit  : 2024-03-21 00:06                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash, readlink, cut, cat, lesspipe, dircolors, test            #
 # Known bugs : NKA                                                            #
@@ -59,6 +59,9 @@ export NNTPSERVER='news.eternal-september.org'
 # Today I found out you can use vim as a man pager
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 
+# Enable extended regex for fzf
+export FZF_DEFAULT_OPS="--extended"
+
 # End environment variables }}}
 
 
@@ -113,14 +116,8 @@ esac
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 
 # Add support for fzf
-[ -f "$XDG_CONFIG_HOME"/fzf/fzf.bash ] && source "$XDG_CONFIG_HOME"/fzf/fzf.bash
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash
 
 # Add completions for Alacritty
 [ -f $HOME/Source/alacritty/extra/completions/alacritty.bash ] && . $HOME/Source/alacritty/extra/completions/alacritty.bash
 # End sourcing of external files }}}
-
-
-# Which terminal emulator am I using?
-# https://askubuntu.com/questions/210182/how-to-check-which-terminal-emulator-is-being-currently-used/1361088#1361088
-# Commented out because I didn't like it after all
-## echo -n "Terminal emulator: " ; readlink "/proc/$(cat /proc/$(echo $$)/stat|cut -d ' ' -f 4)/exe"
