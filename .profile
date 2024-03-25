@@ -2,7 +2,7 @@
 # Filename   : .profile                                                       #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2024-03-19 02:48                                               #
+# Last edit  : 2024-03-25 13:24                                               #
 # Purpose    : Sets environment variables                                     #
 # TODO       : Move ~/.vim to $XDG_CONFIG_HOME                                #
 ###############################################################################
@@ -24,6 +24,10 @@ export TESSDATA_PREFIX=/usr/share/tesseract-ocr/4.00/tessdata/
 # This is set for the git version of vim
 export VISUAL=/usr/local/bin/vim
 export EDITOR=$VISUAL
+
+# For the "par" formatter, per its documentation:
+# http://www.nicemice.net/par/par-doc.var
+export PARINIT="rTbgqR B=.,?'_A_a_@ Q=_s>|"
 
 # ** Modify path for various programs {{{
 # Add $JAVA_HOME to path
