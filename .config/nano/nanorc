@@ -1,42 +1,126 @@
 ###############################################################################
-# Filename   : .nanorc                                                        #
+# Filename   : $XDG_CONFIG_HOME/nano/nanorc                                   #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2022-09-07 00:25                                               #
+# Last edit  : 2024-03-25 14:14                                               #
 # Purpose    : Configuration file for nano                                    #
-#              https://www.nano-editor.org/dist/latest/nanorc.5.html          #
+# Reference  : https://www.nano-editor.org/dist/latest/nanorc.5.html          #
 # Depends    : nano                                                           #
-# Arguments  : N/A                                                            #
 # Known bugs : NKA                                                            #
-# To do      : N/A                                                            #
+# TODO       : N/A                                                            #
 ###############################################################################
 
-# Options{{{
-set atblanks        # wrap long lines at whitespace
+# ** Options {{{
+# When soft line wrapping is enabled, make it wrap lines at blank
+# characters (tabs and spaces) instead of always at the edge of
+# the screen.
+set atblanks
+
+# Automatically indent a newly created line to the same number of
+# tabs and/or spaces as the previous line (or as the next line if
+# the previous line is the beginning of a paragraph).
 set autoindent
+
+# When saving a file, create a backup file by adding a
+# tilde (~) to the file’s name.
 set backup
-set backupdir "~/.cache/nano/backups"
-set boldtext        # Use binstead of reverse for UI elements
-set constantshow    # Cupdate cursor position in status bar
-set historylog      # Remember search/replace strings
-set guidestripe 80  # Show the 80th column
+
+# Make and keep not just one backup file, but make and keep
+# a uniquely numbered one every time a file is saved -- when
+# backups are enabled with set backup or --backup or -B. The
+# uniquely numbered files are stored in the specified directory.
+set backupdir ~/.cache/nano/backups
+
+# Use bold instead of reverse video for the title bar, status bar,
+# key combos, function tags, line numbers, and selected text. This
+# can be overridden by setting the options titlecolor, statuscolor,
+# keycolor, functioncolor, numbercolor, and selectedcolor.
+set boldtext
+
+# Constantly display the cursor position in the status bar. This
+# overrides the option quickblank.
+set constantshow
+
+# Do not use the line below the title bar, leaving
+# it entirely blank.
+set emptyline
+
+# Save the last hundred search strings and replacement strings
+# and executed commands, so they can be easily reused in later
+# sessions.
+set historylog
+
+# Draw a vertical stripe at the given column, to help judge the
+# width of the text. (The color of the stripe can be changed with
+# set stripecolor.)
+set guidestripe 80
+
+# Display line numbers to the left of the text area. (Any line with
+# an anchor additionally gets a mark in the margin.)
 set linenumbers
-set locking         # Use vim-style lock-files
-set minibar         # Suppretitle bar; show info at the bottom
+
+# Enable vim-style lock-files for when editing files.
+set locking
+
+# Suppress the title bar and instead show information about the
+# current buffer at the bottom of the screen, in the space for the
+# status bar. In this "minibar" the filename is shown on the left,
+# followed by an asterisk if the buffer has been modified. On the
+# right are displayed the current line and column number, the code
+# of the character under the cursor (in Unicode format: U+xxxx),
+# the same flags as are shown by set stateflags, and a percentage
+# that expresses how far the cursor is into the file (linewise).
+# When a file is loaded or saved, and also when switching between
+# buffers, the number of lines in the buffer is displayed after
+# the filename. This number is cleared upon the next keystroke, or
+# replaced with an [i/n] counter when multiple buffers are open.
+# The line plus column numbers and the character code are displayed
+# only when set constantshow is used, and can be toggled on and off
+# with M-C. The state flags are displayed only when set stateflags
+# is used.
+set minibar
+
+# Do regular-expression searches by default. Regular expressions in
+# nano are of the extended type (ERE).
 set regexp          # Default to regular expression search
+
+# Display lines that exceed the screen’s width over multiple
+# screen lines. (You can make this soft-wrapping occur at
+# whitespace instead of rudely at the screen’s edge, by using
+# also set atblanks.)
 set softwrap        # Wrap at screen width
-set stateflags      # Show buffer state info in top right corner
+
+# Use the top-right corner of the screen for showing some state
+# flags: I when auto-indenting, M when the mark is on, L when
+# hard-wrapping (breaking long lines), R when recording a macro,
+# and S when soft-wrapping. When the buffer is modified, a star (*)
+# is shown after the filename in the center of the title bar.
+set stateflags
+
+# Use a tab size of number columns. The value of number must be
+# greater than 0. The default value is 8.
 set tabsize 4
+
+# Convert each typed tab to spaces -- to the number of spaces that
+# a tab at that position would take up.
 set tabstospaces
-#}}}
 
-# Syntax Highlighting{{{
-include /usr/share/nano/*.nanorc
-include /usr/share/nano/extra/*.nanorc
-include /usr/share/nano/debian/*.nanorc
-#}}}
+# Remove trailing whitespace from wrapped lines when automatic
+# hard-wrapping occurs or when text is justified.
+set trimblanks
 
-# Rebinding Keys{{{
+# Save a file by default in Unix format. This overrides nano’s
+# default behavior of saving a file in the format that it had.
+# (This option has no effect when you also use set noconvert.)
+set unix
+# End options }}}
+
+# ** Syntax Highlighting {{{
+# These paths are for the git version of nano
+include /usr/local/share/nano/*.nanorc
+include /usr/local/share/nano/extra/*.nanorc
+#End syntax highlighting }}}
+
+# ** Rebinding Keys {{{
 # None yet
-# }}}
-
+# End key rebinds }}}
