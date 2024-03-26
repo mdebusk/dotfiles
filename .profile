@@ -1,8 +1,8 @@
 ###############################################################################
-# Filename   : .profile                                                       #
+# Filename   : $HOME/.profile                                                 #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2024-03-25 13:24                                               #
+# Last edit  : 2024-03-25 20:49                                               #
 # Purpose    : Sets environment variables                                     #
 # TODO       : Move ~/.vim to $XDG_CONFIG_HOME                                #
 ###############################################################################
@@ -63,17 +63,16 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GPODDER_DOWNLOAD_DIR=$HOME/Podcasts/
 export GPODDER_HOME=$XDG_CONFIG_HOME/gpodder/
 export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
-export HISTFILE=$XDG_STATE_HOME/bash/history
 export HTML_TIDY=$XDG_CONFIG_HOME/tidyrc
 export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
 export JAVA_OPTIONS="-Djava.util.prefs.userRoot=${XDG_CONFIG_HOME}/java - Djavafx.cachedir=${XDG_CACHE_HOME}/openjfx"
 export KDEHOME="$XDG_CONFIG_HOME"/kde
 export MPLAYER_HOME=$XDG_CONFIG_HOME/mplayer
-export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql_history
+export MYSQL_HISTFILE=$XDG_STATE_HOME/mysql/mysql_history
 export NCFTPDIR=$XDG_CONFIG_HOME/ncftp
 export NETRC=$XDG_CONFIG_HOME/netrc
-export NODE_REPL_HISTORY=$XDG_DATA_HOME/node_repl_history
+export NODE_REPL_HISTORY=$XDG_STATE_HOME/node_repl_history
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export PWS_PREFSDIR=$XDG_CONFIG_HOME/pwsafe/
 export PYENV_ROOT=$XDG_DATA_HOME/pyenv
@@ -81,7 +80,7 @@ export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export RXVT_SOCKET="$XDG_RUNTIME_DIR"/urxvtd
 export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
-export SQLITE_HISTORY=$XDG_CACHE_HOME/sqlite3/sqlite_history
+export SQLITE_HISTORY=$XDG_STATE_HOME/sqlite3/sqlite_history
 export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 export TEXMFHOME=$XDG_DATA_HOME/texmf
 export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
