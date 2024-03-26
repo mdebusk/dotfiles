@@ -1,8 +1,8 @@
 ###############################################################################
-# Filename   : .bashrc                                                        #
+# Filename   : $HOME/.bashrc                                                  #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2024-03-21 00:06                                               #
+# Last edit  : 2024-03-25 20:50                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash, readlink, cut, cat, lesspipe, dircolors, test            #
 # Known bugs : NKA                                                            #
