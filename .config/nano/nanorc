@@ -2,7 +2,7 @@
 # Filename   : $XDG_CONFIG_HOME/nano/nanorc                                   #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2024-03-25 14:14                                               #
+# Last edit  : 2024-03-25 21:03                                               #
 # Purpose    : Configuration file for nano                                    #
 # Reference  : https://www.nano-editor.org/dist/latest/nanorc.5.html          #
 # Depends    : nano                                                           #
@@ -29,7 +29,7 @@ set backup
 # a uniquely numbered one every time a file is saved -- when
 # backups are enabled with set backup or --backup or -B. The
 # uniquely numbered files are stored in the specified directory.
-set backupdir ~/.cache/nano/backups
+set backupdir ~/.local/state/nano/backups
 
 # Use bold instead of reverse video for the title bar, status bar,
 # key combos, function tags, line numbers, and selected text. This
@@ -82,13 +82,13 @@ set minibar
 
 # Do regular-expression searches by default. Regular expressions in
 # nano are of the extended type (ERE).
-set regexp          # Default to regular expression search
+set regexp
 
 # Display lines that exceed the screen’s width over multiple
 # screen lines. (You can make this soft-wrapping occur at
 # whitespace instead of rudely at the screen’s edge, by using
 # also set atblanks.)
-set softwrap        # Wrap at screen width
+set softwrap
 
 # Use the top-right corner of the screen for showing some state
 # flags: I when auto-indenting, M when the mark is on, L when
