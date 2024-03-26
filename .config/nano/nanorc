@@ -2,7 +2,7 @@
 # Filename   : $XDG_CONFIG_HOME/nano/nanorc                                   #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2024-03-25 21:03                                               #
+# Last edit  : 2024-03-26 10:09                                               #
 # Purpose    : Configuration file for nano                                    #
 # Reference  : https://www.nano-editor.org/dist/latest/nanorc.5.html          #
 # Depends    : nano                                                           #
@@ -115,12 +115,55 @@ set trimblanks
 set unix
 # End options }}}
 
+
 # ** Syntax Highlighting {{{
 # These paths are for the git version of nano
-include /usr/local/share/nano/*.nanorc
-include /usr/local/share/nano/extra/*.nanorc
+## include /usr/local/share/nano/*.nanorc
+## include /usr/local/share/nano/extra/*.nanorc
+# These are from https://github.com/scopatz/nanorc
+include ~/.config/nano/extra/*.nanorc
 #End syntax highlighting }}}
+
 
 # ** Rebinding Keys {{{
 # None yet
 # End key rebinds }}}
+
+
+# ** Color scheme {{{
+
+# Notes on colors {{{2
+###############################################################################
+# Valid names for the foreground and background colors are: red,              #
+# green, blue, magenta, yellow, cyan, white, and black. Each of               #
+# these eight names may be prefixed with the word light to get a              #
+# brighter version of that color. The word grey or gray may be used           #
+# as a synonym for lightblack.                                                #
+#                                                                             #
+# On terminal emulators that can do at least 256 colors, other                #
+# valid (but unprefixable) color names are: pink, purple, mauve,              #
+# lagoon, mint, lime, peach, orange, latte, rosy, beet, plum,                 #
+# sea, sky, slate, teal, sage, brown, ocher, sand, tawny, brick,              #
+# crimson, and normal — where normal means the default foreground             #
+# or background color. On such emulators, the color may also be               #
+# specified as a three-digit hexadecimal number prefixed with #,              #
+# with the digits representing the amounts of red, green, and                 #
+# blue, respectively. This tells nano to select from the available            #
+# palette the color that approximates the given values.                       #
+#                                                                             #
+# Either fgcolor or ,bgcolor may be left out, and the pair may be             #
+# preceded by bold and/or italic (separated by commas) to get a               #
+# bold and/or slanting typeface, if your terminal can do those.               #
+###############################################################################
+# End notes }}}
+
+#   Desc       Fg,Bg
+set titlecolor white,black
+set keycolor grey,blue
+set functioncolor normal,normal
+set numbercolor cyan,black
+set errorcolor brightwhite,red
+set selectedcolor black,white
+set stripecolor white,black
+set statuscolor black,white
+# End colors }}}
