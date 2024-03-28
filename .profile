@@ -2,7 +2,7 @@
 # Filename   : $HOME/.profile                                                 #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2024-03-25 20:49                                               #
+# Last edit  : 2024-03-28 00:11                                               #
 # Purpose    : Sets environment variables                                     #
 # TODO       : Move ~/.vim to $XDG_CONFIG_HOME                                #
 ###############################################################################
@@ -45,12 +45,23 @@ test -f "$HOME/.local/share/cargo/env" && . "$HOME/.local/share/cargo/env"
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
+export XDG_DESKTOP_DIR="$HOME/Desktop"
+export XDG_DOCUMENTS_DIR="$HOME/Documents"
+export XDG_DOWNLOAD_DIR="$HOME/Downloads"
+export XDG_MUSIC_DIR="$HOME/Music"
+export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_PUBLICSHARE_DIR="$HOME/Public"
 export XDG_STATE_HOME=$HOME/.local/state
-test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && source ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
+export XDG_TEMPLATES_DIR="$HOME/Templates"
+export XDG_VIDEOS_DIR="$HOME/Videos"
+# I added these above; there's no need to do it again.
+# I'll comment it out in case something doesn't go well.
+## test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && source ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
 # End standard locations }}}
 
 # Specific programs {{{
 # Useful: https://wiki.archlinux.org/title/XDG_Base_Directory
+# Also useful: https://github.com/b3nj5m1n/xdg-ninja
 export ANDROID_HOME=$XDG_DATA_HOME/android
 export CALOPT="--col=$XDG_CONFIG_HOME/ccal/cal.col --d=$XDG_DATA_HOME/ccal/cal.dat --u --f"
 export CARGO_HOME=$XDG_DATA_HOME/cargo
