@@ -2,7 +2,7 @@
 # Filename   : fzf.bash                                                       #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-11-30                                                     #
-# Last edit  : 2024-03-21 01:36                                               #
+# Last edit  : 2024-04-01 13:06                                               #
 # Purpose    : Initialization for fzf utility                                 #
 # Reference  : https://github.com/junegunn/fzf                                #
 # Depends    : fzf                                                            #
@@ -37,7 +37,7 @@ export FZF_DEFAULT_OPTS+="fg:#657b83,"
 export FZF_DEFAULT_OPTS+="header:#268bd2,"
 export FZF_DEFAULT_OPTS+="hl+:#268bd2,"
 export FZF_DEFAULT_OPTS+="hl:#268bd2,"
-export FZF_DEFAULT_OPTS+="info:#b58900,"
+export FZF_DEFAULT_OPTS+="info:#93a1a1,"
 export FZF_DEFAULT_OPTS+="label:#657b83,"
 export FZF_DEFAULT_OPTS+="marker:#2aa198,"
 export FZF_DEFAULT_OPTS+="pointer:#2aa198,"
