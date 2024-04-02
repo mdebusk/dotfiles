@@ -3,11 +3,11 @@
 # Filename   : popup                                                          #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-01-22 20:19                                               #
-# Last edit  : 2024-03-12 20:18                                               #
+# Last edit  : 2024-04-02 17:54                                               #
 # Purpose    : Hoping to replace a status bar, for the most part              #
 # Depends    : date, notify-send, bash, weather, on_ac_power, awk,            #
 #            : iwgetid, hostname, free, sensors, df, sed, mpstat              #
-# Arguments  : -b -c -d -h -s -w -t                                           #
+# Arguments  : -b -c -h -i -k -w -t                                           #
 # Known bugs : NKA                                                            #
 # TODO       : Consider making the battery icon reflect remaining percentage  #
 # TODO       : When I get a wired connection, Change "Wireless" to "Network"  #
@@ -66,19 +66,19 @@
 # ** Functions {{{1
 # ** Main {{{
 main() {
-    while getopts "bcdhmstw" option; do
+    while getopts "bchimntw" option; do
         case $option in
             b) battery_status
                 exit ;;
             c) show_wireless_info
                 exit;;
-            d) date_and_time
-                exit;;
             h) help_screen
+                exit;;
+            i) system_details
                 exit;;
             m) show_moon_phase
                 exit;;
-            s) system_details
+            n) date_and_time
                 exit;;
             t) todo_list
                 exit;;
@@ -180,7 +180,7 @@ date_and_time() {
 system_details() {
     icn=dialog-information
     info=$(system_information)
-    notify-send\
+    notify-send -t 6000\
         "System Status"\
         "$info"\
         -i $icn
@@ -224,7 +224,7 @@ wireless_info() {
 
 show_wireless_info() {
     icn=nm-device-wireless
-    notify-send\
+    notify-send -t 5000\
         "Wireless"\
         "$(wireless_info)"\
         -i $icn
@@ -237,12 +237,12 @@ help_screen() {
 	usage: popup [OPTION]
 	    -b    battery status
 	    -c    wireless connection info
-	    -d    date and time
 	    -h    this help screen
+	    -i    system information
 	    -m    current phase of the moon
-	    -s    system information
-	    -w    weather
+	    -n    date and time
 	    -t    todo list
+	    -w    weather
 	
 	EOF
 } # }}}
