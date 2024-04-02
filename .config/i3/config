@@ -1,8 +1,8 @@
 ###############################################################################
-# Filename   : config                                                         #
+# Filename   : $XDG_CONFIG_HOME/i3/config                                     #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2024-03-02 02:58                                               #
+# Last edit  : 2024-04-02 17:50                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3 version 4.20+                                               #
@@ -193,6 +193,28 @@ bindsym $mod+Shift+r restart
 # Enter resize mode
 bindsym $mod+r mode "resize"
 
+# Popup information using notify-send {{{2
+# Battery status
+bindsym $mod+b exec popup -b
+
+# Wireless connection status
+bindsym $mod+c exec popup -c
+
+# System information
+bindsym $mod+i exec popup -i
+
+# Time and date
+bindsym $mod+n exec popup -n
+
+# Phase of the moon
+bindsym $mod+m exec popup -m
+
+# To-do list
+bindsym $mod+t exec popup -t
+
+# Weather
+bindsym $mod+Shift+w exec popup -w
+# End popups }}}
 # end keyboard bindings }}}
 
 # ** 4.5: Mouse Bindings {{{
