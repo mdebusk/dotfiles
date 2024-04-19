@@ -1,0 +1,112 @@
+#!/usr/bin/env bash
+###############################################################################
+# Filename   : system_monitor                                                 #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : 2024-04-19 01:26                                               #
+# Last edit  : 2024-04-19 01:26                                               #
+# Purpose    : Print system information                                       #
+# Depends    : bash, tput, uname, lsb_release, sed, ping, hostname, curl,     #
+#            : nmcli, awk, users, top, uptime, free, df                       #
+# Known bugs : NKA                                                            #
+# TODO       : N/A                                                            #
+###############################################################################
+
+# ** License {{{
+###############################################################################
+# This is free and unencumbered software released into the public domain.     #
+#                                                                             #
+# Anyone is free to copy, modify, publish, use, compile, sell, or             #
+# distribute this software, either in source code form or as a compiled       #
+# binary, for any purpose, commercial or non-commercial, and by any means.    #
+#                                                                             #
+# In jurisdictions that recognize copyright laws, the author or authors of    #
+# this software dedicate any and all copyright interest in the software to    #
+# the public domain. We make this dedication for the benefit of the public    #
+# at large and to the detriment of our heirs and successors. We intend        #
+# this dedication to be an overt act of relinquishment in perpetuity of       #
+# all present and future rights to this software under copyright law.         #
+#                                                                             #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,             #
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF          #
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.      #
+# IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER     #
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     #
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         #
+# DEALINGS IN THE SOFTWARE.                                                   #
+#                                                                             #
+# For more information, please refer to <http://unlicense.org/>               #
+###############################################################################
+# End license }}}
+
+# ** Notes {{{
+###############################################################################
+# Almost complete rewrite of the script "tecmint_monitor"                     #
+# Written for Tecmint.com by Ravi Saive for the post                          #
+# https://www.tecmint.com/linux-server-health-monitoring-script/              #
+# Author of original script : https://www.tecmint.com/author/admin/           #
+###############################################################################
+# End notes }}}
+
+unset_variables() { #{{{
+    unset reset external_ip nameserver load_avg unix_name ext_ip_chk up_time
+} #}}}
+
+unset_variables
+
+clear
+
+# ** Define variables {{{
+# reset colors
+reset=$(tput sgr0)
+
+# Site to check external IP address
+ext_ip_chk="http://ipecho.net/plain"
+
+# Read uname into array for os type, hostname, os release,
+# and kernel release
+read -r -a unix_name < <(/usr/bin/uname -a)
+# End variables }}}
+
+# ** About computer and OS {{{
+echo -e '\E[32m'"Hostname        :$reset ${unix_name[1]}"
+
+echo -e '\E[32m'"OS Type         :$reset ${unix_name[15]}"
+
+release=$(/usr/bin/lsb_release -d | sed 's/Description:\t//')
+echo -e '\E[32m'"OS Release      :$reset $release"
+
+echo -e '\E[32m'"Architecture    :$reset ${unix_name[12]}"
+
+echo -e '\E[32m'"Kernel Release  :$reset ${unix_name[2]}\n"
+# End computer and OS }}}
+
+# ** About Internet connection {{{
+if ping -c 1 8.8.8.8 > /dev/null 2>&1; then
+    echo -e '\E[32m'"Internet        :$reset Connected"
+    echo -e '\E[32m'"Internal IP     :$reset" $(hostname -I)
+    external_ip=$(curl -s $ext_ip_chk)
+    nameservers=$(nmcli device show wlp3s0 | awk '/IP4.DNS/ { print $2 }')
+    echo -e '\E[32m'"External IP     :$reset $external_ip"
+    echo -e '\E[32m'"Name Servers    :$reset $nameservers\n"
+else
+    echo -e '\E[32m'"Internet        :$reset Disconnected\n"
+fi
+# End Internet connection }}}
+
+# ** About users and usage {{{
+echo -e '\E[32m'"Logged-in users :$reset" $(/usr/bin/users)
+
+load_avg=$(top -n 1 -b | awk ' /load average/ {print $12, $13, $14}')
+echo -e '\E[32m'"Load Average    :$reset $load_avg"
+
+up_time=$(uptime -p | cut -d' ' -f2-)
+echo -e '\E[32m'"System Uptime   :$reset $up_time"
+
+echo -e '\n\E[32m'"RAM/Swap usage $reset"
+/usr/bin/free -h
+
+echo -e '\n\E[32m'"Disk Usage $reset"
+/usr/bin/df -h | grep 'Filesystem\|/dev/sda*'
+# End users and usage }}}
+
+unset_variables
