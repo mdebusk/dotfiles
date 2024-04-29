@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2024-03-18 01:06                                               #
+# Last edit  : 2024-04-24 20:55                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -122,3 +122,7 @@ REM     First Fri in May                          MSG [mf] Fallen Heroes Day (Ma
 REM     Third Sat in May                          MSG [mf] Preakness Stakes (Maryland)
 REM     Sep 12                                    MSG [mf] Defenders Day (Maryland)
 # End Maryland Holidays }}}
+
+# ** Other Holidays {{{
+REM     Apr 24                                    MSG [pf] Armenian Genocide Remembrance Day
+# End other holidays }}}
