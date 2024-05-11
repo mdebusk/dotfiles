@@ -5,7 +5,7 @@
 " Last edit  : 2024-03-19 02:34                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/                                           "
-" Depends    : vim                                                            "
+" Depends    : vim 8.2.3424 or higher                                         "
 " Known bugs : NKA                                                            "
 " TODO       : none yet                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
