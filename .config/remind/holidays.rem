@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2024-04-24 20:55                                               #
+# Last edit  : 2024-06-11 14:38                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -46,6 +46,7 @@ REM 15 Apr SCANFROM -7 ADDOMIT SATISFY [$Tw == 5] MSG [pf] Emancipation Day (obs
 
 # 16 April falls on Sunday: Observe on the 17th
 REM 17 Apr SCANFROM -7 ADDOMIT SATISFY [$Tw == 1] MSG [pf] Emancipation Day (observed)
+POP-OMIT-CONTEXT
 # End Emancipation Day }}}
 REM     Last Monday in May SCANFROM -7 ADDOMIT    MSG [bf] Memorial Day
 OMIT    Jun 19                                    MSG [bf] Juneteenth
@@ -125,4 +126,7 @@ REM     Sep 12                                    MSG [mf] Defenders Day (Maryla
 
 # ** Other Holidays {{{
 REM     Apr 24                                    MSG [pf] Armenian Genocide Remembrance Day
+REM     Jun 28                                    MSG [pf] День Конституції 
+REM     Aug 24                                    MSG [pf] День Незалежності України
+REM     Oct  1                                    MSG [pf] День захисників та захисниць України
 # End other holidays }}}
