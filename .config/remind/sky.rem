@@ -2,7 +2,7 @@
 # Filename   : sky.rem                                                        #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2024-02-23 01:26                                               #
+# Last edit  : 2024-06-04 14:20                                               #
 # Purpose    : Moon phases and sunrise/sunset file for remind                 #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -95,10 +95,10 @@ ENDIF
 
 
 # ** Future moon phases {{{
-REM [moondate(0)] +60 SPECIAL COLOR [col_blue] New moon          : 🌚 [moondate(0)] (%b)
-REM [moondate(1)] +60 SPECIAL COLOR [col_base1] First Quarter     : 🌛 [moondate(1)] (%b)
-REM [moondate(2)] +60 SPECIAL COLOR [col_base2] Full moon         : 🌝 [moondate(2)] (%b)
-REM [moondate(3)] +60 SPECIAL COLOR [col_base1] Last Quarter      : 🌜 [moondate(3)] (%b)%_
+REM [moondate(0)] +60 SPECIAL COLOR [col_blue] New moon          : 🌑 [moondate(0)] (%b)
+REM [moondate(1)] +60 SPECIAL COLOR [col_base1] First Quarter     : 🌓 [moondate(1)] (%b)
+REM [moondate(2)] +60 SPECIAL COLOR [col_base2] Full moon         : 🌕 [moondate(2)] (%b)
+REM [moondate(3)] +60 SPECIAL COLOR [col_base1] Last Quarter      : 🌗 [moondate(3)] (%b)%_
 # End future moon phases }}}
 
 
