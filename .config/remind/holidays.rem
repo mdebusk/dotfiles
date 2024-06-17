@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2024-06-11 14:38                                               #
+# Last edit  : 2024-06-16 22:09                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -89,6 +89,7 @@ REM     Third Sat in May                          MSG [pf] Armed Forces Day
 REM     May  28                                   MSG [pf] National Burger Day
 REM     Jun 14                                    MSG [pf] Flag Day
 REM     Jun 14                                    MSG [pf] United States Army's [_yr_num(1775)] Birthday
+REM     Jun 16                                    MSG [pf] Bloomsday
 REM     Third Sun in June                         MSG [pf] Father's Day
 REM     Aug  4                                    MSG [pf] United States Coast Guard's [_yr_num(1790)] Birthday
 REM     Aug  9                                    MSG [pf] National Book Lover's Day
