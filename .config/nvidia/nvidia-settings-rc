@@ -2,7 +2,7 @@
 # /home/michael/.config/nvidia/nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA Settings utility
-# Generated on Sun Nov 20 13:14:13 2022
+# Generated on Wed Jun 19 14:54:33 2024
 #
 
 # ConfigProperties:
@@ -29,6 +29,7 @@ michael-G75VW:1.0/FSAAAppControlled=1
 michael-G75VW:1.0/LogAnisoAppControlled=1
 michael-G75VW:1.0/OpenGLImageSettings=1
 michael-G75VW:1.0/FSAAAppEnhanced=0
+michael-G75VW:1.0/ShowGraphicsVisualIndicator=0
 michael-G75VW:1[DPY:VGA-0]/Dithering=0
 michael-G75VW:1[DPY:VGA-0]/DitheringMode=0
 michael-G75VW:1[DPY:VGA-0]/DitheringDepth=0
