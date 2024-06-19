@@ -2,7 +2,7 @@
 # Filename   : $XDG_CONFIG_HOME/i3/config                                     #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-01-16                                                     #
-# Last edit  : 2024-04-02 17:50                                               #
+# Last edit  : 2024-06-19 15:39                                               #
 # Purpose    : Configuration file for i3 window manager                       #
 # Reference  : http://i3wm.org/docs/userguide.html                            #
 # Depends    : i3 version 4.20+                                               #
@@ -17,8 +17,8 @@
 # ** 4.17: Variables {{{1
 
 # Set variables for physical displays {{{2
-## set $tv HDMI-0
-## set $laptop LVDS-0
+set $tv HDMI-0
+set $laptop LVDS-0
 # End physical displays }}}
 
 # Set the modifier key to the "Windows" key {{{2
