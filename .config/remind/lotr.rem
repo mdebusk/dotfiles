@@ -3,7 +3,7 @@
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 #            : Swiped from the unix calendar utility                          #
 # Created    : Unknown, maybe late 1970s                                      #
-# Last edit  : 2024-03-07 18:19                                               #
+# Last edit  : 2024-07-11 15:18                                               #
 # Purpose    : Lord of the Rings days file for remind                         #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -14,6 +14,7 @@
 # include [getenv("XDG_CONFIG_HOME")]/remind/lotr.rem
 SET pf "Lord of the Rings : 🧙"
 
+REM Jan  3 MSG [pf] Tolkien Day (J. R. R. Tolkien's birthday)
 REM Jan  5 MSG [pf] Fellowship enters Moria
 REM Jan  9 MSG [pf] Fellowship reaches Lorien
 REM Jan 17 MSG [pf] Passing of Gandalf
