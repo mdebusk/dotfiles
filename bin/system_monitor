@@ -3,10 +3,10 @@
 # Filename   : system_monitor                                                 #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2024-04-19 01:26                                               #
-# Last edit  : 2024-04-29 10:29                                               #
+# Last edit  : 2024-07-29 20:54                                               #
 # Purpose    : Print system information                                       #
 # Depends    : bash, tput, uname, lsb_release, sed, ping, hostname, curl,     #
-#            : nmcli, awk, users, top, uptime, free, df                       #
+#            : nmcli, awk, users, top, uptime, free, df, date                 #
 # Known bugs : NKA                                                            #
 # TODO       : N/A                                                            #
 ###############################################################################
@@ -98,6 +98,8 @@ echo -e '\E[32m'"Logged-in users :$reset" $(/usr/bin/users)
 
 load_avg=$(top -n 1 b | awk -F': ' ' /load average/ {print $2} ')
 echo -e '\E[32m'"Load Average    :$reset $load_avg"
+
+echo -e '\E[32m'"Date and Time   :$reset" $(date +'%F %H:%m %z')
 
 up_time=$(uptime -p | cut -d' ' -f2-)
 echo -e '\E[32m'"System Uptime   :$reset $up_time"
