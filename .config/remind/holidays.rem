@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2024-06-16 22:09                                               #
+# Last edit  : 2024-08-07 20:00                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -92,6 +92,7 @@ REM     Jun 14                                    MSG [pf] United States Army's 
 REM     Jun 16                                    MSG [pf] Bloomsday
 REM     Third Sun in June                         MSG [pf] Father's Day
 REM     Aug  4                                    MSG [pf] United States Coast Guard's [_yr_num(1790)] Birthday
+REM     Aug  7                                    MSG [pf] Purple Heart Day
 REM     Aug  9                                    MSG [pf] National Book Lover's Day
 REM     Sep 11                                    MSG [pf] Patriot Day
 REM     Sep 14                                    MSG [pf] United States Air Force's [_yr_num(1947)] Birthday
@@ -127,7 +128,4 @@ REM     Sep 12                                    MSG [mf] Defenders Day (Maryla
 
 # ** Other Holidays {{{
 REM     Apr 24                                    MSG [pf] Armenian Genocide Remembrance Day
-REM     Jun 28                                    MSG [pf] День Конституції 
-REM     Aug 24                                    MSG [pf] День Незалежності України
-REM     Oct  1                                    MSG [pf] День захисників та захисниць України
 # End other holidays }}}
