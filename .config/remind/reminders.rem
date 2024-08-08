@@ -2,7 +2,7 @@
 # Filename   : reminders.rem                                                  #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2024-03-18 01:36                                               #
+# Last edit  : 2024-08-07 20:08                                               #
 # Purpose    : General reminders file for remind                              #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -24,6 +24,7 @@ IF defined("tkremind")
     DO deaths.rem
     DO financial.rem
     DO holidays.rem
+    DO ukrainian_holidays.rem
     DO seasons.rem
     DO personal.rem
 ELSE
@@ -33,6 +34,7 @@ ELSE
     ENDIF
     DO seasons.rem
     DO holidays.rem
+    DO ukrainian_holidays.rem
     IF ! $CalMode
         DO discordian.rem
         DO lotr.rem
