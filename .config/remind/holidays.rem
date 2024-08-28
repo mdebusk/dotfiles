@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2024-08-07 20:00                                               #
+# Last edit  : 2024-08-28 19:34                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -18,13 +18,15 @@ SET mf "Maryland Holiday  : 🏴"
 
 
 # ** Easter and related days {{{
-REM  [easterdate($Uy)-47] MSG [pf] Shrove Tuesday/Mardi Gras
-REM  [easterdate($Uy)-46] MSG [pf] Ash Wednesday
-REM  [easterdate($Uy)-7]  MSG [pf] Palm Sunday
-OMIT [easterdate($Uy)-2]  MSG [pf] Good Friday
-OMIT [easterdate($Uy)]    MSG [pf] Easter Sunday
-REM  [easterdate($Uy)+39] MSG [pf] Ascension Day
-REM  [easterdate($Uy)+49] MSG [pf] Pentecost
+SET SaveTrig $NumTrig
+SET easter EASTERDATE($Uy)
+REM  [easter-47] MSG %"Shrove Tuesday / Mardi Gras"
+REM  [easter-46] MSG %"Ash Wednesday%"
+REM  [easter-7]  MSG %"Palm Sunday%"
+OMIT [easter-2]  MSG %"Good Friday%"
+OMIT [easter]    MSG %"Easter%" Sunday
+REM  [easter+39] MSG %"Ascension Day%"
+REM  [easter+49] MSG %"Pentecost%"
 # End Easter }}}
 
 # ** US Holidays {{{
