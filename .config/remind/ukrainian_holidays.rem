@@ -2,7 +2,7 @@
 # Filename   : ukrainian_holidays.rem                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk)                    #
 # Created    : 2024-08-07                                                     #
-# Last edit  : 2024-08-07 20:01                                               #
+# Last edit  : 2024-08-28 19:55                                               #
 # Purpose    : Ukrainian Holidays file for remind                             #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -15,6 +15,7 @@
 SET pf "Holiday           : 🇺🇦"
 
 REM     Feb 24                                    MSG [pf] Скорботний день початку російського вторгнення в Україну
+REM     Apr  1                                    MSG [pf] Гуморина
 REM     May  8                                    MSG [pf] День пам'яті та перемоги над нацизмом у Другій світовій війні 1939 - 1945 років
 REM     Third Thursday in May                     MSG [pf] День вишиванки
 REM     Jun 28                                    MSG [pf] День Конституції
