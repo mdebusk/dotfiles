@@ -2,7 +2,7 @@
 # Filename   : definitions.rem                                                #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/)                        #
 # Created    : 1992                                                           #
-# Last edit  : 2024-02-23 17:40                                               #
+# Last edit  : 2024-08-28 19:26                                               #
 # Purpose    : Definitions for remind                                         #
 # Reference  : man remind                                                     #
 # Depends    : remind                                                         #
@@ -32,9 +32,9 @@ ENDIF
 # End version check }}}
 
 # ** Location information {{{
-SET $Latitude  "39.4633"
-SET $Longitude "-76.1204"
-SET $Location  "Aberdeen, Harford, Maryland, USA"
+SET $Latitude  "39.64972"
+SET $Longitude "-76.94694"
+SET $Location  "Elkton, Cecil, Maryland, USA"
 # End location }}}
 
 # ** Display directives {{{
@@ -89,13 +89,13 @@ REM Sat Sun SPECIAL SHADE 220
 # calendar - the sizes are hard-coded, however, and work best in landscape.
 REM PS Border Border 5 sub moveto \
     /SmallFont findfont 4 scalefont setfont \
-    (Sunrise: [sunrise(trigdate())] Sunset: [sunset(trigdate())]) show
+    (Sunrise: [sunrise($T)] Sunset: [sunset($T)]) show
 
 # The next one puts the day number (1-366) and days left in the year at the
 # bottom of the post-script calendar.  Again, the hard-coded sizes work best
 # in landscape.
 FSET _DayOfYear(x) x-(date(year(x),1,1) - 1)
 REM PS BoxWidth 3 mul 4 div Border 5 sub moveto \
-    /SmallFont findfont 4 scalefont setfont \
-    ([_DayOfYear(today())]([365+isleap(today())-_DayOfYear(today())])) show
+	/SmallFont findfont 4 scalefont setfont \
+	([_DayOfYear($U)]([365+isleap($U)-_DayOfYear($U)])) show
 # }}}
