@@ -2,7 +2,7 @@
 # Filename   : definitions.rem                                                #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/)                        #
 # Created    : 1992                                                           #
-# Last edit  : 2024-08-28 19:26                                               #
+# Last edit  : 2024-08-29 11:02                                               #
 # Purpose    : Definitions for remind                                         #
 # Reference  : man remind                                                     #
 # Depends    : remind                                                         #
@@ -70,32 +70,32 @@ FSET _yr_num(yr)        ORD($Ty - yr)
 FSET _mo_num(mo, yr)    ORD(12 * ($Ty - yr) + $Tm - mo)
 # }}}
 
-# ** Postscript Stuff {{{
+# ** Postscript Stuff (all commented out) {{{
 # This portion of the file contains some cute examples of the new
 # PS-type reminders.  You need a PostScript printer or viewer to
 # appreciate these.  To use them, pipe the output of remind -p into the
 # rem2ps program.  More examples are in the PSSTUFF2 section, below.
 
 # The following reminder will shade Saturday and Sunday
-REM Sat Sun SPECIAL SHADE 220
+## REM Sat Sun SPECIAL SHADE 220
 
 # Fill in the phases of the moon on the PostScript calendar
-[moondate(0)] SPECIAL MOON 0
-[moondate(1)] SPECIAL MOON 1
-[moondate(2)] SPECIAL MOON 2
-[moondate(3)] SPECIAL MOON 3
+## [moondate(0)] SPECIAL MOON 0
+## [moondate(1)] SPECIAL MOON 1
+## [moondate(2)] SPECIAL MOON 2
+## [moondate(3)] SPECIAL MOON 3
 
 # The following example puts sunrise and sunset times in PostScript in the
 # calendar - the sizes are hard-coded, however, and work best in landscape.
-REM PS Border Border 5 sub moveto \
-    /SmallFont findfont 4 scalefont setfont \
-    (Sunrise: [sunrise($T)] Sunset: [sunset($T)]) show
+## REM PS Border Border 5 sub moveto \
+##     /SmallFont findfont 4 scalefont setfont \
+##     (Sunrise: [sunrise($T)] Sunset: [sunset($T)]) show
 
 # The next one puts the day number (1-366) and days left in the year at the
 # bottom of the post-script calendar.  Again, the hard-coded sizes work best
 # in landscape.
-FSET _DayOfYear(x) x-(date(year(x),1,1) - 1)
-REM PS BoxWidth 3 mul 4 div Border 5 sub moveto \
-	/SmallFont findfont 4 scalefont setfont \
-	([_DayOfYear($U)]([365+isleap($U)-_DayOfYear($U)])) show
+## FSET _DayOfYear(x) x-(date(year(x),1,1) - 1)
+## REM PS BoxWidth 3 mul 4 div Border 5 sub moveto \
+##     /SmallFont findfont 4 scalefont setfont \
+##     ([_DayOfYear($U)]([365+isleap($U)-_DayOfYear($U)])) show
 # }}}
