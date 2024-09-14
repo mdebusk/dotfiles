@@ -10,7 +10,7 @@
 
 ## Some of the software I use
 
-- [Ubuntu](https://ubuntu.com/download/desktop) 22.04.4 LTS "Jammy Jellyfish"
+- [Ubuntu](https://ubuntu.com/download/desktop) 22.04.5 LTS "Jammy Jellyfish"
     - I'm thinking of switching to [Debian](https://www.debian.org/), but I haven't decided. Honestly, I compile a lot of my own stuff anyway, so I may as well switch to [Gentoo](https://www.gentoo.org/)
 - [alacritty](https://alacritty.org/) terminal emulator
 - [Azeret Mono](https://fonts.google.com/specimen/Azeret+Mono) is my favorite terminal font
