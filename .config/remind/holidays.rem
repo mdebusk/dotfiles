@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2024-08-28 19:34                                               #
+# Last edit  : 2024-09-18 14:14                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -99,6 +99,7 @@ REM     Aug  9                                    MSG [pf] National Book Lover's
 REM     Sep 11                                    MSG [pf] Patriot Day
 REM     Sep 14                                    MSG [pf] United States Air Force's [_yr_num(1947)] Birthday
 REM     Sep 17                                    MSG [pf] Constitution Day
+REM     Sep 18                                    MSG [pf] United States Air Force's [_yr_num(1947)] Birthday
 REM     Sep 22                                    MSG [pf] Hobbit Day
 REM     Sep 25                                    MSG [pf] National Daughters Day
 REM     Sep 28                                    MSG [pf] National Sons Day
@@ -113,7 +114,7 @@ REM     Oct 30                                    MSG [pf] Mischief Night
 REM     Oct 31                                    MSG [pf] Halloween
 REM     Tue Nov  2 SCANFROM -7 SATISFY [($Ty % 4) == 0] MSG [pf] Election Day
 REM     Nov  9                                    MSG [pf] National Scrapple Day
-REM     Nov 10                                    MSG [pf] US Marine Corps' [_yr_num(1775)] Birthday
+REM     Nov 10                                    MSG [pf] United States Marine Corps' [_yr_num(1775)] Birthday
 REM     Dec  7                                    MSG [pf] Pearl Harbor Rememberance Day
 REM     Dec 20                                    MSG [pf] United States Space Force's [_yr_num(2019)] Birthday
 REM     Dec 21                                    MSG [pf] National Short Girl Appreciation Day
