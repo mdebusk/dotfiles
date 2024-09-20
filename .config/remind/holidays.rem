@@ -2,7 +2,7 @@
 # Filename   : holidays.rem                                                   #
 # Author     : Dianne Skoll (https://dianne.skoll.ca/) et alia                #
 # Created    : 1992                                                           #
-# Last edit  : 2024-09-20 13:07                                               #
+# Last edit  : 2024-09-20 13:09                                               #
 # Purpose    : Holidays file for remind                                       #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -119,6 +119,7 @@ REM     Nov 10                                    MSG [pf] United States Marine 
 REM     Dec  7                                    MSG [pf] Pearl Harbor Rememberance Day
 REM     Dec 20                                    MSG [pf] United States Space Force's [_yr_num(2019)] Birthday
 REM     Dec 21                                    MSG [pf] National Short Girl Appreciation Day
+REM     Dec 23                                    MSG [pf] Festivus
 OMIT    Dec 24                                    MSG [pf] Christmas Eve
 OMIT    Dec 31                                    MSG [pf] New Year's Eve
 # End US Holidays }}}
