@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2024-03-19 02:34                                               "
+" Last edit  : 2024-09-25 10:12                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/                                           "
 " Depends    : vim 8.2.3424 or higher                                         "
@@ -176,6 +176,10 @@ set directory=$XDG_STATE_HOME/vim/swap,~/,/tmp
 set wildmenu  " turn on command line completion wild style
 " Ignore the following extensions when using wildmenu
 set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pdf,*.bak,*.beam
+" Specifies how command line completion works
+set wildmode=longest,full
+" Use popup menu for command line completion
+set wildoptions=pum
 " End Command line editing }}}
 
 " ** 22. Running external commands {{{
