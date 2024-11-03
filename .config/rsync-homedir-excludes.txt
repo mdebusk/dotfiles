@@ -1,9 +1,9 @@
 ###############################################################################
 # Filename   : rsync-homedir-excludes.txt                                     #
-# Author     : Ruben Barkow-Kuder                                             #
-#              <https://github.com/rubo77/rsync-homedir-excludes>             #
+# Author     : Ruben Barkow-Kuder (https://github.com/rubo77/)                #
 # Created    : 2019-11-30                                                     #
-# Last edit  : 2022-10-02 23:17                                               #
+# Last edit  : 2024-11-02 22:02                                               #
+# Reference  : https://github.com/rubo77/rsync-homedir-excludes               #
 # Purpose    : list of files rsync will ignore when backing up %HOME          #
 # Depends    : rsync                                                          #
 # TODO       : N/A                                                            #
@@ -18,8 +18,6 @@
 ##.android
 ##.AndroidStudio*/
 ##Android/Sdk
-.config/BraveSoftware/Brave-Browser/BrowserMetrics/
-.config/BraveSoftware/Brave-Browser/BraveWallet/
 ##.gradle
 ##.gvm
 ##.grails/
@@ -260,6 +258,8 @@ Thumbs.db
 /snap/riot-web/
 
 #Brave
+.config/BraveSoftware/Brave-Browser/BrowserMetrics/
+.config/BraveSoftware/Brave-Browser/BraveWallet/
 .config/BraveSoftware/Brave-Browser/*/Feature Engagement Tracker/
 .config/BraveSoftware/Brave-Browser/*/Local Storage/
 .config/BraveSoftware/Brave-Browser/*/Service Worker/CacheStorage/
