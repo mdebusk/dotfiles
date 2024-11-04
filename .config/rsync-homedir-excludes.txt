@@ -40,6 +40,7 @@
 /nlphilia-Hostmonster
 /nlphilia-Netbook
 /pCloudDrive/
+/Podcasts
 ##*Popcorntime*
 ##/.aMule
 ##/Scribus
@@ -266,6 +267,9 @@ Thumbs.db
 .config/BraveSoftware/Brave-Browser/*/Session Storage/
 .config/BraveSoftware/Brave-Browser/Safe Browsing/
 .config/BraveSoftware/Brave-Browser/ShaderCache/
+.config/BraveSoftware/Brave-Browser/CertificateRevocation/*
+.config/BraveSoftware/Brave-Browser/Crash Reports/*
+.config/BraveSoftware/Brave-Browser/Default/IndexedDB/*
 
 #indexer
 .local/share/baloo
