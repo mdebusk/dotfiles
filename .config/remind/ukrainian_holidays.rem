@@ -2,7 +2,7 @@
 # Filename   : ukrainian_holidays.rem                                         #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk)                    #
 # Created    : 2024-08-07                                                     #
-# Last edit  : 2024-10-22 21:10                                               #
+# Last edit  : 2024-11-11 15:39                                               #
 # Purpose    : Ukrainian Holidays file for remind                             #
 # Depends    : remind                                                         #
 # Known bugs : NKA                                                            #
@@ -12,14 +12,16 @@
 # Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
 # include [getenv("XDG_CONFIG_HOME")]/remind/ukrainian_holidays.rem
 
-SET pf "Holiday           : 🇺🇦"
+SET pf "Ukrainian Holiday : 🇺🇦"
 
 REM     Feb 24                                    MSG [pf] Скорботний день початку російського вторгнення в Україну
-REM     Apr  1                                    MSG [pf] Гуморина
-REM     May  8                                    MSG [pf] День пам'яті та перемоги над нацизмом у Другій світовій війні 1939 - 1945 років
+REM     Apr 01                                    MSG [pf] Гуморина
+REM     May 08                                    MSG [pf] День пам'яті та перемоги над нацизмом у Другій світовій війні 1939 - 1945 років
+REM     [orthodoxeaster($Uy)]                     MSG [pf] Великдень (Пасха)
+REM     [orthodoxeaster($Uy)+49]                  MSG [pf] Трійця
 REM     Third Thursday in May                     MSG [pf] День вишиванки
 REM     Jun 28                                    MSG [pf] День Конституції
 REM     Jul 15                                    MSG [pf] День Української Державності
 REM     Aug 24                                    MSG [pf] День Незалежності України
-REM     Oct  1                                    MSG [pf] День захисників та захисниць України
+REM     Oct 01                                    MSG [pf] День захисників та захисниць України
 REM     Oct 27                                    MSG [pf] День української писемності та мови
