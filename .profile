@@ -2,7 +2,7 @@
 # Filename   : $HOME/.profile                                                 #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : Unknown                                                        #
-# Last edit  : 2024-03-28 00:11                                               #
+# Last edit  : 2024-11-14 18:05                                               #
 # Purpose    : Sets environment variables                                     #
 # TODO       : Move ~/.vim to $XDG_CONFIG_HOME                                #
 ###############################################################################
@@ -62,6 +62,7 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 # Specific programs {{{
 # Useful: https://wiki.archlinux.org/title/XDG_Base_Directory
 # Also useful: https://github.com/b3nj5m1n/xdg-ninja
+export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=${XDG_CONFIG_HOME}/java - Djavafx.cachedir=${XDG_CACHE_HOME}/openjfx"
 export ANDROID_HOME=$XDG_DATA_HOME/android
 export CALOPT="--col=$XDG_CONFIG_HOME/ccal/cal.col --d=$XDG_DATA_HOME/ccal/cal.dat --u --f"
 export CARGO_HOME=$XDG_DATA_HOME/cargo
@@ -77,7 +78,6 @@ export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
 export HTML_TIDY=$XDG_CONFIG_HOME/tidyrc
 export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
-export JAVA_OPTIONS="-Djava.util.prefs.userRoot=${XDG_CONFIG_HOME}/java - Djavafx.cachedir=${XDG_CACHE_HOME}/openjfx"
 export KDEHOME="$XDG_CONFIG_HOME"/kde
 export MPLAYER_HOME=$XDG_CONFIG_HOME/mplayer
 export MYSQL_HISTFILE=$XDG_STATE_HOME/mysql/mysql_history
