@@ -1,0 +1,30 @@
+###############################################################################
+# Filename   : md.rem                                                         #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk)                    #
+# Created    : 2024-11-10                                                     #
+# Last edit  : 2024-11-11 15:26                                               #
+# Purpose    : Maryland-specific holidays file for remind                     #
+# Depends    : remind                                                         #
+# Known bugs : NKA                                                            #
+# TODO       : N/A                                                            #
+###############################################################################
+
+# Place in $XDG_CONFIG_HOME/remind/ and include in reminders.rem with:
+# include [getenv("XDG_CONFIG_HOME")]/remind/md.rem
+
+SET mf "Maryland Holiday  : 🏴"
+
+REM     Mar 25                                    MSG [mf] Maryland Day
+REM     Apr 14                                    MSG [mf] John Hanson Day
+REM     Apr 28                                    MSG [mf] Maryland State Day
+REM     First Fri in May                          MSG [mf] Fallen Heroes Day
+REM     Second Thursday in May                    MSG [mf] Maryland Centenarians Day
+REM     Third Fri in May                          MSG [mf] George E. Mitchell Black-Eyed Susan Stakes
+REM     Third Sat in May                          MSG [mf] Preakness Stakes
+REM     First Sun in Jun                          MSG [mf] Fire, Rescue, and Emergency Services Workers Day
+REM     Jun 20                                    MSG [mf] Maryland Charter Day
+REM     Jul 02                                    MSG [mf] Thurgood Marshall Day
+REM     Sep 12                                    MSG [mf] Defenders Day
+REM     Nov 01                                    MSG [mf] Maryland Emancipation Day
+REM     Friday 23 November ADDOMIT SCANFROM -28   MSG [mf] American Indian Heritage Day
+REM     Dec 17                                    MSG [mf] Annapolis Charter Day
