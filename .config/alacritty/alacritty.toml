@@ -1,13 +1,14 @@
- ###############################################################################
- # Filename   : alacritty.toml                                                 #
- # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
- # Created    : 2023-07-24 01:30                                               #
- # Last edit  : 2024-03-19 02:36                                               #
- # Purpose    : Configuration file for alacritty                               #
- # Depends    : alacritty version 13.0 or above                                #
- # Known bugs : NKA                                                            #
- # TODO       : N/A                                                            #
- ###############################################################################
+###############################################################################
+# Filename   : alacritty.toml                                                 #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : 2023-07-24 01:30                                               #
+# Last edit  : 2024-12-07 19:04                                               #
+# Purpose    : Configuration file for alacritty                               #
+# Reference  : https://alacritty.org/config-alacritty.html                    #
+# Depends    : alacritty version 14.0 or above                                #
+# Known bugs : NKA                                                            #
+# TODO       : N/A                                                            #
+###############################################################################
 
 # ** License {{{
 ###############################################################################
@@ -36,17 +37,11 @@
 ###############################################################################
 # End license }}}
 
-# ** General {{{
-import = [
-    "~/.config/alacritty/solarized_dark.toml"
-]
-
+[general] # {{{
+import = ["~/.config/alacritty/solarized_dark.toml"]
+live_config_reload = true
 working_directory = "None"
 
-live_config_reload = true
-
-[shell]
-program="/usr/bin/bash"
 # End general }}}
 
 [env] # {{{
@@ -115,6 +110,7 @@ thickness = 0.15
 
 [terminal] # {{{
 osc52 = "OnlyCopy"
+shell="/usr/bin/bash"
 # End terminal }}}
 
 [mouse] # {{{
@@ -133,4 +129,3 @@ hide_when_typing = true
 [debug] # {{{
 # See the manual
 # End debug }}}
-
