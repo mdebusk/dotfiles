@@ -2,16 +2,17 @@
 /* Filename   : userstyle.css                                                 */
 /* Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                  */
 /* Created    : 2022-05-05                                                    */
-/* Last edit  : 2024-11-06 23:15                                              */
+/* Last edit  : 2025-01-06 13:46                                              */
 /* Purpose    : user stylesheet for Joplin                                    */
 /* Depends    : joplin                                                        */
+/* Arguments  : N/A                                                           */
 /* Known bugs : NKA                                                           */
-/* TODO       : N/A                                                           */
+/* To do      : N/A                                                           */
 /******************************************************************************/
 
 /* Body {{{ */
 body {
-    font-size: 16pt;
+    font-size: 12pt;
     font-family: Roboto, Baskerville, "Times New Roman", serif;
 }
 /* End body }}} */
@@ -53,29 +54,21 @@ ol,ul,td {
 dl {
     border: 3px double #073642;
     padding: 0.5em;
-}
-dt {
+  }
+  dt {
     float: left;
     clear: left;
-    width: 100px;
+    width: 35%;
     text-align: right;
     font-weight: bold;
     color: #859900;
-}
-dt::after {
+  }
+  dt::after {
     content: ":";
-}
-dd {
+  }
+  dd {
     margin: 0 0 0 110px;
     padding: 0 0 0.5em 0;
-}
+  }
 
 /* End definition lists }}} */
-
-/* Resource icon {{{ */
-.resource-icon {
-    width: 0.75em;
-    height: 0.9em;
-    top: 0.1em;
-}
-/* End resource icon }}} */
