@@ -2,7 +2,7 @@
 # Filename   : fzf.bash                                                       #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2021-11-30                                                     #
-# Last edit  : 2024-04-01 13:06                                               #
+# Last edit  : 2025-02-05 13:43                                               #
 # Purpose    : Initialization for fzf utility                                 #
 # Reference  : https://github.com/junegunn/fzf                                #
 # Depends    : fzf                                                            #
@@ -21,7 +21,7 @@ eval "$(fzf --bash)"
 [[ $- == *i* ]] && source"/home/michael/Source/fzf/shell/completion.bash" 2> /dev/null
 
 # Key bindings
-source "/home/michael/Source/fzf/shell/key-bindings.bash"
+## source "/home/michael/Source/fzf/shell/key-bindings.bash"
 # End setup }}}
 
 

@@ -2,7 +2,7 @@
 # Filename   : $HOME/.bashrc                                                  #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2008                                                           #
-# Last edit  : 2024-03-25 20:50                                               #
+# Last edit  : 2025-02-05 13:34                                               #
 # Purpose    : Configuration file for bash shell                              #
 # Depends    : bash, readlink, cut, cat, lesspipe, dircolors, test            #
 # Known bugs : NKA                                                            #
@@ -60,7 +60,7 @@ export NNTPSERVER='news.eternal-september.org'
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 
 # Enable extended regex for fzf
-export FZF_DEFAULT_OPS="--extended"
+export FZF_DEFAULT_OPTS="--extended"
 
 # End environment variables }}}
 
@@ -117,6 +117,7 @@ esac
 
 # Add support for fzf
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash
+eval "$(fzf --bash)"
 
 # Add completions for Alacritty
 [ -f $HOME/Source/alacritty/extra/completions/alacritty.bash ] && . $HOME/Source/alacritty/extra/completions/alacritty.bash
