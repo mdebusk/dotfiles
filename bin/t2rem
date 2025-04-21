@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+###############################################################################
+# Filename   : t2rem                                                          #
+# Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
+# Created    : 2022-10-19 15:55                                               #
+# Last edit  : 2024-04-20 12:56                                               #
+# Purpose    : Dump all tasks to a remind file                                #
+# Depends    : t, python, cut                                                 #
+# Known bugs : NKA                                                            #
+# TODO       : Can we use 'cut' instead of 'awk'?                             #
+###############################################################################
+
+# ** License {{{
+###############################################################################
+# This is free and unencumbered software released into the public domain.     #
+#                                                                             #
+# Anyone is free to copy, modify, publish, use, compile, sell, or             #
+# distribute this software, either in source code form or as a compiled       #
+# binary, for any purpose, commercial or non-commercial, and by any means.    #
+#                                                                             #
+# In jurisdictions that recognize copyright laws, the author or authors of    #
+# this software dedicate any and all copyright interest in the software to    #
+# the public domain. We make this dedication for the benefit of the public    #
+# at large and to the detriment of our heirs and successors. We intend        #
+# this dedication to be an overt act of relinquishment in perpetuity of       #
+# all present and future rights to this software under copyright law.         #
+#                                                                             #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,             #
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF          #
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.      #
+# IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER     #
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     #
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         #
+# DEALINGS IN THE SOFTWARE.                                                   #
+#                                                                             #
+# For more information, please refer to <http://unlicense.org/>               #
+###############################################################################
+# End license }}}
+
+# ** Notes {{{
+###############################################################################
+# This program requires a powerfully simple task manager named "t",           #
+# written by Steve Losh, which can be found at: https://github.com/sjl/t      #
+# That program requires python version 2.5 or newer and seems to run          #
+# perfectly on python 3.10.                                                   #
+#                                                                             #
+# In my definitions.rem file, I have colors set to the Solarized palette.     #
+# The variable named "col_base3" is set to RGB values "253 246 227". This     #
+# variable could easily be set as follows:                                    #
+# color_string='SET $DefaultColor "253 246 227"'                              #
+###############################################################################
+# End notes }}}
+
+# ** Variables; change to suit your system, setup, and taste {{{
+todo_rem="$XDG_CONFIG_HOME/remind/todo.rem"
+t_exec="$HOME/Source/t/t.py"
+task_dir="$XDG_DATA_HOME/tasks"
+task_file="tasks"
+color_string='SET $DefaultColor coerce("STRING", col_base3)'
+prefix="REM MSG TODO              : "
+# End variables }}}
+
+# Overwrite the old todo file while adding a distinctive color
+echo "$color_string" > "$todo_rem"
+
+# Filter output of t and convert it to remind format
+# while dumping it to the newly-created todo file
+python "$t_exec" --task-dir "$task_dir" --list "$task_file" |\
+    awk '{ $1=$2=""; print "REM MSG TODO              :" $0 }' >> "$todo_rem"
+
+exit 0
