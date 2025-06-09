@@ -2,8 +2,8 @@
 -- Filename   : init.lua                                                     --
 -- Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                 --
 -- Created    : 2022-07-05 15:44                                             --
--- Last edit  : 2022-12-15 22:03                                             --
--- Purpose    : Initialization file for vim                                  --
+-- Last edit  : 2025-06-09 01:33                                             --
+-- Purpose    : Initialization file for neovim                               --
 -- Reference  : I haven't found a good one yet                               --
 -- Depends    : neovim                                                       --
 -- Known bugs : NKA                                                          --
