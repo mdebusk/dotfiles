@@ -2,14 +2,15 @@
 -- Filename   : init.lua                                                     --
 -- Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                 --
 -- Created    : 2022-07-05 15:44                                             --
--- Last edit  : 2025-06-25 03:03                                             --
+-- Last edit  : 2025-06-25 04:34                                             --
 -- Purpose    : Initialization file for neovim                               --
--- Reference  : I haven't found a good one yet                               --
+-- Reference  : https://neovim.io/doc/                                       --
 -- Depends    : neovim                                                       --
 -- Known bugs : NKA                                                          --
--- TODO       : Turn this into something useful                              --
+-- TODO       : N/A                                                          --
 -------------------------------------------------------------------------------
 
+-- Required for TreeSitter
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
@@ -18,7 +19,6 @@ require("set")
 require("config.lazy")
 
 vim.cmd(':iab <expr> dts strftime("%F %R")')
-vim.cmd('colorscheme neosolarized')
 
 -- Make netrc look like NERDtree
 vim.g.netrw_altv = 1
