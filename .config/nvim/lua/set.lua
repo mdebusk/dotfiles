@@ -59,6 +59,7 @@ vim.opt.splitright = true
 
 -- ** 8. Terminal {{{
 vim.opt.guicursor = ""
+vim.opt.title = true
 -- End 8 }}}
 
 -- ** 9. Using the mouse {{{
@@ -78,6 +79,8 @@ vim.opt.mousefocus = true
 -- End 13 }}}
 
 -- ** 14. Editing text {{{
+vim.opt.completeopt= { "menuone", "noselect" }
+vim.opt.pumheight = 10
 vim.opt.undofile = true
 -- End 14 }}}
 
