@@ -2,7 +2,7 @@
 -- Filename   : init.lua                                                     --
 -- Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                 --
 -- Created    : 2022-07-05 15:44                                             --
--- Last edit  : 2025-06-09 01:33                                             --
+-- Last edit  : 2025-06-25 03:03                                             --
 -- Purpose    : Initialization file for neovim                               --
 -- Reference  : I haven't found a good one yet                               --
 -- Depends    : neovim                                                       --
@@ -10,8 +10,12 @@
 -- TODO       : Turn this into something useful                              --
 -------------------------------------------------------------------------------
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 require("remaps")
 require("set")
+require("config.lazy")
 
 vim.cmd(':iab <expr> dts strftime("%F %R")')
 vim.cmd('colorscheme neosolarized')
