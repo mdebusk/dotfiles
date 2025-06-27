@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2025-03-05 12:04                                               "
+" Last edit  : 2025-06-27 01:29                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/                                           "
 " Depends    : vim 9.1.0375 or higher                                         "
@@ -303,7 +303,7 @@ let &t_EI = "\e[2 q" " Steady block for everything else
 " Save macro in register d
 let @d='gg/last edit\ *:\ *\d/e:nohlRdtsýaggd'
 
-" Set sup a local buffer as a pseudo-word-processor {{{2
+" Sets up a local buffer as a pseudo-word-processor {{{2
 function! Writer()
     map j gj
     map k gk
@@ -326,7 +326,7 @@ function ToggleNetRW()
     if exists("g:netrw_buffer") && bufexists(g:netrw_buffer)
         exe "bd".g:netrw_buffer | unlet g:netrw_buffer
     else
-        Vexplore | let g:netrw_buffer=bufnr("%")
+        Lexplore | let g:netrw_buffer=bufnr("%")
     endif
 endfunction
 
