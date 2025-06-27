@@ -2,7 +2,7 @@
 -- Filename   : init.lua                                                     --
 -- Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                 --
 -- Created    : 2022-07-05 15:44                                             --
--- Last edit  : 2025-06-25 04:34                                             --
+-- Last edit  : 2025-06-26 22:27                                             --
 -- Purpose    : Initialization file for neovim                               --
 -- Reference  : https://neovim.io/doc/                                       --
 -- Depends    : neovim                                                       --
@@ -14,8 +14,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-require("remaps")
-require("set")
+require("config.keys")
+require("config.options")
 require("config.lazy")
 
 vim.cmd(':iab <expr> dts strftime("%F %R")')
