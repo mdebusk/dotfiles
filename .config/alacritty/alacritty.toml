@@ -2,7 +2,7 @@
 # Filename   : alacritty.toml                                                 #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-07-24 01:30                                               #
-# Last edit  : 2024-12-07 19:04                                               #
+# Last edit  : 2025-06-26 22:04                                               #
 # Purpose    : Configuration file for alacritty                               #
 # Reference  : https://alacritty.org/config-alacritty.html                    #
 # Depends    : alacritty version 14.0 or above                                #
@@ -71,10 +71,10 @@ multiplier = 3
 
 [font] # {{{
 builtin_box_drawing = true
-normal = { family = "Azeret Mono", style = "Regular" }
-bold = { family = "Azeret Mono", style = "Bold" }
-bold_italic = { family = "Azeret Mono", style = "Bold Italic" }
-italic = { family = "Azeret Mono", style = "Italic" }
+normal = { family = "RobotoMono Nerd Font", style = "Regular" }
+bold = { family = "RobotoMono Nerd Font", style = "Bold" }
+bold_italic = { family = "RobotoMono Nerd Font", style = "Bold Italic" }
+italic = { family = "RobotoMono Nerd Font", style = "Italic" }
 offset = { x = 0, y = 0 }
 glyph_offset = { x = 0, y = 0 }
 size = 16
