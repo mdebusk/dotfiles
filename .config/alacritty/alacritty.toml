@@ -2,7 +2,7 @@
 # Filename   : alacritty.toml                                                 #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2023-07-24 01:30                                               #
-# Last edit  : 2025-06-26 22:04                                               #
+# Last edit  : 2025-06-30 02:37                                               #
 # Purpose    : Configuration file for alacritty                               #
 # Reference  : https://alacritty.org/config-alacritty.html                    #
 # Depends    : alacritty version 14.0 or above                                #
@@ -56,7 +56,7 @@ decorations_theme_variant = "Dark" # "Light" "None"
 dimensions = { columns = 0, lines = 0 }
 dynamic_padding = false
 dynamic_title = true
-opacity = 0.8
+opacity = 0.9
 padding = { x = 5, y = 5 }
 position = "None" # | { x = <integer>, y = <integer> }
 ## startup_mode = "Windowed" | "Maximized" | "Fullscreen" | "SimpleFullscreen"
