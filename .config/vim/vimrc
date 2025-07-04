@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2025-06-27 01:29                                               "
+" Last edit  : 2025-07-04 17:52                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/                                           "
 " Depends    : vim 9.1.0375 or higher                                         "
@@ -12,11 +12,6 @@
 
 " ** 1. Important {{{
 set nocompatible         " Turn off vi-compatible mode
-" I'll probably wait until the 9.2 release to do this because the
-" roadmap indicates vim will recognize XDG natively
-"" set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
-"" set packpath^=$XDG_DATA_HOME/vim,$XDG_CONFIG_HOME/vim
-"" set packpath+=$XDG_CONFIG_HOME/vim/after,$XDG_DATA_HOME/vim/after
 " End Important }}}
 
 " ** 2. Moving around, searching and patterns {{{
