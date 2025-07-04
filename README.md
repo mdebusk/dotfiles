@@ -11,12 +11,11 @@
 ## Some of the software I use
 
 - [Ubuntu](https://ubuntu.com/download/desktop) 22.04.5 LTS "Jammy Jellyfish". Ubuntu 6.06 "Dapper Drake" was the first Linux distro I could get to install on my weird hadware at the time, and I've just kept using it because I haven't found a reason to switch. I'm thinking of switching to [OpenMandriva](https://www.openmandriva.org/), but I haven't decided. Honestly, I compile a lot of my own stuff anyway, so I may as well switch to [Gentoo](https://www.gentoo.org/)
-- [alacritty](https://alacritty.org/) terminal emulator
-- [Azeret Mono](https://fonts.google.com/specimen/Azeret+Mono) is my favorite terminal font
+- [alacritty](https://alacritty.org/) terminal emulator (but I'm playing with [kitty](https://sw.kovidgoyal.net/kitty/))
+- [Azeret Mono](https://fonts.google.com/specimen/Azeret+Mono) is my favorite terminal font. It doesn't seem to be recognized by my system as a monospace font, though, so I sometimes have troube with it
 - [bash](https://www.gnu.org/software/bash/) shell
 - [boxes](https://boxes.thomasjensen.com/) text utility I use to create comment boxes in vim
 - [Chordpro](https://www.chordpro.org/chordpro/) creates well-formatted song sheets from ascii text
-- ~~[dmenu](https://tools.suckless.org/dmenu/) dynamic menu from suckless.org~~ (I'm switching to rofi)
 - [fzf](https://github.com/junegunn/fzf) command-line fuzzy-finder
 - [i3wm](https://i3wm.org/) Window Manager, with added spice by [picom](https://github.com/yshui/picom), almost all the time
 - [Joplin](https://joplinapp.org/) note-taking app has a text UI available
@@ -46,4 +45,4 @@
 - [StackExchange](https://stackexchange.com/users/2998028/mdebusk)
 - [X/Twitter](https://x.com/nlphilia)
 
-*Updated 2025-06-27 01:38*
+*Updated 2025-07-04 18:06*
