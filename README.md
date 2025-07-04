@@ -12,7 +12,7 @@
 
 - [Ubuntu](https://ubuntu.com/download/desktop) 22.04.5 LTS "Jammy Jellyfish". Ubuntu 6.06 "Dapper Drake" was the first Linux distro I could get to install on my weird hadware at the time, and I've just kept using it because I haven't found a reason to switch. I'm thinking of switching to [OpenMandriva](https://www.openmandriva.org/), but I haven't decided. Honestly, I compile a lot of my own stuff anyway, so I may as well switch to [Gentoo](https://www.gentoo.org/)
 - [alacritty](https://alacritty.org/) terminal emulator (but I'm playing with [kitty](https://sw.kovidgoyal.net/kitty/))
-- [Azeret Mono](https://fonts.google.com/specimen/Azeret+Mono) is my favorite terminal font. It doesn't seem to be recognized by my system as a monospace font, though, so I sometimes have troube with it
+- [Azeret Mono](https://fonts.google.com/specimen/Azeret+Mono) is my favorite terminal font. It doesn't seem to be recognized by my system as a monospace font, though, so I sometimes have trouble with it
 - [bash](https://www.gnu.org/software/bash/) shell
 - [boxes](https://boxes.thomasjensen.com/) text utility I use to create comment boxes in vim
 - [Chordpro](https://www.chordpro.org/chordpro/) creates well-formatted song sheets from ascii text
