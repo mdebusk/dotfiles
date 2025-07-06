@@ -2,7 +2,7 @@
 // Filename   : config.jsonc                                                   /
 // Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   /
 // Created    : 2024-02-13 20:00                                               /
-// Last edit  : 2024-02-14 17:45                                               /
+// Last edit  : 2025-07-06 02:46                                               /
 // Purpose    : Main configuration file for fastfetch                          /
 // Reference  : https://github.com/fastfetch-cli/fastfetch/wiki/Json-Schema    /
 // Depends    : fastfetch                                                      /
@@ -42,7 +42,7 @@
     "modules": [
         {
             "type": "custom",
-            "format": "╭─────────────────────────────────────────────────────────────◉"
+            "format": "╭──────────────────────────────────────────────────────────────◉"
         },
         {
             "type": "title",
@@ -56,7 +56,7 @@
         },
         {
             "type": "custom",
-            "format": "├──────────────────────────\u001b[33mHARDWARE\u001b[39m───────────────────────────◉"
+            "format": "├──────────────────────────\u001b[33mHARDWARE\u001b[39m────────────────────────────◉"
         },
         {
             "type": "bios",
@@ -146,6 +146,11 @@
             "type": "terminal",
             "keycolor": "\u001b",
             "key": "│ \u001b[31mTerminal"
+        },
+        {
+            "type": "font",
+            "keycolor": "\u001b",
+            "key": "│ \u001b[31mFont"
         },
         {
             "type": "wm",
