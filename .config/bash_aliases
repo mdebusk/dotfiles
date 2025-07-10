@@ -2,7 +2,7 @@
 # Filename   : bash_aliases                                                   #
 # Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   #
 # Created    : 2022-07-04 13:16                                               #
-# Last edit  : 2025-03-12 01:59                                               #
+# Last edit  : 2025-07-10 10:26                                               #
 # Purpose    : aliases for interactive bash shell, sourced from ~/.bashrc     #
 # Depends    : bash, other programs as listed                                 #
 # Known bugs : NKA                                                            #
@@ -95,8 +95,10 @@ alias la='ls -Ahlpv --color=auto --group-directories-first --time-style=long-iso
 # Use wget to mirror a Web site
 alias mirror='wget --mirror --convert-links --html-extension --wait=2 -o log'
 
+# Make it easier to start NeoVim's appimage
+alias nvim='/opt/nvim/nvim'
+
 # Emulates MS-DOS "pause" command
-## alias pause='echo -n "Press any key to continue... " && read -n 1 -s && echo'
 alias pause='read -n 1 -s -p "Press any key to continue..." && echo'
 
 # Password generator
