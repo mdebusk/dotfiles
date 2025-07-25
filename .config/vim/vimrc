@@ -2,7 +2,7 @@
 " Filename   : vimrc                                                          "
 " Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                   "
 " Created    : 2016                                                           "
-" Last edit  : 2025-07-18 17:03                                               "
+" Last edit  : 2025-07-25 03:26                                               "
 " Purpose    : Initialization file for vim                                    "
 " Reference  : https://vimhelp.org/                                           "
 " Depends    : vim 9.1.0375 or higher                                         "
@@ -219,8 +219,8 @@ highlight SpellBad cterm=underline,bold gui=undercurl
 " End Abbreviations }}}
 
 " ** Plugins {{{
-packadd comment
-packadd matchit
+packadd! comment
+packadd! matchit
 
 "" Make netrw look like NERDtree {{{2
 "" https://shapeshed.com/vim-netrw/
