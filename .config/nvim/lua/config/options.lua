@@ -2,7 +2,7 @@
 -- Filename   : set.lua                                                      --
 -- Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                 --
 -- Created    : 2022-07-05 15:44                                             --
--- Last edit  : 2023-01-09 19:26                                             --
+-- Last edit  : 2025-07-29 14:37                                             --
 -- Purpose    : set stsatements configuration for neovim                     --
 -- Reference  : :options                                                     --
 -- Depends    : neovim                                                       --
@@ -16,6 +16,7 @@
 -- ** 2. Moving around, searching, and patterns {{{
 vim.opt.autochdir = true
 vim.opt.ignorecase = true
+vim.opt.inccommand = split
 vim.opt.incsearch = true
 vim.opt.path:append '**'
 vim.opt.smartcase = true
