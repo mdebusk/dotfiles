@@ -2,7 +2,7 @@
 -- Filename   : set.lua                                                      --
 -- Author     : Michael DeBusk (https://gitlab.com/mdebusk/)                 --
 -- Created    : 2022-07-05 15:44                                             --
--- Last edit  : 2025-07-29 14:37                                             --
+-- Last edit  : 2025-07-30 00:13                                             --
 -- Purpose    : set stsatements configuration for neovim                     --
 -- Reference  : :options                                                     --
 -- Depends    : neovim                                                       --
@@ -45,7 +45,7 @@ vim.opt.wrap = false
 -- ** 5 Syntax, highlighting, and spelling {{{
 vim.opt.colorcolumn = "80"
 vim.opt.cursorline = true
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.termguicolors = true
 -- End 5 }}}
 
